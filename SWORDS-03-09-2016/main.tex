@@ -73,11 +73,13 @@ lower threshold before it becomes nice again.
 """
 
 self.grumpiness = opponent.defections - opponent.cooperations
+
 if self.state == 'Nice':
     if self.grumpiness > self.grumpy_threshold:
         self.state = 'Grumpy'
         return D
     return C
+
 if self.state == 'Grumpy':
     if self.grumpiness < self.nice_threshold:
         self.state = 'Nice'
