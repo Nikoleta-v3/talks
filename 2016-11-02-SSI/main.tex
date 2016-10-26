@@ -9,6 +9,7 @@
 \usepackage{colortbl, xcolor}
 \usepackage{booktabs}
 \usepackage{blindtext} % package for minipage
+\usepackage{minted}
 
 \usepackage{tikz}
 \usetikzlibrary{calc}
@@ -119,11 +120,38 @@
         \end{itemize}
     }
     \end{block}
- \end{frame}
-\begin{frame}
-	\begin{center}
-		\includegraphics[width=.80\textwidth]{static/namibia.png}
-	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Strategy}
+    \begin{center}
+        \begin{minipage}{0.8\textwidth}
+            \begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\tiny
+]
+{python}
+
+>>> import axelrod as axl
+>>> me = axl.Human(name='me')
+>>> players = [axl.TitForTat(), me]
+>>> match = axl.Match(players, turns=3)
+>>> match.play() 
+
+Starting new match
+Turn 1 action [C or D] for me: C
+
+Turn 1: me played C, opponent played C
+Turn 2 action [C or D] for me: D
+
+Turn 2: me played D, opponent played C
+Turn 3 action [C or D] for me: C
+[('C', 'C'), ('C', 'D'), ('D', 'C')]
+            \end{minted}
+        \end{minipage}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -131,13 +159,10 @@
     {
         \begin{itemize}
         \item Encourage SSI in my research community
-        \item PyCon Namibia
-        \pause
-        \item PyCon UK (including Django girls workshop)
-        \pause
         \item Workshops on Game Theory
-        \pause
+        \item PyCon UK (including Django girls workshop)
         \item Encourage students 
+        \item PyCon Namibia
         \end{itemize}
     }
     \end{block}
