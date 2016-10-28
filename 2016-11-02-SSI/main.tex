@@ -13,6 +13,8 @@
 
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usetikzlibrary{intersections}
+\usepackage{pgfplots}
 
 \title{Nikoleta Glynatsi}
 \author{@NikoletaGlyn}
@@ -30,11 +32,11 @@
 
 \begin{frame}
 	\begin{center}
-		\huge{Who am I?}
+		\huge{Who am I.}
 	\end{center}
 \end{frame}
 
-\begin{frame}{Who am I?}
+\begin{frame}{Who am I.}
 \begin{columns}[T] % align columns
 \begin{column}{.58\textwidth}
   		\includegraphics[width=0.8\textwidth]{static/kos-island-map.png}
@@ -54,47 +56,74 @@
 
 \begin{frame}
 	\begin{center}
-		\huge{What do I do?}
+		\huge{What I do.}
 	\end{center}
 \end{frame}
 
-\begin{frame}{What do I do?}
-\begin{columns}
-    \begin{column}{0.30\textwidth}
-        \begin{block}{Research}
-    {
+\begin{frame}{What I do.}
+    \begin{center}
+        \includegraphics[width=.80\textwidth]{static/onion.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}{What I do.}
+    \begin{figure}[htp]
+        \centering
+            \begin{tikzpicture}
+                \coordinate (A) at (-3,0) {};
+                \coordinate (B) at ( 3,0) {};
+                \coordinate (C) at (0,5) {};
+                \draw[name path=AC] (A) -- (C);
+                \draw[name path=BC] (B) -- (C);
+                \foreach \y/\A in {
+                3/Maths,
+                2/Operational\\ Research,
+                1/Game Theory,
+                0/Iterated Prisoner's Dilemma} {
+                    \path[name path=horiz] (A|-0,\y) -- (B|-0,\y);
+                    \draw[name intersections={of=AC and horiz,by=P},
+                          name intersections={of=BC and horiz,by=Q}] (P) -- (Q)
+                          node[midway,above,align=center,text width=
+                \dimexpr(6em-\y em)*3\relax] {\A};
+                }
+            \end{tikzpicture}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{What I do.}
+\def\labellist{{" ","(1980)","(1991)","(1992)","(2012)"," ","(2015)"," "}}
+    \begin{tikzpicture}
+            \begin{axis}[
+                height=8cm,
+                width=12cm,
+                axis lines=left,
+                xtick=\empty,
+                ytick=\empty,
+                nodes near coords={
+                                    \pgfmathparse{\labellist[\coordindex]}%
+                                    \pgfmathresult }
+                ]
+    \addplot[color=white,mark=x]
+        coordinates{
+            (1,1)
+            (2,1.1)
+            (3,6)
+            (4,6.5)
+            (5,8.5)
+            (6,9)
+            (7,9.5)
+            (8,12) };
+            \end{axis}
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{My standing in the community.}
+\center
         \begin{itemize}
-        \item Game Theory
-        \item Axelrod
-        \item Machine Learning
-        \end{itemize}
-    }
-    \end{block}
-    \end{column}
-    \begin{column}{0.30\textwidth}
-        \begin{block}{Groups}
-    {
-        \begin{itemize}
-        \item PyDiff
-        \item S.W.O.R.D.S.
+        \item PyDiff % images 
+        \item SWORDS
         \item PyCon UK
-        \item OR Club?!
         \end{itemize}
-    }
-    \end{block}
-    \end{column}
-    \begin{column}{0.30\textwidth}
-        \begin{block}{Tutoring}
-    {
-        \begin{itemize}
-        \item Computing
-        \item Operational Research
-        \item Statistics
-        \end{itemize}
-    }
-    \end{block}
-    \end{column}   
-\end{columns}    
 \end{frame}
 
 \begin{frame}{My Plans}
@@ -106,66 +135,27 @@
 
 \end{frame}
 
-\begin{frame}
-	\begin{center}
-		\includegraphics[width=.80\textwidth]{static/ashlock.png}
-	\end{center}
-\end{frame}
-
-\begin{frame}
-    \begin{block}{Plans:}
-    {
-        \begin{itemize}
-        \item Encourage SSI in my research community
-        \end{itemize}
-    }
-    \end{block}
-\end{frame}
-
-\begin{frame}[fragile]{Strategy}
+\begin{frame}{Plans.}
     \begin{center}
-        \begin{minipage}{0.8\textwidth}
-            \begin{minted}
-[
-frame=lines,
-framesep=2mm,
-baselinestretch=1.2,
-fontsize=\tiny
-]
-{python}
+        \begin{tikzpicture}
 
->>> import axelrod as axl
->>> me = axl.Human(name='me')
->>> players = [axl.TitForTat(), me]
->>> match = axl.Match(players, turns=3)
->>> match.play() 
+            \node (title) at (0,0) [fill=black!, text width = 6cm, align=center, text=white, opacity=.2, text opacity=1]
+            {\textbf{\color{white}{PyCon 2017}}};
 
-Starting new match
-Turn 1 action [C or D] for me: C
+            \node (a) at ($(title) + (0, -1.5)$) [fill=black!, text width = 6cm, align=center, text=white, opacity=.2, text opacity=1]
+            {\textbf{\color{white}{EuroScipy 2017}}};
 
-Turn 1: me played C, opponent played C
-Turn 2 action [C or D] for me: D
+            \node (b) at ($(a) + (0, -1.5)$) [fill=black!, text width = 6cm, align=center, text=white, opacity=.2, text opacity=1]
+            {\textbf{\color{white}{International Game Theory Collaborators}}};
 
-Turn 2: me played D, opponent played C
-Turn 3 action [C or D] for me: C
-[('C', 'C'), ('C', 'D'), ('D', 'C')]
-            \end{minted}
-        \end{minipage}
+            \node (c) at ($(b) + (0, -1.5)$) [fill=black!, text width = 6cm, align=center, text=white, opacity=.2, text opacity=1]
+            {\textbf{\color{white}{PyCon Namibia}}};
+
+            \node (d) at ($(c) + (0, -1.5)$) [fill=black!, text width = 6cm, align=center, text=white, opacity=.2, text opacity=1]
+            {\textbf{\color{white}{Game Theory Conferences}}};
+
+        \end{tikzpicture}
     \end{center}
-\end{frame}
-
-\begin{frame}
-    \begin{block}{Plans:}
-    {
-        \begin{itemize}
-        \item Encourage SSI in my research community
-        \item Workshops on Game Theory
-        \item PyCon UK (including Django girls workshop)
-        \item Encourage students 
-        \item PyCon Namibia
-        \end{itemize}
-    }
-    \end{block}
 \end{frame}
 
 \begin{frame}
