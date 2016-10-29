@@ -57,24 +57,12 @@
 \begin{frame}{What I do.}
     \begin{figure}[htp]
         \centering
-            \begin{tikzpicture}
-                \coordinate (A) at (-3,0) {};
-                \coordinate (B) at ( 3,0) {};
-                \coordinate (C) at (0,5) {};
-                \draw[name path=AC] (A) -- (C);
-                \draw[name path=BC] (B) -- (C);
-                \foreach \y/\A in {
-                3/Maths,
-                2/Operational\\ Research,
-                1/Game Theory,
-                0/Iterated Prisoner's Dilemma} {
-                    \path[name path=horiz] (A|-0,\y) -- (B|-0,\y);
-                    \draw[name intersections={of=AC and horiz,by=P},
-                          name intersections={of=BC and horiz,by=Q}] (P) -- (Q)
-                          node[midway,above,align=center,text width=
-                \dimexpr(6em-\y em)*3\relax] {\A};
-                }
-            \end{tikzpicture}
+                \begin{tikzpicture}
+                    \draw [thick] (-2,2) to [bend left=60] node[midway, left] {Maths} (-2,10);
+                    \draw [thick] (1,2) to [bend left=60] node[midway, align=left, left] {Operational\\Research}(1,10);
+                    \draw [thick] (4,2) to [bend left=60] node[midway, left] {Game Theory} (4,10);
+                    \draw [thick] (5.5,4) to [bend left=60] node[midway, left, align=left] {Iterated\\Prisoner's\\Dilemma} (5.5,8);
+                \end{tikzpicture}
     \end{figure}
 \end{frame}
 
