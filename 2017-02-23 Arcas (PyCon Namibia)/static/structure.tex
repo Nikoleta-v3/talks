@@ -1,0 +1,22 @@
+\tikzstyle{process} =[rectangle, minimum width=0.5cm, minimum height=1cm,
+text centered, draw=yellow!80,text width=3.5cm]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{center}
+\begin{tikzpicture}[scale=2, node distance=1.5cm, auto, execute at begin
+node={\begin{varwidth}{80em}}, execute at end node={\end{varwidth}}]
+
+\node (query) [process] {\small{Create query}};
+\node (ping) [process, below of=query] {\small{Make request to API}};
+\node (xml) [process, below of=ping] {\small{XML file}};
+\node (parce) [process, below of=xml] {\small{Parce XML to Pandas}};
+\node (json) [process, below of=parce] {\small{Output json file}};
+
+%Lines
+\draw [arrow] (query) -- (ping);
+\draw [arrow] (ping) -- (xml);
+\draw [arrow] (xml) -- (parce);
+\draw [arrow] (parce) -- (json);
+
+\end{tikzpicture}
+\end{center}
