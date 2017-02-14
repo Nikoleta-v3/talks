@@ -1,0 +1,567 @@
+\documentclass{beamer}
+
+\usecolortheme[dark,accent=cyan]{solarized}
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{multimedia}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{colortbl, xcolor}
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+\usepackage{siunitx}
+\usepackage{standalone}
+\usepackage{animate}
+\usepackage{tikz}
+\usepackage{fix-cm}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usepackage{minted}
+
+\definecolor{DarkGray}{gray}{0.1}
+\definecolor{LightGray}{gray}{0.3}
+\usemintedstyle{native}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+
+\title{Writing tests for research software}
+\author{@NikoletaGlyn}
+\date{}
+\institute[]
+{
+\begin{center}
+    \includegraphics[width=.15\textwidth]{static/pycon-namibia.png}
+\end{center}
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+    \begin{center}
+    \includegraphics[width=0.24\textwidth]{static/cardiff_uni_logo.jpg}\hspace{10pt}
+    \includegraphics[width=0.24\textwidth]{static/axelrod-logo.png}\vspace{10pt}
+
+    \includegraphics[width=0.24\textwidth]{static/ssi-logo.png} \hspace{10pt}
+    \includegraphics[width=0.24\textwidth]{static/phoenix-logo.jpg}
+    \vspace{10pt}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \huge {TESTING}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \color{yellow!79}\huge{0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \color{yellow!79}\huge{$F_{0} = 0$}   \\
+        \color{yellow!79}\huge{$F_{1} = 1$}    \\
+        \color{yellow!79}\huge{$F_{n} = F_{n-1} + F_{n-2}$}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{figure}
+    \textbf{main.py}
+    \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\tiny,
+        ]
+        {python}
+def fib(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return 2 * fib(n - 1)
+    \end{minted}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+\color{yellow!79}
+
+\begin{tabular}{lccccccc} \toprule
+\textbf{$n$}                     & \textit{2}     & \textit{3}    & \textit{4}     & \textit{$\dots$} & \textit{16}    & \textit{17}    & \textit{18}    \\[3mm] \midrule
+\textbf{$F_{n}$}                 & \textit{1}     & \textit{2}    & \textit{3}     & \textit{$\dots$} & \textit{987}   & \textit{1597}  & \textit{2584}  \\[3mm]
+\textbf{$F_{n-1}$}               & \textit{1}     & \textit{1}    & \textit{2}     & \textit{$\dots$} & \textit{610}   & \textit{987}   & \textit{1597}  \\[3mm]
+\textbf{$\frac{F_{n}}{F_{n-1}}$} & \textit{1.000} & \textit{2.000} & \textit{1.500} & \textit{$\dots$} & \textit{1.618} & \textit{1.618} & \textit{1.618} \\[3mm]
+\bottomrule
+\end{tabular}
+
+\pause
+    \vspace{5mm}
+    \color{yellow!79}\huge{$\phi \simeq 1.61803...$}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{figure}
+    \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=LightGray,
+        fontsize=\large,
+        ]
+        {python}
+.
+|-- main.py
+|-- golden.py
+    \end{minted}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{figure}
+    \textbf{golden.py}
+    \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\tiny,
+        ]
+        {python}
+import main
+
+for n in range(10, 100000):
+    golden_ratio = fib(n) / fib(n - 1)
+    print(golden_ratio)
+    \end{minted}
+    \end{figure}
+    \pause
+    \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\small,
+        ]
+        {python}
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+...
+    \end{minted}
+    \pause
+\begin{center}
+    \begin{tikzpicture}
+        \node [align=center, text=yellow!79] {\large{Glynatsi 2017, ``SOLVES THE
+                                                      FIBONACCI MYSTERY"}};
+
+    \end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[width=\textwidth]
+    \input{static/process.tex}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+     \begin{center}
+     \Huge{20\% OF GENETIC RESEARCH IS WRONG} \\
+     \vspace{10mm}
+     \small{Gene name errors are widespread in the scientific literature by
+     Mark Ziemann, Yotam Eren and Assam El-Osta}
+     \end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+     \Huge{INDUSTRY} \\
+     \pause
+     \vspace{10mm}
+     \Huge{AMAZON}
+     \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{figure}
+    \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=LightGray,
+        fontsize=\large,
+        ]
+        {python}
+.
+|-- main.py
+|-- golden.py
+|-- test_main.py
+    \end{minted}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{figure}
+\textbf{test\_main.py}
+\begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+import unittest
+import main
+
+class TestExample(unittest.TestCase):
+
+    def test_initial(self):
+        self.assertEqual(fib(0), 0)
+        self.assertEqual(fib(1), 1)
+
+    def test_fib(self):
+        self.assertEqual(fib(2), 1)
+        self.assertEqual(fib(3), 2)
+\end{minted}
+\end{figure}
+\pause
+\begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+python -m unittest test_main.py
+\end{minted}
+\pause
+\begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+self.assertEqual(fib(2), 1)
+AssertionError: 2 != 1
+
+-----------------------------
+Ran 2 tests in 0.000s
+
+FAILED (failures=1)
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{figure}[T]
+    \textbf{main.py}
+    \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\tiny,
+        ]
+        {python}
+def fib(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return 2 * fib(n - 1)
+
+    \end{minted}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{figure}
+    \textbf{main.py}
+    \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\tiny,
+        ]
+        {python}
+def fib(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fib(n - 1) + fib(n - 2)
+    \end{minted}
+    \end{figure}
+    \pause
+    \begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+python -m unittest test_main.py
+-------------------------------
+Ran 2 tests in 0.000s
+
+OK
+\end{minted}
+\pause
+\begin{center}
+    \begin{tikzpicture}
+        \node [align=center, text=yellow!79] {\large{Glynatsi 2017, ``TRYING TO
+        RECLAIM REPUTATION"}};
+    \end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\Huge{Doc Testing}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{figure}
+\textbf{main.py}
+\begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+import unittest
+
+def fib(n):
+    """Returns the n th fibonacci number.
+
+    For example:
+
+        >>> fib(5)
+        5
+        >>> fib(6)
+        8
+        >>> fib(5) + fib(6)
+        13
+        >>> fib(7)
+        10
+   """
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+\end{minted}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+python -m doctest main.py
+
+Failed example:
+    fib(7)
+Expected:
+    10
+Got:
+    13
+****************************
+1 items had failures:
+   1 of   4 in main.fib
+***Test Failed*** 1 failures.
+
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{figure}
+\textbf{main.py}
+\begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+import unittest
+
+def fib(n):
+    """Returns the n th fibonacci number.
+
+    For example:
+
+        >>> fib(5)
+        5
+        >>> fib(6)
+        8
+        >>> fib(5) + fib(6)
+        13
+        >>> fib(7)
+        13
+   """
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+\end{minted}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\Huge{Property Based Testing}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+from hypothesis import given
+from hypothesis.strategies import integers
+
+class TestFib(unittest.TestCase):
+    @given(k=integers(min_value=2))
+    def test_fib(self, k):
+        self.assertTrue(fib(k), fib(k - 1) + fib(k - 2))
+\end{minted}
+\vspace{5mm}
+\begin{center}
+\small{https://github.com/HypothesisWorks} \\
+\small{@DRMacIver}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\huge{It's impossible to conduct research without software, say 7 out of 10
+UK researchers} \\
+\vspace{10mm}
+\large{Simon Hettrick} \\
+\vspace{10mm}
+\small{uk/blog/2016-09-12-its-impossible-conduct-research-without%software-say-7
+-out-10-uk-researchers}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+   \includestandalone[width=\textwidth]{static/92}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includestandalone[width=\textwidth]{static/69}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includestandalone[width=\textwidth]{static/56}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+     \includestandalone[width=\textwidth]{static/79}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includestandalone[width=0.4\textwidth]{static/92}
+    \includestandalone[width=0.4\textwidth]{static/69} \\
+    \includestandalone[width=0.4\textwidth]{static/56}
+    \includestandalone[width=0.4\textwidth]{static/79}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \small{Axelrod : https://github.com/Axelrod-Python/Axelrod} \\
+    \vspace{3mm}
+    \small{Arcas: https://github.com/Nikoleta-v3/Arcas} \\
+    \vspace{3mm}
+    \small{Ciw: https://github.com/CiwPython/Ciw} \\
+    \vspace{3mm}
+    \small{Pandas: https://github.com/pandas-dev/pandas} \\
+    \vspace{3mm}
+    \small{Skleanr: http://scikit-learn.org/stable/} \\
+    \vspace{3mm}
+    \small{Numpy: https://github.com/numpy/numpy} \\
+    \vspace{3mm}
+    \small{cryptography: https://github.com/pyca/cryptography} \\
+    \vspace{3mm}
+    \small{fastnumbers: https://github.com/SethMMorton/fastnumbers} \\
+    \vspace{3mm}
+    \small{yacluster: https://github.com/KrzysiekJ/yacluster} \\
+    \vspace{3mm}
+    \small{binaryornot: https://github.com/audreyr/binaryornot} \\
+    \huge{$\vdots$}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\movie[width=\textwidth,height=0.6\textheight,autostart, loop]{}{static/sonic.mp4}
+\end{center}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\huge{\textbf{}}\\~\\
+		\small{@NikoletaGlyn}\\
+		\small{https://github.com/Nikoleta-v3}\\
+		\small{@SoftwateSaved} \\
+		\small{@PhoenixCUni}
+	\end{center}
+\end{frame}
+
+\end{document}
+
+
+
+
