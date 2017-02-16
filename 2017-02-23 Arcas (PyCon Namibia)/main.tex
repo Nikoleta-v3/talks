@@ -1,5 +1,5 @@
 \documentclass{beamer}
-
+\usepackage{coloremoji}
 \usecolortheme[dark,accent=cyan]{solarized}
 
 \beamertemplatenavigationsymbolsempty
@@ -11,6 +11,8 @@
 \usepackage{varwidth}
 
 \usepackage{tikz}
+\usetikzlibrary{automata}
+\usepackage{pstricks}
 \usetikzlibrary{calc}
 \usepackage{minted}
 
@@ -18,12 +20,9 @@
 \definecolor{DarkGray}{gray}{0.1}
 \usemintedstyle{native}
 
-\theoremstyle{definition}
-\newtheorem{defn}{Definition}
-
 \title{Accessing open research literature with Python}
-\author{Nikoleta Glynatsi}
-\date{2017-02}
+\author{@NikoletaGlyn}
+\date{ }
 \institute[]
 {
 \begin{center}
@@ -35,115 +34,244 @@
 
 \frame{\titlepage}
 
-\begin{frame}{About me}
+\begin{frame}
     \begin{center}
     \includegraphics[width=0.24\textwidth]{static/cardiff_uni_logo.jpg}\hspace{10pt}
-    \includegraphics[width=0.24\textwidth]{static/axelrod-logo.png}
+    \includegraphics[width=0.24\textwidth]{static/axelrod-logo.png}\vspace{10pt}
 
     \includegraphics[width=0.24\textwidth]{static/ssi-logo.png} \hspace{10pt}
     \includegraphics[width=0.24\textwidth]{static/phoenix-logo.jpg}
-    \end{center}
-\end{frame}
-
-\begin{frame}{}
-    \begin{center}
-       \begin{defn}A \textbf{literature review} is a search and evaluation of
-       the available literature in your given subject or chosen topic area. \\
-       -Royal Literary Fund
-       \end{defn}
+    \vspace{10pt}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
-       \begin{defn}\textbf{Web Scraping} is a technique employed to extract large
-            amounts of data from websites. - WebHarvy
-       \end{defn}
+        \small{http://matt.might.net/articles/phd-school-in-pictures/}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
-    \begin{itemize}
-        \item Literature Review;
-        \item World Wide Web;
-        \item Web Scraping;
-    \end{itemize}
+    \input{static/phd-comic.tex}
     \end{center}
 \end{frame}
 
-\begin{frame}{Arcas}
+\begin{frame}
 \begin{center}
-    \small{https://github.com/Nikoleta-v3/Arcas}
+    \Huge{📚📚📚}
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Arcas}
+\begin{frame}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{static/printing.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \input{static/www.tex}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \Huge{🏃🏃}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=1\textwidth]{static/ieee_manual.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\color{yellow!79}\Large{$100 x (0.5 min + 1.5 min) + 10 X (0.5 min)= 110 min \Rightarrow 1h \textrm{ and } 50 min$}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\Huge{API}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{figure}
+    \textbf{'QUERY'}
     \begin{minted}
-    [
-    framesep=4mm,
-    baselinestretch=1.2,
-    bgcolor=DarkGray,
-    fontsize=\footnotesize,
-    ]
-    {python}
- pip install arcas
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\small,
+        ]
+        {python}
+http://ieeexplore.ieee.org/gateway/ipsSearch.jsp?
     \end{minted}
-    \hspace{10mm}
+    \end{figure}
     \pause
-    \begin{minted}
-    [
-    framesep=4mm,
-    baselinestretch=1.2,
-    bgcolor=DarkGray,
-    fontsize=\footnotesize,
-    ]
-    {python}
- git clone git@github.com:Nikoleta-v3/Arcas.git
- python setup.py develop
+        \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\small,
+        ]
+        {python}
+...ti=Namibia
+    \end{minted}
+        \pause
+        \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\small,
+        ]
+        {python}
+...ti=Namibia&hc=100
     \end{minted}
 \end{frame}
 
-\begin{frame}[fragile]{Arcas}
+\begin{frame}[fragile]
+\begin{figure}
+    \textbf{'RESULTS'}
+    \begin{minted}
+        [
+        framesep=2mm,
+        baselinestretch=1,
+        bgcolor=DarkGray,
+        fontsize=\small,
+        ]
+        {python}
+|--<root>
+    |- ...
+|-<document>
+    |-<rank>1</rank>
+    |-<title>
+        |-<![CDATA[
+            Implementation of 220 ...]]>
+    |-</title>
+    |-<authors>
+        |- ...
+    |- ...
+|-</document>
+|-<document>
+ \end{minted}
+ \end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\color{yellow!79}\Large{$15min + 1min + 50 min =  66min \Rightarrow 1h \textrm{ and } 5 min$}
+\end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \input{static/apis_one.tex}
+    \end{center}
+\end{frame}
+\begin{frame}
+    \begin{center}
+    \input{static/apis.tex}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
     \begin{minted}
     [
     framesep=4mm,
     baselinestretch=1.2,
     bgcolor=DarkGray,
-    fontsize=\footnotesize,
+    fontsize=\Large,
     ]
     {python}
- arcas_scrape -p arxiv -t "Prisoner's Dilemma" -y 2014 -r 1
-    \end{minted}
-    \hspace{10mm}
-    \pause
-    \begin{minted}
-    [
-    framesep=2mm,
-    baselinestretch=1.2,
-    bgcolor=DarkGray,
-    fontsize=\footnotesize,
-    ]
-    {python}
- arcas_scrape -p ieee -t "Prisoner Dilemma" -a "Nowak" -y 2014
- ... -r 1 -s 2
-    \end{minted}
-    \hspace{10mm}
-    \pause
-    \begin{minted}
-    [
-    framesep=2mm,
-    baselinestretch=1.2,
-    bgcolor=DarkGray,
-    fontsize=\footnotesize,
-    ]
-    {python}
- arcas_scrape -p ieee -b "game theory" -t "Prisoner Dilemma"
- ... -a "Nowak" -y 2014 -r 1 -s 2
+pip install arcas
     \end{minted}
 \end{frame}
 
-\begin{frame}[fragile]{Results}
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny,
+    ]
+    {python}
+import pandas as pd
+from arcas import *
+
+def get_arguments(word, start, count):
+    arguments = {'-a': None, '-t': word, '-s': start,
+                 '-r': count, '-y': None, '-b': None}
+    return arguments
+
+def main_program(arguments):
+    parameters = pp.parameters_fix(arguments=arguments)
+    url = pp.create_url_search(parameters=parameters)
+    response = pp.make_request(url)
+    root = pp.get_root(response)
+    article = pp.parse(root)
+    return article, url
+    \end{minted}
+
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny,
+    ]
+    {python}
+words = ["Namibia"]
+
+apis = {"ieee": Ieee, "nature": Nature, "arxiv": Arxiv,
+        "springer": Springer, "plos": Plos}
+list_apis = ['plos', 'arxiv', 'ieee', 'nature', 'springer']
+count = 10
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny,
+    ]
+    {python}
+for p in list_apis:
+    pp = apis[p]()
+    start = 1
+    while start < 100:
+        arguments = get_arguments(words[0], start, count)
+        raw_articles, url = main_program(arguments)
+
+        dfs = []
+        if raw_articles is not False:
+            for raw_article in raw_articles:
+                try:
+                    df = pp.to_dataframe(raw_article)
+                    dfs.append(df)
+                except ValueError:
+                    ValueError()
+            try:
+                df = pd.concat(dfs, ignore_index=True)
+                pp.export(df, filename='articles/{}-{}-{}.json'.format(p, words[0], start))
+            except ValueError:
+                print(None)
+        start += 10
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
     \begin{minted}
         [
         framesep=2mm,
@@ -153,107 +281,148 @@
         ]
         {python}
 {
-"key":{"0":"Deng2014","1":"Deng2014","2":"Deng2014"},
-"unique_key":{"0":"3369e749ce1c92062806e7fa3c41c90e",
-              "1":"3369e749ce1c92062806e7fa3c41c90e",
-              "2":"3369e749ce1c92062806e7fa3c41c90e"},
-"title":{"0":"Generalized prisoner's dilemma",
-         "1":"Generalized prisoner's dilemma",
-         "2":"Generalized prisoner's dilemma"},
-"author":{"0":"Xinyang Deng","1":"Qi Liu","2":"Yong Deng"},
-"abstract":{"0":"  Prisoner's dilemma has been ...",
-            "1":"  Prisoner's dilemma has been ...",
-            "2":"  Prisoner's dilemma has been ..."},
-"date":{"0":2014,"1":2014, "2":2014},
-"journal":{"0":"arXiv","1":"arXiv","2":"arXiv"},
-"provenance":{"0":"arXiv","1":"arXiv","2":"arXiv"}
+"key":{"0":, "1":, "2": },
+"unique_key":{"0":, "1":, "2":},
+"title":{"0":,
+         "1":,
+         "2":},
+"author":{"0":,"1":,"2":},
+"abstract":{"0":,
+            "1":,
+            "2":},
+"date":{"0":,"1":, "2":},
+"journal":{"0":,"1":,"2":},
+"provenance":{"0":,"1":,"2":}
 }
      \end{minted}
 \end{frame}
 
-
 \begin{frame}
 \begin{center}
-\begin{figure}[H]
-		\input{static/structure.tex}
-\end{figure}
-\end{center}
-\end{frame}
-
-\begin{frame}[fragile]
-    \begin{minted}
-        [
-        framesep=2mm,
-        baselinestretch=1,
-        bgcolor=DarkGray,
-        fontsize=\tiny,
-        ]
-        {python}
-from arcas import *
-
-def get_arguments(api, word, count):
-    arguments = [{'-a': None, '-b': word, '-s': None,
-                  '-r': count, '-y': None, '-t': None},
-    return arguments
-
-def main_program(arguments):
-    parameters = pp.parameters_fix(arguments=arguments)
-    url = pp.create_url_search(parameters=parameters)
-    response = pp.make_request(url)
-    root = pp.get_root(response)
-    article = pp.parse(root)
-    return article
-    \end{minted}
-    \pause
-    \begin{minted}
-        [
-        framesep=2mm,
-        baselinestretch=1,
-        bgcolor=DarkGray,
-        fontsize=\tiny,
-        ]
-        {python}
-words = ["prisoner's dilemma", "prisoners evolution", "prisoner dilemma", ...]
-apis = {"ieee": Ieee, "nature": Nature, "arxiv": Arxiv, "springer": Springer, "plos": Plos}
-list_apis = ['plos', 'arxiv', 'ieee', 'nature', 'springer']
-count = 10
-\end{minted}
-    \pause
-    \begin{minted}
-        [
-        framesep=2mm,
-        baselinestretch=1,
-        bgcolor=DarkGray,
-        fontsize=\tiny,
-        ]
-        {python}
-for wr in words:
-    for p in list_apis:
-        pp = apis[p]()
-
-        arguments = get_arguments(p, wr, count)
-        raw_articles = main_program(arg)
-
-        df = pp.to_dataframe(raw_article)
-        pp.export(dfs, filename='articles/{}-{}.json'.format(p, wr))
-\end{minted}
-\end{frame}
-
-\begin{frame}
-\begin{center}
-\begin{figure}[]
-        \includegraphics[width=\textwidth]{static/articles-year.pdf}
-\end{figure}
+\color{yellow!79}\Large{$15 min + 5 min= 20 min$}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-\begin{figure}[]
-        \includegraphics[width=\textwidth]{static/provenance.pdf}
-\end{figure}
+    \includegraphics[width=\textwidth]{static/provenance.pdf}
 \end{center}
 \end{frame}
+
+
+%    \hspace{10mm}
+%    \pause
+%    \begin{minted}
+%    [
+%    framesep=2mm,
+%    baselinestretch=1.2,
+%    bgcolor=DarkGray,
+%    fontsize=\footnotesize,
+%    ]
+%    {python}
+% arcas_scrape -p ieee -t "Prisoner Dilemma" -a "Nowak" -y 2014
+% ... -r 1 -s 2
+%    \end{minted}
+%    \hspace{10mm}
+%    \pause
+%    \begin{minted}
+%    [
+%    framesep=2mm,
+%    baselinestretch=1.2,
+%    bgcolor=DarkGray,
+%    fontsize=\footnotesize,
+%    ]
+%    {python}
+% arcas_scrape -p ieee -b "game theory" -t "Prisoner Dilemma"
+% ... -a "Nowak" -y 2014 -r 1 -s 2
+%    \end{minted}
+%\end{frame}
+%
+
+%
+%
+%\begin{frame}
+%\begin{center}
+%\begin{figure}[H]
+%		\input{static/structure.tex}
+%\end{figure}
+%\end{center}
+%\end{frame}
+%
+%\begin{frame}[fragile]
+%    \begin{minted}
+%        [
+%        framesep=2mm,
+%        baselinestretch=1,
+%        bgcolor=DarkGray,
+%        fontsize=\tiny,
+%        ]
+%        {python}
+%from arcas import *
+%
+%def get_arguments(api, word, count):
+%    arguments = [{'-a': None, '-b': word, '-s': None,
+%                  '-r': count, '-y': None, '-t': None},
+%    return arguments
+%
+%def main_program(arguments):
+%    parameters = pp.parameters_fix(arguments=arguments)
+%    url = pp.create_url_search(parameters=parameters)
+%    response = pp.make_request(url)
+%    root = pp.get_root(response)
+%    article = pp.parse(root)
+%    return article
+%    \end{minted}
+%    \pause
+%    \begin{minted}
+%        [
+%        framesep=2mm,
+%        baselinestretch=1,
+%        bgcolor=DarkGray,
+%        fontsize=\tiny,
+%        ]
+%        {python}
+%words = ["prisoner's dilemma", "prisoners evolution", "prisoner dilemma", ...]
+%apis = {"ieee": Ieee, "nature": Nature, "arxiv": Arxiv, "springer": Springer, "plos": Plos}
+%list_apis = ['plos', 'arxiv', 'ieee', 'nature', 'springer']
+%count = 10
+%\end{minted}
+%    \pause
+%    \begin{minted}
+%        [
+%        framesep=2mm,
+%        baselinestretch=1,
+%        bgcolor=DarkGray,
+%        fontsize=\tiny,
+%        ]
+%        {python}
+%for wr in words:
+%    for p in list_apis:
+%        pp = apis[p]()
+%
+%        arguments = get_arguments(p, wr, count)
+%        raw_articles = main_program(arg)
+%
+%        df = pp.to_dataframe(raw_article)
+%        pp.export(dfs, filename='articles/{}-{}.json'.format(p, wr))
+%\end{minted}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{center}
+%\begin{figure}[]
+%        \includegraphics[width=\textwidth]{static/articles-year.pdf}
+%\end{figure}
+%\end{center}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{center}
+%\begin{figure}[]
+%        \includegraphics[width=\textwidth]{static/provenance.pdf}
+%\end{figure}
+%\end{center}
+%\end{frame}
 
 \begin{frame}
 	\begin{center}

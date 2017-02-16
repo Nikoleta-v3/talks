@@ -1,0 +1,12 @@
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{center}
+\begin{tikzpicture}
+\node[align=center, text=yellow!79] (c1) {\Large{WRITE}};
+\node[align=center,text=yellow!79, right=4cmof c1] (c2) { \Large{PUBLISH}};
+\node[align=center,text=yellow!79, below=2cmof c2] (c3) {\Large{REVIEWED}};
+
+\draw [arrow] (c1) -- (c2);
+\draw [arrow] (c2) -- (c3);
+\end{tikzpicture}
+\end{center}
