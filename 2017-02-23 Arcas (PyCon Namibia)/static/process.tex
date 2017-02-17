@@ -1,0 +1,14 @@
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{center}
+\begin{tikzpicture}
+\node[align=center, text=yellow!79] (c1) {\Large{ME}};
+\node[align=center,text=yellow!79, right=4cmof c1] (c2) { \Large{JOURNAL}};
+\node[align=center,text=yellow!79, below=2cmof c2] (c3) {\Large{REVIEW}};
+
+\draw [arrow] (c1) -- (c2);
+\draw [arrow] (c2) -- (c3);
+\draw [arrow] (c3) -- (c2);
+\draw [arrow] (c2) -- (c1);
+\end{tikzpicture}
+\end{center}

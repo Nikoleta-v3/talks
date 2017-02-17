@@ -1,22 +1,31 @@
-\tikzstyle{process} =[rectangle, minimum width=0.5cm, minimum height=1cm,
-text centered, draw=yellow!80,text width=3.5cm]
-\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{arrow} = [thick,->]
 
 \begin{center}
-\begin{tikzpicture}[scale=2, node distance=1.5cm, auto, execute at begin
-node={\begin{varwidth}{80em}}, execute at end node={\end{varwidth}}]
+\begin{tikzpicture}[remember picture,
+  inner/.style={draw=blue!70,thick,inner sep=3pt},
+  outer/.style={draw=yellow!70,thick,inner sep=10pt}
+  ]
+  \node[outer,minimum width=15mm, minimum height = 7mm] (A) {
+    \begin{tikzpicture}
+      \node [inner] (ieee)  {IEEE};
+      \node [inner, right=of ieee] (nature) {Nature};
+      \node [inner, below=of ieee] (plos) {PLOS};
+      \node [inner, below=of nature] (plos) {...};
+    \end{tikzpicture}
+  };
+  \node[outer, minimum width=15mm , minimum height = 1cm,left=2.7 cmof A,yshift=10mm] (B) {tools.py};
+  \node[outer, minimum width=0.05*\columnwidth, minimum height = 2mm ,below=of B, inner sep=3pt, anchor=east] (C) {doc/};
+  \node[draw=yellow!70, minimum width=0.05*\columnwidth, minimum height = 2mm, left=2 cmof A, inner sep=3pt, yshift=-30mm] (D) {readthedocs.org};
 
-\node (query) [process] {\small{Create query}};
-\node (ping) [process, below of=query] {\small{Make request to API}};
-\node (xml) [process, below of=ping] {\small{XML file}};
-\node (parce) [process, below of=xml] {\small{Parce XML to Pandas}};
-\node (json) [process, below of=parce] {\small{Output json file}};
+  \node[outer,minimum width=15mm, minimum height = 7mm, below= of A] (F) {
+    \begin{tikzpicture}
+      \node [inner] (ieee)  {\tiny{testIEEE}};
+      \node [inner, right=of ieee] (nature) {\tiny{testNature}};
+      \node [inner, below=of ieee] (plos) {\tiny{testPLOS}};
+      \node [inner, below=of nature] (plos) {...};
+    \end{tikzpicture}
+  };
 
-%Lines
-\draw [arrow] (query) -- (ping);
-\draw [arrow] (ping) -- (xml);
-\draw [arrow] (xml) -- (parce);
-\draw [arrow] (parce) -- (json);
-
+  \draw [arrow] (C) -- ++(-40pt,0pt) |-  (D);
 \end{tikzpicture}
 \end{center}

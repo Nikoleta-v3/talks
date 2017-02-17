@@ -9,11 +9,12 @@
 \usepackage{colortbl, xcolor}
 \usepackage{booktabs}
 \usepackage{varwidth}
+\usepackage{hyperref}
 
 \usepackage{tikz}
+\usetikzlibrary{positioning,calc}
 \usetikzlibrary{automata}
 \usepackage{pstricks}
-\usetikzlibrary{calc}
 \usepackage{minted}
 
 \definecolor{DarkGray}{gray}{0.1}
@@ -46,9 +47,13 @@
 \end{frame}
 
 \begin{frame}
-    \begin{center}
-        \small{http://matt.might.net/articles/phd-school-in-pictures/}
-    \end{center}
+\begin{center}
+\huge{The illustrated guide to a Ph.D.} \\
+\vspace{10mm}
+\large{Matt Might} \\
+\vspace{10mm}
+\tiny{http://matt.might.net/articles/phd-school-in-pictures/}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -58,26 +63,28 @@
 \end{frame}
 
 \begin{frame}
-\begin{center}
-    \Huge{📚📚📚}
-\end{center}
+\begin{figure}[width=\textwidth]
+    \input{static/process.tex}
+\end{figure}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{static/printing.png}
+    \includegraphics[width=0.5\textwidth]{static/printing.png} \\
+    \small{1436}
 \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
-    \input{static/www.tex}
+    \input{static/www.tex} \\
+    \small{1980s}
     \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \Huge{🏃🏃}
+    \Huge{NAMIBIA}
 \end{center}
 \end{frame}
 
@@ -89,7 +96,9 @@
 
 \begin{frame}
 \begin{center}
-\color{yellow!79}\Large{$100 x (0.5 min + 1.5 min) + 10 X (0.5 min)= 110 min \Rightarrow 1h \textrm{ and } 50 min$}
+\color{yellow!79}\Large{$0.5 min + \textrm{100} \times 1.5 min + 10 \times (0.5
+\textrm{min})= 155.5 \textrm{min} \Rightarrow 2 \textrm{h} \textrm{ and } 35.5
+\textrm{min}$}
 \end{center}
 \end{frame}
 
@@ -100,74 +109,32 @@
 \end{frame}
 
 \begin{frame}[fragile]
-    \begin{figure}
-    \textbf{'QUERY'}
-    \begin{minted}
-        [
-        framesep=2mm,
-        baselinestretch=1,
-        bgcolor=DarkGray,
-        fontsize=\small,
-        ]
-        {python}
-http://ieeexplore.ieee.org/gateway/ipsSearch.jsp?
-    \end{minted}
-    \end{figure}
+    \begin{center}
+    \textbf{QUERY} \\
+    \vspace{3mm}
+    \small{\url{http://ieeexplore.ieee.org/gateway/ipsSearch
+    .jsp?ti=Namibia&hc=100}} \\
     \pause
-        \begin{minted}
-        [
-        framesep=2mm,
-        baselinestretch=1,
-        bgcolor=DarkGray,
-        fontsize=\small,
-        ]
-        {python}
-...ti=Namibia
-    \end{minted}
-        \pause
-        \begin{minted}
-        [
-        framesep=2mm,
-        baselinestretch=1,
-        bgcolor=DarkGray,
-        fontsize=\small,
-        ]
-        {python}
-...ti=Namibia&hc=100
-    \end{minted}
+    \vspace{10mm}
+    \small{\url{http://api.plos.org/search?q=title:Namibia&rows=100}} \\
+    \pause
+    \vspace{10mm}
+    \small{\url{http://www.nature.com/opensearch/request?queryType=cql&query=dc
+    .title%20adj%20Namibia&maximumRecords=100}} \\
+    \small{...}
+    \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
 \begin{figure}
-    \textbf{'RESULTS'}
-    \begin{minted}
-        [
-        framesep=2mm,
-        baselinestretch=1,
-        bgcolor=DarkGray,
-        fontsize=\small,
-        ]
-        {python}
-|--<root>
-    |- ...
-|-<document>
-    |-<rank>1</rank>
-    |-<title>
-        |-<![CDATA[
-            Implementation of 220 ...]]>
-    |-</title>
-    |-<authors>
-        |- ...
-    |- ...
-|-</document>
-|-<document>
- \end{minted}
+    \small{SCREENSHOT}
  \end{figure}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-\color{yellow!79}\Large{$15min + 1min + 50 min =  66min \Rightarrow 1h \textrm{ and } 5 min$}
+\color{yellow!79}\Large{$15 \textrm{min} + 1 \textrm{min} + 50 \textrm{min} =
+66 \textrm{min} \Rightarrow 1\textrm{h} \textrm{ and } 6 \text{min}$}
 \end{center}
 \end{frame}
 
@@ -309,120 +276,64 @@ for p in list_apis:
 \end{center}
 \end{frame}
 
+\begin{frame}
+\begin{center}
+\begin{figure}[H]
+    \input{static/structure.tex}
+\end{figure}
+\end{center}
+\end{frame}
 
-%    \hspace{10mm}
-%    \pause
-%    \begin{minted}
-%    [
-%    framesep=2mm,
-%    baselinestretch=1.2,
-%    bgcolor=DarkGray,
-%    fontsize=\footnotesize,
-%    ]
-%    {python}
-% arcas_scrape -p ieee -t "Prisoner Dilemma" -a "Nowak" -y 2014
-% ... -r 1 -s 2
-%    \end{minted}
-%    \hspace{10mm}
-%    \pause
-%    \begin{minted}
-%    [
-%    framesep=2mm,
-%    baselinestretch=1.2,
-%    bgcolor=DarkGray,
-%    fontsize=\footnotesize,
-%    ]
-%    {python}
-% arcas_scrape -p ieee -b "game theory" -t "Prisoner Dilemma"
-% ... -a "Nowak" -y 2014 -r 1 -s 2
-%    \end{minted}
-%\end{frame}
-%
+\begin{frame}
+\begin{center}
+\begin{figure}[]
+        \includegraphics[width=\textwidth]{static/articles-year.pdf}
+\end{figure}
+\end{center}
+\end{frame}
 
-%
-%
-%\begin{frame}
-%\begin{center}
-%\begin{figure}[H]
-%		\input{static/structure.tex}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%\begin{frame}[fragile]
-%    \begin{minted}
-%        [
-%        framesep=2mm,
-%        baselinestretch=1,
-%        bgcolor=DarkGray,
-%        fontsize=\tiny,
-%        ]
-%        {python}
-%from arcas import *
-%
-%def get_arguments(api, word, count):
-%    arguments = [{'-a': None, '-b': word, '-s': None,
-%                  '-r': count, '-y': None, '-t': None},
-%    return arguments
-%
-%def main_program(arguments):
-%    parameters = pp.parameters_fix(arguments=arguments)
-%    url = pp.create_url_search(parameters=parameters)
-%    response = pp.make_request(url)
-%    root = pp.get_root(response)
-%    article = pp.parse(root)
-%    return article
-%    \end{minted}
-%    \pause
-%    \begin{minted}
-%        [
-%        framesep=2mm,
-%        baselinestretch=1,
-%        bgcolor=DarkGray,
-%        fontsize=\tiny,
-%        ]
-%        {python}
-%words = ["prisoner's dilemma", "prisoners evolution", "prisoner dilemma", ...]
-%apis = {"ieee": Ieee, "nature": Nature, "arxiv": Arxiv, "springer": Springer, "plos": Plos}
-%list_apis = ['plos', 'arxiv', 'ieee', 'nature', 'springer']
-%count = 10
-%\end{minted}
-%    \pause
-%    \begin{minted}
-%        [
-%        framesep=2mm,
-%        baselinestretch=1,
-%        bgcolor=DarkGray,
-%        fontsize=\tiny,
-%        ]
-%        {python}
-%for wr in words:
-%    for p in list_apis:
-%        pp = apis[p]()
-%
-%        arguments = get_arguments(p, wr, count)
-%        raw_articles = main_program(arg)
-%
-%        df = pp.to_dataframe(raw_article)
-%        pp.export(dfs, filename='articles/{}-{}.json'.format(p, wr))
-%\end{minted}
-%\end{frame}
-%
-%\begin{frame}
-%\begin{center}
-%\begin{figure}[]
-%        \includegraphics[width=\textwidth]{static/articles-year.pdf}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%\begin{frame}
-%\begin{center}
-%\begin{figure}[]
-%        \includegraphics[width=\textwidth]{static/provenance.pdf}
-%\end{figure}
-%\end{center}
-%\end{frame}
+\begin{frame}
+\begin{center}
+\begin{figure}[]
+        \includegraphics[width=\textwidth]{static/provenance.pdf}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{figure}[]
+        \includegraphics[width=\textwidth]{static/network.pdf}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=2mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize,
+    ]
+    {python}
+ arcas_scrape -p ieee -t "Prisoner Dilemma" -a "Nowak" -y 2014
+ ... -r 1 -s 2
+    \end{minted}
+    \hspace{10mm}
+    \begin{minted}
+    [
+    framesep=2mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize,
+    ]
+    {python}
+ arcas_scrape -p ieee -b "game theory" -t "Prisoner Dilemma"
+ ... -a "Nowak" -y 2014 -r 1 -s 2
+    \end{minted}
+\end{frame}
 
 \begin{frame}
 	\begin{center}
