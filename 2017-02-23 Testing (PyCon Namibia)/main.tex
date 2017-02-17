@@ -15,6 +15,7 @@
 
 \usepackage{animate}
 \usepackage{tikz}
+\usepackage{fix-cm}
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
 \usepackage{minted}
@@ -65,13 +66,15 @@
 
 \begin{frame}
     \begin{center}
+        \color{yellow!79}\huge{$F_{0} = 0$}   \\
+        \color{yellow!79}\huge{$F_{1} = 1$}    \\
         \color{yellow!79}\huge{$F_{n} = F_{n-1} + F_{n-2}$}
     \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
     \begin{figure}
-    \textbf{'main.py'}
+    \textbf{main.py}
     \begin{minted}
         [
         framesep=2mm,
@@ -81,20 +84,32 @@
         ]
         {python}
 def fib(n):
-   if n == 1:
-      return 1
-   elif n == 0:
-      return 0
-   else:
-      return 2*fib(n-1)
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return 2 * fib(n - 1)
     \end{minted}
     \end{figure}
 \end{frame}
 
 \begin{frame}
     \begin{center}
-        \color{yellow!79}\huge{$\frac{F_{n}}{F_{n-1}} \rightarrow \phi \pause \simeq 1
-        .61803...$}
+\color{yellow!79}
+\Large{
+$\frac{F_{10}}{F_{9}} =  1.617  $ \\
+$\frac{F_{11}}{F_{10}} =  1.618  $ \\
+$\frac{F_{12}}{F_{11}} =  1.617  $ \\
+$\frac{F_{13}}{F_{12}} =  1.618  $ \\
+$\frac{F_{14}}{F_{13}} =  1.618  $ \\
+$\frac{F_{15}}{F_{14}} =  1.618  $ \\
+$\frac{F_{16}}{F_{15}} =  1.618  $ \\
+$\frac{F_{17}}{F_{16}} =  1.618  $ \\
+$\frac{F_{18}}{F_{17}} = 1.618  $ \\
+}
+\pause
+    \color{yellow!79}\huge{$\phi \simeq 1.61803...$}
     \end{center}
 \end{frame}
 
@@ -117,7 +132,7 @@ def fib(n):
 
 \begin{frame}[fragile]
     \begin{figure}
-    \textbf{'golden.py'}
+    \textbf{golden.py}
     \begin{minted}
         [
         framesep=2mm,
@@ -129,7 +144,7 @@ def fib(n):
 import main
 
 for n in range(10, 100000):
-    golden_ratio = fib(n)/ fib(n-1)
+    golden_ratio = fib(n) / fib(n - 1)
     print(golden_ratio)
     \end{minted}
     \end{figure}
@@ -156,7 +171,7 @@ for n in range(10, 100000):
     \pause
 \begin{center}
     \begin{tikzpicture}
-        \node [align=center, text=yellow!79] {\Large{"Nikoleta SOLVES THE
+        \node [align=center, text=yellow!79] {\large{Glynatsi2017, ``SOLVES THE
                                                       FIBONACCI MYSTERY"}};
 
     \end{tikzpicture}
@@ -207,7 +222,7 @@ for n in range(10, 100000):
 
 \begin{frame}[fragile]
 \begin{figure}
-\textbf{'test\_main.py'}
+\textbf{test\_main.py}
 \begin{minted}
        [
        framesep=2mm,
@@ -261,7 +276,7 @@ FAILED (failures=1)
 
 \begin{frame}[fragile]
     \begin{figure}
-    \textbf{'main.py'}
+    \textbf{main.py}
     \begin{minted}
         [
         framesep=2mm,
@@ -271,19 +286,19 @@ FAILED (failures=1)
         ]
         {python}
 def fib(n):
-   if n == 1:
-      return 1
-   elif n == 0:
-      return 0
-   else:
-      return 2*fib(n-1)
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return 2 * fib(n - 1)
     \end{minted}
     \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
     \begin{figure}
-    \textbf{'main.py'}
+    \textbf{main.py}
     \begin{minted}
         [
         framesep=2mm,
@@ -293,12 +308,12 @@ def fib(n):
         ]
         {python}
 def fib(n):
-   if n == 1:
-      return 1
-   elif n == 0:
+   if n == 0:
       return 0
+   elif n == 1:
+      return 1
    else:
-      return fib(n-1) + f(n-2)
+      return fib(n - 1) + f(n - 2)
     \end{minted}
     \end{figure}
     \pause
@@ -319,7 +334,7 @@ OK
 \pause
 \begin{center}
     \begin{tikzpicture}
-        \node [align=center, text=yellow!79] {\Large{"Nikoleta TRYING TO
+        \node [align=center, text=yellow!79] {\large{Glynatsi2017, ``TRYING TO
         RECLAIM REPUTATION"}};
     \end{tikzpicture}
 \end{center}
@@ -327,35 +342,42 @@ OK
 
 \begin{frame}[fragile]
 \begin{figure}
-\textbf{'main.py'}
+\textbf{main.py}
 \begin{minted}
        [
        framesep=2mm,
        baselinestretch=1,
        bgcolor=DarkGray,
-       fontsize=\small,
+       fontsize=\tiny,
        ]
        {python}
 import unittest
 
 def fib(n):
     """Returns the n th fibonacci number.
+
     For example:
 
         >>> fib(5)
         5
         >>> fib(6)
         8
+        >>> fib(5) + fib(6)
+        13
+        >>> fib(7)
+        10
    """
-    if n == 1:
-        return 1
-    elif n == 0:
+    if n == 0:
         return 0
+    elif n == 1:
+        return 1
     else:
-        return fib(n-1) + fib(n-2)
+        return fib(n - 1) + fib(n - 2)
 \end{minted}
 \end{figure}
-\pause
+\end{frame}
+
+\begin{frame}[fragile]
 \begin{minted}
        [
        framesep=2mm,
@@ -365,7 +387,55 @@ def fib(n):
        ]
        {python}
 python -m doctest main.py
+
+Failed example:
+    fib(7)
+Expected:
+    10
+Got:
+    13
+*****************************
+1 items had failures:
+   1 of   4 in main.fib
+***Test Failed*** 1 failures.
 \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{figure}
+\textbf{main.py}
+\begin{minted}
+       [
+       framesep=2mm,
+       baselinestretch=1,
+       bgcolor=DarkGray,
+       fontsize=\tiny,
+       ]
+       {python}
+import unittest
+
+def fib(n):
+    """Returns the n th fibonacci number.
+
+    For example:
+
+        >>> fib(5)
+        5
+        >>> fib(6)
+        8
+        >>> fib(5) + fib(6)
+        13
+        >>> fib(7)
+        13
+   """
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+\end{minted}
+\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -380,28 +450,34 @@ python -m doctest main.py
 from hypothesis import given
 from hypothesis.strategies import integers
 
-
 class TestFib(unittest.TestCase):
     @given(k=integers(min_value=2))
     def test_fib(self, k):
         self.assertTrue(fib(k), fib(k-1) + fib(k-2))
 \end{minted}
 \begin{center}
-\small{https://github.com/HypothesisWorks}
+\small{https://github.com/HypothesisWorks} \\
+\small{@DRMacIver}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-\small{uk/blog/2016-09-12-its-impossible-conduct-research-without%software-say-7
+\huge{It's impossible to conduct research without software, say 7 out of 10
+UK researchers} \\
+\vspace{10mm}
+\large{Simon Hettrick} \\
+\vspace{10mm}
+\tiny{uk/blog/2016-09-12-its-impossible-conduct-research-without%software-say-7
 -out-10-uk-researchers}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \begin{tikzpicture}
-        \node [align=center, text=yellow!79] {\tiny{USE} \\ \Huge{92\%}};
+    \begin{tikzpicture}[scale=10]
+        \node [align=center, text=yellow!79] {\tiny{USE} \\
+        \Huge{92\%}};
     \end{tikzpicture}
 \end{center}
 \end{frame}
