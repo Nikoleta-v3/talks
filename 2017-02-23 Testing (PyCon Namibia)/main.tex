@@ -13,6 +13,7 @@
 \usepackage{booktabs}
 \usepackage{varwidth}
 
+\usepackage{standalone}
 \usepackage{animate}
 \usepackage{tikz}
 \usepackage{fix-cm}
@@ -98,17 +99,17 @@ def fib(n):
     \begin{center}
 \color{yellow!79}
 \Large{
-$\frac{F_{10}}{F_{9}} =  1.617  $ \\
-$\frac{F_{11}}{F_{10}} =  1.618  $ \\
-$\frac{F_{12}}{F_{11}} =  1.617  $ \\
-$\frac{F_{13}}{F_{12}} =  1.618  $ \\
-$\frac{F_{14}}{F_{13}} =  1.618  $ \\
-$\frac{F_{15}}{F_{14}} =  1.618  $ \\
+$\frac{F_{2}}{F_{1}} =  1.000  $ \\
+$\frac{F_{3}}{F_{2}} =  2.000  $ \\
+$\frac{F_{4}}{F_{3}} =  1.500  $ \\
+$\frac{F_{5}}{F_{3}} =  1.666  $ \\
+$\vdots$ \\
 $\frac{F_{16}}{F_{15}} =  1.618  $ \\
 $\frac{F_{17}}{F_{16}} =  1.618  $ \\
 $\frac{F_{18}}{F_{17}} = 1.618  $ \\
 }
 \pause
+    \vspace{3mm}
     \color{yellow!79}\huge{$\phi \simeq 1.61803...$}
     \end{center}
 \end{frame}
@@ -438,6 +439,11 @@ def fib(n):
 \end{figure}
 \end{frame}
 
+\begin{frame}
+\begin{center}
+\Huge{Property Based Testing}
+\end{center}
+\end{frame}
 \begin{frame}[fragile]
 \begin{minted}
        [
@@ -475,34 +481,25 @@ UK researchers} \\
 
 \begin{frame}
 \begin{center}
-    \begin{tikzpicture}[scale=10]
-        \node [align=center, text=yellow!79] {\tiny{USE} \\
-        \Huge{92\%}};
-    \end{tikzpicture}
+   \includestandalone[width=\textwidth]{static/92}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \begin{tikzpicture}
-        \node [align=center, text=yellow!79] {\tiny{IMPOSSIBLE} \\ \Huge{69\%}};
-    \end{tikzpicture}
+    \includestandalone[width=\textwidth]{static/69}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \begin{tikzpicture}
-        \node [align=center, text=yellow!79] {\tiny{DEVELOP} \\ \Huge{56\%}};
-    \end{tikzpicture}
+    \includestandalone[width=\textwidth]{static/56}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \begin{tikzpicture}
-        \node [align=center, text=yellow!79] {\tiny{TRAINING} \\ \Huge{79\%}};
-    \end{tikzpicture}
+     \includestandalone[width=\textwidth]{static/79}
 \end{center}
 \end{frame}
 
