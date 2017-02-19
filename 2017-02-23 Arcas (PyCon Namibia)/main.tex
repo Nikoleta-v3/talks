@@ -103,8 +103,8 @@
 
 \begin{frame}
 \begin{center}
-\color{yellow!79}\Large{$0.5 min + \textrm{100} \times 1.5 min + 10 \times (0.5
-\textrm{min})= 155.5 \textrm{min} \Rightarrow 2 \textrm{h} \textrm{ and } 35.5
+\color{yellow!79}\Large{$0.5 \textrm{min} + \textrm{100} \times 1.5 \textrm{min} + 10 \times 0.5
+\textrm{min}= 155.5 \textrm{min} \Rightarrow 2 \textrm{h} \textrm{ and } 35.5
 \textrm{min}$}
 \end{center}
 \end{frame}
@@ -132,9 +132,9 @@
     \end{center}
 \end{frame}
 
-\begin{frame}[fragile]
+\begin{frame}
 \begin{figure}
-     \includegraphics[width=1\textwidth]{static/xml.png}
+     \includegraphics[width=1.05\textwidth]{static/xml.png}
  \end{figure}
 \end{frame}
 
@@ -210,7 +210,7 @@ import arcas
 arguments = {'-a': None, '-t': 'Namibia', '-s': None,
              '-r': 100, '-y': None, '-b': None}
 
-for p in [arcas.Ieee, arcas.Plos]:
+for p in [arcas.Ieee, arcas.Plos, arcas.Arxiv, arcas.Nature, arcas.Springer]:
     api = p()
     parameters = api.parameters_fix(arguments)
 
@@ -376,7 +376,7 @@ Options:
 
 \begin{frame}
 	\begin{center}
-		\huge{\textbf{}}\\~\\
+		\large\textbf{``I academic API so you don't have to!"}\\~\\
 		\small{@NikoletaGlyn}\\
 		\small{https://github.com/Nikoleta-v3}\\
 		\small{ttps://github.com/Nikoleta-v3/Arcas}

@@ -15,7 +15,7 @@
   };
   \node[outer, minimum width=15mm , minimum height = 1cm,left=2.7 cmof A,yshift=10mm] (B) {tools.py};
   \node[outer, minimum width=0.05*\columnwidth, minimum height = 2mm ,below=of B, inner sep=3pt, anchor=east] (C) {doc/};
-  \node[draw=yellow!70, minimum width=0.05*\columnwidth, minimum height = 2mm, left=2 cmof A, inner sep=3pt, yshift=-30mm] (D) {readthedocs.org};
+  \node[draw=yellow!70, minimum width=0.05*\columnwidth, minimum height = 2mm, left=2 cmof A, inner sep=3pt, yshift=-30mm] (D) {arcas/readthedocs.org};
 
   \node[outer,minimum width=15mm, minimum height = 7mm, below= of A] (F) {
     \begin{tikzpicture}
@@ -25,7 +25,6 @@
       \node [inner, below=of nature] (plos) {...};
     \end{tikzpicture}
   };
-
-  \draw [arrow] (C) -- ++(-40pt,0pt) |-  (D);
+  \draw [arrow] (C) -- ++(0,-30pt) -- ++(-55pt,0pt) |- (D);
 \end{tikzpicture}
 \end{center}
