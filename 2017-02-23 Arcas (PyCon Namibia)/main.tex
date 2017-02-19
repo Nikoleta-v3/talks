@@ -1,9 +1,10 @@
 \documentclass{beamer}
-\usepackage{coloremoji}
+
 \usecolortheme[dark,accent=cyan]{solarized}
 
 \beamertemplatenavigationsymbolsempty
 
+\usepackage{coloremoji}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{colortbl, xcolor}
@@ -90,7 +91,13 @@
 
 \begin{frame}
 \begin{center}
-    \includegraphics[width=1\textwidth]{static/ieee_manual.png}
+    \includegraphics[width=\textwidth]{static/ieee_search.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=\textwidth]{static/namibia_search.png}
 \end{center}
 \end{frame}
 
@@ -127,7 +134,7 @@
 
 \begin{frame}[fragile]
 \begin{figure}
-    \small{SCREENSHOT}
+     \includegraphics[width=1\textwidth]{static/xml.png}
  \end{figure}
 \end{frame}
 
@@ -171,37 +178,21 @@ pip install arcas
     fontsize=\tiny,
     ]
     {python}
-import pandas as pd
-from arcas import *
+import arcas
 
-def get_arguments(word, start, count):
-    arguments = {'-a': None, '-t': word, '-s': start,
-                 '-r': count, '-y': None, '-b': None}
-    return arguments
+arguments = {'-a': None, '-t': 'Namibia', '-s': None,
+             '-r': 1, '-y': None, '-b': None}
 
-def main_program(arguments):
-    parameters = pp.parameters_fix(arguments=arguments)
-    url = pp.create_url_search(parameters=parameters)
-    response = pp.make_request(url)
-    root = pp.get_root(response)
-    article = pp.parse(root)
-    return article, url
-    \end{minted}
+api =  arcas.Ieee()
 
-    \begin{minted}
-    [
-    framesep=4mm,
-    baselinestretch=1.2,
-    bgcolor=DarkGray,
-    fontsize=\tiny,
-    ]
-    {python}
-words = ["Namibia"]
+parameters = api.parameters_fix(arguments)
 
-apis = {"ieee": Ieee, "nature": Nature, "arxiv": Arxiv,
-        "springer": Springer, "plos": Plos}
-list_apis = ['plos', 'arxiv', 'ieee', 'nature', 'springer']
-count = 10
+url = api.create_url_search(parameters)
+request = api.make_request(url)
+response = api.get_root(request)
+root = api.get_root(response)
+raw_article = api.parse(root)
+article = api.to_dataframe(raw_article)
     \end{minted}
 \end{frame}
 
@@ -214,27 +205,24 @@ count = 10
     fontsize=\tiny,
     ]
     {python}
-for p in list_apis:
-    pp = apis[p]()
-    start = 1
-    while start < 100:
-        arguments = get_arguments(words[0], start, count)
-        raw_articles, url = main_program(arguments)
+import arcas
 
-        dfs = []
-        if raw_articles is not False:
-            for raw_article in raw_articles:
-                try:
-                    df = pp.to_dataframe(raw_article)
-                    dfs.append(df)
-                except ValueError:
-                    ValueError()
-            try:
-                df = pd.concat(dfs, ignore_index=True)
-                pp.export(df, filename='articles/{}-{}-{}.json'.format(p, words[0], start))
-            except ValueError:
-                print(None)
-        start += 10
+arguments = {'-a': None, '-t': 'Namibia', '-s': None,
+             '-r': 100, '-y': None, '-b': None}
+
+for p in [arcas.Ieee, arcas.Plos]:
+    api = p()
+    parameters = api.parameters_fix(arguments)
+
+    url = api.create_url_search(parameters)
+    request = api.make_request(url)
+    response = api.get_root(request)
+    root = api.get_root(response)
+    raw_article = api.parse(root)
+
+    for art in raw_article:
+        article = api.to_dataframe(raw_article)
+        api.export(articles, 'results.json')
     \end{minted}
 \end{frame}
 
@@ -244,35 +232,49 @@ for p in list_apis:
         framesep=2mm,
         baselinestretch=1,
         bgcolor=DarkGray,
-        fontsize=\footnotesize,
+        fontsize=\tiny,
         ]
         {python}
-{
-"key":{"0":, "1":, "2": },
-"unique_key":{"0":, "1":, "2":},
-"title":{"0":,
-         "1":,
-         "2":},
-"author":{"0":,"1":,"2":},
-"abstract":{"0":,
-            "1":,
-            "2":},
-"date":{"0":,"1":, "2":},
-"journal":{"0":,"1":,"2":},
-"provenance":{"0":,"1":,"2":}
-}
+{"key":{"0":"Momose2011",
+        "1":"Momose2011",
+        "2":"Momose2011"},
+"unique_key":{"0":"4061b0ca3b823f85a0cb2823a554c524",
+              "1":"4061b0ca3b823f85a0cb2823a554c524",
+              "2":"4061b0ca3b823f85a0cb2823a554c524"},
+"title":{"0":"Mapping pegmatite using HyMap data in southern Namibia",
+         "1":"Mapping pegmatite using HyMap data in southern Namibia",
+         "2":"Mapping pegmatite using HyMap data in southern Namibia"},
+"author":{"0":"Atsushi Momose",
+          "1":"Atsushi Momose",
+          "2":"Atsushi Momose"},
+"abstract":{"0":"A pegmatite deposit is an ..."},
+"date":{"0":2011,
+        "1":2011,
+        "2":2011},
+"journal":{"0":"2011 IEEE International Geoscience and Remote Sensing Symposium",
+           "1":"2011 IEEE International Geoscience and Remote Sensing Symposium",
+           "2":"2011 IEEE International Geoscience and Remote Sensing Symposium"},
+"pages":{"0":"2216-2217",
+         "1":"2216-2217",
+         "2":"2216-2217"},
+"key_word":{"0":"data analysis",
+            "1":"geophysical image processing",
+            "2":"geophysical techniques"},
+"provenance":{"0":"IEEE",
+              "1":"IEEE",
+              "2":"IEEE"}}
      \end{minted}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-\color{yellow!79}\Large{$15 min + 5 min= 20 min$}
+\color{yellow!79}\Large{$15 \textrm{min} + 5 \textrm{min} = 20 \textrm{min}$}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \includegraphics[width=\textwidth]{static/provenance.pdf}
+    \includegraphics[width=\textwidth]{static/namibia-provenance.pdf}
 \end{center}
 \end{frame}
 
@@ -295,7 +297,7 @@ for p in list_apis:
 \begin{frame}
 \begin{center}
 \begin{figure}[]
-        \includegraphics[width=\textwidth]{static/provenance.pdf}
+        \includegraphics[width=\textwidth]{static/ipd-provenance.pdf}
 \end{figure}
 \end{center}
 \end{frame}
@@ -303,9 +305,34 @@ for p in list_apis:
 \begin{frame}
 \begin{center}
 \begin{figure}[]
-        \includegraphics[width=\textwidth]{static/network.pdf}
+        \includegraphics[width=\textwidth]{static/network_one.pdf}
 \end{figure}
 \end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{figure}[]
+        \includegraphics[width=\textwidth]{static/network_two.pdf}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny,
+    ]
+    {python}
+authors_papers = df.groupby(['title', 'author']).size().reset_index().groupby('title').count()
+
+authors_papers.sort('author').tail(1)
+
+"An open reproducible framework for the study of the iterated prisoner's dilemma"
+    \end{minted}
 \end{frame}
 
 
@@ -315,24 +342,36 @@ for p in list_apis:
     framesep=2mm,
     baselinestretch=1.2,
     bgcolor=DarkGray,
-    fontsize=\footnotesize,
+    fontsize=\tiny,
     ]
     {python}
- arcas_scrape -p ieee -t "Prisoner Dilemma" -a "Nowak" -y 2014
- ... -r 1 -s 2
+ arcas_scrape -h
+
+ Arcas. A library to facilitate scraping of APIs for scholarly resources.
+
+Usage:
+    arcas_scrape  [-h] [-p API] [-a AUTHOR] [-t TITLE] [-b ABSTRACT] [-y
+    YEAR]
+              [-r RECORDS] [-s START] [-v VALIDATE] [-f FILENAME]
+    arcas_scrape --version
+
+
+Options:
+    -h --help              Show this
+    --version              Show version.
+    -p API                 The online API, from a given list, to parse [default: arxiv]
+    -a AUTHOR              Terms to search for in Author
+    -t TITLE               Terms to search for in Title
+    -b ABSTRACT            Terms to search for in the Abstract
+    -y YEAR                Terms to search for in Year
+    -r RECORDS             Number of records to fetch
+    -s START               Sequence number of first record to fetch
+    -v VALIDATE            Checks if query returned with arguments asked [default: False]
+    -f FILENAME            Name of json file [default: results.json]
+
+
     \end{minted}
-    \hspace{10mm}
-    \begin{minted}
-    [
-    framesep=2mm,
-    baselinestretch=1.2,
-    bgcolor=DarkGray,
-    fontsize=\footnotesize,
-    ]
-    {python}
- arcas_scrape -p ieee -b "game theory" -t "Prisoner Dilemma"
- ... -a "Nowak" -y 2014 -r 1 -s 2
-    \end{minted}
+
 \end{frame}
 
 \begin{frame}
