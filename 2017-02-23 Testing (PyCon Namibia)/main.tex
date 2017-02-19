@@ -87,10 +87,9 @@
 def fib(n):
     if n == 0:
         return 0
-    elif n == 1:
+    if n == 1:
         return 1
-    else:
-        return 2 * fib(n - 1)
+    return 2 * fib(n - 1)
     \end{minted}
     \end{figure}
 \end{frame}
@@ -98,16 +97,26 @@ def fib(n):
 \begin{frame}
     \begin{center}
 \color{yellow!79}
-\Large{
-$\frac{F_{2}}{F_{1}} =  1.000  $ \\
-$\frac{F_{3}}{F_{2}} =  2.000  $ \\
-$\frac{F_{4}}{F_{3}} =  1.500  $ \\
-$\frac{F_{5}}{F_{3}} =  1.666  $ \\
-$\vdots$ \\
-$\frac{F_{16}}{F_{15}} =  1.618  $ \\
-$\frac{F_{17}}{F_{16}} =  1.618  $ \\
-$\frac{F_{18}}{F_{17}} = 1.618  $ \\
-}
+%\Large{
+%$\frac{F_{2}}{F_{1}} =  1.000  $ \\
+%$\frac{F_{3}}{F_{2}} =  2.000  $ \\
+%$\frac{F_{4}}{F_{3}} =  1.500  $ \\
+%$\frac{F_{5}}{F_{3}} =  1.666  $ \\
+%$\vdots$ \\
+%$\frac{F_{16}}{F_{15}} =  1.618  $ \\
+%$\frac{F_{17}}{F_{16}} =  1.618  $ \\
+%$\frac{F_{18}}{F_{17}} = 1.618  $ \\
+%}
+\begin{table}
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+\textbf{$n$}                     & \textit{2}     & \textit{3}    & \textit{4}     & \textit{$\dots$} & \textit{16}    & \textit{17}    & \textit{18}    \\ \hline
+\textbf{$F_{n}$}                 & \textit{1}     & \textit{2}    & \textit{3}     & \textit{$\dots$} & \textit{987}   & \textit{1597}  & \textit{2584}  \\ \hline
+\textbf{$F_{n-1}$}               & \textit{1}     & \textit{1}    & \textit{2}     & \textit{$\dots$} & \textit{610}   & \textit{987}   & \textit{1597}  \\ \hline
+\textbf{$\frac{F_{n}}{F_{n-1}}$} & \textit{1.000} & \textit{2.00} & \textit{1.500} & \textit{$\dots$} & \textit{1.618} & \textit{1.618} & \textit{1.618} \\ \hline
+\end{tabular}
+\end{table}
 \pause
     \vspace{3mm}
     \color{yellow!79}\huge{$\phi \simeq 1.61803...$}
@@ -172,7 +181,7 @@ for n in range(10, 100000):
     \pause
 \begin{center}
     \begin{tikzpicture}
-        \node [align=center, text=yellow!79] {\large{Glynatsi2017, ``SOLVES THE
+        \node [align=center, text=yellow!79] {\large{Glynatsi 2017, ``SOLVES THE
                                                       FIBONACCI MYSTERY"}};
 
     \end{tikzpicture}
@@ -237,11 +246,13 @@ import main
 
 class TestExample(unittest.TestCase):
 
-   def test_fib(self):
-       self.assertEqual(fib(0), 0)
-       self.assertEqual(fib(1), 1)
-       self.assertEqual(fib(2), 1)
-       self.assertEqual(fib(3), 2)
+    def test_initial(self):
+        self.assertEqual(fib(0), 0)
+        self.assertEqual(fib(1), 1)
+
+    def test_fib(self):
+        self.assertEqual(fib(2), 1)
+        self.assertEqual(fib(3), 2)
 \end{minted}
 \end{figure}
 \pause
@@ -268,10 +279,9 @@ self.assertEqual(fib(2), 1)
 AssertionError: 2 != 1
 
 -----------------------------
-Ran 1 test in 0.000s
+Ran 2 tests in 0.000s
 
 FAILED (failures=1)
-
 \end{minted}
 \end{frame}
 
@@ -289,10 +299,9 @@ FAILED (failures=1)
 def fib(n):
     if n == 0:
         return 0
-    elif n == 1:
+    if n == 1:
         return 1
-    else:
-        return 2 * fib(n - 1)
+    return 2 * fib(n - 1)
     \end{minted}
     \end{figure}
 \end{frame}
@@ -309,12 +318,11 @@ def fib(n):
         ]
         {python}
 def fib(n):
-   if n == 0:
-      return 0
-   elif n == 1:
-      return 1
-   else:
-      return fib(n - 1) + f(n - 2)
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fib(n - 1) + fib(n - 2)
     \end{minted}
     \end{figure}
     \pause
@@ -328,16 +336,22 @@ def fib(n):
        {python}
 python -m unittest test_main.py
 -------------------------------
-Ran 1 test in 0.000s
+Ran 2 tests in 0.000s
 
 OK
 \end{minted}
 \pause
 \begin{center}
     \begin{tikzpicture}
-        \node [align=center, text=yellow!79] {\large{Glynatsi2017, ``TRYING TO
+        \node [align=center, text=yellow!79] {\large{Glynatsi 2017, ``TRYING TO
         RECLAIM REPUTATION"}};
     \end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\Huge{Doc Testing}
 \end{center}
 \end{frame}
 
@@ -395,10 +409,11 @@ Expected:
     10
 Got:
     13
-*****************************
+****************************
 1 items had failures:
    1 of   4 in main.fib
 ***Test Failed*** 1 failures.
+
 \end{minted}
 \end{frame}
 
@@ -467,6 +482,24 @@ class TestFib(unittest.TestCase):
 \end{center}
 \end{frame}
 
+
+\begin{frame}
+\begin{center}
+    \small{Axelrod Library: https://github.com/Axelrod-Python/Axelrod} \\
+    \vspace{3mm}
+    \small{Arcas: https://github.com/Nikoleta-v3/Arcas} \\
+    \vspace{3mm}
+    \small{Ciw: https://github.com/CiwPython/Ciw} \\
+    \vspace{3mm}
+    \small{Pandas: https://github.com/pandas-dev/pandas} \\
+    \vspace{3mm}
+    \small{Skleanr: http://scikit-learn.org/stable/} \\
+    \vspace{3mm}
+    \small{Numpy: https://github.com/numpy/numpy} \\
+    $\vdots$
+\end{center}
+\end{frame}
+
 \begin{frame}
 \begin{center}
 \huge{It's impossible to conduct research without software, say 7 out of 10
@@ -500,6 +533,15 @@ UK researchers} \\
 \begin{frame}
 \begin{center}
      \includestandalone[width=\textwidth]{static/79}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includestandalone[width=0.25\textwidth]{static/92}
+    \includestandalone[width=0.25\textwidth]{static/69} \\
+    \includestandalone[width=0.25\textwidth]{static/56}
+    \includestandalone[width=0.25\textwidth]{static/79}
 \end{center}
 \end{frame}
 
