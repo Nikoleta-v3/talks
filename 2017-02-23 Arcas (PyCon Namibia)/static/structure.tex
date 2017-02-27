@@ -1,0 +1,30 @@
+\tikzstyle{arrow} = [thick,->]
+
+\begin{center}
+\begin{tikzpicture}[remember picture,
+  inner/.style={draw=blue!70,thick,inner sep=3pt},
+  outer/.style={draw=yellow!70,thick,inner sep=10pt}
+  ]
+  \node[outer,minimum width=15mm, minimum height = 4mm] (A) {
+    \begin{tikzpicture}
+      \node (ieee)  {IEEE};
+      \node [right=of ieee] (nature) {Nature};
+      \node [below=of ieee] (plos) {PLOS};
+      \node [below=of nature] (plos) {...};
+    \end{tikzpicture}
+  };
+  \node[outer, minimum width=15mm , minimum height = 1cm,left=2.7 cmof A,yshift=10mm] (B) {tools.py};
+  \node[outer, minimum width=0.05*\columnwidth, minimum height = 2mm ,below=of B, inner sep=3pt, anchor=east] (C) {doc/};
+  \node[draw=yellow!70, minimum width=0.05*\columnwidth, minimum height = 2mm, left=2 cmof A, inner sep=3pt, yshift=-30mm] (D) {arcas.readthedocs.io/};
+
+  \node[outer,minimum width=15mm, minimum height = 7mm, below= of A] (F) {
+    \begin{tikzpicture}
+      \node  (ieee)  {testIEEE};
+      \node [ right=of ieee, xshift=-1.2cm] (nature) {testNature};
+      \node [ below=of ieee, yshift=0.5cm] (plos) {testPLOS};
+      \node [ below=of nature, yshift=0.5cm] (plos) {...};
+    \end{tikzpicture}
+  };
+  \draw [arrow] (C) -- ++(0,-30pt) -- ++(-55pt,0pt) |- (D);
+\end{tikzpicture}
+\end{center}
