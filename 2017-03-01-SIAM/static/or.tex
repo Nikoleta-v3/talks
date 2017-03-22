@@ -1,0 +1,18 @@
+\tikzstyle{arrow} = [->,>=stealth]
+
+\begin{tikzpicture}
+     \node[align=center, minimum size=2cm] (center) at (0,0) {Operational \\ Research};
+
+    \node[align=center, minimum size=2cm] (v_1) at (360/6 * 1:4cm) {\color{yellow!79}Computing};
+    \node[align=center, minimum size=2cm] (v_2) at (360/6 * 2:4cm) {\color{yellow!79}Marketing};
+    \node[align=center, minimum size=2cm] (v_6) at (360/6 * 6:4cm) {\color{yellow!79}Optimization};
+    \node[align=center, minimum size=2cm] (v_3) at (360/6 * 3:4cm) {\color{yellow!79}Simulation};
+    \node[align=center, minimum size=2cm] (v_4) at (360/6 * 4:4cm)
+    {\color{yellow!79} Stochastic Modelling};
+    \node[align=center, minimum size=2cm] (v_5) at (360/6 * 5:4cm) {\color{yellow!79} ...};
+
+\foreach \phi in {1,...,6}{
+     \draw[arrow] [yellow!70] (v_\phi) -- (center);
+     \draw[arrow] [yellow!70] (center) -- (v_\phi);
+     }
+\end{tikzpicture}
