@@ -1,0 +1,76 @@
+\documentclass{beamer}
+
+\usecolortheme[dark,accent=cyan]{solarized}
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{coloremoji}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl, xcolor}
+\usepackage{booktabs}
+\usepackage{varwidth}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc}
+\usetikzlibrary{automata}
+\usepackage{pstricks}
+\usepackage{minted}
+
+\definecolor{DarkGray}{gray}{0.1}
+\definecolor{DarkGray}{gray}{0.1}
+\usemintedstyle{native}
+
+\begin{document}
+
+\begin{frame}[fragile]
+	\begin{center}
+		\small{https://github.com/Nikoleta-v3/Arcas}
+	\end{center}
+
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny,
+    ]
+    {python}
+import arcas
+
+for p in [arcas.Ieee, arcas.Plos, arcas.Arxiv,
+          arcas.Nature, arcas.Springer]:
+
+    api = p()
+    parameters = api.parameters_fix(title='Sustainable Software')
+
+    url = api.create_url_search(parameters)
+    request = api.make_request(url)
+    response = api.get_root(request)
+    root = api.get_root(response)
+    raw_article = api.parse(root)
+
+    for art in raw_article:
+        article = api.to_dataframe(raw_article)
+        api.export(articles, 'results.json')
+    \end{minted}
+\vspace{3mm}
+    \begin{minted}
+    [
+    framesep=2mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny,
+    ]
+    {python}
+$ pip install arcas
+$ arcas_scrape -h
+\end{minted}
+\end{frame}
+
+\end{document}
+
+
+
+
