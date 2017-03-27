@@ -189,8 +189,7 @@ parameters = api.parameters_fix(arguments)
 
 url = api.create_url_search(parameters)
 request = api.make_request(url)
-response = api.get_root(request)
-root = api.get_root(response)
+root = api.get_root(request)
 raw_article = api.parse(root)
 article = api.to_dataframe(raw_article)
     \end{minted}
@@ -217,13 +216,12 @@ for p in [arcas.Ieee, arcas.Plos, arcas.Arxiv,
 
     url = api.create_url_search(parameters)
     request = api.make_request(url)
-    response = api.get_root(request)
-    root = api.get_root(response)
+    root = api.get_root(request)
     raw_article = api.parse(root)
 
     for art in raw_article:
-        article = api.to_dataframe(raw_article)
-        api.export(articles, 'results.json')
+        article = api.to_dataframe(art)
+        api.export(article, 'results.json')
     \end{minted}
 \end{frame}
 
