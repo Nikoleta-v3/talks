@@ -1,0 +1,78 @@
+\documentclass{beamer}
+
+\usecolortheme[dark,accent=cyan]{solarized}
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl, xcolor}
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{minted}
+
+\definecolor{DarkGray}{gray}{0.1}
+\definecolor{LightGray}{gray}{0.3}
+\usemintedstyle{native}
+
+\title{I see prisoners everywhere}
+\author{@NikoletaGlyn}
+\date{}
+\institute[]
+{
+\begin{center}
+    \includegraphics[width=.15\textwidth]{static/cardiff_uni_logo.jpg}
+\end{center}
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[fragile]
+
+
+\begin{comment}
+\begin{columns}
+	\begin{column}{0.3\textwidth}
+			\begin{minted}
+[
+framesep=2mm,
+baselinestretch=1,
+bgcolor=DarkGray,
+fontsize=\tiny,
+]
+{python}
+
+class Grumpy(Player):
+    \end{minted}
+  	\end{column}
+  	\begin{column}{0.3\textwidth}
+  		\includegraphics[width=\textwidth]{static/complete.png}
+  	\end{column}
+\end{columns}
+\end{comment}
+
+\begin{figure}[t]
+    \begin{center}
+    \[
+    \begin{bmatrix}
+    (2,2) & (5,0)  \\
+    (0,5) & (4,4)
+    \end{bmatrix}
+    \]
+    \end{center}
+\end{figure}
+
+\begin{figure}[]
+    \begin{center}
+    \hspace{-0.5em}\includegraphics[width=0.6\textwidth]{static/complete.png}
+    \end{center}
+\end{figure}
+\end{frame}
+
+\end{document}
+
