@@ -1,0 +1,16 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+    \begin{tikzpicture}
+
+        \fill[orange] (0, 0) rectangle (6, 6);
+        \fill[cyan] (0, 3) rectangle (6, 6);
+        \draw[step=0.25cm, black] (0, 0) grid (6, 6);
+
+    \end{tikzpicture}
+\end{document}

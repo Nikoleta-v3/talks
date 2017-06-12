@@ -1,0 +1,10 @@
+# latex files
+*aux
+*log
+
+
+#  minted
+*_minted-main/*
+
+# notes
+notes.*
