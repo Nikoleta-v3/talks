@@ -1,2 +1,2 @@
 # Talks
-A reposity with the files for my talks.
+A repository with the files for my talks.
