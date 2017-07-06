@@ -1,8 +1,19 @@
 # Created by .ignore support plugin (hsz.mobi)
-main.log
-main.aux
-main.nav
-main.toc
-main.out
-main.snm
+# pdf 
+*main.log
+*main.aux
+*main.nav
+*main.toc
+*main.out
+*main.snm
+
+# pycharm
 .idea/
+
+# jekyll
+_site
+.sass-cache
+.jekyll-metadata
+
+# Gemfiles
+Gemfile*
