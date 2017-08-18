@@ -1,0 +1,51 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{fit}                    % fitting shapes to coordinates
+\usetikzlibrary{backgrounds}    % drawing the background after the foreground
+
+\tikzstyle{background}=[red!79, rectangle, draw, inner sep=-0.5mm,
+           rounded corners=1mm, thick]
+
+\begin{document}
+\begin{tikzpicture}[scale=2]
+
+    \tikzstyle{state}=[minimum width=0.4cm, font=\boldmath];
+    
+
+    \node[thick] (0) at (-1, 0) [state] {\textcolor{cyan}{SneakyTitForTat}};
+    \node[thick] (1) at (-1, -1) [state] {\textcolor{brown}{Grudger}};
+
+    \node[thick] (2) at (1, 0.7) [state] {$1$};
+    \node[thick] (3) at (2, 0.7) [state] {$2$};
+    \node[thick] (4) at (3, 0.7) [state] {$3$};
+    \node[thick] (5) at (4, 0.7) [state] {$4$};
+    \node[thick] (6) at (5, 0.7) [state] {$5$};
+    \node[thick] (7) at (6, 0.7) [state] {$6$};
+      
+    \node (8) at (1, 0) [state] {\textcolor{cyan}{$C$}};
+    \node (14) at (1, -1) [state] {\textcolor{brown}{$C$}};   
+    
+    \node (9) at (2, 0) [state] {\textcolor{cyan}{$C$}};
+    \node (16) at (2, -1) [state] {\textcolor{brown}{$C$}};
+
+    \node[circle, draw=red!79, thick, inner sep=3pt] (10) at (3, 0) [state] {\textcolor{cyan}{$D$}};
+    \node (15) at (3, -1) [state] {\textcolor{brown}{$C$}};
+
+
+    \node (11) at (4, 0) [state] {\textcolor{cyan}{$D$}};
+    \node (17) at (4, -1) [state] {\textcolor{brown}{$D$}};
+
+    \node (12) at (5, 0) [state] {\textcolor{cyan}{$C$}};
+    \node (13) at (6, 0) [state] {\textcolor{cyan}{$C$}};
+
+    \node (18) at (5, -1) [state] {\textcolor{brown}{$D$}};
+    \node (19) at (6, -1) [state] {\textcolor{brown}{$D$}};
+
+    \node [background, fit=(17) (18) (19)] {};
+\end{tikzpicture}
+
+\end{document}
