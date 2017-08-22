@@ -12,6 +12,11 @@
 \usepackage{rotating}
 \usepackage{fontawesome}
 \usepackage{multicol}
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{2010}{-}% support older LaTeX versions
 
@@ -62,17 +67,22 @@
   \end{column}
   \begin{column}{.30\linewidth}
 
-    \centering
-    \Large{THE \textcolor{brown}{AXELROD} \textcolor{brown}{LIBRARY} IS AN 
-    OPEN SOURCE \textcolor{cyan}{PYTHON} TOOL}
+    \begin{center}
     \large{
-    \begin{itemize}
+    AXELROD LIBRARY IS AN OPEN SOURCE TOOL THAT COMBINES
+    \textcolor{cyan}{PYTHON} \textbf{+} \textcolor{brown}{PRISONERS DILEMMA}}
+
+    % \Large{THE \textcolor{brown}{AXELROD} \textcolor{brown}{LIBRARY} IS AN 
+    % OPEN SOURCE \textcolor{cyan}{PYTHON} TOOL}
+    \large{
+    \begin{itemize}[leftmargin=1.7in]
     \item more than \textcolor{brown}{200 condtibutors}
     \item \textcolor{brown}{100\%} test coverage
     \item unit and integration \textcolor{brown}{tests}
     \item \textcolor{brown}{documentation}.
     \end{itemize}
     }
+    \end{center}
   \end{column}
 %   \begin{column}{.10\linewidth}
 
@@ -154,7 +164,8 @@ second_match.final_score()
    \vspace{1cm}
    
 \begin{center}
-    \LARGE{\textcolor{OliveGreen}{FACED WITH DIFEERENT WAR SCENARIOS WHAT IS THE OPTIMAL PLAY?}} 
+    \LARGE{\textcolor{OliveGreen}{WHEN FACED WITH DIFEERENT WAR SCENARIOS WHAT 
+    IS THE OPTIMAL PLAY?}} 
     \end{center}
 
 \hspace{2cm}
