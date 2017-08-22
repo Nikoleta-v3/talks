@@ -7,27 +7,61 @@
 \begin{document}
     \begin{tikzpicture}
 
-    \tikzstyle{state}=[minimum width=0.4cm, font=\boldmath];
+    \tikzstyle{state}=[minimum width=-0.2cm, font=\boldmath, inner sep=6pt];
+
+    \node[circle, draw, thick, label=above:{\small{\textit{choose strategies}}}] (0) at (0, 1.5) [state]   {  \scriptsize{$C$}};
+    \node[circle, draw, thick] (1) at (-2, 0) [state]  {  \scriptsize{$D$}};
+    \node[circle, draw, thick] (2) at (-1.5, -2) [state] {  \scriptsize{$T$}};
+    \node[circle, draw, thick] (3) at (1.5, -2) [state]  {  \scriptsize{$G$}};
+    \node[circle, draw, thick] (4) at (2, 0) [state]   {  \scriptsize{$R$}};
+
+    % \draw (0) edge[out=180, in=90, -, thick] node [above] {} (1);
+    % \draw (0) edge[out=0, in=90, -, thick] node [above] {} (4);
+    % \draw (1) edge[out=-90, in=135, -, thick] node [above] {} (2);
+    % \draw (2) edge[out=-30, in=-150, -, thick] node [above] {} (3);
+    % \draw (4) edge[out=-90, in=45, -, thick] node [above] {} (3);
+
+    % \draw (2) edge[out=15, in=-135, -, thick] node [above] {} (4);
+    % \draw (3) edge[out=165, in=-45, -, thick] node [above] {} (1);
+
+    % \draw (0) edge[out=-100, in=45, -, thick] node [above] {} (2);
+    % \draw (0) edge[out=-80, in=135, -, thick] node [above] {} (3);
+
+    % \draw (1) edge[out=25, in=155, -, thick] node [above] {} (4);
+
+    \node[circle, thick, draw, label=above:{\small{\textit{a player interacts}}}] (5) at (7, 1.5) [state]   {\scriptsize{$C$}};
+    \node[circle, thick, draw] (6) at (5, 0) [state]  {  \scriptsize{$D$}};
+    \node[circle, thick, draw] (7) at (5.5, -2) [state] {  \scriptsize{$T$}};
+    \node[circle, thick, draw] (8) at (8.5, -2) [state]  {  \scriptsize{$G$}};
+    \node[circle, thick, draw] (9) at (9, 0) [state]   {  \scriptsize{$R$}};
+
+    \draw (5) edge[out=180, in=90, -, thick] node [above] {} (6);
+    \draw (5) edge[out=0, in=90, -, thick] node [above] {} (9);
+    \draw (5) edge[out=-100, in=45, -, thick] node [above] {} (7);
+    \draw (5) edge[out=-80, in=135, -, thick] node [above] {} (8);
 
 
-    \node[circle, draw, fill, thick] (0) at (0, 1.5) [state]   {};
-    \node[circle, draw, fill, thick] (1) at (-2, 0) [state]  {};
-    \node[circle, draw, fill, thick] (2) at (-1.5, -2) [state] {};
-    \node[circle, draw, fill, thick] (3) at (1.5, -2) [state]  {};
-    \node[circle, draw, fill, thick] (4) at (2, 0) [state]   {};
 
-    \draw (0) edge[out=180, in=90, -, thick] node [above] {} (1);
-    \draw (0) edge[out=0, in=90, -, thick] node [above] {} (4);
-    \draw (1) edge[out=-90, in=135, -, thick] node [above] {} (2);
-    \draw (2) edge[out=-30, in=-150, -, thick] node [above] {} (3);
-    \draw (4) edge[out=-90, in=45, -, thick] node [above] {} (3);
+    \node[circle, thick, draw, label=above:{\small{\textit{players play against all}}}] (10) at (14, 1.5) [state]   {\scriptsize{$C$}};
+    \node[circle, thick, draw] (11) at (12, 0) [state]  {  \scriptsize{$D$}};
+    \node[circle, thick, draw] (12) at (12.5, -2) [state] {  \scriptsize{$T$}};
+    \node[circle, thick, draw] (13) at (15.5, -2) [state]  {  \scriptsize{$G$}};
+    \node[circle, thick, draw] (14) at (16, 0) [state]   {  \scriptsize{$R$}};
 
-    \draw (2) edge[out=15, in=-135, -, thick] node [above] {} (4);
-    \draw (3) edge[out=165, in=-45, -, thick] node [above] {} (1);
+    \draw (10) edge[out=180, in=90, -, thick] node [above] {} (11);
+    \draw (10) edge[out=0, in=90, -, thick] node [above] {} (14);
+    \draw (11) edge[out=-90, in=135, -, thick] node [above] {} (12);
+    \draw (12) edge[out=-30, in=-150, -, thick] node [above] {} (13);
+    \draw (14) edge[out=-90, in=45, -, thick] node [above] {} (13);
 
-    \draw (0) edge[out=-100, in=45, -, thick] node [above] {} (2);
-    \draw (0) edge[out=-80, in=135, -, thick] node [above] {} (3);
+    \draw (12) edge[out=15, in=-135, -, thick] node [above] {} (14);
+    \draw (13) edge[out=165, in=-45, -, thick] node [above] {} (11);
 
-    \draw (1) edge[out=25, in=155, -, thick] node [above] {} (4);
-    \end{tikzpicture}
+    \draw (10) edge[out=-100, in=45, -, thick] node [above] {} (12);
+    \draw (10) edge[out=-80, in=135, -, thick] node [above] {} (13);
+
+    \draw (11) edge[out=25, in=155, -, thick] node [above] {} (14);
+
+\end{tikzpicture}
+
 \end{document}

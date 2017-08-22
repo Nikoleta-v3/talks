@@ -2,7 +2,6 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm, amssymb, latexsym}
-\boldmath
 \usepackage{color}
 \usepackage{tikz}
 \usepackage{standalone}
@@ -12,13 +11,16 @@
 \usepackage{wrapfig}
 \usepackage{rotating}
 \usepackage{fontawesome}
+\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2010}{-}% support older LaTeX versions
 
 \makeatletter
 \setlength{\@fptop}{0pt}
 \makeatother
 \setlength{\columnsep}{2pt}
 
-\definecolor{LightGray}{gray}{0.2}
+\definecolor{DarkGray}{gray}{0.1}
 \usemintedstyle{native}
 
 \usetikzlibrary{decorations.pathmorphing}
@@ -36,105 +38,137 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \begin{frame}[fragile]
-\begin{columns}[t]
- \begin{column}{.53\linewidth}
 
-  \Huge{\textcolor{solarizedRed}{SHOULD PEOPLE HOLD A GRUDGE?} \textcolor{OliveGreen}{WHAT IS}\\
-  \textcolor{OliveGreen}{THE OPTIMAL PLAY IN A WAR?} \textcolor{cyan}{SOUTH AND}\\
-  \textcolor{cyan}{NORTH JOIN HANDS TO DEFEAT THE NIGHT
-  KING?}}
-  %   \end{block}
-  \end{column}
-  \begin{column}{.22\linewidth}
- 
-  \Large{\textcolor{brown}{GAME THEORY} IS THE STUDY OF STRATEGY INTERACTIONS. THE \textcolor{brown}{PRISONERS DILEMMA} IS A GAME USED TO UNDERSTAND THE EVOLUTION OF CO- OPERATIVE BEHAVIOUR.}
-  \end{column}
-  \begin{column}{.20\linewidth}
+%%%%%%%%%%%%%%TOP ROW%%%%%%%%%%%%%%%%%%
+\begin{columns}
+  \begin{column}{.33\linewidth}
 
-  \includestandalone[width=1\textwidth]{static/matrix}
+    \centering
+    \Large{THE \textcolor{brown}{ITERATED PRISONERS DILEMMA}
+    ALLOWS THE STUDY OF \textcolor{brown}{COOPERATIVE BEHAVIOUR}}
+    \Large{
+    \begin{itemize}
+      \item both sides are better off choosing \textbf{Cooperation} (3)
+      \item than choosing to \textbf{Defect} (1) even so,
+      \item an individual has a \textbf{Tempetation} to deviate (5).
+    \end{itemize}
+    }
   \end{column}
+  \begin{column}{.30\linewidth}
+
+  \begin{center}
+   \includestandalone[width=0.6\textwidth]{static/matrix}
+   \end{center}
+  \end{column}
+  \begin{column}{.30\linewidth}
+
+    \centering
+    \Large{THE \textcolor{brown}{AXELROD} \textcolor{brown}{LIBRARY} IS AN 
+    OPEN SOURCE \textcolor{cyan}{PYTHON} TOOL}
+    \large{
+    \begin{itemize}
+    \item more than \textcolor{brown}{200 condtibutors}
+    \item \textcolor{brown}{100\%} test coverage
+    \item unit and integration \textcolor{brown}{tests}
+    \item \textcolor{brown}{documentation}.
+    \end{itemize}
+    }
+  \end{column}
+%   \begin{column}{.10\linewidth}
+
   \end{columns}
-  \begin{columns}[t]
+  \begin{columns}
     \begin{column}{.30\linewidth}
+%%%%%%%%%%%%%%%%%%FIRST QUESTION%%%%%%%%%%%%%%%%%% 
+   \vspace{1cm}
 
-    \hspace{3cm}
-
-    % \textcolor{brown}{\Large{\textbf{HOW IT WAS DONE?}}} \\
-    % \Large{The Axelrod Python Library has more than \textcolor{brown}{200 condtibutors}, \textcolor{brown}{100\%} test coverage, unit and integration 
-    % \textcolor{brown}{testing} and is well \textcolor{brown}{documented}}.
-\includestandalone[width=\textwidth]{static/match}
+\begin{center}
+\LARGE{\textcolor{red!80}{WHEN INTERACTING WITH A SNEAKY OPPONENT}}
+\end{center}
 
 \noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{figure}
+\begin{center}
+\includestandalone[scale=0.9]{static/match}
+\end{center}
+\end{figure}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{center}
+\LARGE{\textcolor{red!80}{SHOULD PEOPLE HOLD A GRUDGE AGAINST THEM?}}
+\end{center}
+
     \begin{minted}
     [
-    autogobble=true,          % Automatically remove common whitespace
-    %bgcolor=dark-bg,
+    autogobble=true,       
     frame=lines,
     framesep=2mm,
-    fontsize=\normalsize
+    fontsize=\normalsize  
     ]
     {python}
 import axelrod as axl
 
-first_match = axl.Match([axl.TitForTat(), 
-                         axl.SneakyTitForTat()])
-second_match = axl.Match([axl.Grudger(), 
-                          axl.SneakyTitForTat()])
+first_match = axl.Match([axl.SneakyTitForTat(), 
+                         axl.Grudger()],
+                        turns=100)
+first_match.play()[:6]
+[('C', 'C'), ('C', 'C'), ('D', 'C'), 
+ ('D', 'D'), ('C', 'D'), ('C', 'D')]
 
-play = first_match.play()
+print(first_match.sparklines())             
+
 first_match.final_score()
-(297, 297)
-
-play = second_match.play()
-second_match.final_score()
 (295, 60)
+
+second_match = axl.Match([axl.TitForTat(), 
+                          axl.SneakyTitForTat()],
+                         turns=100)
+
+second_match.play()
+second_match.final_score()
+(297, 297)
     \end{minted}
-\Large{Assume a colice of your is forgetful and Defcts againsts. SHould a person hold a grudge or should let their collide retailete? The Axelrod Python library allow you to create a match between a 'Sneaky' player and allow us
-to compare the results of two diffrent actions of ours.}
 
-\hspace{10cm}
-\noindent\rule[0.5ex]{\linewidth}{1pt}
+\hspace{5cm}
 
-\large{\textbf{MORE INFORMANTION}}
+\small{
+\textbf{MORE INFORMANTION}
           \begin{itemize}
           \item In case you missed me:
           \item Github: \url{https://github.com/Axelrod-Python}
           \end{itemize}
 
-\hspace{1cm}
+\hspace{2cm}
 
-\large{\textbf{ABOUT ME}}
-\hspace{1cm}
+\textbf{ABOUT ME} \\
 
-\faTwitter \large{ NikoletaGlyn} \\
-\faGithub \large{ Nikoleta-v3}
-      \end{column}
+\begin{itemize}
+\item[] \hspace{-1.2cm} \faTwitter \ NikoletaGlyn \ \faGithub \ Nikoleta-v3
+\end{itemize}
+}
+    \end{column}
     \begin{column}{.30\linewidth}
-
-      \Large{In a game of war several players collide. The players interact 
-      with the rest players and that's when a question rises: \\
-      \begin{center}\textcolor{OliveGreen}{`What is a player's optimal strategy?'}\end{center}}
-
-    \begin{columns}
-    \begin{column}{.60\linewidth}
-    \large{The Axelrod Python Library allows us to create different 
-    enviroments, \textcolor{OliveGreen}{tournaments}, and choose from over 200 different strategic plays. This allow us to explore different possible war scenarios and winners.}
-    \end{column}
-    \begin{column}{.40\linewidth}
-    \begin{center}
-    \includestandalone[width=0.8\textwidth]{static/tournament}
+%%%%%%%%%%%%%%%%%%SECOND QUESTION%%%%%%%%%%%%%%%%%% 
+   \vspace{1cm}
+   
+\begin{center}
+    \LARGE{\textcolor{OliveGreen}{FACED WITH DIFEERENT WAR SCENARIOS WHAT IS THE OPTIMAL PLAY?}} 
     \end{center}
-    \end{column}
-    \end{columns}
+
+\hspace{2cm}
 
     \begin{center}
+    \includestandalone[width=\textwidth]{static/tournament}
+    \end{center}
+    \centering
     \begin{minted}
     [
-    autogobble=true,          % Automatically remove common whitespace
-    %bgcolor=dark-bg,
+    autogobble=true,          
     frame=lines,
     framesep=2mm,
-    fontsize=\normalsize
+    fontsize=\normalsize  
     ]
     {python}
 import axelrod as axl
@@ -154,48 +188,59 @@ p = plot.boxplot()
 p.show()
     \end{minted}
     \includegraphics[width=\textwidth, height=0.55\textwidth]{static/tournament_results.pdf}
-    \end{center}
   \end{column}
       \begin{column}{.30\linewidth}
+%%%%%%%%%%%%%%%%%%THIRD QUESTION%%%%%%%%%%%%%%%%%% 
+   \vspace{1cm}
+   
+\begin{center}
+        \LARGE{\textcolor{cyan}{SHOULD THE NORTH JOIN HANDS WITH THE SOUTH TO DEFEAT THE NIGHT KING?}} 
+        % \\
+        % \large{Evolutionary Game Theory allow us to study such population dynamics} 
 
+\vspace{1cm}
+
+\end{center}
         \begin{center}
         \includestandalone[width=0.8\textwidth]{static/evolution}
         \end{center}
-        \Large{Following the recent events of Game of Thrones season 7 many 
-        have wondered as to if the South and the North should work together
-        against the army of the dead. More speficically should our players 
-        cooperative or defect. \textcolor{cyan}{Evolutionary Game Theory} 
-        allow us to study the evolution of such populations.}
     \begin{center}
     \begin{minted}
     [
-    autogobble=true,          % Automatically remove common whitespace
-    %bgcolor=dark-bg,
+    autogobble=true,          
     frame=lines,
     framesep=2mm,
-    fontsize=\normalsize
+    fontsize=\small
     ]
     {python}
-N = 20
+import random
+
+N = 5
 players = []
+axl.seed(5)
 for _ in range(N):
     player = random.choice([axl.Defector, axl.Cooperator])
     players.append(player())
-
+    
 mp = axl.MoranProcess(players=players, turns=200)
 mp.play()
-[Counter({'Cooperator': 11, 'Defector': 9}),
- Counter({'Cooperator': 10, 'Defector': 10}),
-          ......................
- Counter({'Cooperator': 1, 'Defector': 19}),
- Counter({'Defector': 20})]
+
+[Counter({'Cooperator': 3, 'Defector': 2}),
+ Counter({'Cooperator': 3, 'Defector': 2}),
+ Counter({'Cooperator': 3, 'Defector': 2}),
+ Counter({'Cooperator': 2, 'Defector': 3}),
+ Counter({'Cooperator': 2, 'Defector': 3}),
+ Counter({'Cooperator': 1, 'Defector': 4}),
+ Counter({'Cooperator': 1, 'Defector': 4}),
+ Counter({'Cooperator': 1, 'Defector': 4}),
+ Counter({'Defector': 5})]
     \end{minted}
-    \includegraphics[width=0.8\textwidth, height=0.6\textwidth]{static/evolution.pdf}
+    \includegraphics[width=0.7\textwidth, height=0.5\textwidth]{static/evolution_results.pdf}
     \end{center}
 
     \end{column}
     \end{columns}
 \end{frame}
 \end{document}
+% \noindent\rule[0.5ex]{\linewidth}{1pt}
 
- 
