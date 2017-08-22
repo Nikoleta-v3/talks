@@ -25,12 +25,14 @@
 \makeatother
 \setlength{\columnsep}{2pt}
 
-\definecolor{DarkGray}{gray}{0.1}
+\definecolor{DarkGray}{RGB}{7, 54, 66}
 \usemintedstyle{native}
 
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{fit}                    % fitting shapes to coordinates
 \usetikzlibrary{backgrounds}    % drawing the background after the foreground
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
 
 \tikzstyle{background}=[red!79, rectangle, draw, inner sep=-0.5mm,
            rounded corners=1mm, thick]
@@ -38,7 +40,7 @@
 \usecolortheme[dark,accent=cyan]{solarized}
 \beamertemplatenavigationsymbolsempty
 \setbeamerfont{block title}{size=\Large}
-\usepackage[orientation=landscape,size=a1,scale=1.4]{beamerposter}
+\usepackage[orientation=landscape,size=a0,scale=1.4]{beamerposter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -46,195 +48,182 @@
 
 %%%%%%%%%%%%%%TOP ROW%%%%%%%%%%%%%%%%%%
 \begin{columns}
-  \begin{column}{.33\linewidth}
+  \begin{column}{.55\linewidth}
+   \vspace{1cm}
 
     \centering
-    \Large{THE \textcolor{brown}{ITERATED PRISONERS DILEMMA}
-    ALLOWS THE STUDY OF \textcolor{brown}{COOPERATIVE BEHAVIOUR}}
+    \Huge\textcolor{orange}{PIP \hspace{2cm} INSTALL \hspace{2cm} AXELROD}
+    % \large{THE \textcolor{brown}{ITERATED PRISONERS DILEMMA}
+    % ALLOWS THE STUDY OF \textcolor{brown}{COOPERATIVE BEHAVIOUR}}
     \Large{
+    \begin{multicols}{2}
     \begin{itemize}
       \item both sides are better off choosing \textbf{Cooperation} (3)
-      \item than choosing to \textbf{Defect} (1) even so,
-      \item an individual has a \textbf{Tempetation} to deviate (5).
+      \item but there is always a \textbf{Tempetation} to deviate (5)
     \end{itemize}
+    \end{multicols}
     }
   \end{column}
-  \begin{column}{.30\linewidth}
+  \begin{column}{.25\linewidth}
 
-  \begin{center}
-   \includestandalone[width=0.6\textwidth]{static/matrix}
-   \end{center}
+    \centering
+   \includestandalone[width=0.65\textwidth]{static/matrix}
   \end{column}
-  \begin{column}{.30\linewidth}
+  % \begin{column}{.35\linewidth}
 
-    \begin{center}
-    \large{
-    AXELROD LIBRARY IS AN OPEN SOURCE TOOL THAT COMBINES
-    \textcolor{cyan}{PYTHON} \textbf{+} \textcolor{brown}{PRISONERS DILEMMA}}
-
-    % \Large{THE \textcolor{brown}{AXELROD} \textcolor{brown}{LIBRARY} IS AN 
-    % OPEN SOURCE \textcolor{cyan}{PYTHON} TOOL}
-    \large{
-    \begin{itemize}[leftmargin=1.7in]
-    \item more than \textcolor{brown}{200 condtibutors}
-    \item \textcolor{brown}{100\%} test coverage
-    \item unit and integration \textcolor{brown}{tests}
-    \item \textcolor{brown}{documentation}.
-    \end{itemize}
-    }
-    \end{center}
-  \end{column}
+  %   \large{
+  %   AXELROD LIBRARY IS AN OPEN SOURCE TOOL THAT COMBINES
+  %   \textcolor{cyan}{PYTHON} \textbf{+} \textcolor{brown}{PRISONERS DILEMMA}}
+  %   \large{
+  %   \begin{itemize}%[leftmargin=1.7in]
+  %   \item more than \textcolor{brown}{200 condtibutors}
+  %   \item \textcolor{brown}{100\%} test coverage
+  %   \item unit and integration \textcolor{brown}{tests}
+  %   \item \textcolor{brown}{documentation}.
+  %   \end{itemize}
+  %   }
+  % \end{column}
 %   \begin{column}{.10\linewidth}
 
   \end{columns}
   \begin{columns}
-    \begin{column}{.30\linewidth}
+    \begin{column}{.25\linewidth}
 %%%%%%%%%%%%%%%%%%FIRST QUESTION%%%%%%%%%%%%%%%%%% 
    \vspace{1cm}
 
 \begin{center}
-\LARGE{\textcolor{red!80}{WHEN INTERACTING WITH A SNEAKY OPPONENT}}
+\Large{\textcolor{red!80}{WHEN INTERACTING WITH A SNEAKY OPPONENT}}
 \end{center}
+\begin{center}
+\Large{\textcolor{red!80}{SHOULD PEOPLE HOLD A GRUDGE AGAINST THEM?}}
+\end{center}
+
+\vspace{1cm}
 
 \noindent\rule[0.5ex]{\linewidth}{1pt}
 
 \begin{figure}
 \begin{center}
-\includestandalone[scale=0.9]{static/match}
+\includestandalone[width=0.9\textwidth]{static/match}
 \end{center}
 \end{figure}
 
-\noindent\rule[0.5ex]{\linewidth}{1pt}
-
-\begin{center}
-\LARGE{\textcolor{red!80}{SHOULD PEOPLE HOLD A GRUDGE AGAINST THEM?}}
-\end{center}
+\vspace{0.5cm}
 
     \begin{minted}
     [
     autogobble=true,       
     frame=lines,
     framesep=2mm,
-    fontsize=\normalsize  
+    fontsize=\normalsize,
+     bgcolor=DarkGray,  
     ]
     {python}
-import axelrod as axl
 
-first_match = axl.Match([axl.SneakyTitForTat(), 
-                         axl.Grudger()],
-                        turns=100)
-first_match.play()[:6]
+>>> import axelrod as axl
+
+>>> first_match = axl.Match([
+        axl.SneakyTitForTat(), 
+        axl.Grudger()], turns=100)
+
+>>> first_match.play()[:6]
 [('C', 'C'), ('C', 'C'), ('D', 'C'), 
  ('D', 'D'), ('C', 'D'), ('C', 'D')]
 
-print(first_match.sparklines())             
+>>> print(first_match.sparklines())             
 
-first_match.final_score()
+>>> first_match.final_score()
 (295, 60)
 
-second_match = axl.Match([axl.TitForTat(), 
-                          axl.SneakyTitForTat()],
-                         turns=100)
+>>> second_match = axl.Match([
+        axl.SneakyTitForTat(), 
+        axl.TitForTat()], turns=100)
 
-second_match.play()
-second_match.final_score()
+>>> second_match.play()
+>>> second_match.final_score()
 (297, 297)
-    \end{minted}
-
-\hspace{5cm}
-
-\small{
-\textbf{MORE INFORMANTION}
-          \begin{itemize}
-          \item In case you missed me:
-          \item Github: \url{https://github.com/Axelrod-Python}
-          \end{itemize}
-
-\hspace{2cm}
-
-\textbf{ABOUT ME} \\
-
-\begin{itemize}
-\item[] \hspace{-1.2cm} \faTwitter \ NikoletaGlyn \ \faGithub \ Nikoleta-v3
-\end{itemize}
-}
+\end{minted}
     \end{column}
-    \begin{column}{.30\linewidth}
-%%%%%%%%%%%%%%%%%%SECOND QUESTION%%%%%%%%%%%%%%%%%% 
+    \begin{column}{.25\linewidth}
+%%%%%%%%%%%%%%%%%SECOND QUESTION%%%%%%%%%%%%%%%%%% 
    \vspace{1cm}
    
 \begin{center}
-    \LARGE{\textcolor{OliveGreen}{WHEN FACED WITH DIFEERENT WAR SCENARIOS WHAT 
-    IS THE OPTIMAL PLAY?}} 
+    \Large{\textcolor{OliveGreen}{WHAT THE OPTIMAL STRATEGIC PLAY AGAINST THE MANY FACES OF WAR?}} 
     \end{center}
 
-\hspace{2cm}
+\vspace{3.5cm}
 
-    \begin{center}
-    \includestandalone[width=\textwidth]{static/tournament}
-    \end{center}
-    \centering
+\centering
+\includestandalone[width=\textwidth, height=0.3\textwidth]{static/tournament}
+
+\vspace{2cm}
+
     \begin{minted}
     [
     autogobble=true,          
     frame=lines,
     framesep=2mm,
-    fontsize=\normalsize  
+    fontsize=\normalsize,
+    bgcolor=DarkGray,  
     ]
     {python}
-import axelrod as axl
+>>> import axelrod as axl
 
-axl.seed(0)
-players = [axl.Cooperator(), axl.Defector(), 
-           axl.TitForTat(), axl.Grudger(), 
-           axl.Random()]
-tournament = axl.Tournament(players)
-results = tournament.play()
-results.ranked_names
+>>> axl.seed(0)
+>>> players = [axl.Cooperator(), axl.Random(), 
+               axl.TitForTat(), axl.Grudger(), 
+               axl.Defector()]
+
+>>> tournament = axl.Tournament(players)
+>>> results = tournament.play()
+>>> results.ranked_names
 ['Defector', 'Grudger', 'Tit For Tat', 
  'Cooperator', 'Random: 0.5']
 
-plot = axl.Plot(results)
-p = plot.boxplot()
-p.show()
-    \end{minted}
-    \includegraphics[width=\textwidth, height=0.55\textwidth]{static/tournament_results.pdf}
+>>> plot = axl.Plot(results)
+>>> p = plot.boxplot()
+>>> p.show()
+\end{minted}
+
+    \includegraphics[width=\textwidth, height=0.65\textwidth]{static/tournament_results.pdf}
   \end{column}
-      \begin{column}{.30\linewidth}
+      \begin{column}{.25\linewidth}
 %%%%%%%%%%%%%%%%%%THIRD QUESTION%%%%%%%%%%%%%%%%%% 
    \vspace{1cm}
    
 \begin{center}
-        \LARGE{\textcolor{cyan}{SHOULD THE NORTH JOIN HANDS WITH THE SOUTH TO DEFEAT THE NIGHT KING?}} 
-        % \\
-        % \large{Evolutionary Game Theory allow us to study such population dynamics} 
-
-\vspace{1cm}
-
+        \Large{\textcolor{cyan}{SHOULD THE NORTH JOIN HANDS WITH THE SOUTH TO DEFEAT THE NIGHT KING?}} 
 \end{center}
+
+   \vspace{0.3cm}
+
         \begin{center}
-        \includestandalone[width=0.8\textwidth]{static/evolution}
+        \includestandalone[width=1.05\textwidth]{static/evolution}
         \end{center}
     \begin{center}
+
     \begin{minted}
     [
     autogobble=true,          
     frame=lines,
     framesep=2mm,
-    fontsize=\small
+    fontsize=\small,
+    bgcolor=DarkGray,
     ]
     {python}
-import random
+>>> import random
 
-N = 5
-players = []
-axl.seed(5)
-for _ in range(N):
-    player = random.choice([axl.Defector, axl.Cooperator])
-    players.append(player())
+>>> N = 5
+>>> players = []
+>>> axl.seed(5)
+>>> for _ in range(N):
+    ... player = random.choice([axl.Defector, 
+                                axl.Cooperator])
+    ... players.append(player())
     
-mp = axl.MoranProcess(players=players, turns=200)
-mp.play()
+>>> mp = axl.MoranProcess(players=players, turns=200)
+>>> mp.play()
 
 [Counter({'Cooperator': 3, 'Defector': 2}),
  Counter({'Cooperator': 3, 'Defector': 2}),
@@ -246,12 +235,54 @@ mp.play()
  Counter({'Cooperator': 1, 'Defector': 4}),
  Counter({'Defector': 5})]
     \end{minted}
+
+   \vspace{1cm}
+
     \includegraphics[width=0.7\textwidth, height=0.5\textwidth]{static/evolution_results.pdf}
     \end{center}
 
     \end{column}
     \end{columns}
+\begin{columns}
+\begin{column}{.10\linewidth}
+\end{column}
+
+\begin{column}{.38\linewidth}
+\begin{block}{}
+\begin{multicols}{2}
+ \begin{itemize}
+          \item In case you missed me:
+          \item Github: \url{github.com/Axelrod-Python} 
+\end{itemize}
+\end{multicols}
+\end{block}
+\end{column}
+\begin{column}{.2\linewidth}
+\begin{block}{}
+
+\begin{multicols}{2}
+ \begin{itemize} 
+          \item \faTwitter \ NikoletaGlyn 
+          \item  \faGithub \ Nikoleta-v 
+\end{itemize}
+\end{multicols}
+\end{block}
+\end{column}
+\end{columns}
+
+   \vspace{1cm}
+
 \end{frame}
 \end{document}
 % \noindent\rule[0.5ex]{\linewidth}{1pt}
 
+%          
+
+% \hspace{2cm}
+
+% \textbf{ABOUT ME} \\
+
+% \begin{itemize}
+% \item[] \hspace{-1.2cm} \faTwitter \ NikoletaGlyn \ \faGithub \ Nikoleta-v3
+% \end{itemize}
+% }
