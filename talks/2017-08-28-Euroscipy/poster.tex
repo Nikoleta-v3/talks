@@ -48,43 +48,32 @@
 
 %%%%%%%%%%%%%%TOP ROW%%%%%%%%%%%%%%%%%%
 \begin{columns}
-  \begin{column}{.49\linewidth}
+  \begin{column}{.45\linewidth}
    \vspace{1cm}
 
-    \centering
+
     {\fontsize{120}{130}\selectfont\textcolor{orange}{PIP \hspace{2cm} INSTALL \hspace{2cm} AXELROD}}
-    % \large{THE \textcolor{brown}{ITERATED PRISONERS DILEMMA}
-    % ALLOWS THE STUDY OF \textcolor{brown}{COOPERATIVE BEHAVIOUR}}
-    \Large{
-    \begin{multicols}{2}
+
+  \begin{columns}
+  \begin{column}{.39\linewidth}
+
+   \vspace{1cm}
+    \textcolor{orange}{\LARGE{PRISONERS DILEMMA}}
+  \end{column}
+  \begin{column}{.55\linewidth}
+    \large{
     \begin{itemize}
       \item both sides are better off \textbf{Cooperating} (3)
-      \item but there is always a tempetation to \textbf{Defect} (5)
+      \item there is always a tempetation to \textbf{Defect} (5)
     \end{itemize}
-    \end{multicols}
     }
+    \end{column}
+    \end{columns}
   \end{column}
-  \begin{column}{.25\linewidth}
+  \begin{column}{.30\linewidth}
 
-    \centering
-   \includestandalone[width=0.65\textwidth]{static/matrix}
+ \hspace{13cm}  \includestandalone[width=0.55\textwidth]{static/matrix}
   \end{column}
-  % \begin{column}{.35\linewidth}
-
-  %   \large{
-  %   AXELROD LIBRARY IS AN OPEN SOURCE TOOL THAT COMBINES
-  %   \textcolor{cyan}{PYTHON} \textbf{+} \textcolor{brown}{PRISONERS DILEMMA}}
-  %   \large{
-  %   \begin{itemize}%[leftmargin=1.7in]
-  %   \item more than \textcolor{brown}{200 condtibutors}
-  %   \item \textcolor{brown}{100\%} test coverage
-  %   \item unit and integration \textcolor{brown}{tests}
-  %   \item \textcolor{brown}{documentation}.
-  %   \end{itemize}
-  %   }
-  % \end{column}
-%   \begin{column}{.10\linewidth}
-
   \end{columns}
   \begin{columns}
     \begin{column}{.25\linewidth}
@@ -98,9 +87,7 @@
 \Large{\textcolor{red!80}{SHOULD PEOPLE HOLD A GRUDGE AGAINST THEM?}}
 \end{center}
 
-\vspace{1cm}
-
-\noindent\rule[0.5ex]{\linewidth}{1pt}
+\vspace{3cm}
 
 \begin{figure}
 \begin{center}
@@ -108,12 +95,11 @@
 \end{center}
 \end{figure}
 
-\vspace{0.5cm}
+\vspace{2cm}
 
     \begin{minted}
     [
     autogobble=true,       
-    frame=lines,
     framesep=2mm,
     fontsize=\normalsize,
      bgcolor=DarkGray,  
@@ -124,7 +110,7 @@
 
 >>> first_match = axl.Match([
         axl.SneakyTitForTat(), 
-        axl.Grudger()], turns=100)
+        axl.Grudger()], turns=20)
 
 >>> first_match.play()[:6]
 [('C', 'C'), ('C', 'C'), ('D', 'C'), 
@@ -133,15 +119,15 @@
 >>> print(first_match.sparklines())             
 
 >>> first_match.final_score()
-(295, 60)
+(20, 55)
 
 >>> second_match = axl.Match([
         axl.SneakyTitForTat(), 
-        axl.TitForTat()], turns=100)
+        axl.TitForTat()], turns=20)
 
 >>> second_match.play()
 >>> second_match.final_score()
-(297, 297)
+(57, 57)
 \end{minted}
     \end{column}
     \begin{column}{.25\linewidth}
@@ -149,20 +135,19 @@
    \vspace{1cm}
    
 \begin{center}
-    \Large{\textcolor{OliveGreen}{WHAT THE OPTIMAL STRATEGIC PLAY AGAINST THE MANY FACES OF WAR?}} 
+    \Large{\textcolor{OliveGreen}{WHAT IS THE OPTIMAL STRATEGIC PLAY AGAINST THE MANY FACES OF WAR?}} 
     \end{center}
 
-\vspace{3.5cm}
+\vspace{5cm}
 
 \centering
 \includestandalone[width=\textwidth, height=0.3\textwidth]{static/tournament}
 
-\vspace{2cm}
+\vspace{1.8cm}
 
     \begin{minted}
     [
     autogobble=true,          
-    frame=lines,
     framesep=2mm,
     fontsize=\normalsize,
     bgcolor=DarkGray,  
@@ -196,17 +181,16 @@
         \Large{\textcolor{cyan}{SHOULD THE NORTH JOIN HANDS WITH THE SOUTH TO DEFEAT THE NIGHT KING?}} 
 \end{center}
 
-   \vspace{0.3cm}
+   \vspace{1.2cm}
 
         \begin{center}
-        \includestandalone[width=1.05\textwidth]{static/evolution}
+        \includestandalone[width=1.1\textwidth]{static/evolution}
         \end{center}
     \begin{center}
 
     \begin{minted}
     [
     autogobble=true,          
-    frame=lines,
     framesep=2mm,
     fontsize=\small,
     bgcolor=DarkGray,
@@ -246,9 +230,7 @@
 \begin{columns}
 \begin{column}{.10\linewidth}
 \end{column}
-
 \begin{column}{.4\linewidth}
-
 \textbf{
 \begin{multicols}{2}
  \begin{itemize}
@@ -259,7 +241,6 @@
 }
 \end{column}
 \begin{column}{.2\linewidth}
-
 \textbf{
 \begin{multicols}{2}
  \begin{itemize} 
@@ -275,15 +256,3 @@
 
 \end{frame}
 \end{document}
-% \noindent\rule[0.5ex]{\linewidth}{1pt}
-
-%          
-
-% \hspace{2cm}
-
-% \textbf{ABOUT ME} \\
-
-% \begin{itemize}
-% \item[] \hspace{-1.2cm} \faTwitter \ NikoletaGlyn \ \faGithub \ Nikoleta-v3
-% \end{itemize}
-% }
