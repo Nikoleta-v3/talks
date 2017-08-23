@@ -26,6 +26,8 @@
 \setlength{\columnsep}{2pt}
 
 \definecolor{DarkGray}{RGB}{7, 54, 66}
+\definecolor{DarkerGray}{RGB}{3, 22, 27}
+
 \usemintedstyle{native}
 
 \usetikzlibrary{decorations.pathmorphing}
@@ -48,16 +50,20 @@
 
 %%%%%%%%%%%%%%TOP ROW%%%%%%%%%%%%%%%%%%
 \begin{columns}
+  \begin{column}{.03\linewidth}
+  \end{column}
   \begin{column}{.45\linewidth}
    \vspace{1cm}
 
-
-    {\fontsize{120}{130}\selectfont\textcolor{orange}{PIP \hspace{2cm} INSTALL \hspace{2cm} AXELROD}}
+    \centering
+    {\fontsize{120}{130}\selectfont\textcolor{orange}{PIP \hspace{2.5cm} INSTALL \hspace{2cm} AXELROD}}
 
   \begin{columns}
   \begin{column}{.39\linewidth}
 
    \vspace{1cm}
+
+    \centering
     \textcolor{orange}{\LARGE{PRISONERS DILEMMA}}
   \end{column}
   \begin{column}{.55\linewidth}
@@ -72,7 +78,7 @@
   \end{column}
   \begin{column}{.30\linewidth}
 
- \hspace{13cm}  \includestandalone[width=0.55\textwidth]{static/matrix}
+ \hspace{9cm}  \includestandalone[width=0.55\textwidth]{static/matrix}
   \end{column}
   \end{columns}
   \begin{columns}
@@ -109,25 +115,40 @@
 >>> import axelrod as axl
 
 >>> first_match = axl.Match([
-        axl.SneakyTitForTat(), 
-        axl.Grudger()], turns=20)
+...     axl.SneakyTitForTat(), 
+...     axl.Grudger()], turns=20)
 
 >>> first_match.play()[:6]
 [('C', 'C'), ('C', 'C'), ('D', 'C'), 
- ('D', 'D'), ('C', 'D'), ('C', 'D')]
-
->>> print(first_match.sparklines())             
+('D', 'D'), ('C', 'D'), ('C', 'D')]           
 
 >>> first_match.final_score()
 (20, 55)
 
 >>> second_match = axl.Match([
-        axl.SneakyTitForTat(), 
-        axl.TitForTat()], turns=20)
+...     axl.SneakyTitForTat(), 
+...     axl.TitForTat()], turns=20)
 
->>> second_match.play()
+>>> play = second_match.play()
 >>> second_match.final_score()
 (57, 57)
+
+\end{minted}
+
+\vspace{2cm}
+
+    \begin{minted}
+    [
+    autogobble=true,       
+    framesep=2mm,
+    fontsize=\normalsize,
+     bgcolor=DarkerGray,  
+    ]
+    {python}
+
+>>> assert axl.__version__ == "3.5.0"
+
+$   python -m doctest poster.tex
 \end{minted}
     \end{column}
     \begin{column}{.25\linewidth}
@@ -157,18 +178,19 @@
 
 >>> axl.seed(0)
 >>> players = [axl.Cooperator(), axl.Random(), 
-               axl.TitForTat(), axl.Grudger(), 
-               axl.Defector()]
+...            axl.TitForTat(), axl.Grudger(), 
+...            axl.Defector()]
 
 >>> tournament = axl.Tournament(players)
 >>> results = tournament.play()
 >>> results.ranked_names
-['Defector', 'Grudger', 'Tit For Tat', 
- 'Cooperator', 'Random: 0.5']
+['Grudger', 'Defector', 'Tit For Tat', 
+'Cooperator', 'Random: 0.5']
 
 >>> plot = axl.Plot(results)
 >>> p = plot.boxplot()
 >>> p.show()
+
 \end{minted}
 
     \includegraphics[width=\textwidth, height=0.65\textwidth]{static/tournament_results.pdf}
@@ -196,19 +218,19 @@
     bgcolor=DarkGray,
     ]
     {python}
+>>> import axelrod as axl
 >>> import random
 
 >>> N = 5
 >>> players = []
 >>> axl.seed(5)
 >>> for _ in range(N):
-    ... player = random.choice([axl.Defector, 
-                                axl.Cooperator])
-    ... players.append(player())
+...     player = random.choice([axl.Defector, 
+...                             axl.Cooperator])
+...     players.append(player())
     
 >>> mp = axl.MoranProcess(players=players, turns=200)
 >>> mp.play()
-
 [Counter({'Cooperator': 3, 'Defector': 2}),
  Counter({'Cooperator': 3, 'Defector': 2}),
  Counter({'Cooperator': 3, 'Defector': 2}),
@@ -218,36 +240,31 @@
  Counter({'Cooperator': 1, 'Defector': 4}),
  Counter({'Cooperator': 1, 'Defector': 4}),
  Counter({'Defector': 5})]
+
     \end{minted}
 
    \vspace{1cm}
 
-    \includegraphics[width=0.7\textwidth, height=0.5\textwidth]{static/evolution_results.pdf}
+    \includegraphics[width=0.8\textwidth, height=0.5\textwidth]{static/evolution_results.pdf}
     \end{center}
 
     \end{column}
     \end{columns}
 \begin{columns}
-\begin{column}{.10\linewidth}
+\begin{column}{.30\linewidth}
 \end{column}
-\begin{column}{.4\linewidth}
-\textbf{
-\begin{multicols}{2}
- \begin{itemize}
-          \item In case you missed me:
-          \item Github: \url{github.com/Axelrod-Python} 
-\end{itemize}
-\end{multicols}
+\begin{column}{.45\linewidth}
+
+   \hspace{1cm}
+
+\textbf{In case you missed me: \url{nikoleta-v3.github.io/blog/2017/08/23/grudges-war-GoT.html}
 }
 \end{column}
-\begin{column}{.2\linewidth}
-\textbf{
-\begin{multicols}{2}
- \begin{itemize} 
-          \item \faTwitter \ NikoletaGlyn 
-          \item  \faGithub \ Nikoleta-v 
-\end{itemize}
-\end{multicols}
+\begin{column}{.3\linewidth}
+
+   \hspace{1cm}
+
+\textbf{ \faTwitter \ NikoletaGlyn \ \faGithub \ Nikoleta-v 
 }
 \end{column}
 \end{columns}
