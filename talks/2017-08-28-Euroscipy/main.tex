@@ -79,13 +79,21 @@
 
 \begin{frame}
 \begin{center}
-    \includegraphics[width=0.8\textwidth]{static/arxiv_search.png}
+    \includegraphics[width=\textwidth, height=0.5\textwidth]{static/arxiv_search.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \includegraphics[width=0.8\textwidth]{static/arxiv_results.png}
+    \includegraphics[width=\textwidth]{static/arxiv_result.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\color{orange}\Large{$0.5 \textrm{min} + \textrm{100} \times 1.5 \textrm{min} + 10 \times 0.5
+\textrm{min}= 155.5 \textrm{min} \Rightarrow 2 \textrm{h} \textrm{ and } 35.5
+\textrm{min}$}
 \end{center}
 \end{frame}
 
@@ -100,12 +108,19 @@
     \centering
     \textcolor{orange}{\textbf{QUERY}} \\
     \vspace{3mm}
-    \small{\url{http://export.arxiv.org/api/query?search_query=Sustainable%20Software}} \\
+    \small{\url{http://export.arxiv.org/api/query?search_query=ti:Sustainable%20Software}} \\
 \end{frame}
 
 \begin{frame}
 \begin{center}
-    \includegraphics[width=0.8\textwidth]{static/arxiv_api_result.png}
+    \includegraphics[width=\textwidth]{static/arxiv_api_result.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\color{orange}\Large{$15 \textrm{min} + 1 \textrm{min} + 50 \textrm{min} =
+66 \textrm{min} \Rightarrow 1\textrm{h} \textrm{ and } 6 \text{min}$}
 \end{center}
 \end{frame}
 
@@ -113,7 +128,7 @@
     \begin{center}
     \textcolor{orange}{\textbf{QUERY}} \\
     \vspace{3mm}
-    \small{\url{http://export.arxiv.org/api/query?search_query=Sustainable%20Software}} \\
+    \small{\url{http://export.arxiv.org/api/query?search_query=ti:Sustainable%20Software}} \\
     \pause
     \vspace{10mm}
     \small{\url{http://api.plos.org/search?q=title:Sustainable%20Software&rows=100}} \\
@@ -197,6 +212,12 @@ $ pip install arcas
     \end{minted}
 \end{frame}
 
+\begin{frame}
+\begin{center}
+\color{orange}\Large{$15 \textrm{min} + 5 \textrm{min} = 20 \textrm{min}$}
+\end{center}
+\end{frame}
+
 \begin{frame}[fragile]
     \begin{minted}
     [
@@ -226,16 +247,6 @@ $ pip install arcas
 \end{frame}
 
 \begin{frame}
-\centering
-\textcolor{brown}{\large{Arcas}}
-\begin{center}
-\begin{figure}
-    \input{static/structure.tex}
-\end{figure}
-\end{center}
-\end{frame}
-
-\begin{frame}
 \begin{center}
     \includegraphics[width=\textwidth]{static/timeline.pdf}
 \end{center}
@@ -259,13 +270,23 @@ $ pip install arcas
 \end{center}
 \end{frame}
 
+\begin{frame}
+\centering
+\textcolor{brown}{\large{Arcas}}
+\begin{center}
+\begin{figure}
+    \input{static/structure.tex}
+\end{figure}
+\end{center}
+\end{frame}
+
 \begin{frame}[fragile]
     \begin{minted}
     [
     framesep=4mm,
     baselinestretch=1.2,
     bgcolor=DarkGray,
-    fontsize=\tiny,
+    fontsize=\scriptsize,
     ]
     {python}
 $ arcas_scrape --version
@@ -277,11 +298,12 @@ Arcas 0.0.1
     framesep=4mm,
     baselinestretch=1.2,
     bgcolor=DarkGray,
-    fontsize=\tiny,
+    fontsize=\scriptsize,
     ]
     {python}
 $ arcas_scrape -p arxiv -t "Sustainable Software" -r 1
-http://export.arxiv.org/api/query?search_query=ti:Sustainable Software&max_results=1&start=1
+http://export.arxiv.org/api/query?search_query=ti:Sustainable 
+Software&max_results=1&start=1
     \end{minted}
 \end{frame}
 
