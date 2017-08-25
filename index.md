@@ -15,4 +15,6 @@ PyCon NA, Namibia 2017.
 SIAM Meeting, Cardiff 2017.
 + [Optimisation of short memory strategies in the Iterated Prisoners Dilemma]({{ site.baseurl }}/talks/2017-05-22-Gregynog/main.pdf) -
 Wales Mathematics Colloquium, Gregynog Hall 2017.
++ [PIP INSTALL AXELROD]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
+/poster.pdf) poster - Euroscipy, Erlangen Germany 2017.
 
