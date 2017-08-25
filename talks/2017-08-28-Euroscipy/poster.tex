@@ -25,7 +25,7 @@
 \makeatother
 \setlength{\columnsep}{2pt}
 
-\definecolor{DarkGray}{RGB}{7, 54, 66}
+\definecolor{DarkGray}{RGB}{5, 66, 81}
 \definecolor{DarkerGray}{RGB}{3, 22, 27}
 
 \usemintedstyle{native}
@@ -37,7 +37,11 @@
 \usetikzlibrary{decorations.markings}
 
 \tikzstyle{background}=[red!79, rectangle, draw, inner sep=-0.5mm,
-           rounded corners=1mm, thick]
+           rounded corners=1mm, ultra thick]
+
+\tikzset{
+    ultra thick/.style={line width=3pt}
+}
 
 \usecolortheme[dark,accent=cyan]{solarized}
 \beamertemplatenavigationsymbolsempty
@@ -59,12 +63,12 @@
     {\fontsize{120}{130}\selectfont\textcolor{orange}{PIP \hspace{2.5cm} INSTALL \hspace{2cm} AXELROD}}
 
   \begin{columns}
-  \begin{column}{.39\linewidth}
+  \begin{column}{.40\linewidth}
 
    \vspace{1cm}
 
     \centering
-    \textcolor{orange}{\LARGE{PRISONERS DILEMMA}}
+    \textcolor{orange}{\LARGE{PRISONERS' DILEMMA}}
   \end{column}
   \begin{column}{.55\linewidth}
     \large{
@@ -93,7 +97,7 @@
 \Large{\textcolor{red!80}{SHOULD PEOPLE HOLD A GRUDGE AGAINST THEM?}}
 \end{center}
 
-\vspace{3cm}
+\vspace{2.9cm}
 
 \begin{figure}
 \begin{center}
@@ -116,7 +120,8 @@
 
 >>> first_match = axl.Match([
 ...     axl.SneakyTitForTat(), 
-...     axl.Grudger()], turns=20)
+...     axl.Grudger()], 
+...     turns=20)
 
 >>> first_match.play()[:6]
 [('C', 'C'), ('C', 'C'), ('D', 'C'), 
@@ -127,21 +132,22 @@
 
 >>> second_match = axl.Match([
 ...     axl.SneakyTitForTat(), 
-...     axl.TitForTat()], turns=20)
+...     axl.TitForTat()], 
+...     turns=20)
 
->>> play = second_match.play()
+>>> _ = second_match.play()
 >>> second_match.final_score()
 (57, 57)
 
 \end{minted}
 
-\vspace{2cm}
+\vspace{3cm}
 
     \begin{minted}
     [
     autogobble=true,       
     framesep=2mm,
-    fontsize=\normalsize,
+    fontsize=\small,
      bgcolor=DarkerGray,  
     ]
     {python}
@@ -149,6 +155,8 @@
 >>> assert axl.__version__ == "3.5.0"
 
 $   python -m doctest poster.tex
+
+# 3 expected failures for readability
 \end{minted}
     \end{column}
     \begin{column}{.25\linewidth}
@@ -159,12 +167,12 @@ $   python -m doctest poster.tex
     \Large{\textcolor{OliveGreen}{WHAT IS THE OPTIMAL STRATEGIC PLAY AGAINST THE MANY FACES OF WAR?}} 
     \end{center}
 
-\vspace{5cm}
+\vspace{3cm}
 
 \centering
 \includestandalone[width=\textwidth, height=0.3\textwidth]{static/tournament}
 
-\vspace{1.8cm}
+\vspace{3.8cm}
 
     \begin{minted}
     [
@@ -251,13 +259,13 @@ $   python -m doctest poster.tex
     \end{column}
     \end{columns}
 \begin{columns}
-\begin{column}{.1\linewidth}
+\begin{column}{.15\linewidth}
 \end{column}
 \begin{column}{.8\linewidth}
 
    \hspace{1cm}
 
-\textbf{ \faTwitter \ NikoletaGlyn \hspace{2cm} In case you missed me: \url{nikoleta-v3.github.io/blog/2017/08/23/grudges-war-GoT.html} \hspace{2cm} \faGithub \ Nikoleta-v}
+\textbf{ \faTwitter \ NikoletaGlyn \hspace{2cm} In case you missed me: \url{nikoleta-v3.github.io/blog/2017/08/23/grudges-war-GoT.html} \hspace{2cm} \faGithub \ Nikoleta-v3}
 
 \end{column}
 % \begin{column}{.1\linewidth}
