@@ -1,0 +1,11 @@
+# minted
+*_minted-poster
+
+# files
+*.aux
+*.log
+*.aux
+*.toc
+*.snm
+*.nav
+*.vrb

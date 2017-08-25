@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lighting Talks
+title: Lightning Talks
 ---
 
 + [PyDiff]({{ site.baseurl }}/lightning-talks/PyDiff/main.pdf) - PyDiff meeting, Cardiff 2017.
