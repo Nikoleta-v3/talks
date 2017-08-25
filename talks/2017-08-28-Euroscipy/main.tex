@@ -1,0 +1,65 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%Solarized Theme%%%%%%%%%%%%%%%
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+
+%%%%%Packages%%%%%
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl, xcolor}
+\usepackage{booktabs}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{minted}
+
+\definecolor{DarkGray}{gray}{0.1}
+\definecolor{DarkGray}{gray}{0.1}
+\usemintedstyle{native}
+
+%%%%%%Title%%%%%%%%
+\title{A cool title}
+\author{Nikoleta Glynatsi}
+\date{A date}
+\institute[]
+{
+\begin{center}
+    \includegraphics[width=.15\textwidth]{static/cardiff_uni_logo.jpg}
+\end{center}
+}
+
+\begin{document}
+
+\maketitle  
+
+\begin{frame}
+	\begin{center}
+		\Huge This is a slide
+	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\Huge,
+    ]
+    {python}
+    1 + 1 = 2
+    \end{minted}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\huge{\textbf{}}\\~\\
+		\small{@NikoletaGlyn}\\
+		\small{https://github.com/Nikoleta-v3}\\
+	\end{center}
+\end{frame}
+
+\end{document}
+
