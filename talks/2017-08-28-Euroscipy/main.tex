@@ -5,61 +5,312 @@
 \beamertemplatenavigationsymbolsempty
 
 %%%%%Packages%%%%%
-\usepackage{graphicx}
+\usepackage{varwidth}
 \usepackage{hyperref}
-\usepackage{colortbl, xcolor}
-\usepackage{booktabs}
 
 \usepackage{tikz}
-\usetikzlibrary{calc}
+\usepackage{standalone}
+\usetikzlibrary{positioning,calc}
+\usetikzlibrary{automata}
+\usetikzlibrary{fit}                    % fitting shapes to coordinates
+\usetikzlibrary{backgrounds}    % drawing the background after the foreground
 
+\tikzstyle{background}=[orange, rectangle, draw, inner sep=0.2mm,
+           rounded corners=1mm, ultra thick]
 \usepackage{minted}
 
 \definecolor{DarkGray}{gray}{0.1}
-\definecolor{DarkGray}{gray}{0.1}
 \usemintedstyle{native}
 
-%%%%%%Title%%%%%%%%
-\title{A cool title}
-\author{Nikoleta Glynatsi}
-\date{A date}
+\title{Arcas: Using Python to access open research literature}
+\author{@NikoletaGlyn}
+\date{ }
 \institute[]
 {
 \begin{center}
-    \includegraphics[width=.15\textwidth]{static/cardiff_uni_logo.jpg}
+    \includegraphics[width=.20\textwidth]{static/euroscipy-logo.png}
+    \hspace{0.5cm}\includegraphics[width=.20\textwidth]{static/arcas-logo.jpg}
 \end{center}
 }
 
 \begin{document}
 
-\maketitle  
+\frame{\titlepage}
 
 \begin{frame}
-	\begin{center}
-		\Huge This is a slide
-	\end{center}
+    \begin{center}
+    \includegraphics[width=0.24\textwidth]{static/cardiff_uni_logo.jpg}\hspace{10pt}
+    \includegraphics[width=0.24\textwidth]{static/axelrod-logo.png}\vspace{10pt}
+
+    \hspace{3pt} \includegraphics[width=0.24\textwidth]{static/ssi-logo.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textcolor{orange}{
+\huge{The illustrated guide to a Ph.D.} \\
+\vspace{10mm}
+\large{Matt Might} \\}
+\vspace{10mm}
+\small{http://matt.might.net/articles/phd-school-in-pictures/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \input{static/phd-comic.tex}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includestandalone[width=0.9\textwidth]{static/process}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textcolor{orange}{
+    \Huge{Sustainable Software}}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=\textwidth, height=0.5\textwidth]{static/arxiv_search.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=\textwidth]{static/arxiv_result.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\color{orange}\Large{$0.5 \textrm{min} + \textrm{100} \times 1.5 \textrm{min} + 10 \times 0.5
+\textrm{min}= 155.5 \textrm{min} \Rightarrow 2 \textrm{h} \textrm{ and } 35.5
+\textrm{min}$}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textcolor{orange}{
+\Huge{API}}
+\end{center}
 \end{frame}
 
 \begin{frame}[fragile]
-	\begin{minted}
+    \centering
+    \textcolor{orange}{\textbf{QUERY}} \\
+    \vspace{3mm}
+    \small{\url{http://export.arxiv.org/api/query?search_query=ti:Sustainable%20Software}} \\
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=\textwidth]{static/arxiv_api_result.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\color{orange}\Large{$15 \textrm{min} + 1 \textrm{min} + 50 \textrm{min} =
+66 \textrm{min} \Rightarrow 1\textrm{h} \textrm{ and } 6 \text{min}$}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{center}
+    \textcolor{orange}{\textbf{QUERY}} \\
+    \vspace{3mm}
+    \small{\url{http://export.arxiv.org/api/query?search_query=ti:Sustainable%20Software}} \\
+    \pause
+    \vspace{10mm}
+    \small{\url{http://api.plos.org/search?q=title:Sustainable%20Software&rows=100}} \\
+    \pause
+    \vspace{10mm}
+    \small{\url{http://www.nature.com/opensearch/request?queryType=cql&query=dc
+    .title%20adj%20SustainableSoftware&maximumRecords=100}} \\
+    \small{...}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \input{static/apis_one.tex}
+    \end{center}
+\end{frame}
+\begin{frame}[fragile]
+    \begin{center}
+    \input{static/apis.tex}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{minted}
     [
     framesep=4mm,
     baselinestretch=1.2,
     bgcolor=DarkGray,
-    fontsize=\Huge,
+    fontsize=\footnotesize,
     ]
     {python}
-    1 + 1 = 2
+$ pip install arcas
+
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize,
+    ]
+    {python}
+>>> import arcas
+
+>>> api = arcas.Arxiv()
+>>> parameters = api.parameters_fix(
+...     title='sustainable software', records=1, start=1)
+>>> url = api.create_url_search(parameters)
+>>> request = api.make_request(url)
+>>> root = api.get_root(request)
+>>> raw_article = api.parse(root)
+
+>>> article = api.to_dataframe(raw_article[0])
+>>> api.export(article, "result.json")
+
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize,
+    ]
+    {python}
+{"key":{"0":"Ahern2013"},
+ "unique_key":{"0":"698d27415f69258ef122f46b184a77e0"},
+ "title":{"0":"VisIt: Experiences with Sustainable Software"},
+ "author":{"0":"Sean Ahern","1":"Eric Brugger"},
+ "abstract":{"0":"  The success of the VisIt visualization..."},
+ "date":{"0":2013},
+ "journal":{"0":"arXiv"},
+ "provenance":{"0":"arXiv"}}
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\scriptsize,
+    ]
+    {python}
+>>> for p in [arcas.Arxiv, arcas.Nature, arcas.Ieee, arcas.Plos]:
+...    api = p()
+...    parameters = api.parameters_fix(
+...         title='sustainable software', records=1, start=1)
+...    url = api.create_url_search(parameters)
+...    request = api.make_request(url)
+...    root = api.get_root(request)
+...    raw_article = api.parse(root)
+...    try:
+...        for art in raw_article:
+...            article = api.to_dataframe(art)         
+...        api.export(article, "result_from_{}.json".format(
+...            api.__class__.__name__))    
+...    except TypeError:
+...        pass
+
     \end{minted}
 \end{frame}
 
 \begin{frame}
-	\begin{center}
-		\huge{\textbf{}}\\~\\
-		\small{@NikoletaGlyn}\\
-		\small{https://github.com/Nikoleta-v3}\\
-	\end{center}
+\begin{center}
+\color{orange}\Large{$15 \textrm{min} + 5 \textrm{min} = 20 \textrm{min}$}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=\textwidth]{static/timeline.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=\textwidth]{static/provenance.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{static/network.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{static/network_2.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\centering
+\textcolor{brown}{\large{Arcas}}
+\begin{center}
+\begin{figure}
+    \input{static/structure.tex}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\scriptsize,
+    ]
+    {python}
+$ arcas_scrape --version
+Arcas 0.0.3
+    \end{minted}
+\vspace{0.5cm}
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\scriptsize,
+    ]
+    {python}
+$ arcas_scrape -p arxiv -t "Sustainable Software" -r 1
+http://export.arxiv.org/api/query?search_query=ti:Sustainable 
+Software&max_results=1&start=1
+    \end{minted}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \small{@NikoletaGlyn}\\
+        \small{https://github.com/ArcasProject/Arcas} \\
+        \small{https://nikoleta-v3.github.io}
+    \end{center}
 \end{frame}
 
 \end{document}
-
