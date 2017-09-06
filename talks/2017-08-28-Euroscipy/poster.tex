@@ -74,7 +74,7 @@
     \large{
     \begin{itemize}
       \item both sides are better off \textbf{Cooperating} (3)
-      \item there is always a tempetation to \textbf{Defect} (5)
+      \item there is always a temptation to \textbf{Defect} (5)
     \end{itemize}
     }
     \end{column}
@@ -87,6 +87,7 @@
   \end{columns}
   \begin{columns}
     \begin{column}{.25\linewidth}
+
 %%%%%%%%%%%%%%%%%%FIRST QUESTION%%%%%%%%%%%%%%%%%% 
    \vspace{1cm}
 
@@ -109,30 +110,30 @@
 
     \begin{minted}
     [
-    autogobble=true,       
+    autogobble=true,
     framesep=2mm,
     fontsize=\normalsize,
-     bgcolor=DarkGray,  
+     bgcolor=DarkGray,
     ]
     {python}
 
 >>> import axelrod as axl
 
 >>> first_match = axl.Match([
-...     axl.SneakyTitForTat(), 
-...     axl.Grudger()], 
+...     axl.SneakyTitForTat(),
+...     axl.Grudger()],
 ...     turns=20)
 
 >>> first_match.play()[:6]
-[('C', 'C'), ('C', 'C'), ('D', 'C'), 
-('D', 'D'), ('C', 'D'), ('C', 'D')]           
+[('C', 'C'), ('C', 'C'), ('D', 'C'),
+('D', 'D'), ('C', 'D'), ('C', 'D')]
 
 >>> first_match.final_score()
 (20, 55)
 
 >>> second_match = axl.Match([
-...     axl.SneakyTitForTat(), 
-...     axl.TitForTat()], 
+...     axl.SneakyTitForTat(),
+...     axl.TitForTat()],
 ...     turns=20)
 
 >>> _ = second_match.play()
@@ -145,10 +146,10 @@
 
     \begin{minted}
     [
-    autogobble=true,       
+    autogobble=true,
     framesep=2mm,
     fontsize=\small,
-     bgcolor=DarkerGray,  
+     bgcolor=DarkerGray,
     ]
     {python}
 
@@ -160,11 +161,11 @@ $   python -m doctest poster.tex
 \end{minted}
     \end{column}
     \begin{column}{.25\linewidth}
-%%%%%%%%%%%%%%%%%SECOND QUESTION%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%SECOND QUESTION%%%%%%%%%%%%%%%%%%
    \vspace{1cm}
-   
+
 \begin{center}
-    \Large{\textcolor{OliveGreen}{WHAT IS THE OPTIMAL STRATEGIC PLAY AGAINST THE MANY FACES OF WAR?}} 
+    \Large{\textcolor{OliveGreen}{WHAT IS THE OPTIMAL STRATEGIC PLAY AGAINST THE MANY FACES OF WAR?}}
     \end{center}
 
 \vspace{3cm}
@@ -176,23 +177,23 @@ $   python -m doctest poster.tex
 
     \begin{minted}
     [
-    autogobble=true,          
+    autogobble=true,
     framesep=2mm,
     fontsize=\normalsize,
-    bgcolor=DarkGray,  
+    bgcolor=DarkGray,
     ]
     {python}
 >>> import axelrod as axl
 
 >>> axl.seed(0)
->>> players = [axl.Cooperator(), axl.Random(), 
-...            axl.TitForTat(), axl.Grudger(), 
+>>> players = [axl.Cooperator(), axl.Random(),
+...            axl.TitForTat(), axl.Grudger(),
 ...            axl.Defector()]
 
 >>> tournament = axl.Tournament(players)
 >>> results = tournament.play()
 >>> results.ranked_names
-['Grudger', 'Defector', 'Tit For Tat', 
+['Grudger', 'Defector', 'Tit For Tat',
 'Cooperator', 'Random: 0.5']
 
 >>> plot = axl.Plot(results)
@@ -204,11 +205,11 @@ $   python -m doctest poster.tex
     \includegraphics[width=\textwidth, height=0.65\textwidth]{static/tournament_results.pdf}
   \end{column}
       \begin{column}{.25\linewidth}
-%%%%%%%%%%%%%%%%%%THIRD QUESTION%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%THIRD QUESTION%%%%%%%%%%%%%%%%%%
    \vspace{1cm}
-   
+
 \begin{center}
-        \Large{\textcolor{cyan}{SHOULD THE NORTH JOIN HANDS WITH THE SOUTH TO DEFEAT THE NIGHT KING?}} 
+        \Large{\textcolor{cyan}{SHOULD THE NORTH JOIN HANDS WITH THE SOUTH TO DEFEAT THE NIGHT KING?}}
 \end{center}
 
    \vspace{1.2cm}
@@ -220,7 +221,7 @@ $   python -m doctest poster.tex
 
     \begin{minted}
     [
-    autogobble=true,          
+    autogobble=true,
     framesep=2mm,
     fontsize=\small,
     bgcolor=DarkGray,
@@ -233,10 +234,10 @@ $   python -m doctest poster.tex
 >>> players = []
 >>> axl.seed(5)
 >>> for _ in range(N):
-...     player = random.choice([axl.Defector, 
+...     player = random.choice([axl.Defector,
 ...                             axl.Cooperator])
 ...     players.append(player())
-    
+
 >>> mp = axl.MoranProcess(players=players, turns=200)
 >>> mp.play()
 [Counter({'Cooperator': 3, 'Defector': 2}),
