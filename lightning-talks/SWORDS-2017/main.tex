@@ -1,0 +1,93 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%Solarized Theme%%%%%%%%%%%%%%%
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+
+%%%%%Packages%%%%%
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl, xcolor}
+\usepackage{booktabs}
+\usepackage{fontawesome}
+\usepackage{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{minted}
+
+\definecolor{DarkGray}{gray}{0.1}
+\definecolor{DarkGray}{gray}{0.1}
+\usemintedstyle{native}
+
+%%%%%%Title%%%%%%%%
+\author{@NikoletaGlyn}
+\date{\small{Dr. Vincent \textsc{Knight} \hspace{1cm}  Dr. Jonathan \textsc{Gillard} \\~\\
+ \small{Dr. Tamsin  \textsc{Lee}}}}
+\institute[]
+{
+\begin{center}
+    \includegraphics[width=.20\textwidth]{static/cardiff_uni_logo.jpg}
+\end{center}
+}
+
+
+\begin{document}
+
+\maketitle  
+
+\begin{frame}
+	\begin{center}
+    \includegraphics[width=\textwidth]{static/rhinos.jpg}
+
+    \footnotesize{\textcolor{orange}{http://www.bbc.com/earth/story/20150518-the-epic-history-of-rhinos?ocid=twert}}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=0.8\textwidth]{static/RhinoPic.pdf}
+
+      \footnotesize{\textcolor{orange}{Tamsin E. Lee and  David L. Roberts. 
+      Devaluing rhino horns as a theoretical game, 2016.}}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \hbox{\hspace{-2em}\includestandalone[scale=0.78]{static/evolutionary_study}}
+\end{frame}
+
+\begin{frame}
+\Large{
+    \begin{eqnarray*}{}
+    u(\sigma, \chi) &=&
+    H (\theta_r r(1 - s) - r + 1) \theta(r, x)^{-\alpha} - 
+    \\ && F \left(1 - s + \frac{s}{1 - r} \right)(1-rx)^{\gamma}(1 - r)^{\beta}
+\end{eqnarray*}
+}
+\end{frame}
+
+\begin{frame}
+    \hbox{\hspace{-2em}\includestandalone[scale=0.78]{static/results}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=0.8\textwidth]{static/IndiscriminateESS.pdf}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\Large{\faTwitter t\_e\_lee}\\
+		\Large{\faTwitter drvinceknight}\\
+                        \Large{\faTwitter nikoletaglyn}\\
+
+                        \hspace{5pt}
+                        
+                        \small{\textit{paper-link}}\\
+	\end{center}
+\end{frame}
+
+\end{document}
+
