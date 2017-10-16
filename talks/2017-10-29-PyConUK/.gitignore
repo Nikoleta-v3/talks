@@ -1,0 +1,8 @@
+# minted
+
+/_minted-main/*
+
+# files
+*.aux
+*.log
+*.vrb
