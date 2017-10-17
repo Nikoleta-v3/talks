@@ -35,14 +35,13 @@
 \usemintedstyle{native}
 
 %%%%%%Title%%%%%%%%
-\title{A trip to earth science with Python as a companion}
+\title{\LARGE{A trip to earth science with Python as a companion}}
 \author{@NikoletaGlyn}
 \date{}
 \institute[]
 {
 \begin{center}
-    %\includegraphics[width=.15\textwidth]{static/pyconuk.png}
-    \includegraphics[width=.20\textwidth]{static/PyDiff.png}
+    \includegraphics[width=.3\textwidth]{static/pycon.png}
 \end{center}
 }
 
@@ -55,8 +54,8 @@
     \pause
     \textcolor{orange}{
     \begin{todolist}
-        \item[\done] several things have been invented by our ancestors;
-        \item[\done] mathematics make use of our alphabet;
+        \item[\done] several things have been invented by my ancestors;
+        \item[\done] mathematics make use of my alphabet;
     \end{todolist}
     }
 \end{frame}
@@ -128,6 +127,26 @@
 
 \end{frame}
 
+
+\begin{frame}[fragile]
+\LARGE{
+  \begin{center}
+    \begin{tabular}{ll}
+    \toprule
+   \textcolor{orange}{Class} & \textcolor{orange}{Magnitude} \\
+    \midrule
+Great  &  8 or more \\
+Major &  7 - 7.9 \\
+Strong  &  6 - 6.9 \\
+Moderate  &  5 - 5.9 \\
+Light &  4 - 4.9 \\
+Minor &  3 -3.9 \\
+    \bottomrule
+   \end{tabular}
+  \end{center}
+  }
+\end{frame}
+
 \begin{frame}[fragile]
     \begin{minted}
     [
@@ -194,7 +213,7 @@
 >>> report = earthquakes.get_report()
 >>> report['title']
 'USGS Significant Earthquakes, Past Hour'
->>> report = earthquakes.get_report('hour', 'all')
+>>> report = earthquakes.get_report('week', '4.5')
     \end{minted}
 \end{frame}
 
@@ -241,8 +260,7 @@ import numpy as np
 plt.figure()
 my_map = Basemap(projection='ortho', 
                  lat_0=22,  lon_0=30.22, 
-                 resolution='h',
-                 area_thresh=1000.0)
+                 resolution='h')
 my_map.drawcoastlines()
 
 
@@ -281,8 +299,7 @@ import numpy as np
 plt.figure()
 my_map = Basemap(projection='ortho', 
                  lat_0=22,  lon_0=30.22, 
-                 resolution='h',
-                 area_thresh=1000.0)
+                 resolution='h')
 my_map.drawcoastlines()
 my_map.drawcountries()
 my_map.fillcontinents(color='orange')
@@ -322,8 +339,7 @@ plt.show()
 plt.figure()
 my_map = Basemap(projection='merc', 
                  lat_0=40, lon_0=19,
-                 resolution = 'l', 
-                 area_thresh = 1000.0,
+                 resolution = 'h',
                  llcrnrlon=20.577,
                  llcrnrlat=33.568
                  urcrnrlon=28.1905, 
@@ -332,7 +348,6 @@ my_map = Basemap(projection='merc',
 my_map.drawcoastlines()
 my_map.drawcountries()
 my_map.fillcontinents(color='orange')
-
 
 
 
@@ -363,8 +378,7 @@ plt.show()
 plt.figure()
 my_map = Basemap(projection='merc', 
                  lat_0=40, lon_0=19,
-                 resolution = 'l', 
-                 area_thresh = 1000.0,
+                 resolution = 'h',
                  llcrnrlon=20.577,
                  llcrnrlat=33.568
                  urcrnrlon=28.1905, 
@@ -407,11 +421,26 @@ plt.show()
     \includegraphics[width=\textwidth]{static/obspy.pdf}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 	\begin{center}
+
+\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\small
+    ]
+{python}
+>>> import quakefeeds
+>>> import earthquakes
+>>> from mpl_toolkits.basemap import Basemap
+>>> import obspy
+\end{minted}
+
 		\huge{\textbf{}}\\~\\
-		\small{@NikoletaGlyn}\\
-		\small{https://github.com/Nikoleta-v3}\\
+		\large{@NikoletaGlyn}\\
+		\large{https://github.com/Nikoleta-v3}\\
 	\end{center}
 \end{frame}
 

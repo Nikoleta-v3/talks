@@ -29,6 +29,9 @@ Wales Mathematics Colloquium, Gregynog Hall 2017.
 literature]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
 /main.pdf) - Euroscipy, Erlangen Germany 2017.
 
++ [A trip to earth science with python as a companion]({{ site.baseurl }}/talks//2017-10-29-PyConUK
+/main.pdf) - PyConUK, Cardiff 2017.
+
 Lightning Talks
 ---------------
 
