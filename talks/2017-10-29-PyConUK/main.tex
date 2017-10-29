@@ -1,0 +1,448 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%Solarized Theme%%%%%%%%%%%%%%%
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+
+%%%%%Packages%%%%%
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl, xcolor}
+\usepackage{booktabs}
+\usepackage{standalone}
+\usepackage{marvosym}
+\usepackage{color}
+\usepackage{animate,media9,movie15}
+
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+
+\usepackage{minted}
+
+\definecolor{DarkGray}{gray}{0.1}
+\definecolor{DarkGray}{gray}{0.1}
+\usemintedstyle{native}
+
+%%%%%%Title%%%%%%%%
+\title{\LARGE{A trip to earth science with Python as a companion}}
+\author{@NikoletaGlyn}
+\date{}
+\institute[]
+{
+\begin{center}
+    \includegraphics[width=.3\textwidth]{static/pycon.png}
+\end{center}
+}
+
+\begin{document}
+
+\maketitle  
+
+\begin{frame}
+    \Large{\textcolor{orange}{HINTS:}}
+    \pause
+    \textcolor{orange}{
+    \begin{todolist}
+        \item[\done] several things have been invented by my ancestors;
+        \item[\done] mathematics make use of my alphabet;
+    \end{todolist}
+    }
+\end{frame}
+
+\begin{frame}
+\centering
+    \includegraphics[width=.75\textwidth]{static/map-kos.png}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=0.65\textwidth]{static/earth_quake_kos.jpg}
+    \vspace{10pt}
+    \includegraphics[width=0.65\textwidth]{static/quake_two.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\movie[width=0.6\textwidth, height=0.4\textheight,autostart, loop]{}{static/adventure.mp4}
+\end{center}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includestandalone[width=0.60\textwidth]{static/earth}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includestandalone[width=0.60\textwidth]{static/cut_earth}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize
+    ]
+    {python}
+>>> import quakefeeds
+    \end{minted}
+
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize,
+    ]
+    {python}
+>>> from quakefeeds import QuakeFeed
+
+>>> feed = QuakeFeed("2.5", "month")
+>>> feed.title
+'USGS Magnitude 2.5+ Earthquakes, Past Month'
+    \end{minted}
+\end{frame}
+
+\begin{frame}
+\centering
+\Large{\textcolor{orange}{MAGNITUDE}}
+
+\vspace{30pt}
+
+\includestandalone[width=0.4\textwidth]{static/seismic_wave}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\LARGE{
+  \begin{center}
+    \begin{tabular}{ll}
+    \toprule
+   \textcolor{orange}{Class} & \textcolor{orange}{Magnitude} \\
+    \midrule
+Great  &  8 or more \\
+Major &  7 - 7.9 \\
+Strong  &  6 - 6.9 \\
+Moderate  &  5 - 5.9 \\
+Light &  4 - 4.9 \\
+Minor &  3 -3.9 \\
+    \bottomrule
+   \end{tabular}
+  \end{center}
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny
+    ]
+    {python}
+{'geometry': {'coordinates': [27.3346, 36.9405, 5.01], 'type': 'Point'},
+ 'id': 'us1000apsm',
+ 'properties': {'alert': None,
+  'cdi': 4.1,
+  'code': '1000apsm',
+  'detail': 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000apsm.geojson',
+  'dmin': 0.962,
+  'felt': 59,
+  'gap': 45,
+  'ids': ',us1000apsm,',
+  'mag': 4.4,
+  'magType': 'mb',
+  'mmi': None,
+  'net': 'us',
+  'nst': None,
+  'place': '6km NE of Kos, Greece',
+  'rms': 0.82,
+  'sig': 322,
+  'sources': ',us,',
+  'status': 'reviewed',
+  'time': 1507665564350,
+  'title': 'M 4.4 - 6km NE of Kos, Greece',
+  'tsunami': 0,
+  'type': 'earthquake',
+  'types': ',dyfi,geoserve,origin,phase-data,',
+  'tz': 120,
+  'updated': 1508097562926,
+  'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/us1000apsm'},
+ 'type': 'Feature'}
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize
+    ]
+    {python}
+>>> import earthquakes
+    \end{minted}
+
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize,
+    ]
+    {python}
+>>> from earthquakes import earthquakes
+
+>>> report = earthquakes.get_report()
+>>> report['title']
+'USGS Significant Earthquakes, Past Hour'
+>>> report = earthquakes.get_report('week', '4.5')
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\footnotesize
+    ]
+    {python}
+>>> create_map = feed.create_google_map(style="titled")
+>>> feed.write_google_map("map.html", style="titled")
+    \end{minted}
+\end{frame}
+
+\begin{frame}
+\centering
+\Large{\textcolor{orange}{MATPLOTLIB BASEMAP TOOLKIT}}
+
+\vfill 
+
+\small{\url{http://introtopython.org/visualization_earthquakes.html}}  
+\end{frame}
+
+
+\begin{frame}[fragile]
+\tiny{
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny
+    ]
+{python}
+from mpl_toolkits.basemap import Basemap
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.figure()
+my_map = Basemap(projection='ortho', 
+                 lat_0=22,  lon_0=30.22, 
+                 resolution='h')
+my_map.drawcoastlines()
+
+
+
+
+
+
+
+
+plt.show()
+\end{minted}
+\end{column}
+\begin{column}{0.55\textwidth}
+\includegraphics[width=\textwidth]{static/simple_map.pdf}
+\end{column}
+\end{columns}
+}
+\end{frame}
+
+\begin{frame}[fragile]
+\tiny{
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny
+    ]
+{python}
+from mpl_toolkits.basemap import Basemap
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.figure()
+my_map = Basemap(projection='ortho', 
+                 lat_0=22,  lon_0=30.22, 
+                 resolution='h')
+my_map.drawcoastlines()
+my_map.drawcountries()
+my_map.fillcontinents(color='orange')
+my_map.drawmapboundary()
+ 
+meridians = np.arange(0, 360, 30)
+parallels = np.arange(-90, 90, 30)
+my_map.drawmeridians(meridians)
+my_map.drawparallels(parallels)
+
+plt.show()
+\end{minted}
+\end{column}
+\begin{column}{0.55\textwidth}
+\includegraphics[width=\textwidth]{static/earth_map_two.pdf}
+\end{column}
+\end{columns}
+}
+\end{frame}
+
+\begin{frame}
+    \includegraphics[width=1\textwidth]{static/part_2_map.pdf}
+\end{frame}
+
+\begin{frame}[fragile]
+\tiny{
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny
+    ]
+{python}
+plt.figure()
+my_map = Basemap(projection='merc', 
+                 lat_0=40, lon_0=19,
+                 resolution = 'h',
+                 llcrnrlon=20.577,
+                 llcrnrlat=33.568
+                 urcrnrlon=28.1905, 
+                 urcrnrlat=39.701)
+ 
+my_map.drawcoastlines()
+my_map.drawcountries()
+my_map.fillcontinents(color='orange')
+
+
+
+
+plt.axis('off')
+plt.show()
+\end{minted}
+\end{column}
+\begin{column}{0.51\textwidth}
+\includegraphics[width=\textwidth]{static/greece_map.pdf}
+\end{column}
+\end{columns}
+}
+\end{frame}
+
+\begin{frame}[fragile]
+\tiny{
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\tiny
+    ]
+{python}
+plt.figure()
+my_map = Basemap(projection='merc', 
+                 lat_0=40, lon_0=19,
+                 resolution = 'h',
+                 llcrnrlon=20.577,
+                 llcrnrlat=33.568
+                 urcrnrlon=28.1905, 
+                 urcrnrlat=39.701)
+ 
+my_map.drawcoastlines()
+my_map.drawcountries()
+my_map.fillcontinents(color='orange')
+
+x,y = my_map(lons, lats)
+my_map.plot(x, y, 'ro', markersize=10)
+
+plt.axis('off')
+plt.show()
+\end{minted}
+\end{column}
+\begin{column}{0.51\textwidth}
+\includegraphics[width=\textwidth]{static/kos_map.pdf}
+\end{column}
+\end{columns}
+}
+\end{frame}
+
+\begin{frame}
+    \includegraphics[width=\textwidth]{static/mexico.pdf}
+\end{frame}
+
+\begin{frame}
+    \includegraphics[width=\textwidth]{static/world_map.pdf}
+\end{frame}
+
+\begin{frame}
+\centering
+    \includegraphics[width=\textwidth]{static/logo.png}
+    
+    \small{\url{https://github.com/obspy/obspy/wiki}}
+\end{frame}
+
+\begin{frame}
+    \includegraphics[width=\textwidth]{static/obspy.pdf}
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{center}
+
+\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\small
+    ]
+{python}
+>>> import quakefeeds
+>>> import earthquakes
+>>> from mpl_toolkits.basemap import Basemap
+>>> import obspy
+\end{minted}
+
+		\huge{\textbf{}}\\~\\
+		\large{@NikoletaGlyn}\\
+		\large{https://github.com/Nikoleta-v3}\\
+	\end{center}
+\end{frame}
+
+\end{document}
+
