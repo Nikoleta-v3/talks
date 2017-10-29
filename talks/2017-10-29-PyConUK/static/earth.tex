@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+%draw of base circles and ellipse's
+\draw[orange, thick] (0,0,0)   circle   (2.0);
+\draw[orange, thick] (0,0,0) ellipse (2.0 and 0.3);
+\draw[orange, thick] (0,0,0) ellipse (0.75 and 2.0);
+
+\node[orange] (0) at (0, 2.2) {$N$};
+\node[orange] (0) at (0, -2.2) {$S$};
+\node[orange] (0) at (-2.3, -0) {$W$};
+\node[orange] (0) at (2.2, -0) {$E$};
+\end{tikzpicture}
+
+\end{document}
