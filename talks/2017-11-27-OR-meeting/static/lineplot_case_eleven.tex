@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\usepackage{color}
+
+\begin{document}
+
+    \begin{tikzpicture}
+
+    \draw[->, line width=3pt] (-3, 0) -- (6, 0) node[right] {$p$};
+    \draw[->, line width=3pt] (0,-2) -- (0,5) node[above] {$u_q$};
+
+    \draw[line width=3pt] (-5.9, 1) sin (-4.5, 4) cos (-3.6, 3) sin (-1.8, 1) cos (0, 4);
+
+    \node (0) at (-0.5, 0.5) {\Huge{\textcolor{red}{\(p_{-}\)}}};
+    \node (0) at (-4.5, 4.5) {\Huge{\textcolor{red}{\(p_{+}\)}}};
+
+	\draw [dashed, line width=2mm, red] (5,6) -- (5,-2);
+    \end{tikzpicture}
+
+\end{document}
