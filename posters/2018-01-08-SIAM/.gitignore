@@ -1,0 +1,13 @@
+# minted
+_minted-blog_post/*
+_minted-poster/*
+
+# latex files
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+

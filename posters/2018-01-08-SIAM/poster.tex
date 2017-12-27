@@ -1,0 +1,112 @@
+\documentclass[usenames,dvipsnames,t]{beamer}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{standalone}
+\usepackage{minted}
+\usepackage{lmodern}
+
+\definecolor{DarkGray}{RGB}{5, 66, 81}
+\definecolor{DarkerGray}{RGB}{3, 22, 27}
+
+\usemintedstyle{native}
+
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+\setbeamerfont{block title}{size=\Large}
+\usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.025\linewidth}
+    \end{column}
+    \begin{column}{.5\linewidth}
+        \vspace{0.7cm}
+
+        \centering
+        \textcolor{orange}{\fontsize{180}{400} \selectfont THE POWER}
+        \vspace{0.6cm}
+
+        \textcolor{orange}{\fontsize{180}{400} \selectfont OF MEMORY}
+        \vspace{0.6cm}
+
+        \Large\textcolor{orange}{In interactions both social and biological can memory
+        be advantageous?}
+    \end{column}
+    \begin{column}{.025\linewidth}
+    \end{column}
+    \vrule width 10pt
+
+    \begin{column}{.025\linewidth}
+    \end{column}
+
+    \begin{column}{.4\linewidth}
+        \vspace{2cm}
+
+    \begin{itemize}
+        \item Both players are better of choosing Cooperation (3)
+        \item there is always a temptation for a player to Defect (5).
+    \end{itemize}
+
+        \large{
+        \begin{equation}\label{eq:payoff_matrix_symb}
+             \bordermatrix{~ & C & D \cr
+                              C & (3, 3) & (5, 0) \cr
+                              D & (0, 5) & (1, 1) \cr}
+            \end{equation}
+        }
+    \end{column}
+
+    \begin{column}{.025\linewidth}
+    \end{column}
+\end{columns}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECOND ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.025\linewidth}
+    \end{column}
+    \begin{column}{.5\linewidth}
+        \vspace{0.9cm}
+    
+   \small{In the 1980's, Robert Axelrod carried out a computer tournament of the
+          iterated prisoner's dilemma. In the iterated version of the game the players
+          interact for an infinite number of time and they have access to the full history
+          of the matches. Axelrod's results argued for the first time how
+          cooperation can be evolutionarily advantageous.}
+    
+    \begin{center}
+        \includestandalone[width=0.6\textwidth]{static/memory_one}
+    \end{center}
+
+    \small{In 2012 Press and Dyson studied the iterated prisoner's dilemma in a
+           similar manner. They stated that in a two players interaction, a player
+           with the shortest memory in effect sets the rules of the game. A player
+           with a good memory-one strategy can force the game to be played,
+           effectively, as memory-one. Thus, in the iterated prisoner's dilemma,
+           memory is not advantageous.}
+    \vspace{0.5cm}
+    
+    \small{The purpose of this work is to consider a given memory one strategy 
+    \(q=(q_1, q_2, q_3, q_4)\). However previous work found a way for
+    the opponent of \(q\) to manipulate \(q\), this work will consider an optimisation
+    approach to identify the best response \(p^*=(p_1, p_2, p_3, p_4)\) to a strategy
+    \(q\). In essence answering the question: what is the best memory one strategy
+    against a given other memory one strategy.
+    }
+    \end{column}
+
+    \begin{column}{.5\linewidth}
+    \end{column}
+\end{columns}
+
+\end{document}
