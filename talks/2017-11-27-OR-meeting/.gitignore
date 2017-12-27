@@ -1,0 +1,4 @@
+_minted-main/*
+*.fdb_latexmk
+*.log
+*.fls
