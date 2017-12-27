@@ -1,0 +1,34 @@
+\documentclass{standalone}
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{amssymb}
+    
+    \usepackage{tikz}
+    \usepackage{standalone}
+    \usetikzlibrary{calc}
+    \usepackage{pgfplots}
+    \usepackage{color}
+    
+    \begin{document}
+    
+        \begin{tikzpicture}
+    
+        \node (0) at (-0.5, 0) {$\begin{aligned}
+            f_0 & = 0 \\
+            f_1 & = 0 \\
+            \vdots \\
+            f_n & = 0
+             \end{aligned}$};
+
+        \node(1) at (3, 0.5) {$ M = \begin{bmatrix}
+            \dots \\
+            \dots
+          \end{bmatrix}$};
+        \draw (0) edge[out=70, in=90, ->, thick] node [above] {} (1);
+
+        \node(2) at (1.5, -2) {\small{det$(M)= 0$}};
+        \draw (1) edge[out=-90, in=15, ->, thick] node [above] {} (2);
+        \draw (2) edge[out=180, in=-90, ->, thick] node [above] {} (0);
+        \end{tikzpicture}
+    
+    \end{document}
