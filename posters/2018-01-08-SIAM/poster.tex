@@ -56,17 +56,20 @@
             \item there is always a temptation for a player to Defect (5).
         \end{itemize}
     \end{column}
-    \begin{column}{.35\linewidth}
+    \begin{column}{.09\linewidth}
+    \end{column}
+    \begin{column}{.17\linewidth}
         \vspace{0.1cm}
 
         \large{
-        \begin{equation*}\label{eq:payoff_matrix_symb}
+        \begin{equation}\label{eq:payoff_matrix}
              \bordermatrix{~ & C & D \cr
                               C & (3, 3) & (5, 0) \cr
                               D & (0, 5) & (1, 1) \cr}
-            \end{equation*}}
+            \end{equation}}
     \end{column}
-
+    \begin{column}{.09\linewidth}
+    \end{column}
     \begin{column}{.3\linewidth}
         \begin{center}
             \includestandalone[width=.8\textwidth, height=0.4\textwidth]{static/memory_one}
@@ -97,9 +100,9 @@
         \end{center}
 
         \small{
-        A memory one strategy is denoted by the probabilities of cooperating after each of these states \(p = (p_1, p_2, p_3, p_4) \in \R_{[0,1]} ^ 4\). A match between
-        two memory one players \(p\) and \(q\) can be modelled as a stochastic
-        process; a Markov process.}
+        A memory one strategy is denoted by the probabilities of cooperating after each of these states \(p = (p_1, p_2, p_3, p_4) \in \R_{[0,1]} ^ 4\)~\cite{Nowak1990}.
+        A match between two memory one players \(p\) and \(q\) can be modelled as
+        a Markov chain.}
 
         \begin{equation*}
         M = \left[\begin{matrix}p_{1} q_{1} & p_{1} \left(- q_{1} + 1\right) & q_{1} \left(- p_{1} + 1\right) & \left(- p_{1} + 1\right) \left(- q_{1} + 1\right)\\
@@ -107,6 +110,15 @@
         p_{3} q_{2} & p_{3} \left(- q_{2} + 1\right) & q_{2} \left(- p_{3} + 1\right) & \left(- p_{3} + 1\right) \left(- q_{2} + 1\right)\\
         p_{4} q_{4} & p_{4} \left(- q_{4} + 1\right) & q_{4} \left(- p_{4} + 1\right) & \left(- p_{4} + 1\right) \left(- q_{4} + 1\right)\end{matrix}\right]
         \end{equation*}
+        \vspace{0.3cm}
+
+        Thus the utility of player \(p\) against an opponent \(q\) is given by:
+
+            \[u_q(p) = v \times S_{p}\]
+            \vspace{0.3cm}
+
+        where \(v\) denotes the stationary vector of \(M\) and \(S_{p}\) the payoffs of
+        player \(p\) given by equation~(\ref{eq:payoff_matrix}).
         \vspace{0.5cm}
 
         \textcolor{solarizedGreen}{Against a single opponent:}
@@ -116,11 +128,12 @@
                         {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\]
 
          \[st:  \ p \in \R^4_{[0, 1]}\]
-         \vspace{0.5cm}
+         \vspace{0.3cm}
 
         \small{
         where \(Q, \bar{Q}\) are matrices of \(4 \times 4\), and \(c, \bar{c}\) are 
-        \(4 \times 1\) vectors  defined with the transition probabilities of the opponent's transition probabilities \(q_1, q_2, q_3, q_4\).}
+        \(4 \times 1\) vectors  defined with the transition probabilities of the
+        opponent's transition probabilities \(q_1, q_2, q_3, q_4\).}
     \vspace{2cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PART THREE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -242,6 +255,9 @@
         \faGithub \ Nikoleta-v3}
     \end{column}
     \begin{column}{.7\linewidth}
+
+        \bibliographystyle{plain}
+        \bibliography{bibliography.bib}
     \end{column}
 \end{columns}
 \end{document}
