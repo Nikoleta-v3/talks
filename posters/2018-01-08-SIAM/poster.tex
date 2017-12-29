@@ -25,7 +25,7 @@
 \usecolortheme[dark,accent=cyan]{solarized}
 \beamertemplatenavigationsymbolsempty
 \setbeamerfont{block title}{size=\Large}
-\usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
+\usepackage[orientation=portrait,size=a1,scale=1.4]{beamerposter}
 \newcommand{\R}{\mathbb{R}}
 
 %%%%%%%%%%%%%%%
@@ -58,16 +58,21 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-    \begin{column}{\linewidth}
+    \begin{column}{.9\linewidth}
     \vspace{1cm}
 
     \centering
-    \textcolor{orange}{\fontsize{180}{400} \selectfont THE POWER OF MEMORY}
+    \textcolor{orange}{\fontsize{100}{200} \selectfont THE POWER OF MEMORY}
     \vspace{0.5cm}
 
     \Large\textcolor{orange}{In interactions both social and biological is memory
     size advantageous?}
     \end{column}
+    \begin{column}{.1\linewidth}
+        \vspace{0.5cm}
+    
+            \includegraphics[width=0.8\textwidth]{static/cardiff_uni_logo}
+        \end{column}
 \end{columns}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
@@ -103,6 +108,8 @@
     \begin{column}{.1\linewidth}
     \end{column}
 \end{columns}
+\vspace{0.3cm}
+
 \hrule height 5pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PART ONE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
@@ -125,7 +132,7 @@
         \end{center}
 
         \small{
-        A memory one strategy is denoted by the probabilities of cooperating after each of these states \(p = (p_1, p_2, p_3, p_4) \in \R_{[0,1]} ^ 4\)~\cite{Nowak1990}.
+        A memory one strategy is denoted by the probabilities of cooperating after each of these states \(p = (p_1, p_2, p_3, p_4) \in \R_{[0,1]} ^ 4\).%~\cite{Nowak1990}.
         A match between two memory one players \(p\) and \(q\) can be modelled as
         a Markov chain.}
 
@@ -168,11 +175,20 @@
     \small{
         In order to find the optimal memory on player against a set of opponents
         we need to explore the numeration of the differentiation of:
-        
-        This will be explored using Resultant Theory. The resultant will equal
-        zero if and only if the polynomials of a multivariate system have at least
-        one common root.
+        \vspace{0.3cm}
+
+        \[\dots\]
+
+        \vspace{0.3cm}
+        \small{
+        This will be explored using the \textbf{resultant}.}
+
     }
+
+    \begin{center}
+        \includestandalone[width=.5\textwidth]{static/resultant}
+    \end{center}
+
     \small{
         \begin{itemize}
             \item Dixon's resultant;
@@ -226,8 +242,8 @@
         \begin{center}
             \begin{figure}
             \includegraphics[width=0.6\textwidth]{static/random_vs_one}
-            \caption{The theoretical results were generated with~\cite{sympy, numpy},
-            the simulated ones with~\cite{axelrod}.}
+            % \caption{The theoretical results were generated with~\cite{sympy, numpy},
+            % the simulated ones with~\cite{axelrod}.}
             \end{figure}
         \end{center}
         \vspace{0.5cm}
@@ -275,23 +291,20 @@
 \begin{columns}
     \begin{column}{.05\linewidth}
     \end{column}
-    \begin{column}{.1\linewidth}
+    \begin{column}{.20\linewidth}
         \vspace{0.7cm}
 
-        \includegraphics[width=0.7\textwidth]{static/cardiff_uni_logo.jpg}
-    \end{column}
-    \begin{column}{.1\linewidth}
+        \faTwitter \ NikoletaGlyn
     \end{column}
     \begin{column}{.20\linewidth}
-        \vspace{1.4cm}
+        \vspace{0.7cm}
 
-        \faTwitter \ NikoletaGlyn \\
         \faGithub \ Nikoleta-v3}
     \end{column}
     \begin{column}{.55\linewidth}
-        \scriptsize{
-        \bibliographystyle{abbrv}
-        \bibliography{bibliography.bib}}
+        % \scriptsize{
+        % \bibliographystyle{abbrv}
+        % \bibliography{bibliography.bib}}
     \end{column}
 \end{columns}
 \end{document}
