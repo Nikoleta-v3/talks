@@ -28,6 +28,31 @@
 \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
 \newcommand{\R}{\mathbb{R}}
 
+%%%%%%%%%%%%%%%
+\usepackage{multicol}
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\begin{multicols}{2}[\section*{\refname}]%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist\end{multicols}}
+\makeatother
+%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -166,14 +191,16 @@
         \vspace{0.3cm}
 
         \small{
-        A set of memory one strategies where the transition probabilities of each
-        state are the same, are called \textbf{purely random strategies}.}
+        A memory one strategy where the transition probabilities of each
+        state are the same is called a \textbf{purely random strategy}.}
         \vspace{0.5cm}
 
         \textcolor{solarizedGreen}{Against a single opponent:}
         \vspace{0.3cm}
 
         \[ \max_q: u_q(p) = \frac{n_2p^2 + n_1p +n_0 } {d_1p + d_0}\]
+        \vspace{0.3cm}
+
         \begin{equation*}
             \begin{aligned}
                 st: & \ p_1 = p_2 = p_3 = p_4 = p\\
@@ -190,14 +217,18 @@
         \vspace{0.3cm}
 
         \small{
-        where the set \(S_q\) is defined as}
+        where the set \(S_q\) is defined as,}
         
         \[S_q = \left \{0, p_{\pm}, 1 \left | \begin{array}{l} 0 < p_{\pm} < 1,
             \\ p_{\pm} \neq \frac{-d_0}{d_1} \end{array} \right. \right\}\]
         \vspace{0.5cm}
         
         \begin{center}
+            \begin{figure}
             \includegraphics[width=0.6\textwidth]{static/random_vs_one}
+            \caption{The theoretical results were generated with~\cite{sympy, numpy},
+            the simulated ones with~\cite{axelrod}.}
+            \end{figure}
         \end{center}
         \vspace{0.5cm}
 
@@ -211,7 +242,7 @@
                 & \ p \in \R_{[0, 1]} 
             \end{aligned}
             \end{equation*}
-            \vspace{0.5cm}
+            \vspace{0.3cm}
 
             \small{
             The optimal behaviour of a \textbf{purely random} player \((p, p, p, p)\)
@@ -224,7 +255,8 @@
             
             \small{
             where the set \(S_{q(i)}\) is defined as:}
-            
+            \vspace{0.3cm}
+
             \[ S_{q(i)} =  \overset{2N}{\underset{\lambda_i \neq \frac{do_i}{d1_i}}{\underset{i=1}{u}}} \lambda_i \cup \{0, 1\} \]
             \vspace{0.3cm}
 
@@ -236,28 +268,30 @@
             \end{center}
             \vspace{0.3cm}
     \end{column}
-    \begin{column}{.03\linewidth}
+    \begin{column}{.05\linewidth}
     \end{column}
 \end{columns}
 \hrule height 5pt 
 \begin{columns}
-    \begin{column}{.1\linewidth}
+    \begin{column}{.05\linewidth}
     \end{column}
-    \begin{column}{.2\linewidth}
+    \begin{column}{.1\linewidth}
         \vspace{0.7cm}
 
-        \includegraphics[width=0.4\textwidth]{static/cardiff_uni_logo.jpg}
+        \includegraphics[width=0.7\textwidth]{static/cardiff_uni_logo.jpg}
     \end{column}
-    \begin{column}{.2\linewidth}
-        \vspace{0.7cm}
+    \begin{column}{.1\linewidth}
+    \end{column}
+    \begin{column}{.20\linewidth}
+        \vspace{1.4cm}
 
         \faTwitter \ NikoletaGlyn \\
         \faGithub \ Nikoleta-v3}
     \end{column}
-    \begin{column}{.7\linewidth}
-
-        \bibliographystyle{plain}
-        \bibliography{bibliography.bib}
+    \begin{column}{.55\linewidth}
+        \scriptsize{
+        \bibliographystyle{abbrv}
+        \bibliography{bibliography.bib}}
     \end{column}
 \end{columns}
 \end{document}
