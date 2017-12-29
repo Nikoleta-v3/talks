@@ -8,6 +8,7 @@
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.pathreplacing,angles,quotes}
 
+
 \begin{document}
 
     \begin{tikzpicture}
@@ -30,21 +31,29 @@
 	\node (10) at (7, 0) [state] {$C$};
 	\node (11) at (10, 0) [state] {$\dots$};
 	\node (12) at (13, 0) [state] {$D$};
-	\node (13) at (16, 0) [state] {\dots};
+	\node (13) at (16, 0) [state] {$\dots$};
 
 	\node (14) at (1, -2) [state] {$C$};
 	\node (15) at (4, -2) [state] {$C$};
 	\node (16) at (7, -2) [state] {$D$};
 	\node (17) at (10, -2) [state] {$\dots$};
 	\node (18) at (13, -2) [state] {$D$};
-	\node (19) at (16, -2) [state] {\dots};
+	\node (19) at (16, -2) [state] {$\dots$};
 
-	\draw[decoration={brace, raise=6pt, amplitude=10pt}, decorate, orange, thick] 
+	\draw[decoration={brace, raise=6pt, amplitude=10pt}, decorate, orange, ultra thick] 
 	(11.5, 2.5) -- node[above=10pt] {\textcolor{orange}{\small{memory-$1$}}} (14.5, 2.5);
 
-	\draw[decoration={brace, mirror, raise=5pt, amplitude=10pt}, decorate, cyan, thick] 
-	(0.5, -2.5) -- node[below=10pt] {\textcolor{cyan}{\small{memory size-$m$}}} (14, -2.5);
+	\draw[decoration={brace, mirror, raise=5pt, amplitude=10pt}, decorate, cyan, ultra thick] 
+	(0.5, -2.5) -- node[below=10pt] {\textcolor{cyan}{\small{memory size-$n -1$}}} (14, -2.5);
 	
+	\coordinate (s)  at (15, 3.7);
+
+	\draw[orange, looseness=2] (s) edge[out=0, in=90, ->, ultra thick] (7);
+
+	\coordinate (n)  at (11.5, -3.7);
+
+	\draw[cyan, looseness=0.8] (n) edge[out=0, in=-90, ->, ultra thick] (19);
+
 	\end{tikzpicture}
 
 \end{document}

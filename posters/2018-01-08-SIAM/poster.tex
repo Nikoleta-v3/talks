@@ -3,11 +3,13 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{amssymb}
 \usepackage{color}
 \usepackage{tikz}
 \usepackage{standalone}
 \usepackage{minted}
 \usepackage{lmodern}
+\usepackage{fontawesome}
 
 \definecolor{DarkGray}{RGB}{5, 66, 81}
 \definecolor{DarkerGray}{RGB}{3, 22, 27}
@@ -16,97 +18,230 @@
 
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\tikzset{
+    ultra thick/.style={line width=3pt}
+}
 
 \usecolortheme[dark,accent=cyan]{solarized}
 \beamertemplatenavigationsymbolsempty
 \setbeamerfont{block title}{size=\Large}
 \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
-
+\newcommand{\R}{\mathbb{R}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{\linewidth}
+    \vspace{1cm}
+
+    \centering
+    \textcolor{orange}{\fontsize{180}{400} \selectfont THE POWER OF MEMORY}
+    \vspace{0.5cm}
+
+    \Large\textcolor{orange}{In interactions both social and biological is memory
+    size advantageous?}
+    \end{column}
+\end{columns}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-    \begin{column}{.025\linewidth}
+    \begin{column}{.1\linewidth}
     \end{column}
-    \begin{column}{.5\linewidth}
-        \vspace{0.7cm}
+    \begin{column}{.2\linewidth}
+        \vspace{1.1cm}
 
-        \centering
-        \textcolor{orange}{\fontsize{180}{400} \selectfont THE POWER}
-        \vspace{0.6cm}
-
-        \textcolor{orange}{\fontsize{180}{400} \selectfont OF MEMORY}
-        \vspace{0.6cm}
-
-        \Large\textcolor{orange}{In interactions both social and biological can memory
-        be advantageous?}
+        \begin{itemize}
+            \item Both players are better of choosing Cooperation (3)
+            \item there is always a temptation for a player to Defect (5).
+        \end{itemize}
     \end{column}
-    \begin{column}{.025\linewidth}
-    \end{column}
-    \vrule width 10pt
-
-    \begin{column}{.025\linewidth}
-    \end{column}
-
-    \begin{column}{.4\linewidth}
-        \vspace{2cm}
-
-    \begin{itemize}
-        \item Both players are better of choosing Cooperation (3)
-        \item there is always a temptation for a player to Defect (5).
-    \end{itemize}
+    \begin{column}{.35\linewidth}
+        \vspace{0.1cm}
 
         \large{
-        \begin{equation}\label{eq:payoff_matrix_symb}
+        \begin{equation*}\label{eq:payoff_matrix_symb}
              \bordermatrix{~ & C & D \cr
                               C & (3, 3) & (5, 0) \cr
                               D & (0, 5) & (1, 1) \cr}
-            \end{equation}
-        }
+            \end{equation*}}
     \end{column}
 
-    \begin{column}{.025\linewidth}
+    \begin{column}{.3\linewidth}
+        \begin{center}
+            \includestandalone[width=.8\textwidth, height=0.4\textwidth]{static/memory_one}
+        \end{center}
+    \end{column}
+    \begin{column}{.1\linewidth}
     \end{column}
 \end{columns}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECOND ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hrule height 5pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PART ONE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-    \begin{column}{.025\linewidth}
+    \begin{column}{.05\linewidth}
     \end{column}
-    \begin{column}{.5\linewidth}
+    \begin{column}{.4\linewidth}
         \vspace{0.9cm}
-    
-   \small{In the 1980's, Robert Axelrod carried out a computer tournament of the
-          iterated prisoner's dilemma. In the iterated version of the game the players
-          interact for an infinite number of time and they have access to the full history
-          of the matches. Axelrod's results argued for the first time how
-          cooperation can be evolutionarily advantageous.}
-    
-    \begin{center}
-        \includestandalone[width=0.6\textwidth]{static/memory_one}
-    \end{center}
 
-    \small{In 2012 Press and Dyson studied the iterated prisoner's dilemma in a
-           similar manner. They stated that in a two players interaction, a player
-           with the shortest memory in effect sets the rules of the game. A player
-           with a good memory-one strategy can force the game to be played,
-           effectively, as memory-one. Thus, in the iterated prisoner's dilemma,
-           memory is not advantageous.}
-    \vspace{0.5cm}
-    
-    \small{The purpose of this work is to consider a given memory one strategy 
-    \(q=(q_1, q_2, q_3, q_4)\). However previous work found a way for
-    the opponent of \(q\) to manipulate \(q\), this work will consider an optimisation
-    approach to identify the best response \(p^*=(p_1, p_2, p_3, p_4)\) to a strategy
-    \(q\). In essence answering the question: what is the best memory one strategy
-    against a given other memory one strategy.
+        \begin{center}
+        \textcolor{orange}{\large{1. OPTIMAL MEMORY ONE STRATEGY IN A MATCH}}
+        \end{center}
+        \vspace{0.3cm}
+
+        \small{
+        Depending on the simultaneous moves of the two players, there are four
+        possibles `states':}
+
+        \begin{center}
+            \includestandalone[width=.5\textwidth]{static/states}
+        \end{center}
+
+        \small{
+        A memory one strategy is denoted by the probabilities of cooperating after each of these states \(p = (p_1, p_2, p_3, p_4) \in \R_{[0,1]} ^ 4\). A match between
+        two memory one players \(p\) and \(q\) can be modelled as a stochastic
+        process; a Markov process.}
+
+        \begin{equation*}
+        M = \left[\begin{matrix}p_{1} q_{1} & p_{1} \left(- q_{1} + 1\right) & q_{1} \left(- p_{1} + 1\right) & \left(- p_{1} + 1\right) \left(- q_{1} + 1\right)\\
+        p_{2} q_{3} & p_{2} \left(- q_{3} + 1\right) & q_{3} \left(- p_{2} + 1\right) & \left(- p_{2} + 1\right) \left(- q_{3} + 1\right)\\
+        p_{3} q_{2} & p_{3} \left(- q_{2} + 1\right) & q_{2} \left(- p_{3} + 1\right) & \left(- p_{3} + 1\right) \left(- q_{2} + 1\right)\\
+        p_{4} q_{4} & p_{4} \left(- q_{4} + 1\right) & q_{4} \left(- p_{4} + 1\right) & \left(- p_{4} + 1\right) \left(- q_{4} + 1\right)\end{matrix}\right]
+        \end{equation*}
+        \vspace{0.5cm}
+
+        \textcolor{solarizedGreen}{Against a single opponent:}
+        \vspace{0.3cm}
+
+        \[\max_q: u_q(p) = \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a} 
+                        {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\]
+
+         \[st:  \ p \in \R^4_{[0, 1]}\]
+         \vspace{0.5cm}
+
+        \small{
+        where \(Q, \bar{Q}\) are matrices of \(4 \times 4\), and \(c, \bar{c}\) are 
+        \(4 \times 1\) vectors  defined with the transition probabilities of the opponent's transition probabilities \(q_1, q_2, q_3, q_4\).}
+    \vspace{2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PART THREE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \textcolor{orange}{\large{3. OPTIMAL MEMORY ONE IN A TOURNAMENT}}
+    \vspace{0.3cm}
+
+    \small{
+        In order to find the optimal memory on player against a set of opponents
+        we need to explore the numeration of the differentiation of:
+        
+        This will be explored using Resultant Theory. The resultant will equal
+        zero if and only if the polynomials of a multivariate system have at least
+        one common root.
+    }
+    \small{
+        \begin{itemize}
+            \item Dixon's resultant;
+            \item Maycalay resultant.
+        \end{itemize}
     }
     \end{column}
 
-    \begin{column}{.5\linewidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PART TWO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{column}{.05\linewidth}
+    \end{column}
+    \begin{column}{.45\linewidth}
+        \vspace{0.9cm}
+    
+        \textcolor{orange}{\large{2. WHAT IS THE OPTIMAL PURE RANDOM STRATEGY?}}
+        \vspace{0.3cm}
+
+        \small{
+        A set of memory one strategies where the transition probabilities of each
+        state are the same, are called \textbf{purely random strategies}.}
+        \vspace{0.5cm}
+
+        \textcolor{solarizedGreen}{Against a single opponent:}
+        \vspace{0.3cm}
+
+        \[ \max_q: u_q(p) = \frac{n_2p^2 + n_1p +n_0 } {d_1p + d_0}\]
+        \begin{equation*}
+            \begin{aligned}
+                st: & \ p_1 = p_2 = p_3 = p_4 = p\\
+                & \ p \in \R_{[0, 1]} 
+            \end{aligned}
+        \end{equation*}
+        \vspace{0.3cm}
+
+        \small{
+        The optimal behaviour of a \textbf{purely random} player \((p, p, p, p)\)
+        against a memory one opponent \(q\) is given by:}
+        
+        \[p^* = \text{argmax}(u_q(p)), \ p \in S_q,\]
+        \vspace{0.3cm}
+
+        \small{
+        where the set \(S_q\) is defined as}
+        
+        \[S_q = \left \{0, p_{\pm}, 1 \left | \begin{array}{l} 0 < p_{\pm} < 1,
+            \\ p_{\pm} \neq \frac{-d_0}{d_1} \end{array} \right. \right\}\]
+        \vspace{0.5cm}
+        
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{static/random_vs_one}
+        \end{center}
+        \vspace{0.5cm}
+
+        \textcolor{solarizedGreen}{Against multiple opponents:}
+        \vspace{0.5cm}
+
+        \[\max_q: \ \frac{\sum_{i=1} ^ {N} {u_q}^{(i)} (p)}{N}\]
+        \begin{equation*}
+            \begin{aligned}
+            st: & \ p_1 = p_2 = p_3 = p_4 = p\\
+                & \ p \in \R_{[0, 1]} 
+            \end{aligned}
+            \end{equation*}
+            \vspace{0.5cm}
+
+            \small{
+            The optimal behaviour of a \textbf{purely random} player \((p, p, p, p)\)
+            in an \(N-\)memory one player tournament, \(\{q_{(1)}, q_{(2)} \dots,q_{(N)} \}
+            \) is given by:}
+            \vspace{0.3cm}
+
+            \[p^* = \text{argmax}(\displaystyle \sum_{i=1} ^ {N} {u_q}^{(i)} (p)), \ p \in S_{q(i)},\]
+            \vspace{0.3cm}
+            
+            \small{
+            where the set \(S_{q(i)}\) is defined as:}
+            
+            \[ S_{q(i)} =  \overset{2N}{\underset{\lambda_i \neq \frac{do_i}{d1_i}}{\underset{i=1}{u}}} \lambda_i \cup \{0, 1\} \]
+            \vspace{0.3cm}
+
+            Note the size of candidate solutions is \( 1 \leq|S_{q(i)}| \leq 2N + 2\).
+            \vspace{0.3cm}
+
+            \begin{center}
+                \includegraphics[width=0.6\textwidth]{static/random_vs_multiple}
+            \end{center}
+            \vspace{0.3cm}
+    \end{column}
+    \begin{column}{.03\linewidth}
     \end{column}
 \end{columns}
+\hrule height 5pt 
+\begin{columns}
+    \begin{column}{.1\linewidth}
+    \end{column}
+    \begin{column}{.2\linewidth}
+        \vspace{0.7cm}
 
+        \includegraphics[width=0.4\textwidth]{static/cardiff_uni_logo.jpg}
+    \end{column}
+    \begin{column}{.2\linewidth}
+        \vspace{0.7cm}
+
+        \faTwitter \ NikoletaGlyn \\
+        \faGithub \ Nikoleta-v3}
+    \end{column}
+    \begin{column}{.7\linewidth}
+    \end{column}
+\end{columns}
 \end{document}

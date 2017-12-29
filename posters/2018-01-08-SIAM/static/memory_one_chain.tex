@@ -1,0 +1,49 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+    \begin{tikzpicture}
+
+    \tikzstyle{state}=[minimum width=1cm, font=\boldmath];
+    
+
+	\node[circle, draw, thick] (0) at (0, 0) [state] {CC};
+	\node[circle, draw, thick] (1) at (8, 0) [state] {CD};
+	\node[circle, draw, thick] (2) at (0, -8) [state] {DC};
+	\node[circle, draw, thick] (3) at (8, -8) [state] {DD};
+
+	\node (p1) at (2, 2) {\textcolor{cyan}C};
+	\node (minus_p1) at (2, -2) {\textcolor{brown}D};
+
+	\node (p2) at (10, 2) {\textcolor{cyan}C};
+	\node (minus_p2) at (10, -2) {\textcolor{brown}D};
+
+	\node (p3) at (2, -6) {\textcolor{cyan}C};
+	\node (minus_p3) at (2, -10) {\textcolor{brown}D};
+
+	\node (p4) at (10, -6) {\textcolor{cyan}C};
+	\node (minus_p4) at (10, -10) {\textcolor{brown}D};
+
+	\draw (0) edge[cyan, out=90, in=180, ->, ultra thick] node [above] {$p_1$} (p1);
+	\draw (0) edge[brown, out=-90, in=180, ->, ultra thick] node [below] {$1-p_1$} (minus_p1);
+
+	\draw (1) edge[cyan, out=90, in=180, ->, ultra thick] node [above] {$p_2$} (p2);
+	\draw (1) edge[brown, out=-90, in=180, ->, ultra thick] node [below] {$1-p_2$} (minus_p2);
+
+	\draw (2) edge[cyan, out=90, in=180, ->, ultra thick] node [above] {$p_3$} (p3);
+	\draw (2) edge[brown, out=-90, in=180, ->, ultra thick] node [below] {$1-p_3$} (minus_p3);
+
+	\draw (3) edge[cyan, out=90, in=180, ->, ultra thick] node [above] {$p_4$} (p4);
+	\draw (3) edge[brown, out=-90, in=180, ->, ultra thick] node [below] {$1-p_4$} (minus_p4);
+
+
+
+
+
+    \end{tikzpicture}
+
+\end{document}
