@@ -101,7 +101,7 @@ angles, quotes, decorations.pathmorphing}
         \small{
             W. H. Press and F. J. Dyson. \textbf{Iterated Prisoner’s
             Dilemma contains strategies that dominate any evolutionary opponent}
-            PNAS 2012. Introducing the zero determinant strategies:
+            PNAS 2012.%Introducing the zero determinant strategies:
             \[p ^ * \rightarrow \text{ manipulates } \rightarrow q\]
         }
         \vspace{1cm}
@@ -110,22 +110,23 @@ angles, quotes, decorations.pathmorphing}
         This work considers an optimisation approach to identify:
         \[ p ^ * \rightarrow \text{ best response } \rightarrow q\]
             }
-        % \small{
-        %  \[\max_q: u_q(p) = \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
+        % \small{\textcolor{solarizedGreen}{
+        %  \[\max_q: \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
         %           {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\]
-        %     }
+        %     }}
     \end{column}
     \begin{column}{.2\linewidth}
     \end{column}
 \end{columns}
-\vspace{0.7cm}
+% \vspace{0.1cm}
 
-\hrule height 5pt
+\hrule height 3pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECOND ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
     \begin{column}{.8\linewidth}
         \begin{center}
             \textcolor{orange}{\Large{PURELY RANDOM STRATEGIES \(p=(p, p, p, p)\)}}
+            \vspace{1cm}
         \end{center}
     \end{column}
     \begin{column}{.2\linewidth}
@@ -139,10 +140,11 @@ angles, quotes, decorations.pathmorphing}
     \begin{column}{.4\linewidth}
         \centering
         \textcolor{solarizedOrange}{\large{AGAINST A SINGLE OPPONENT}}
+        \vspace{.3cm}
 
         \begin{minipage}{50cm}
         \begin{block}
-            
+
             \[p^* = \text{argmax}(u_q(p)), \ p \in S_q,\]
             \vspace{0.3cm}
 
@@ -153,12 +155,14 @@ angles, quotes, decorations.pathmorphing}
             \\ p_{\pm} \neq \frac{-d_0}{d_1} \end{array} \right. \right\}\]
         \end{block}
     \end{minipage}
-    
-    \includestandalone[width=.3\textwidth]{static/single_opponent}
+    \vspace{0.3cm}
+
+    \includestandalone[width=.45\textwidth]{static/single_opponent}
     \end{column}
     \begin{column}{.4\linewidth}
         \centering
-        \textcolor{solarizedOrange}{\large{AGAINST MULTIPLE OPPONENTS}}
+        \textcolor{solarizedYellow}{\large{AGAINST MULTIPLE OPPONENTS}}
+        \vspace{.3cm}
 
         \begin{minipage}{50cm}
             \begin{block}
@@ -175,50 +179,75 @@ angles, quotes, decorations.pathmorphing}
             Note the size of candidate solutions is \( 1 \leq|S_{q(i)}| \leq 2N + 2\).
             \end{block}
         \end{minipage}
+        \vspace{.3cm}
 
-        \includestandalone[width=.3\textwidth]{static/multiple_opponents}
+        \includestandalone[width=.35\textwidth]{static/multiple_opponents}
     \end{column}
     \begin{column}{.2\linewidth}
         \begin{enumerate}
-            \item The first
-            \item The second
-            \item The third
+            \item The utility of a given player \(p\) against a given opponent \(q\) 
+            is a ratio of quadratic forms.
+            \item Optimization procedures, often reducing the complex optimisation 
+            problem to a search over a small finite set are found.
+            \item Complex strategies outperform optimal purely random.
         \end{enumerate}
+        \vspace{1cm}
 
         \begin{center}
-            \textcolor{orange}{\Large{FUTURE WORK}}
+            \textcolor{orange}{\Large{FUTURE WORK}} \\
+            \textcolor{orange}{\small{RESULTANT THEORY}}
         \end{center}
     \begin{center}
-        \includestandalone[width=.5\textwidth]{static/resultant}
+        \includestandalone[width=.6\textwidth]{static/resultant}
     \end{center}
     \end{column}
 \end{columns}
+\vspace{1cm}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%THIRD ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=\textwidth]{static/plot_one}
+    \begin{column}{.03\linewidth}
     \end{column}
     \begin{column}{.2\linewidth}
-        \includegraphics[width=\textwidth]{static/plot_two}
+        \vspace{1cm}
+        \includegraphics[width=.8\textwidth]{static/plot_one}
     \end{column}
     \begin{column}{.2\linewidth}
-        \includegraphics[width=\textwidth]{static/plot_three}
+        \includegraphics[width=.8\textwidth]{static/plot_two}
     \end{column}
     \begin{column}{.2\linewidth}
-        \includegraphics[width=\textwidth]{static/plot_four}
+        \includegraphics[width=.8\textwidth]{static/plot_three}
     \end{column}
     \begin{column}{.2\linewidth}
-        \includegraphics[width=\textwidth]{static/plot_four}
+        \includegraphics[width=.8\textwidth]{static/plot_four}
+    \end{column}
+    \begin{column}{.2\linewidth}
+        \includegraphics[width=.8\textwidth, height=0.57\textwidth]{static/tournament}
     \end{column}
 \end{columns}
-\vspace{1cm}
+\vspace{0.3cm}
 
-\hrule height 5pt
+\hrule height 3pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-    \begin{column}{.8\linewidth}
-        \hspace{1cm}
-     \textbf{ \faTwitter \ NikoletaGlyn \hspace{2cm} In case you missed me: \url{nikoleta-v3.github.io/blog/2017/08/23/grudges-war-GoT.html} \hspace{2cm} \faGithub \ Nikoleta-v3}
-     \end{column}
+    \begin{column}{.1\linewidth}
+
+        \centering
+        \textbf{ \faTwitter \ NikoletaGlyn}
+    \end{column}
+    \begin{column}{.55\linewidth}
+
+        \centering
+        \textbf{ In case you missed me: \url{nikoleta-v3.github.io/blog/2017/08/23/power-of-memoty.html}}
+    \end{column}
+    \begin{column}{.1\linewidth}
+
+        \centering
+        \textbf{ \faGithub \ Nikoleta-v3}
+    \end{column}
+    \begin{column}{.1\linewidth}
+
+        \centering
+        \textbf{Cardiff University}
+    \end{column}
 \end{columns}
 \end{document}
