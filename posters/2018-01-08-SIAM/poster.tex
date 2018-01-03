@@ -10,6 +10,7 @@
 \usepackage{minted}
 %\usepackage{lmodern}
 \usepackage{fontawesome}
+\usepackage{setspace}
 
 \definecolor{DarkGray}{RGB}{5, 66, 81}
 \definecolor{DarkerGray}{RGB}{3, 22, 27}
@@ -18,6 +19,7 @@
 
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.arrows}
 \tikzset{
     ultra thick/.style={line width=3pt}
 }
@@ -28,31 +30,7 @@
 \usepackage[orientation=landscape,size=a1,scale=1.4]{beamerposter}
 \newcommand{\R}{\mathbb{R}}
 
-%%%%%%%%%%%%%%%
-\usepackage{multicol}
-
-\makeatletter
-\renewenvironment{thebibliography}[1]
-     {\begin{multicols}{2}[\section*{\refname}]%
-      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
-      \list{\@biblabel{\@arabic\c@enumiv}}%
-           {\settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \@openbib@code
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist\end{multicols}}
-\makeatother
-%%%%%%%%%%%%%%%
+\renewcommand{\arraystretch}{1.2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -60,72 +38,78 @@
 \begin{columns}
     % \begin{column}{.1\linewidth}
     % \end{column}
-    \begin{column}{.50\linewidth}
-    \vspace{1cm}
+    \begin{column}{.55\linewidth}
+    \vspace{1.5cm}
 
     \centering
-    \textcolor{orange}{\fontsize{100}{110} \selectfont THE POWER OF MEMORY}
-    \vspace{0.5cm}
+    \textcolor{orange}{\fontsize{110}{120} \selectfont THE POWER OF MEMORY}
+    \vspace{0.7cm}
 
     \Large\textcolor{orange}{In interactions both social and biological is memory
     size advantageous?}
     \end{column}
     \begin{column}{.2\linewidth}
-        % \vspace{0.7cm}
-    
-        \Large{
-        \begin{equation*}\label{eq:payoff_matrix}
-             \bordermatrix{     & C & D \cr
-                              C ~~ & (3, 3) & (5, 0) \cr
-                              D ~~ & (0, 5) & (1, 1) \cr}
-            \end{equation*}}
-        \end{column}
-    \begin{column}{.3\linewidth}
+        
         \begin{center}
-            \includestandalone[width=.7\textwidth, height=0.3\textwidth]{static/memory_one}
+            \includestandalone[width=.75\textwidth]{static/matrix}
         \end{center}
+        \end{column}
+    \begin{column}{.23\linewidth}
+
+        \includestandalone[width=\textwidth]{static/memory_one}
+    \end{column}
+    \begin{column}{.02\linewidth}
+    \end{column}
+\end{columns}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.2\linewidth}
+        \vspace{-.9cm}
+        \begin{center}
+            \includestandalone[width=.8\textwidth]{static/states}
+        \end{center}
+    \end{column}
+    \begin{column}{.1\linewidth}
+        \vspace{3.5cm}
+
+            \includestandalone[width=.5\textwidth]{static/arrow}
+    \end{column}
+    \begin{column}{.25\linewidth}
+        \vspace{1.5cm}
+
+        \hspace{-2cm}\input{static/m_matrix} 
+    \end{column}
+    \begin{column}{.1\linewidth}
+        \vspace{1.5cm}
+
+        \includestandalone[width=.6\textwidth]{static/trident_arrow}
+    \end{column}
+    \begin{column}{.35\linewidth}
+        \vspace{1cm}
+
+        \small{
+            W. H. Press and F. J. Dyson. \textbf{Iterated Prisoner’s
+            Dilemma contains strategies that dominate any evolutionary opponent}
+            PNAS 2012. Introducing the zero determinant strategies:
+            \[p ^ * \rightarrow \text{ manipulates } \rightarrow q\]
+        }
+        \vspace{1cm}
+
+        \small{
+        This work considers an optimisation approach to identify:
+        \[ p ^ * \rightarrow \text{ best response } \rightarrow q\]
+            }
+        % \small{
+        %  \[\max_q: u_q(p) = \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
+        %           {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\]
+        %     }
+    \end{column}
+    \begin{column}{.2\linewidth}
     \end{column}
 \end{columns}
 \vspace{0.7cm}
 
 \hrule height 5pt
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{columns}
-%     \begin{column}{.1\linewidth}
-%     \end{column}
-%     \begin{column}{.2\linewidth}
-%         \vspace{1.1cm}
-
-%         \begin{itemize}
-%             \item Both players are better of choosing Cooperation (3)
-%             \item there is always a temptation for a player to Defect (5).
-%         \end{itemize}
-%     \end{column}
-%     \begin{column}{.09\linewidth}
-%     \end{column}
-%     \begin{column}{.17\linewidth}
-%         \vspace{0.1cm}
-
-%         \large{
-%         \begin{equation}\label{eq:payoff_matrix}
-%              \bordermatrix{~ & C & D \cr
-%                               C & (3, 3) & (5, 0) \cr
-%                               D & (0, 5) & (1, 1) \cr}
-%             \end{equation}}
-%     \end{column}
-%     \begin{column}{.09\linewidth}
-%     \end{column}
-%     \begin{column}{.3\linewidth}
-%         \begin{center}
-%             \includestandalone[width=.8\textwidth, height=0.4\textwidth]{static/memory_one}
-%         \end{center}
-%     \end{column}
-%     \begin{column}{.1\linewidth}
-%     \end{column}
-% \end{columns}
-% \vspace{0.7cm}
-
-% \hrule height 5pt
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PART ONE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{columns}
 %     \begin{column}{.05\linewidth}
@@ -324,4 +308,12 @@
 %         % \bibliography{bibliography.bib}}
 %     \end{column}
 % \end{columns}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.8\linewidth}
+        \hspace{1cm}
+     \textbf{ \faTwitter \ NikoletaGlyn \hspace{2cm} In case you missed me: \url{nikoleta-v3.github.io/blog/2017/08/23/grudges-war-GoT.html} \hspace{2cm} \faGithub \ Nikoleta-v3}
+     \end{column}
+\end{columns}
 \end{document}
