@@ -123,25 +123,16 @@ angles, quotes, decorations.pathmorphing}
 \hrule height 3pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECOND ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%LEFT PART%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{column}{.8\linewidth}
         \begin{center}
             \textcolor{orange}{\Large{PURELY RANDOM STRATEGIES \(p=(p, p, p, p)\)}}
             \vspace{1cm}
-        \end{center}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \begin{center}
-            \textcolor{orange}{\Large{RESULTS}}
-        \end{center}
-    \end{column}
-\end{columns}
 
+            \hspace{-2cm}\includestandalone[width=.7\textwidth]{static/purely_random_section_diagram}
+        \end{center}
 \begin{columns}
     \begin{column}{.4\linewidth}
-        \centering
-        \textcolor{solarizedOrange}{\large{AGAINST A SINGLE OPPONENT}}
-        \vspace{.3cm}
-
         \begin{minipage}{50cm}
         \begin{block}
 
@@ -152,18 +143,12 @@ angles, quotes, decorations.pathmorphing}
             where the set \(S_q\) is defined as,}
         
             \[S_q = \left \{0, p_{\pm}, 1 \left | \begin{array}{l} 0 < p_{\pm} < 1,
-            \\ p_{\pm} \neq \frac{-d_0}{d_1} \end{array} \right. \right\}\]
+            \\ p_{\pm} \neq \frac{-d_0}{d_1} \end{array} \right. \right\}\] \\
+
         \end{block}
     \end{minipage}
-    \vspace{0.3cm}
-
-    \includestandalone[width=.45\textwidth]{static/single_opponent}
     \end{column}
     \begin{column}{.4\linewidth}
-        \centering
-        \textcolor{solarizedYellow}{\large{AGAINST MULTIPLE OPPONENTS}}
-        \vspace{.3cm}
-
         \begin{minipage}{50cm}
             \begin{block}
 
@@ -174,58 +159,31 @@ angles, quotes, decorations.pathmorphing}
             where the set \(S_{q(i)}\) is defined as:}
 
             \[ S_{q(i)} =  \overset{2N}{\underset{\lambda_i \neq \frac{do_i}{d1_i}}{\underset{i=1}{u}}} \lambda_i \cup \{0, 1\} \]
-             \vspace{0.3cm}
-
-            Note the size of candidate solutions is \( 1 \leq|S_{q(i)}| \leq 2N + 2\).
             \end{block}
         \end{minipage}
-        \vspace{.3cm}
-
-        \includestandalone[width=.35\textwidth]{static/multiple_opponents}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \begin{enumerate}
-            \item The utility of a given player \(p\) against a given opponent \(q\) 
-            is a ratio of quadratic forms.
-            \item Optimization procedures, often reducing the complex optimisation 
-            problem to a search over a small finite set are found.
-            \item Complex strategies outperform optimal purely random.
-        \end{enumerate}
-        \vspace{1cm}
-
-        \begin{center}
-            \textcolor{orange}{\Large{FUTURE WORK}} \\
-            \textcolor{orange}{\small{RESULTANT THEORY}}
-        \end{center}
-    \begin{center}
-        \includestandalone[width=.6\textwidth]{static/resultant}
-    \end{center}
     \end{column}
 \end{columns}
-\vspace{1cm}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%THIRD ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{columns}
-    \begin{column}{.03\linewidth}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \vspace{1cm}
-        \includegraphics[width=.8\textwidth]{static/plot_one}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=.8\textwidth]{static/plot_two}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=.8\textwidth]{static/plot_three}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=.8\textwidth]{static/plot_four}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=.8\textwidth, height=0.57\textwidth]{static/tournament}
-    \end{column}
-\end{columns}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{0.3cm}
+\begin{center}
+    \textcolor{orange}{\Large{RESULTS}}
+\end{center}
+       \begin{enumerate}
+           \item The utility of a given player \(p\) against a given opponent \(q\) 
+           is a ratio of quadratic forms.
+           \item Optimization procedures, often reducing the complex optimisation 
+           problem to a search over a small finite set are found.
+           \item Complex strategies outperform optimal purely random.
+       \end{enumerate}
+       \vspace{1cm}
 
+   %     \begin{center}
+   %         \textcolor{orange}{\Large{FUTURE WORK}} \\
+   %         \textcolor{orange}{\small{RESULTANT THEORY}}
+   %     \end{center}
+   % \begin{center}
+   %     \includestandalone[width=.6\textwidth]{static/resultant}
+   % \end{center}
 \hrule height 3pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
@@ -250,4 +208,53 @@ angles, quotes, decorations.pathmorphing}
         \textbf{Cardiff University}
     \end{column}
 \end{columns}
+\end{column}
+% \vrule 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RIGHT PART%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{column}{.2\linewidth}
+        \begin{center}
+            \textcolor{orange}{\Large{NUMERICAL EXPERIMENTS}}
+            \vspace{1cm}
+
+            \includegraphics[width=.65\textwidth]{static/plot_one}
+            \vspace{.2cm}
+
+            \includegraphics[width=.65\textwidth]{static/plot_two}
+            \vspace{.2cm}
+
+            \includegraphics[width=.65\textwidth]{static/plot_three}
+            \vspace{.2cm}
+
+            \includegraphics[width=.65\textwidth]{static/plot_four}
+            \vspace{.2cm}
+
+            \includegraphics[width=.65\textwidth, height=.45\textwidth]{static/tournament}
+        \end{center}
+    \end{column}
+\end{columns}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%THIRD ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{columns}
+%     \begin{column}{.16\linewidth}
+%         \vspace{1cm}
+%         \includegraphics[width=.8\textwidth]{static/plot_one}
+%     \end{column}
+%     \begin{column}{.16\linewidth}
+%         \includegraphics[width=.8\textwidth]{static/plot_two}
+%     \end{column}
+%     \begin{column}{.16\linewidth}
+%         \includegraphics[width=.8\textwidth]{static/plot_three}
+%     \end{column}
+%     \begin{column}{.16\linewidth}
+%         \includegraphics[width=.8\textwidth]{static/plot_four}
+%     \end{column}
+%     \begin{column}{.16\linewidth}
+%         \includegraphics[width=.8\textwidth, height=0.57\textwidth]{static/tournament}
+%     \end{column}
+%     \begin{column}{.2\linewidth}
+%     \end{column}
+% \end{columns}
+% \vspace{0.3cm}
+
+% \hrule height 3pt
+
 \end{document}
