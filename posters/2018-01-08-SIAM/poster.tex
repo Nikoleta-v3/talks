@@ -22,6 +22,7 @@ angles, quotes, decorations.pathmorphing}
 \tikzset{
     ultra thick/.style={line width=3pt}
 }
+\usetikzlibrary{matrix}
 
 \usecolortheme[dark,accent=cyan]{solarized}
 \beamertemplatenavigationsymbolsempty
@@ -104,7 +105,7 @@ angles, quotes, decorations.pathmorphing}
         \vspace{1cm}
 
         \small{
-            W. H. Press and F. J. Dyson. \textbf{Iterated Prisoner’s
+            W. H. Press and F. J. Dyson. \textbf{Iterated Prisoner's
             Dilemma contains strategies that dominate any evolutionary opponent}
             PNAS 2012.%Introducing the zero determinant strategies:
             \[p ^ * \rightarrow \text{ manipulates } \rightarrow q\]
@@ -139,7 +140,7 @@ angles, quotes, decorations.pathmorphing}
             \begin{center}
             \vspace{-1cm}
 
-            \textcolor{orange}{\textbf{\small{2. AGAINST A SINGLE OPPONENT}}}
+            \textcolor{orange}{\textbf{\small{AGAINST A SINGLE OPPONENT}}}
             \vspace{2cm}
 
             \includestandalone[width=.7\textwidth]{static/single_opponent}
@@ -152,13 +153,16 @@ angles, quotes, decorations.pathmorphing}
             \begin{center}
                 \vspace{-1cm}
     
-                \textcolor{orange}{\textbf{\small{3. AGAINST MULTIPLE OPPONENTS}}}
+                \textcolor{orange}{\textbf{\small{AGAINST MULTIPLE OPPONENTS}}}
                 \vspace{2cm}
     
                 \includestandalone[width=.7\textwidth]{static/multiple_opponents}
-                \vspace{2cm}
-    
-                \includegraphics[width=.7\textwidth]{static/tournament}
+                \vspace{1.5cm}
+                
+                \includestandalone[width=.7\textwidth]{static/companion_matrix} \\
+                \includestandalone[width=.4\textwidth]{static/trident_down} \\
+                \includegraphics[width=.5\textwidth]{static/tournament}
+
             \end{center}
         \end{column}
     \end{columns}
