@@ -5,15 +5,16 @@
 \begin{document}
     \begin{tikzpicture}
 
-    \node(0) at (0, 0) {\boldmath{$a_{2N} p ^ {2N} + \dots + a_{1} p+ a_{0}$}};
+    \node(0) at (0, 0) {{$u_q(p)$}};
 
-    \matrix (1) [matrix of nodes, thick, row sep=-\pgflinewidth,column 2/.style={nodes={rectangle,minimum width=3em}}, left delimiter=(,right delimiter=)]
-    at (15, -0.2)
-{   0.0 & 0.0 & $\dots$ & 0 & $-a_{0}$\\
-    1.0 & 0.0 & $\dots$ & 0 & $-a_{1}$ \\
-    0.0 & 1.0 & $\dots$ & 0 & $-a_{2}$ \\
-    $\vdots$ & $\vdots$ & $\ddots$ & $\ddots$ & $\vdots$ \\
-    0.0 & 0.0 & $\dots$ & 1 & $-a_{2N}$\\};
+    \matrix (1) [matrix of nodes, thick,column 2/.style={nodes={rectangle,minimum width=.3cm}},
+    left delimiter={[},right delimiter={]}]
+    at (10, -0.2)
+{   0 & 0 & $\dots$ & 0 & $-a_{0}$\\
+    1 & 0 & $\dots$ & 0 & $-a_{1}$ \\
+    0 & 1 & $\dots$ & 0 & $-a_{2}$ \\
+    $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\vdots$ \\
+    0 & 0 & $\dots$ & 1 & $-a_{2N}$\\};
 
     \draw[solarizedRed, ultra thick, ->] (5.5, 0) -- (7.5, 0);
     \end{tikzpicture}

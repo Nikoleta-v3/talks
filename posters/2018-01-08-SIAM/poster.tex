@@ -55,11 +55,11 @@ angles, quotes, decorations.pathmorphing}
     \vspace{1.5cm}
 
     \centering
-    \textcolor{orange}{\fontsize{110}{120} \selectfont THE POWER OF MEMORY}
+    \textbf{\textcolor{orange}{\fontsize{110}{120} \selectfont THE POWER OF MEMORY}}
     \vspace{0.7cm}
 
-    \Large\textcolor{orange}{Is memory size advantageous in interactions (social,
-    biological, $\dots$) ?}
+    \textbf{\Large\textcolor{orange}{Is memory size advantageous in interactions (social,
+    biological, $\dots$) ?}}
     \end{column}
     \begin{column}{.2\linewidth}
         
@@ -116,9 +116,9 @@ angles, quotes, decorations.pathmorphing}
         This work considers an optimisation approach to identify:
         \[ p ^ * \rightarrow \text{ best response } \rightarrow q\]}
         \normalsize{{
-            \boldmath{\[\text{1. }\max_q: \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
-                  {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\] \\
-                  \[st:  \ p \in \R^4_{[0, 1]}\]
+            \boldmath{\[u_q(p)= \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
+                  {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}},\] \\
+                  \[\text{where }  \ p \in \R^4_{[0, 1]}\]
             }}}
     \end{column}
     \begin{column}{.05\linewidth}
@@ -157,10 +157,12 @@ angles, quotes, decorations.pathmorphing}
                 \vspace{2cm}
     
                 \includestandalone[width=.7\textwidth]{static/multiple_opponents}
-                \vspace{1.5cm}
+                \vspace{-.5cm}
                 
-                \includestandalone[width=.7\textwidth]{static/companion_matrix} \\
-                \includestandalone[width=.4\textwidth]{static/trident_down} \\
+                \textbf{\[u_q(p)\]} \\
+                \includestandalone[width=.02\textwidth]{static/arrow_down} \\
+                \input{static/matrix_companion} \\
+                \includestandalone[width=.02\textwidth]{static/arrow_down} \\
                 \includegraphics[width=.5\textwidth]{static/tournament}
 
             \end{center}
@@ -169,24 +171,24 @@ angles, quotes, decorations.pathmorphing}
     \end{column}
     \begin{column}{.2\linewidth}
         \begin{center}
-            \textcolor{orange}{\textbf{\Large{RESULTS}}}
-        \begin{center}
-            \begin{enumerate}
-                \item The utility of a given player \(p\) against a given opponent \(q\) 
-                is written in a compact way.
-                \item Defining the optimal random behaviour \(p ^ *\) is reduced to a search over a small finite set.
-                \item Optimising against the mean utility can not be captured by optimising against the mean opponent.
-            \end{enumerate}
-            \vspace{3cm}
-    
+            \textcolor{orange}{\textbf{\Large{FUTURE WORK}}} \\
+            \textcolor{orange}{\textbf{ \(p=(p_1, p_2, p_3, p_4) \rightarrow\) \small{ RESULTANT THEORY}}}
+        \end{center}
+    \begin{center}
+        \includestandalone[width=.6\textwidth]{static/resultant}
+    \end{center}
+            \vspace{2cm}
+
             \begin{center}
-                \textcolor{orange}{\textbf{\Large{FUTURE WORK}}} \\
-                \textcolor{orange}{\textbf{\small{RESULTANT THEORY}}}
+                \textcolor{orange}{\textbf{\Large{SUMMARY}}}
+            \begin{center}
+                \begin{enumerate}
+                    \item The utility of a given player \(p\) against a given opponent \(q\) 
+                    can be written in a compact way.
+                    \item Obtaining the optimal random behaviour \(p ^ *\) reduces to a search over a small finite set.
+                    \item Optimising against the mean utility can not be captured by optimising against the mean opponent.
+                \end{enumerate}
             \end{center}
-        \begin{center}
-            \includestandalone[width=.6\textwidth]{static/resultant}
-        \end{center}
-        \end{center}
         \end{center}
     \end{column}
 \end{columns}
