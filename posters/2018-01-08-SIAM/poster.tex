@@ -8,7 +8,7 @@
 \usepackage{tikz}
 \usepackage{standalone}
 \usepackage{minted}
-\usepackage{fontawesome}
+% \usepackage{fontawesome}
 \usepackage{setspace}
 \usepackage{rotating}
 
@@ -57,7 +57,7 @@ angles, quotes, decorations.pathmorphing}
     \textcolor{orange}{\fontsize{110}{120} \selectfont THE POWER OF MEMORY}
     \vspace{0.7cm}
 
-    \Large\textcolor{orange}{Is memory size edvantageous in interactions (social,
+    \Large\textcolor{orange}{Is memory size advantageous in interactions (social,
     biological, $\dots$) ?}
     \end{column}
     \begin{column}{.2\linewidth}
@@ -114,10 +114,11 @@ angles, quotes, decorations.pathmorphing}
         \small{
         This work considers an optimisation approach to identify:
         \[ p ^ * \rightarrow \text{ best response } \rightarrow q\]}
-        \normalsize{\textcolor{solarizedGreen}{
-         \[\max_q: \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
-                  {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\]
-            }}
+        \normalsize{{
+            \boldmath{\[\text{1. }\max_q: \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
+                  {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\] \\
+                  \[st:  \ p \in \R^4_{[0, 1]}\]
+            }}}
     \end{column}
     \begin{column}{.05\linewidth}
     \end{column}
@@ -130,7 +131,7 @@ angles, quotes, decorations.pathmorphing}
 \begin{columns}
     \begin{column}{.7\linewidth}
         \begin{center}
-            \textcolor{orange}{\Large{PURELY RANDOM STRATEGIES \(p=(p, p, p, p)\)}}
+            \textcolor{orange}{\textbf{\Large{PURELY RANDOM STRATEGIES \(p=(p, p, p, p)\)}}}
         \end{center}
 
     \begin{columns}
@@ -138,7 +139,7 @@ angles, quotes, decorations.pathmorphing}
             \begin{center}
             \vspace{-1cm}
 
-            \textcolor{solarizedOrange}{\small{AGAINST A SINGLE OPPONENT}}
+            \textcolor{orange}{\textbf{\small{2. AGAINST A SINGLE OPPONENT}}}
             \vspace{2cm}
 
             \includestandalone[width=.7\textwidth]{static/single_opponent}
@@ -151,7 +152,7 @@ angles, quotes, decorations.pathmorphing}
             \begin{center}
                 \vspace{-1cm}
     
-                \textcolor{yellow}{\small{AGAINST MULTIPLE OPPONENTS}}
+                \textcolor{orange}{\textbf{\small{3. AGAINST MULTIPLE OPPONENTS}}}
                 \vspace{2cm}
     
                 \includestandalone[width=.7\textwidth]{static/multiple_opponents}
@@ -164,19 +165,19 @@ angles, quotes, decorations.pathmorphing}
     \end{column}
     \begin{column}{.2\linewidth}
         \begin{center}
-            \textcolor{orange}{\Large{RESULTS}}
+            \textcolor{orange}{\textbf{\Large{RESULTS}}}
         \begin{center}
             \begin{enumerate}
                 \item The utility of a given player \(p\) against a given opponent \(q\) 
-                can be written in a compact way.
-                \item The optimal purely random player.
-                \item Complex strategies outperform optimal purely random.
+                is written in a compact way.
+                \item Defining the optimal random behaviour \(p ^ *\) is reduced to a search over a small finite set.
+                \item Optimising against the mean utility can not be captured by optimising against the mean opponent.
             \end{enumerate}
             \vspace{3cm}
     
             \begin{center}
-                \textcolor{orange}{\Large{FUTURE WORK}} \\
-                \textcolor{orange}{\small{RESULTANT THEORY}}
+                \textcolor{orange}{\textbf{\Large{FUTURE WORK}}} \\
+                \textcolor{orange}{\textbf{\small{RESULTANT THEORY}}}
             \end{center}
         \begin{center}
             \includestandalone[width=.6\textwidth]{static/resultant}
@@ -185,7 +186,7 @@ angles, quotes, decorations.pathmorphing}
         \end{center}
     \end{column}
 \end{columns}
-\vspace{3cm}
+\vspace{1.5cm}
 
 \hrule height 3pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -193,17 +194,17 @@ angles, quotes, decorations.pathmorphing}
     \begin{column}{.1\linewidth}
 
         \centering
-        \textbf{ \faTwitter \ NikoletaGlyn}
+        % \textbf{ \faTwitter \ NikoletaGlyn}
     \end{column}
     \begin{column}{.55\linewidth}
 
         \centering
-        \textbf{ In case you missed me: \url{nikoleta-v3.github.io/blog/2017/08/23/power-of-memoty.html}}
+        \textbf{ In case you missed me: \url{nikoleta-v3.github.io/blog/2018/01/05/power-of-memory.html}}
     \end{column}
     \begin{column}{.1\linewidth}
 
         \centering
-        \textbf{ \faGithub \ Nikoleta-v3}
+        % \textbf{ \faGithub \ Nikoleta-v3}
     \end{column}
     \begin{column}{.1\linewidth}
 
