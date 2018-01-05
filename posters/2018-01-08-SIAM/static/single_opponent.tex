@@ -7,7 +7,7 @@
         \node[rounded corners=2pt,minimum height=1.3cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
         \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
         \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
-        \draw[thick,white,-round cap] (body.south) --++(90:5.5mm);}}
+        \draw[thick, solarizedBase03, -round cap] (body.south) --++(90:5.5mm);}}
     \begin{tikzpicture}
 
         \pic[cyan] at (0, 1.5) (myman) {man};
@@ -22,5 +22,9 @@
         \pic[orange] at (-2, -1) (myman) {man};
         \pic[cyan] at (-3, -1) (myman) {man};
 
+        \node (0) at (15, 0) {\textcolor{solarizedOrange}{$p^*= \mbox{argmax}(u_q(p)), \ p \in S_q,$}};
+        \node (0) at (13.5, -2.5) {\textcolor{solarizedOrange}{where the set \(S_q\) is defined as:}};
+        \node (0) at (15, -5) {\textcolor{solarizedOrange}{$S_q = \left \{0, p_{\pm}, 1 \left | \begin{array}{l} 0 < p_{\pm} < 1, \\ p_{\pm} \neq \frac{-d_0}{d_1} \end{array} \right. \right\}$}};
+        
     \end{tikzpicture}
     \end{document}

@@ -8,9 +8,9 @@
 \usepackage{tikz}
 \usepackage{standalone}
 \usepackage{minted}
-%\usepackage{lmodern}
 \usepackage{fontawesome}
 \usepackage{setspace}
+\usepackage{rotating}
 
 \definecolor{DarkGray}{RGB}{5, 66, 81}
 \definecolor{DarkerGray}{RGB}{3, 22, 27}
@@ -29,7 +29,7 @@ angles, quotes, decorations.pathmorphing}
 \usepackage[orientation=landscape,size=a1,scale=1.4]{beamerposter}
 \newcommand{\R}{\mathbb{R}}
 
-\renewcommand{\arraystretch}{1.2}
+\renewcommand{\arraystretch}{0.8}
 
 \addtobeamertemplate{block begin}{%
   \setlength{\textwidth}{.5\textwidth}%
@@ -42,6 +42,7 @@ angles, quotes, decorations.pathmorphing}
 \addtobeamertemplate{block example begin}{%
   \setlength{\textwidth}{.5\textwidth}%
 }{}
+\setbeamerfont{block body}{size=\footnotesize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -49,15 +50,15 @@ angles, quotes, decorations.pathmorphing}
 \begin{columns}
     % \begin{column}{.1\linewidth}
     % \end{column}
-    \begin{column}{.55\linewidth}
+    \begin{column}{.7\linewidth}
     \vspace{1.5cm}
 
     \centering
     \textcolor{orange}{\fontsize{110}{120} \selectfont THE POWER OF MEMORY}
     \vspace{0.7cm}
 
-    \Large\textcolor{orange}{In interactions both social and biological is memory
-    size advantageous?}
+    \Large\textcolor{orange}{Is memory size edvantageous in interactions (social,
+    biological, $\dots$) ?}
     \end{column}
     \begin{column}{.2\linewidth}
         
@@ -65,37 +66,41 @@ angles, quotes, decorations.pathmorphing}
             \includestandalone[width=.75\textwidth]{static/matrix}
         \end{center}
         \end{column}
-    \begin{column}{.23\linewidth}
+    % \begin{column}{.23\linewidth}
 
-        \includestandalone[width=\textwidth]{static/memory_one}
-    \end{column}
+    %     \includestandalone[width=\textwidth]{static/memory_one}
+    % \end{column}
     \begin{column}{.02\linewidth}
     \end{column}
 \end{columns}
+\vspace{1cm}
+
+\hrule height 3pt
+\vspace{1cm}
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
+    \begin{column}{.05\linewidth}
+    \end{column}
     \begin{column}{.2\linewidth}
-        \vspace{-.9cm}
+        \vspace{3cm}
+
+        \includestandalone[width=\textwidth]{static/memory_one}
+    \end{column}
+    \begin{column}{.3\linewidth}
+    \vspace{-.5cm}
         \begin{center}
-            \includestandalone[width=.8\textwidth]{static/states}
+            \includestandalone[width=.45\textwidth]{static/states} \\
+            \includestandalone[width=.05\textwidth]{static/arrow_down} \\
+            \input{static/m_matrix}
         \end{center}
     \end{column}
     \begin{column}{.1\linewidth}
-        \vspace{3.5cm}
+        \vspace{2cm}
 
-            \includestandalone[width=.5\textwidth]{static/arrow}
+        \includestandalone[width=.7\textwidth]{static/trident_arrow}
     \end{column}
-    \begin{column}{.25\linewidth}
-        \vspace{1.5cm}
-
-        \hspace{-2cm}\input{static/m_matrix} 
-    \end{column}
-    \begin{column}{.1\linewidth}
-        \vspace{1.5cm}
-
-        \includestandalone[width=.6\textwidth]{static/trident_arrow}
-    \end{column}
-    \begin{column}{.35\linewidth}
+    \begin{column}{.3\linewidth}
         \vspace{1cm}
 
         \small{
@@ -108,98 +113,66 @@ angles, quotes, decorations.pathmorphing}
 
         \small{
         This work considers an optimisation approach to identify:
-        \[ p ^ * \rightarrow \text{ best response } \rightarrow q\]
-            }
-        % \small{\textcolor{solarizedGreen}{
-        %  \[\max_q: \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
-        %           {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\]
-        %     }}
+        \[ p ^ * \rightarrow \text{ best response } \rightarrow q\]}
+        \normalsize{\textcolor{solarizedGreen}{
+         \[\max_q: \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
+                  {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}}\]
+            }}
     \end{column}
-    \begin{column}{.2\linewidth}
+    \begin{column}{.05\linewidth}
     \end{column}
 \end{columns}
-% \vspace{0.1cm}
+\vspace{1cm}
 
 \hrule height 3pt
+\vspace{1cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECOND ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%LEFT PART%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{column}{.8\linewidth}
+    \begin{column}{.7\linewidth}
         \begin{center}
             \textcolor{orange}{\Large{PURELY RANDOM STRATEGIES \(p=(p, p, p, p)\)}}
-            \vspace{1cm}
-
-            \hspace{-2cm}\includestandalone[width=.7\textwidth]{static/purely_random_section_diagram}
         \end{center}
-\begin{columns}
-    \begin{column}{.4\linewidth}
-        \begin{minipage}{50cm}
-        \begin{block}
 
-            \[p^* = \text{argmax}(u_q(p)), \ p \in S_q,\]
-            \vspace{0.3cm}
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+            \begin{center}
+            \vspace{-1cm}
 
-            \small{
-            where the set \(S_q\) is defined as,}
-        
-            \[S_q = \left \{0, p_{\pm}, 1 \left | \begin{array}{l} 0 < p_{\pm} < 1,
-            \\ p_{\pm} \neq \frac{-d_0}{d_1} \end{array} \right. \right\}\] \\
+            \textcolor{solarizedOrange}{\small{AGAINST A SINGLE OPPONENT}}
+            \vspace{2cm}
 
-        \end{block}
-    \end{minipage}
-    \end{column}
-    \begin{column}{.4\linewidth}
-        \begin{minipage}{50cm}
-            \begin{block}
+            \includestandalone[width=.7\textwidth]{static/single_opponent}
+            \vspace{2cm}
 
-            \[p^* = \text{argmax}(\displaystyle \sum_{i=1} ^ {N} {u_q}^{(i)} (p)), \ p \in S_{q(i)},\]
-            \vspace{0.3cm}
-
-            \small{
-            where the set \(S_{q(i)}\) is defined as:}
-
-            \[ S_{q(i)} =  \overset{2N}{\underset{\lambda_i \neq \frac{do_i}{d1_i}}{\underset{i=1}{u}}} \lambda_i \cup \{0, 1\} \]
-            \end{block}
-        \end{minipage}
+            \includegraphics[width=.7\textwidth]{static/matches}
+            \end{center}
+        \end{column}
+        \begin{column}{.5\linewidth}
+            \begin{center}
+                \vspace{-1cm}
+    
+                \textcolor{yellow}{\small{AGAINST MULTIPLE OPPONENTS}}
+                \vspace{2cm}
+    
+                \includestandalone[width=.7\textwidth]{static/multiple_opponents}
+                \vspace{2cm}
+    
+                \includegraphics[width=.7\textwidth]{static/tournament}
+            \end{center}
+        \end{column}
+    \end{columns}
     \end{column}
-\end{columns}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{0.7cm}
-
-\begin{columns}
-    \centering
-    \begin{column}{.2\linewidth}
-        \vspace{1cm}
-        \includegraphics[width=.9\textwidth]{static/plot_one}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=.9\textwidth]{static/plot_two}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=.9\textwidth]{static/plot_three}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=.9\textwidth]{static/plot_four}
-    \end{column}
-    \begin{column}{.2\linewidth}
-        \includegraphics[width=.9\textwidth, height=0.63\textwidth]{static/tournament}
-    \end{column}
-\end{columns}
-\end{column}
-\hrule 
     \begin{column}{.2\linewidth}
         \begin{center}
             \textcolor{orange}{\Large{RESULTS}}
-        \end{center}
         \begin{center}
             \begin{enumerate}
                 \item The utility of a given player \(p\) against a given opponent \(q\) 
-                is a ratio of quadratic forms.
-                \item Optimization procedures, often reducing the complex optimisation 
-                problem to a search over a small finite set are found.
+                can be written in a compact way.
+                \item The optimal purely random player.
                 \item Complex strategies outperform optimal purely random.
             \end{enumerate}
-            \vspace{5cm}
+            \vspace{3cm}
     
             \begin{center}
                 \textcolor{orange}{\Large{FUTURE WORK}} \\
@@ -209,9 +182,10 @@ angles, quotes, decorations.pathmorphing}
             \includestandalone[width=.6\textwidth]{static/resultant}
         \end{center}
         \end{center}
+        \end{center}
     \end{column}
 \end{columns}
-\vspace{0.3cm}
+\vspace{3cm}
 
 \hrule height 3pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
