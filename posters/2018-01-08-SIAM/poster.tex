@@ -18,9 +18,13 @@
 \usemintedstyle{native}
 
 \usetikzlibrary{shapes.arrows, positioning, arrows, decorations.pathreplacing,
-angles, quotes, decorations.pathmorphing}
+angles, quotes, decorations.pathmorphing, fit, backgrounds}
+
+\tikzstyle{background}=[solarizedRed, rectangle, draw, inner sep=0.7mm,
+           rounded corners=1mm, ultra thick]
 \tikzset{
-    ultra thick/.style={line width=3pt}
+    ultra thick/.style={line width=3pt},
+    super thick/.style={line width=6pt}
 }
 \usetikzlibrary{matrix}
 
@@ -49,8 +53,15 @@ angles, quotes, decorations.pathmorphing}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-    % \begin{column}{.1\linewidth}
-    % \end{column}
+    \begin{column}{.02\linewidth}
+    \end{column}
+    \begin{column}{.1\linewidth}
+        \vspace{1cm}
+
+        \begin{center}
+        \includegraphics[width=.7\textwidth]{static/cardiff_uni_logo}
+        \end{center}
+    \end{column}
     \begin{column}{.7\linewidth}
     \vspace{1.5cm}
 
@@ -59,7 +70,7 @@ angles, quotes, decorations.pathmorphing}
     \vspace{0.7cm}
 
     \textbf{\Large\textcolor{orange}{Is memory size advantageous in interactions (social,
-    biological, $\dots$) ?}}
+    biological, etc) ?}}
     \end{column}
     \begin{column}{.2\linewidth}
         
@@ -81,12 +92,12 @@ angles, quotes, decorations.pathmorphing}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-    \begin{column}{.05\linewidth}
+    \begin{column}{.02\linewidth}
     \end{column}
     \begin{column}{.2\linewidth}
-        \vspace{3cm}
+        \vspace{1cm}
 
-        \includestandalone[width=\textwidth]{static/memory_one}
+        \includestandalone[width=1.1\textwidth]{static/memory_one}
     \end{column}
     \begin{column}{.3\linewidth}
     \vspace{-.5cm}
@@ -107,7 +118,7 @@ angles, quotes, decorations.pathmorphing}
         \small{
             W. H. Press and F. J. Dyson. \textbf{Iterated Prisoner's
             Dilemma contains strategies that dominate any evolutionary opponent}
-            PNAS 2012.%Introducing the zero determinant strategies:
+            PNAS 2012. The \textbf{zero determinant} strategies.
             \[p ^ * \rightarrow \text{ manipulates } \rightarrow q\]
         }
         \vspace{1cm}
@@ -132,7 +143,7 @@ angles, quotes, decorations.pathmorphing}
 \begin{columns}
     \begin{column}{.7\linewidth}
         \begin{center}
-            \textcolor{orange}{\textbf{\Large{PURELY RANDOM STRATEGIES \(p=(p, p, p, p)\)}}}
+            \textcolor{orange}{\textbf{\Large{PURELY RANDOM STRATEGIES \boldmath\(p=(p, p, p, p)\)}}}
         \end{center}
 
     \begin{columns}
@@ -144,7 +155,7 @@ angles, quotes, decorations.pathmorphing}
             \vspace{2cm}
 
             \includestandalone[width=.7\textwidth]{static/single_opponent}
-            \vspace{2cm}
+            \vspace{1.5cm}
 
             \includegraphics[width=.7\textwidth]{static/matches}
             \end{center}
@@ -154,25 +165,31 @@ angles, quotes, decorations.pathmorphing}
                 \vspace{-1cm}
     
                 \textcolor{orange}{\textbf{\small{AGAINST MULTIPLE OPPONENTS}}}
-                \vspace{2cm}
+                \vspace{1.5cm}
     
                 \includestandalone[width=.7\textwidth]{static/multiple_opponents}
                 \vspace{-.5cm}
                 
                 \textbf{\[u_q(p)\]} \\
-                \includestandalone[width=.02\textwidth]{static/arrow_down} \\
+                \includestandalone[width=.024\textwidth]{static/arrow_down} \\
                 \input{static/matrix_companion} \\
-                \includestandalone[width=.02\textwidth]{static/arrow_down} \\
+                \includestandalone[width=.024\textwidth]{static/arrow_down} \\
                 \includegraphics[width=.5\textwidth]{static/tournament}
 
             \end{center}
         \end{column}
     \end{columns}
     \end{column}
-    \begin{column}{.2\linewidth}
+    \begin{column}{.25\linewidth}
         \begin{center}
-            \textcolor{orange}{\textbf{\Large{FUTURE WORK}}} \\
-            \textcolor{orange}{\textbf{ \(p=(p_1, p_2, p_3, p_4) \rightarrow\) \small{ RESULTANT THEORY}}}
+            \vspace{-.08cm}
+            \textcolor{orange}{\textbf{\Large{FURTHER WORK}}}
+        \end{center}
+
+        \begin{center}
+            \vspace{.3cm}
+
+            \textcolor{orange}{\small{\textbf{ \boldmath\(p=(p_1, p_2, p_3, p_4) \rightarrow\) RESULTANT THEORY}}}
         \end{center}
     \begin{center}
         \includestandalone[width=.6\textwidth]{static/resultant}
@@ -197,25 +214,20 @@ angles, quotes, decorations.pathmorphing}
 \hrule height 3pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{columns}
-    \begin{column}{.1\linewidth}
+    \begin{column}{.2\linewidth}
 
         \centering
         \textbf{ \faTwitter \ NikoletaGlyn}
     \end{column}
-    \begin{column}{.55\linewidth}
+    \begin{column}{.6\linewidth}
 
         \centering
-        \textbf{ In case you missed me: \url{nikoleta-v3.github.io/blog/2018/01/05/power-of-memory.html}}
+        \textbf{ In case you missed me: \url{https://nikoleta-v3.github.io/blog/2018/01/05/power-of-memory.html}}
     \end{column}
-    \begin{column}{.1\linewidth}
+    \begin{column}{.2\linewidth}
 
         \centering
         \textbf{ \faGithub \ Nikoleta-v3}
-    \end{column}
-    \begin{column}{.1\linewidth}
-
-        \centering
-        \textbf{Cardiff University}
     \end{column}
 \end{columns}
 \end{document}

@@ -39,10 +39,10 @@
 	\node (19) at (16, -2) [state] {$\dots$};
 
 	\draw[decoration={brace, raise=6pt, amplitude=10pt}, decorate, orange, ultra thick] 
-	(11.5, 2.5) -- node[above=10pt] {\textcolor{orange}{\small{memory-$1$}}} (14.5, 2.5);
+	(11.5, 2.5) -- node[above=10pt] {\textcolor{orange}{\textbf{\small{memory-\boldmath$1$}}}} (14.5, 2.5);
 
 	\draw[decoration={brace, mirror, raise=5pt, amplitude=10pt}, decorate, cyan, ultra thick] 
-	(0.5, -2.5) -- node[below=10pt] {\textcolor{cyan}{\small{memory size-$n -1$}}} (14, -2.5);
+	(0.5, -2.5) -- node[below=10pt] {\textcolor{cyan}{\textbf{\small{memory size-\boldmath$n -1$}}}} (14, -2.5);
 	
 	\coordinate (s)  at (15, 3.7);
 
@@ -51,7 +51,10 @@
 	\coordinate (n)  at (11.5, -3.7);
 
 	\draw[cyan, looseness=0.8] (n) edge[out=0, in=-90, ->, ultra thick] (19);
-
+	
+	\draw[solarizedRed, super thick] (13, 4.5) -- (13, 6);
+	\draw[solarizedRed, super thick, ->] (12.9, 6) -- (17, 6);
+	\node (empty) at (17, 7) {};
 	\end{tikzpicture}
 
 \end{document}
