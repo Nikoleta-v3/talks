@@ -1,0 +1,60 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{color}
+
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+
+\begin{document}
+
+    \begin{tikzpicture}
+
+    \tikzstyle{state}=[minimum width=1cm, font=\boldmath];
+    
+
+	\node[thick] (0) at (-2, 0) [state] {\small{player $p$}};
+	\node[thick] (1) at (-2, -2) [state] {\small{player $q$}};
+
+	\node[thick] (2) at (1, 2) [state] {$1$};
+	\node[thick] (3) at (4, 2) [state] {$2$};
+	\node[thick] (4) at (7, 2) [state] {$3$};
+	\node[thick] (5) at (10, 2) [state] {$\dots$};
+	\node[thick] (6) at (13, 2) [state] {$n - 1$};
+	\node[thick] (7) at (16, 2) [state] {$n$};
+
+	\node (8) at (1, 0) [state] {$C$};
+	\node (9) at (4, 0) [state] {$C$};
+	\node (10) at (7, 0) [state] {$C$};
+	\node (11) at (10, 0) [state] {$\dots$};
+	\node (12) at (13, 0) [state] {$D$};
+	\node (13) at (16, 0) [state] {$\dots$};
+
+	\node (14) at (1, -2) [state] {$C$};
+	\node (15) at (4, -2) [state] {$C$};
+	\node (16) at (7, -2) [state] {$D$};
+	\node (17) at (10, -2) [state] {$\dots$};
+	\node (18) at (13, -2) [state] {$D$};
+	\node (19) at (16, -2) [state] {$\dots$};
+
+	\draw[decoration={brace, raise=6pt, amplitude=10pt}, decorate, orange, ultra thick] 
+	(11.5, 2.5) -- node[above=10pt] {\textcolor{orange}{\textbf{\small{memory-\boldmath$1$}}}} (14.5, 2.5);
+
+	\draw[decoration={brace, mirror, raise=5pt, amplitude=10pt}, decorate, cyan, ultra thick] 
+	(0.5, -2.5) -- node[below=10pt] {\textcolor{cyan}{\textbf{\small{memory size-\boldmath$n -1$}}}} (14, -2.5);
+	
+	\coordinate (s)  at (15, 3.7);
+
+	\draw[orange, looseness=2] (s) edge[out=0, in=90, ->, ultra thick] (7);
+
+	\coordinate (n)  at (11.5, -3.7);
+
+	\draw[cyan, looseness=0.8] (n) edge[out=0, in=-90, ->, ultra thick] (19);
+	
+	\draw[solarizedRed, super thick] (13, 4.5) -- (13, 6);
+	\draw[solarizedRed, super thick, ->] (12.9, 6) -- (17, 6);
+	\node (empty) at (17, 7) {};
+	\end{tikzpicture}
+
+\end{document}

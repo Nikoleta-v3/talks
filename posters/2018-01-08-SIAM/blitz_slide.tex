@@ -1,0 +1,25 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%Solarized Theme%%%%%%%%%%%%%%%
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+\usepackage{standalone}
+\usepackage{color}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.arrows, positioning, arrows, decorations.pathreplacing,
+angles, quotes, decorations.pathmorphing}
+\tikzset{
+    ultra thick/.style={line width=3pt}
+}
+
+\begin{document}
+
+\begin{frame}
+    \centering
+    \textbf{\textcolor{orange}{\huge THE POWER OF MEMORY}}
+    \vspace{1cm}
+
+    \includestandalone[width=\textwidth]{static/purely_random_section_diagram}
+\end{frame}
+\end{document}

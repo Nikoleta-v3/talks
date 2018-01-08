@@ -1,0 +1,45 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+    \begin{tikzpicture}
+
+    \tikzstyle{state}=[minimum width=1cm, font=\boldmath];
+    
+
+	\node[circle, draw, thick] (0) at (0, 0) [state] {$CC$};
+	\node[circle, draw, thick] (1) at (6, 0) [state] {$CD$};
+	\node[circle, draw, thick] (2) at (0, -6) [state] {$DC$};
+	\node[circle, draw, thick] (3) at (6, -6) [state] {$DD$};
+
+	\draw (0) edge[solarizedGreen,out=20, in=160, ->, ultra thick] node [above] {} (1);
+	\draw (1) edge[solarizedGreen, out=-160, in=-20, ->, ultra thick] node [above] {} (0);
+
+	\draw (2) edge[solarizedViolet,out=20, in=160, ->, ultra thick] node [above] {} (3);
+	\draw (3) edge[solarizedViolet, out=-160, in=-20, ->, ultra thick] node [above] {} (2);
+
+	\draw (0) edge[solarizedViolet,out=-70, in=70, ->, ultra thick] node [above] {} (2);
+	\draw (2) edge[solarizedGreen, out=110, in=-110, ->, ultra thick] node [above] {} (0);
+
+	\draw (1) edge[solarizedViolet,out=-70, in=70, ->, ultra thick] node [above] {} (3);
+	\draw (3) edge[solarizedGreen, out=110, in=-110, ->, ultra thick] node [above] {} (1);
+
+    \draw (0) edge[solarizedViolet,out=-35, in=125, ->, ultra thick] node [above] {} (3);
+    \draw (3) edge[solarizedGreen, out=145, in=-55, ->, ultra thick] node [above] {} (0);
+
+    \draw (1) edge[solarizedViolet,out=-125, in=35, ->, ultra thick] node [above] {} (2);
+    \draw (2) edge[solarizedGreen, out=55, in=-145, ->, ultra thick] node [above] {} (1);
+
+    \draw (0) edge[solarizedGreen, out=180, in=135, ->, ultra thick, loop] node [above] {}  (0);
+    \draw (2) edge[solarizedViolet,out=180, in=135, ->, ultra thick, loop] node [above] {} (2);
+
+    \draw (1) edge[solarizedGreen,out=0, in=45, ->, ultra thick, loop] node [above] {} (1);
+    \draw (3) edge[solarizedViolet, out=0, in=45, ->, ultra thick, loop] node [above] {} (3);
+
+    \end{tikzpicture}
+
+\end{document}
