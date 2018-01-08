@@ -22,8 +22,8 @@ SIAM Meeting, Cardiff 2017.
 Wales Mathematics Colloquium, Gregynog Hall 2017.
 
 + [PIP INSTALL AXELROD]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
-/poster.pdf) poster - Euroscipy, Erlangen Germany 2017.[Grudges, War and Game of Thrones](https://nikoleta-v3.github.io/blog/2017/08/23/grudges-war-GoT.html)
-    a blog post accompanying the poster.
+/poster.pdf) poster - Euroscipy, Erlangen Germany 2017.
+[Grudges, War and Game of Thrones](https://nikoleta-v3.github.io/blog/2017/08/23/grudges-war-GoT.html) a blog post accompanying the poster.
 
 + [Arcas: Using Python to access open research
 literature]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
@@ -31,6 +31,10 @@ literature]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
 
 + [A trip to earth science with python as a companion]({{ site.baseurl }}/talks//2017-10-29-PyConUK
 /main.pdf) - PyConUK, Cardiff 2017.
+
++ [The power of memory]({{ site.baseurl }}/posters//2018-01-08-SIAM
+/poster.pdf) poster - SIAM UKIE Annual Meeting, Southampton 2018.
+[The power of memory](https://nikoleta-v3.github.io/blog/2018/01/05/power-of-memory.html) a blog post accompanying the poster.
 
 Lightning Talks
 ---------------
