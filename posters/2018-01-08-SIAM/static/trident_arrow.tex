@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+    \usepackage{tikz}
+    
+    \begin{document}
+    \begin{tikzpicture}
+    \draw[solarizedRed, ultra thick] (-0.5, -3.5) -- (0.052, -3.5);
+    \draw[solarizedRed, ultra thick] (0, -3.5) -- (0, 0.052);
+    \draw[solarizedRed, ultra thick] (0, 0) -- (1, 0);
+    \draw[solarizedRed, ultra thick] (1, 0) -- (1, 1);
+    \draw[solarizedRed, ultra thick] (1, 0) -- (1, -1);
+    
+    \draw[solarizedRed, ultra thick, ->] (.948, 1) -- (2, 1);
+    \draw[solarizedRed, ultra thick, ->] (.948, -1) -- (2, -1);
+    
+    \node (empty) at (2, 1) {};
+    \node (empty_two) at (2, -1.3) {};
+        \end{tikzpicture}
+    \end{document}

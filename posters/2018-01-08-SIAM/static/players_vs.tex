@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{marvosym}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+\tikzset{man/.pic={%
+        \fill [rounded corners=1.5] (0,0.4) -- (0,0.8) -- (0.4,0.8) -- (0.4,0.4) --
+            (0.325,0.4) -- (0.325,0.7) -- (0.3,0.7) -- (0.3,0) -- (0.225,0) --
+            (0.225,0.4) -- (0.175,0.4) -- (0.175,0) -- (0.1,0) -- (0.1,0.7) --
+            (0.075,0.7) -- (0.075,0.4) -- cycle;%
+        \fill (0.2,0.9) circle (0.1);%
+        \coordinate (-head) at (0.2,1);%
+        \coordinate (-foot) at (0.2,0);}}%
+        
+\begin{tikzpicture}
+
+\pic[cyan] at (0, 0) (myman) {man};
+\pic[orange] at (0.6, 0) (myman) {man};
+
+\draw[thick, orange] (1, 1) -- (1.13, 1); {};
+\draw[thick, orange] (1, 0.99) -- (1.13, 0.99); {};
+\node (0) at (1.3, 0.99) {\fontsize{1.5}{3} \selectfont memory one};
+
+\draw[thick, cyan] (1, 0.93) -- (1.13, 0.93); {};
+\draw[thick, cyan] (1, 0.92) -- (1.13, 0.92); {};
+\node (1) at (1.3, 0.92) {\fontsize{1.5}{3} \selectfont long memory};
+\end{tikzpicture}
+\end{document}

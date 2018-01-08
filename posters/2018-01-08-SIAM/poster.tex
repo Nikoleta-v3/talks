@@ -1,0 +1,236 @@
+\documentclass[usenames,dvipsnames,t]{beamer}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{standalone}
+\usepackage{minted}
+\usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage{rotating}
+
+\definecolor{DarkGray}{RGB}{5, 66, 81}
+\definecolor{DarkerGray}{RGB}{3, 22, 27}
+
+\usemintedstyle{native}
+
+\usetikzlibrary{shapes.arrows, positioning, arrows, decorations.pathreplacing,
+angles, quotes, decorations.pathmorphing, fit, backgrounds}
+
+\tikzstyle{background}=[solarizedRed, rectangle, draw, inner sep=0.7mm,
+           rounded corners=1mm, ultra thick]
+\tikzset{
+    ultra thick/.style={line width=3pt},
+    super thick/.style={line width=6pt}
+}
+\usetikzlibrary{matrix}
+
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+\setbeamerfont{block title}{size=\Large}
+\usepackage[orientation=landscape,size=a1,scale=1.4]{beamerposter}
+\newcommand{\R}{\mathbb{R}}
+
+\renewcommand{\arraystretch}{0.8}
+
+\addtobeamertemplate{block begin}{%
+  \setlength{\textwidth}{.5\textwidth}%
+}{}
+
+\addtobeamertemplate{block alerted begin}{%
+  \setlength{\textwidth}{.5\textwidth}%
+}{}
+
+\addtobeamertemplate{block example begin}{%
+  \setlength{\textwidth}{.5\textwidth}%
+}{}
+\setbeamerfont{block body}{size=\footnotesize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.02\linewidth}
+    \end{column}
+    \begin{column}{.1\linewidth}
+        \vspace{1cm}
+
+        \begin{center}
+        \includegraphics[width=.7\textwidth]{static/cardiff_uni_logo}
+        \end{center}
+    \end{column}
+    \begin{column}{.7\linewidth}
+    \vspace{1.5cm}
+
+    \centering
+    \textbf{\textcolor{orange}{\fontsize{110}{120} \selectfont THE POWER OF MEMORY}}
+    \vspace{0.7cm}
+
+    \textbf{\Large\textcolor{orange}{Is memory size advantageous in interactions?}}
+    \end{column}
+    \begin{column}{.2\linewidth}
+        
+        \begin{center}
+            \includestandalone[width=.75\textwidth]{static/matrix}
+        \end{center}
+        \end{column}
+    % \begin{column}{.23\linewidth}
+
+    %     \includestandalone[width=\textwidth]{static/memory_one}
+    % \end{column}
+    \begin{column}{.02\linewidth}
+    \end{column}
+\end{columns}
+\vspace{1cm}
+
+\hrule height 3pt
+\vspace{1cm}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.02\linewidth}
+    \end{column}
+    \begin{column}{.2\linewidth}
+        \vspace{1cm}
+
+        \includestandalone[width=1.1\textwidth]{static/memory_one}
+    \end{column}
+    \begin{column}{.3\linewidth}
+    \vspace{-.5cm}
+        \begin{center}
+            \includestandalone[width=.45\textwidth]{static/states} \\
+            \includestandalone[width=.05\textwidth]{static/arrow_down} \\
+            \input{static/m_matrix}
+        \end{center}
+    \end{column}
+    \begin{column}{.1\linewidth}
+        \vspace{2cm}
+
+        \includestandalone[width=.7\textwidth]{static/trident_arrow}
+    \end{column}
+    \begin{column}{.3\linewidth}
+        \vspace{1cm}
+
+        \small{
+            W. H. Press and F. J. Dyson. \textbf{Iterated Prisoner's
+            Dilemma contains strategies that dominate any evolutionary opponent}
+            PNAS 2012.
+            \[p ^ * \rightarrow \text{ manipulates } \rightarrow q\]
+        }
+        \vspace{1cm}
+
+        \small{
+        This work considers an optimisation approach to identify:
+        \[ p ^ * \rightarrow \text{ best response } \rightarrow q\]}
+        \normalsize{{
+            \boldmath{\[u_q(p)= \frac{\frac{1}{2}\enspace p  Q  p^T + c^T p + a}
+                  {\frac{1}{2}\enspace  p  \bar{Q}  p^T + \bar{c}^T  p + \bar{a}},
+                  \text{ where }  \ p \in \R^4_{[0, 1]}\] 
+            }}}
+    \end{column}
+    \begin{column}{.05\linewidth}
+    \end{column}
+\end{columns}
+\vspace{1cm}
+
+\hrule height 3pt
+\vspace{1cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECOND ROW%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.7\linewidth}
+        \begin{center}
+            \textcolor{orange}{\textbf{\Large{PURELY RANDOM STRATEGIES \boldmath\(p=(p, p, p, p)\)}}}
+        \end{center}
+
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+            \begin{center}
+            \vspace{-1cm}
+
+            \textcolor{orange}{\textbf{\small{AGAINST A SINGLE OPPONENT}}}
+            \vspace{2cm}
+
+            \includestandalone[width=.7\textwidth]{static/single_opponent}
+            \vspace{1.5cm}
+
+            \includegraphics[width=.7\textwidth]{static/matches}
+            \end{center}
+        \end{column}
+        \begin{column}{.5\linewidth}
+            \begin{center}
+                \vspace{-1cm}
+    
+                \textcolor{orange}{\textbf{\small{AGAINST MULTIPLE OPPONENTS}}}
+                \vspace{1.5cm}
+    
+                \includestandalone[width=.7\textwidth]{static/multiple_opponents}
+                \vspace{-.5cm}
+                
+                \textbf{\[u_q(p)\]} \\
+                \includestandalone[width=.024\textwidth]{static/arrow_down} \\
+                \input{static/matrix_companion} \\
+                \includestandalone[width=.024\textwidth]{static/arrow_down} \\
+                \includegraphics[width=.5\textwidth]{static/tournament}
+
+            \end{center}
+        \end{column}
+    \end{columns}
+    \end{column}
+    \begin{column}{.25\linewidth}
+        \begin{center}
+            \vspace{-.08cm}
+            \textcolor{orange}{\textbf{\Large{FURTHER WORK}}}
+        \end{center}
+
+        \begin{center}
+            \vspace{.3cm}
+
+            \textcolor{orange}{\small{\textbf{ \boldmath\(p=(p_1, p_2, p_3, p_4) \rightarrow\) RESULTANT THEORY}}}
+        \end{center}
+    \begin{center}
+        \includestandalone[width=.6\textwidth]{static/resultant}
+    \end{center}
+            \vspace{2cm}
+
+            \begin{center}
+                \textcolor{orange}{\textbf{\Large{SUMMARY}}}
+            \begin{center}
+                \begin{enumerate}
+                    \item The utility of a given player \(p\) against a given opponent \(q\) 
+                    can be written in a compact way.
+                    \item Obtaining the optimal random behaviour \(p ^ *\) reduces to a search over a small finite set.
+                    \item Optimising against the mean utility cannot be captured by optimising against the mean opponent.
+                    \item Memory is important in interactions with multiple agents.
+                \end{enumerate}
+            \end{center}
+        \end{center}
+    \end{column}
+\end{columns}
+\vspace{1.5cm}
+
+\hrule height 3pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.2\linewidth}
+        \vspace{0.3cm}
+
+        \centering
+        \textbf{ \faTwitter \ NikoletaGlyn}
+    \end{column}
+    \begin{column}{.6\linewidth}
+        \vspace{0.3cm}
+
+        \centering
+        \textbf{ In case you missed me: \url{https://nikoleta-v3.github.io/blog/2018/01/05/power-of-memory.html}}
+    \end{column}
+    \begin{column}{.2\linewidth}
+        \vspace{0.3cm}
+
+        \centering
+        \textbf{ \faGithub \ Nikoleta-v3}
+    \end{column}
+\end{columns}
+\end{document}
