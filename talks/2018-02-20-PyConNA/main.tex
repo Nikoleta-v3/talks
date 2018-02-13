@@ -69,21 +69,14 @@
 \end{frame}
 
 \begin{frame}
+    \centering
+    \large{
     \textcolor{orange}{
-    \Large{
-        \begin{eqnarray*}
-            \mathbf{u(\sigma, \chi)} &=&
-            \mathbf{H (\theta_r r(1 - s) - r + 1) \theta(r, x)^{-\alpha} -}
-        \\ && \mathbf{F \left(1 - s + \frac{s}{1 - r} \right)(1-rx)^{\gamma}(1 - r)^{\beta}}
-    \end{eqnarray*}
-    }}
+        \rotatebox{-35}{
+            \(\mathbf{u(\sigma, \chi)} = \mathbf{H (\theta_r r(1 - s) - r + 1) \theta(r, x)^{-\alpha} -}
+            \mathbf{F \left(1 - s + \frac{s}{1 - r} \right)(1-rx)^{\gamma}(1 - r)^{\beta}}\)
+    }}}
     \end{frame}
-
-% \begin{frame}
-%     \centering
-%     \includestandalone[width=.45\textwidth]{static/stable}
-%     \includestandalone[width=.45\textwidth]{static/evolutionary_stability}
-% \end{frame}
 
 \begin{frame}
     \centering
@@ -97,7 +90,7 @@
     where
     \[u(1, 1) = H(1 - r)^{1 - \alpha} − F (1 - r)^{\beta + \gamma - 1}\]
     and
-    \[u(0, 1) = H(\theta{r} r + 1 - r)(1 - r)^{-\alpha} - F (1 - r)^{\beta + \gamma}.\]
+    \[u(0, 1) = H(\theta_{r} r + 1 - r)(1 - r)^{-\alpha} - F (1 - r)^{\beta + \gamma}.\]
     This gives the condition,
     \[H\theta_{r} < -F (1 - r)^{\gamma + \beta + \alpha -1}\]
     \end{proof}
@@ -112,7 +105,7 @@
     fontsize=\footnotesize,
     ]
     {python}
->>> import sympy as sympy
+>>> import sympy as sym
     \end{minted}
 \vspace{.5cm}
 \pause
@@ -176,8 +169,8 @@ a**2 + 2*a*b + b**2
     \vspace{1cm}
     \centering
     \footnotesize
-    \begin{theorem}[Selective]
-    A mixed stable strategy \((s = s^{∗})\) never exists for \(0 < r < 1\).
+    \begin{theorem}[Mixed]
+    A mixed stable strategy \((s = s^{\star})\) never exists for \(0 < r < 1\).
     \end{theorem}
 \end{frame}
 
@@ -196,10 +189,10 @@ a**2 + 2*a*b + b**2
 \begin{frame}
     \centering
     \footnotesize
-    \begin{theorem}[Indiscriminate]
+    \begin{theorem}[Disincentive]
     Using the modified utility model, a population of selective poachers is stable
     if and only if:
-     \[\theta_r H - F (1 − r)^{\gamma + \beta + \alpha -1} < \frac{\Gamma(1 - r)^{\alpha}}{r}\]
+     \[\theta_r H - F (1 - r)^{\gamma + \beta + \alpha -1} < \frac{\Gamma(1 - r)^{\alpha}}{r}\]
     \end{theorem}
 
     \pause
@@ -218,21 +211,8 @@ a**2 + 2*a*b + b**2
     ]
     {python}
 >>> import numpy as np
+>>> from scipy.optimize import brentq
     \end{minted}
-%     \vspace{.5cm}
-%     \pause
-% 	\begin{minted}
-%         [
-%         framesep=4mm,
-%         baselinestretch=1.2,
-%         bgcolor=DarkGray,
-%         fontsize=\footnotesize,
-%         ]
-%         {python}
-% >>> import pandas as pd
-% >>> df = pd.read_csv("../data/main.csv")
-% >>> df.head()
-%         \end{minted}
 \end{frame}
 
 \begin{frame}[fragile]
