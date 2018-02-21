@@ -1,0 +1,56 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{marvosym}
+\usepackage{color}
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning, arrows}
+\usepackage{standalone}
+
+\begin{document}
+\tikzset{man/.pic={
+        \node[circle,fill,minimum size=5mm] (head) {};
+        \node[rounded corners=2pt,minimum height=1.3cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        \draw[thick, solarizedBase03, -round cap] (body.south) --++(90:5.5mm);}}
+\begin{tikzpicture}
+
+\pic[cyan] at (1, 0) (myman) {man};
+\pic[cyan] at (3, 0) (myman) {man};
+\pic[cyan] at (4, 0) (myman) {man};
+\pic[cyan] at (1, 2) (myman) {man};
+\pic[cyan] at (2, 2) (myman) {man};
+\pic[cyan] at (3, 2) (myman) {man};
+\pic[cyan] at (4, 2) (myman) {man};
+
+\node[draw=solarizedRed, single arrow, minimum height=10mm, minimum width=1mm,
+          single arrow head extend=1mm, anchor=west, fill=red, rotate=-90] at (2, -.5) {};
+\pic[solarizedGreen] at (2, -2) (myman) {man};
+
+\pic[orange] at (6.5, 0) (myman) {man};
+\pic[orange] at (7.5, 0) (myman) {man};
+\pic[orange] at (8.5, 0) (myman) {man};
+\node[draw=solarizedRed, single arrow, minimum height=10mm, minimum width=1mm,
+          single arrow head extend=1mm, anchor=west, fill=red, rotate=-45] at (9.5, -.5) {};
+\pic[orange] at (6.5, 2) (myman) {man};
+\pic[orange] at (7.5, 2) (myman) {man};
+\pic[orange] at (8.5, 2) (myman) {man};
+\pic[orange] at (9.5, 2) (myman) {man};
+
+\pic[solarizedGreen] at (10.6, -2) (myman) {man};
+
+\pic[cyan] at	(12, 0) (myman) {man};
+\pic[orange] at	(13, 0) (myman) {man};
+\pic[orange] at	(14, 0) (myman) {man};
+\pic[orange] at	(15, 0) (myman) {man};
+\pic[orange] at	(12, 2) (myman) {man};
+\pic[cyan] at	(13, 2) (myman) {man};
+\pic[orange] at	(15, 2) (myman) {man};
+
+\node[draw=solarizedRed, single arrow, minimum height=10mm, minimum width=1mm,
+          single arrow head extend=1mm, anchor=west, fill=red, rotate=90] at (14, 1) {};
+\pic[solarizedGreen] at (14, 4) (myman) {man};
+\end{tikzpicture}
+\end{document}
