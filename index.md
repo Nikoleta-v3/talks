@@ -36,6 +36,11 @@ literature]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
 /poster.pdf) poster - SIAM UKIE Annual Meeting, Southampton 2018.
 [The power of memory](https://nikoleta-v3.github.io/blog/2018/01/05/power-of-memory.html) a blog post accompanying the poster.
 
+<<<<<<< HEAD
+=======
++ [Rhinos with a bit of Python]({{ site.baseurl }}/talks//2018-02-20-PyConNA/main.pdf) - PyConNA, Namibia 2018.
+
+>>>>>>> master
 Lightning Talks
 ---------------
 
