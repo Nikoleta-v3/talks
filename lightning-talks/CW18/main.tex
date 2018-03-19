@@ -45,8 +45,7 @@
 ...    for name in names:
 ...         df = read_author_files(name)
 ...         for key in keywords:
-...             flag = check_keyword_in_abstract(key, df)
-...             if flag == True:
+...             if check_keyword_in_abstract(key, df):
 ...                 authors_of_interest.append((name, key))
 ...    return authors_of_interest
 >>> find_reviewers(names, keywords)
