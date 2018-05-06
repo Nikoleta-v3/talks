@@ -1,0 +1,46 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%Solarized Theme%%%%%%%%%%%%%%%
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+\usepackage{standalone}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{shapes.multipart}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{\fill}
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \draw [line width=0.5mm] (0, 0) -- (8.5, 0);
+    \draw [line width=0.5mm] (0, -1.9) -- (8.5, -1.9);
+    \draw [line width=0.5mm] (0, -4) -- (8.5, -4);
+    
+    \draw [line width=0.5mm] (2, 1) -- (2, -5);
+    \draw [line width=0.5mm] (5, 1) -- (5, -5);
+    \draw [line width=0.5mm] (8, 1) -- (8, -5);
+    
+    \node (label) at (3, -1) {\includegraphics[width=.07\textwidth]{img/bag.pdf}};
+    \node (label) at (4, -1) {\includegraphics[width=.07\textwidth]{img/bag.pdf}};
+    
+    \node (label) at (6.9, -.7) {\includegraphics[width=.07\textwidth]{img/bag.pdf}};
+    \node (label) at (7.4, -1.2) {\includegraphics[width=.07\textwidth]{img/bag.pdf}};
+    \node (label) at (5.7, -1) {\Huge{\textbf{0}}};
+
+    \node (label) at (2.7, -2.7) {\includegraphics[width=.07\textwidth]{img/bag.pdf}};
+    \node (label) at (3.2, -3.2) {\includegraphics[width=.07\textwidth]{img/bag.pdf}};
+    \node (label) at (4, -2.9) {\Huge{\textbf{0}}};
+
+    \node (label) at (6, -3.2) {\includegraphics[width=.07\textwidth]{img/pounds.pdf}};
+    \node (label) at (7, -3.2) {\includegraphics[width=.07\textwidth]{img/pounds.pdf}};
+
+    \node (label) at (3.5, .5) {\textit{they cooperate}};
+    \node (label) at (6.5, .5) {\textit{they defect}};
+
+    \node (label) at (1, -1) {\textit{you} \\ \textit{cooperate}};
+    \node (label) at (1, -3) {\textit{you} \\ \textit{defect}};
+    \end{tikzpicture}
+\end{center}
+\vspace*{\fill}
+\end{document}
