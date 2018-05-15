@@ -20,8 +20,28 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
-
+\usepackage[framemethod=TikZ]{mdframed}
 \setbeamertemplate{blocks}[default]
+
+\mdfdefinestyle{framed}{%
+    linecolor=orange,
+    outerlinewidth=2pt,
+    roundcorner=10pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    innerrightmargin=8pt,
+    innerleftmargin=8pt,
+    backgroundcolor=solarizedBase03}
+
+\mdfdefinestyle{blank}{%
+    linecolor=solarizedBase03,
+    outerlinewidth=2pt,
+    roundcorner=10pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    innerrightmargin=8pt,
+    innerleftmargin=8pt,
+    backgroundcolor=solarizedBase03}
 
 %%%%%%Title%%%%%%%%
 \title{Memory size in the Prisoner's Dilemma}
@@ -59,6 +79,33 @@ Dr. Jonathan \textsc{Gillard} }}
 \end{frame}
 
 \begin{frame}
+    \begin{mdframed}[style=blank]
+    \centering
+    \large{
+    \textbf{\textcolor{orange}{WHICH IS THE BEST MEMORY ONE STRATEGY?}}}
+    \end{mdframed}
+    \begin{mdframed}[style=blank]
+    \centering
+    \large{
+    \textbf{\textcolor{orange}{ARE THEY LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
+    \end{mdframed}
+\end{frame}
+
+\begin{frame}
+    \begin{mdframed}[style=framed]
+    \centering
+    \large{
+    \textbf{\textcolor{orange}{WHICH IS THE BEST MEMORY ONE STRATEGY?}}}
+    \end{mdframed}
+    \begin{mdframed}[style=blank]
+    \centering
+    \large{
+    \textbf{\textcolor{orange}{ARE THEY LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
+    \end{mdframed}
+\end{frame}
+
+
+\begin{frame}
     \centering
     \includestandalone[width=0.5\textwidth]{memory_one_chain}
   
@@ -73,15 +120,6 @@ Dr. Jonathan \textsc{Gillard} }}
     \includestandalone[width=.6\textwidth]{states} \vspace{1cm}
 
     \includestandalone[width=.8\textwidth]{m_matrix}
-\end{frame}
-
-\begin{frame}
-    \begin{center}
-    \large{
-    \textbf{\textcolor{orange}{
-    WHICH IS THE BEST MEMORY ONE STRATEGY? \\ \vspace{.7cm}
-    ARE THEY LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
-    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -133,11 +171,43 @@ Dr. Jonathan \textsc{Gillard} }}
 \end{frame}
 
 \begin{frame}
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+    \Large{\textcolor{orange}{
+    \[\mathbf{S_{q} = \displaystyle \ U_{i=1}^{2N}  \lambda_i \cup \{0, 1\}}\] \\
+    \[\mathbf{1 \leq|S_{q(i)}| \leq 2N + 2}\]}}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \includegraphics[width=\textwidth]{match_random}
+            \includegraphics[width=\textwidth]{tournament_random}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
     \begin{center}
     \Large{
     \textbf{\textcolor{orange}{REACTIVE}} \vspace{1cm}
 
     \textcolor{orange}{\boldmath\( p = (p_1, p_2, p_1, p_2)\)}}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+            \includestandalone[width=\textwidth]{resultant}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \includegraphics[width=\textwidth]{reactive}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \Large{
+    \textbf{\textcolor{orange}{MEMORY ONE}}}
     \end{center}
 \end{frame}
 
@@ -149,9 +219,61 @@ Dr. Jonathan \textsc{Gillard} }}
 \end{frame}
 
 \begin{frame}
+    \centering
+    \textcolor{orange}{
+    \resizebox{11cm}{!}{
+    \begin{tabular}{lrrrrrrrrrrrrrrrlrr}
+        \toprule
+        {} &     $q_1$ &     $q_2$ &     $q_3$ &     $q_4$  &     $p_1$ &     $p_2$ &  $p_3$ &  $p_4$ &     $u_q$ &  $U_q$ \\
+        \midrule
+        0 &  0.208461 & 0.481681 & 0.420538 & 0.859182 & 0.603430 & 0.435408 & 0.0 & 0.0 & 3.494901 & 3.467 \\
+        1 &  0.781368 & 0.692829 & 0.969659 & 0.032401 & 0.000000 & 0.000000 & 0.0 & 1.0 & 3.266885 & 3.328 \\
+        2 &  0.546571 & 0.964307 & 0.063893 & 0.383576 & 0.389439 & 0.491920 & 0.0 & 0.0 & 4.659477 & 4.544 \\
+        3 &  0.930557 & 0.381203 & 0.665347 & 0.999155 & 0.145812 & 0.480583 & 0.0 & 0.0 & 3.470172 & 3.454 \\
+        4 &  0.309831 & 0.129804 & 0.346928 & 0.770327 & 0.566760 & 0.039395 & 0.0 & 0.0 & 2.878247 & 2.886 \\
+        \bottomrule
+        \end{tabular}}}
+\end{frame}
+
+
+\begin{frame}
+    \begin{mdframed}[style=blank]
+    \centering
+    \large{
+    \textbf{\textcolor{orange}{WHICH IS THE BEST MEMORY ONE STRATEGY?}}}
+    \end{mdframed}
+    \begin{mdframed}[style=framed]
+    \centering
+    \large{
+    \textbf{\textcolor{orange}{ARE THEY LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
+    \end{mdframed}
+\end{frame}
+
+\begin{frame}
     \begin{center}
     \includestandalone[width=\textwidth]{limitations}
     \end{center}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textcolor{orange}{
+    \resizebox{11cm}{!}{
+    \begin{tabular}{lrrrrrrrrrrrrrrrlrr}
+        \toprule
+        {} &     $q_1$ &     $q_2$ &     $q_3$ &     $q_4$  &     $p_1$ &     $p_2$ &  $p_3$ &  $p_4$ &     $u_q$ &  $U_q$ \\
+        \midrule
+        0 &  0.208461 & 0.481681 & 0.420538 & 0.859182 & 0.603430 & 0.435408 & 0.0 & 0.0 & 3.494901 & 3.467 \\
+        1 &  0.781368 & 0.692829 & 0.969659 & 0.032401 & 0.000000 & 0.000000 & 0.0 & 1.0 & 3.266885 & 3.328 \\
+        2 &  0.546571 & 0.964307 & 0.063893 & 0.383576 & 0.389439 & 0.491920 & 0.0 & 0.0 & 4.659477 & 4.544 \\
+        3 &  0.930557 & 0.381203 & 0.665347 & 0.999155 & 0.145812 & 0.480583 & 0.0 & 0.0 & 3.470172 & 3.454 \\
+        4 &  0.309831 & 0.129804 & 0.346928 & 0.770327 & 0.566760 & 0.039395 & 0.0 & 0.0 & 2.878247 & 2.886 \\
+        \bottomrule
+        \end{tabular}}}
+\end{frame}
+
+\begin{frame}
+    \includegraphics[width=\textwidth]{contribution}
 \end{frame}
 
 \begin{frame}
