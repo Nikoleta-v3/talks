@@ -15,7 +15,7 @@
 \usepackage{tikz}
 \usepackage{standalone}
 \usetikzlibrary{decorations.pathmorphing, decorations.markings, arrows}
-\usetikzlibrary{decorations.pathreplacing,angles,quotes, calc}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes, calc, er, positioning}
 
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -43,6 +43,8 @@
     innerleftmargin=8pt,
     backgroundcolor=solarizedBase03}
 
+\usetikzlibrary{shapes.arrows, positioning, arrows, decorations.pathreplacing,
+angles, quotes, decorations.pathmorphing}
 %%%%%%Title%%%%%%%%
 \title{Memory size in the Prisoner's Dilemma}
 \author{Nikoleta E. Glynatsi}
@@ -71,11 +73,16 @@ Dr. Jonathan \textsc{Gillard} }}
 
 \begin{frame}
     \begin{center}
-    \textbf{\textcolor{orange}{
-    \textit{William H. Press and Freeman J. Dyson.}
+    \textcolor{orange}{\textbf{
+    \underline{William H. Press and Freeman J. Dyson.}
     Iterated Prisoner's Dilemma contains strategies that dominate any evolutionary
-    opponent. 2012.}}
+    opponent. \underline{2012}}}
     \end{center}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includestandalone[width=.7\textwidth]{achieve}
 \end{frame}
 
 \begin{frame}
@@ -87,7 +94,7 @@ Dr. Jonathan \textsc{Gillard} }}
     \begin{mdframed}[style=blank]
     \centering
     \large{
-    \textbf{\textcolor{orange}{ARE THEY LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
+    \textbf{\textcolor{orange}{ARE THERE LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
     \end{mdframed}
 \end{frame}
 
@@ -100,7 +107,7 @@ Dr. Jonathan \textsc{Gillard} }}
     \begin{mdframed}[style=blank]
     \centering
     \large{
-    \textbf{\textcolor{orange}{ARE THEY LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
+    \textbf{\textcolor{orange}{ARE THERE LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
     \end{mdframed}
 \end{frame}
 
@@ -145,6 +152,19 @@ Dr. Jonathan \textsc{Gillard} }}
 
 \begin{frame}
     \begin{center}
+    \begin{lemma}
+    {\tiny
+     \boldmath\[\frac{1}{N} \sum\limits_{i=1} ^ {N} {u_q}^{(i)} (p) = \frac{1}{N}
+     \frac{\sum\limits_{i=1} ^ {N} (\frac{1}{2} pQ^{(i)} p^T + c^{(i)T} p + a^ {(i)})
+     \prod\limits_{\tiny\begin{array}{l} j=1 \\ j \neq i \end{array}} ^ 
+     N (\frac{1}{2} p\bar{Q}^{(i)} p^T + \bar{c}^{(i)T} p + \bar{a}^ {(i)})}
+     {\prod\limits_{i=1} ^ N (\frac{1}{2} p\bar{Q}^{(i)} p^T + \bar{c}^{(i)T} p + \bar{a}^ {(i)})}\]}
+    \end{lemma}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
     \includestandalone[width=.4\textwidth]{cube}
     \end{center}
 \end{frame}
@@ -174,14 +194,18 @@ Dr. Jonathan \textsc{Gillard} }}
     \begin{columns}
         \begin{column}{.5\textwidth}
     \Large{\textcolor{orange}{
-    \[\mathbf{S_{q} = \displaystyle \ U_{i=1}^{2N}  \lambda_i \cup \{0, 1\}}\] \\
+    \[\mathbf{S_q = U_{\substack{i=1}} ^ {2N} \lambda_i \cup \{0, 1\}}\] \vspace{1mm}
     \[\mathbf{1 \leq|S_{q(i)}| \leq 2N + 2}\]}}
         \end{column}
         \begin{column}{.5\textwidth}
-            \includegraphics[width=\textwidth]{match_random}
-            \includegraphics[width=\textwidth]{tournament_random}
+            \includegraphics[width=.8\textwidth]{match_random}
+            \includegraphics[width=.8\textwidth]{tournament_random}
         \end{column}
     \end{columns}
+    \pause
+    \centering
+    \vspace{1cm}
+    \textbf{\textcolor{orange}{result: optimal behaviour using eigenvalues of companion matrix}}
 \end{frame}
 
 \begin{frame}
@@ -202,6 +226,10 @@ Dr. Jonathan \textsc{Gillard} }}
             \includegraphics[width=\textwidth]{reactive}
         \end{column}
     \end{columns}
+    \pause
+    \centering
+    \vspace{2mm}
+    \textbf{\textcolor{orange}{result: optimal behaviour using Sylvester's resultant (Sylvester 1840)}}
 \end{frame}
 
 \begin{frame}
@@ -213,8 +241,12 @@ Dr. Jonathan \textsc{Gillard} }}
 
 \begin{frame}
     \begin{center}
-    \Large{
-    \textbf{\textcolor{orange}{DIFFERENTIAL EVOLUTION}}}
+        \vspace{-.5cm}
+        \textcolor{orange}{
+        \[\mathbf{ b'= b_0 + m \times (p^{(i)} - p^{(j)})}\]}
+        \vspace{.1cm}
+
+        \includestandalone[width=.8\textwidth]{static/numeric}
     \end{center}
 \end{frame}
 
@@ -245,7 +277,7 @@ Dr. Jonathan \textsc{Gillard} }}
     \begin{mdframed}[style=framed]
     \centering
     \large{
-    \textbf{\textcolor{orange}{ARE THEY LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
+    \textbf{\textcolor{orange}{ARE THEIR LIMITATIONS TO MEMORY ONE STRATEGIES?}}}
     \end{mdframed}
 \end{frame}
 
@@ -277,7 +309,10 @@ Dr. Jonathan \textsc{Gillard} }}
 \end{frame}
 
 \begin{frame}
-\centering
+    \centering
+    \large{\textcolor{orange}{\textbf{Limitations of memory size on the Iterated Prisoner's dilemma}. (In preperation)}} \\
+    \vspace{2cm}
+
     \large \textbf{\textcolor{orange}{{@NikoletaGlyn}}}\\
     \large \textbf{\textcolor{orange}{{https://github.com/Nikoleta-v3}}}\\
 \end{frame}

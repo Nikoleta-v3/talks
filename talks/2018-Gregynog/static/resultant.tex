@@ -13,23 +13,22 @@
     
         \begin{tikzpicture}
     
-        \node (0) at (-0.5, 0.5) {$\begin{aligned}
+        \node (0) at (-0.5, 0.3) {$\begin{aligned}
             \frac{du}{dp_1} & = 0 \\
+            & \\
             \frac{du}{dp_2} & = 0 \\
-            \vdots \\
-            \frac{du}{dp_n} & = 0 \\
              \end{aligned}$};
 
-        \node(1) at (3, 1.5) {$ M = \begin{bmatrix}
+        \node(1) at (3, .8) {$ M = \begin{bmatrix}
             \dots \\
             \dots \\
             \dots
           \end{bmatrix}$};
         \draw (0) edge[out=90, in=90, ->, ultra thick, orange, looseness=1.5] node [above] {} (1);
 
-        \node(2) at (3, -1.2) {\small{det$(M)= 0$}};
+        \node(2) at (3, -.8) {\small{det$(M)= 0$}};
         \draw (1) edge[out=-90, in=90, ->, ultra thick, orange] node [above] {} (2);
-        \draw (2) edge[out=-90, in=-90, ->, ultra thick, orange] node [above] {} (0);
+        \draw (2) edge[out=-90, in=-90, ->, ultra thick, orange, looseness=1.5] node [above] {} (0);
         \end{tikzpicture}
 
     \end{document}
