@@ -1,0 +1,12 @@
+# Compile files
+*_minted-main/*
+*.aux
+*.log
+*.vrb
+
+# tex/tikz files
+static/*.pdf
+static/*.gnuplot
+
+# notes to myself
+notes.txt

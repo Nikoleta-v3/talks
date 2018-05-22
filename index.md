@@ -13,7 +13,7 @@ Talks
 + [Accessing open research literature with Python]({{ site.baseurl }}/talks/2017-02-23 Arcas (PyCon Namibia)/main.pdf) -
 PyCon NA, Namibia 2017.
 
-+ [Writing tests for research software]({{ site.baseurl }}/talks/2017-02-23 Testing (PyCon Namibia)/main.pdf) - PyCon NA, Namibia 2017.
++ [Writing tests for research software]({{ site.baseurl }}/talks/2017-02-23 Testing (PyCon Namibia)/main.pdf) - PyCon NA, Namibia 2017.\draw[orange, looseness=1.8] (s) edge[out=0, in=90, ->, thick] (7);
 
 + [Defection and Cooperation amongst Prisoners]({{ site.baseurl }}/talks/2017-03-01-SIAM/main.pdf) -
 SIAM Meeting, Cardiff 2017.
@@ -29,14 +29,16 @@ Wales Mathematics Colloquium, Gregynog Hall 2017.
 literature]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
 /main.pdf) - Euroscipy, Erlangen Germany 2017.
 
-+ [A trip to earth science with python as a companion]({{ site.baseurl }}/talks//2017-10-29-PyConUK
-/main.pdf) - PyConUK, Cardiff 2017.
++ [A trip to earth science with python as a companion]({{ site.baseurl }}/talks//2017-10-29-PyConUK/main.pdf) - PyConUK, Cardiff 2017.
 
 + [The power of memory]({{ site.baseurl }}/posters//2018-01-08-SIAM
 /poster.pdf) poster - SIAM UKIE Annual Meeting, Southampton 2018.
 [The power of memory](https://nikoleta-v3.github.io/blog/2018/01/05/power-of-memory.html) a blog post accompanying the poster.
 
 + [Rhinos with a bit of Python]({{ site.baseurl }}/talks//2018-02-20-PyConNA/main.pdf) - PyConNA, Namibia 2018.
+
++ [Memory size in the Prisoners Dilemma]({{ site.baseurl }}/talks/2018-05-22-Gregynog/main.pdf) - Wales Mathematics Colloquium, Gregynog Hall 2018.
+
 
 Lightning Talks
 ---------------
