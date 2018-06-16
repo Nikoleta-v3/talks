@@ -1,0 +1,28 @@
+\documentclass{standalone}
+
+    \usepackage{tikz}
+    
+    \usetikzlibrary{er, positioning, calc}
+    \begin{document}
+    \tikzstyle{arrow}=[draw, -latex, ultra thick] 
+    \begin{tikzpicture}[auto, node distance=.6cm] 
+    
+      \node[orange, entity] (node1) {\textbf{Initial Population}};
+      \node[orange, entity] (node2) [below = of node1] {\textbf{Evaluate Fitness}};
+    
+      \node[orange, relationship] (rel1) [below = of node2] {\textbf{Stop Condition}};
+    
+      \node[orange, entity] (node3) [right = of rel1] {\textbf{Selection}};
+    
+      \node[orange, entity] (node4) [right= of node3] {\textbf{Crossover and mutation}};
+    
+      \node[orange, entity] (node5) [below = of rel1] {\textbf{Results}};
+    
+      \draw[arrow, orange] (node1)--(node2);
+      \draw[arrow, orange] (node2)--(rel1);
+      \draw[arrow, orange] (rel1)-- node {No} (node3);
+      \draw[arrow, orange] (node3)--(node4);
+      \draw[arrow, orange] (rel1.west) |- node [above left] {Yes} (node5.west);
+      \draw[arrow, orange] (node4)|-(node2.east);
+    \end{tikzpicture}
+    \end{document}
