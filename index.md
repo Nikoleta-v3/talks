@@ -38,7 +38,7 @@ literature]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
 + [Rhinos with a bit of Python]({{ site.baseurl }}/talks//2018-02-20-PyConNA/main.pdf) - PyConNA, Namibia 2018.
 
 + [Memory size in the Prisoners Dilemma]({{ site.baseurl }}/talks/2018-05-22-Gregynog/main.pdf) - Wales Mathematics Colloquium, Gregynog Hall 2018.
-
++ [Memory size in the Prisoners Dilemma]({{ site.baseurl }}/talks/2018-06-18-SIAM-UKIE-National-Student-Chapter/main.pdf) - SIAM UKIE National Student Chapter, Bath University 2018.
 
 Lightning Talks
 ---------------
