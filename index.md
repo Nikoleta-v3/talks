@@ -13,7 +13,7 @@ Talks
 + [Accessing open research literature with Python]({{ site.baseurl }}/talks/2017-02-23 Arcas (PyCon Namibia)/main.pdf) -
 PyCon NA, Namibia 2017.
 
-+ [Writing tests for research software]({{ site.baseurl }}/talks/2017-02-23 Testing (PyCon Namibia)/main.pdf) - PyCon NA, Namibia 2017.\draw[orange, looseness=1.8] (s) edge[out=0, in=90, ->, thick] (7);
++ [Writing tests for research software]({{ site.baseurl }}/talks/2017-02-23 Testing (PyCon Namibia)/main.pdf) - PyCon NA, Namibia 2017.
 
 + [Defection and Cooperation amongst Prisoners]({{ site.baseurl }}/talks/2017-03-01-SIAM/main.pdf) -
 SIAM Meeting, Cardiff 2017.
