@@ -1,7 +1,10 @@
 # latex files
 *aux
 *log
-
+*nav
+*toc
+*out
+*snm
 
 #  minted
 *_minted-main/*
