@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>PyConUK 2018</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -44,12 +44,12 @@
                         <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 11;">
                             <h1 style="text-align:left">
                                 <span style="font-size:1.4em">
-                                    <span style="color:#FF8C00">WHY A SMILE MAKES A </span>
+                                    <span style="color:#FF8C00">WHY DOES A SMILE MAKE</span>
                                 </span>
                             </h1>
                             <h1 style="text-align:left">
                                 <span style="font-size:1.4em">
-                                    <span style="color:#FF8C00">DIFFERENCE?</span>
+                                    <span style="color:#FF8C00"> A DIFFERENCE?</span>
                                 </span>
                             </h1>
                         </div>
@@ -59,7 +59,7 @@
                     <div class="sl-block-content" style="z-index: 12; color: rgb(255, 153, 0);">
                         <p style="text-align:left">
                             <strong>
-                                <span style="text-align:start">Unlocking the complex world as a programmer</span>
+                                <span style="text-align:start">Unlocking the complex world as a programmer @NikoletaGlyn</span>
                             </strong>
                         </p>
                     </div>
@@ -106,29 +106,6 @@
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 278px; height: 278px; left: 160px; top: 72px;">
                     <div class="sl-block-content" style="z-index: 14;">
                         <img data-natural-width="299" data-natural-height="299" style="" data-lazy-loaded="" data-src="img/uk.png"/>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 210px; height: auto;">
-                    <div class="sl-block-content" style="z-index: 10;">
-                        <h1>
-                            <span style="font-size:1.4em">
-                                <span style="color:#FF8C00">WHAT AM I INTERESTED IN?</span>
-                            </span>
-                        </h1>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 210px; height: auto;">
-                    <div class="sl-block-content" style="z-index: 11;">
-                        <h1>
-                            <span style="color:#FF8C00">
-                                <span style="font-size:105px">You!</span>
-                            </span>
-                        </h1>
-                        <p>&nbsp;</p>
                     </div>
                 </div>
             </section>
@@ -224,42 +201,61 @@
                 </div>
             </section>
             <section>
-                <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 956px; height: 305px; left: 4px; top: 0px;">
+                <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 50px; width: 956px; height: 400px; left: 4px; top: 0px;">
                     <div class="sl-block-content notranslate" style="z-index: 11;" data-highlight-theme="obsidian">
                         <pre class="python">
                             <code>&gt;&gt;&gt; import arcas
 
 &gt;&gt;&gt; def retrieve_articles(api, records):
 ...     api = api()
-...     parameters = api.parameters_fix(title='open source software', records=records)
-...     url = api.create_url_search(parameters)
-    
-...     request = api.make_request(url)
-...     root = api.get_root(request)
-...     raw_articles = api.parse(root)
-...     articles = [api.to_dataframe(article) for article in raw_articles]
-    
+...     articles = []
+...     for i in range(repeat):
+...         parameters = api.parameters_fix(title='python programming language',
+...                                         records=10, start=(10 * i) + 1)
+...         url = api.create_url_search(parameters)
+
+...         request = api.make_request(url)
+...         root = api.get_root(request)
+...         raw_articles = api.parse(root)
+...         if raw_articles:
+...             for raw_article in raw_articles:
+...                 articles.append(api.to_dataframe(raw_article))
+...         else:
+...             return articles
 ...     return articles
 </code></pre>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 956px; height: 162px; left: 4px; top: 350px;">
+                <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 956px; height: 162px; left: 4px; top: 420px;">
                     <div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 12;">
                         <pre class="python">
                             <code>&gt;&gt;&gt; import pandas as pd
 &gt;&gt;&gt; dfs = []
-&gt;&gt;&gt; for api in [arcas.Plos, arcas.Arxiv, arcas.Nature, arcas.Ieee, arcas.Springer]:
+&gt;&gt;&gt; for api in [arcas.Arxiv, arcas.Ieee, arcas.Springer]:
 ...     articles = retrieve_articles(api, records=20)
 ...     if articles:
 ...         dfs.append(pd.concat(articles))
-...     else:
-...         pass</code></pre>
+        </code></pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 968px; height: 820px; left: 0px; top: -60px;">
+                    <div class="sl-block-content" style="z-index: 11;">
+                        <img style="" data-natural-width="1594" data-natural-height="1350" data-src="img/python_graph.png">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 960px; height: 655px; left: 0px; top: 0px;">
+                    <div class="sl-block-content" style="z-index: 11;">
+                        <img style="" data-natural-width="1165" data-natural-height="795" data-lazy-loaded="" data-src="img/sub_python_graph.png">
                     </div>
                 </div>
             </section>
             <section>
                 <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 956px; height: 162px; left: 2px; top: 0px;">
-                    <div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 11;">
+                    <div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 10;">
                         <pre class="python">
                             <code>&gt;&gt;&gt; import networkx as nx
 &gt;&gt;&gt; central_authors = sorted(nx.degree_centrality(G).items(), 
@@ -267,10 +263,15 @@
 ...                          reverse=True)[0:10]</code></pre>
                     </div>
                 </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 602px; height: 546px; left: 179px; top: 210px;">
+                    <div class="sl-block-content" style="z-index: 12;">
+                        <img style="" data-natural-width="911" data-natural-height="827" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5249771/betweness.png"/>
+                    </div>
+                </div>
             </section>
             <section>
                 <div class="sl-block" data-block-type="code" style="width: 956px; height: 162px; left: 2px; top: 0px;">
-                    <div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 10;">
+                    <div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 11;">
                         <pre class="python">
                             <code>&gt;&gt;&gt; import networkx as nx
 &gt;&gt;&gt; central_authors = sorted(nx.nx.betweenness_centrality(G).items(), 
@@ -278,16 +279,16 @@
 ...                          reverse=True)[0:10]</code></pre>
                     </div>
                 </div>
-            </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 331px;">
-                    <div class="sl-block-content" style="z-index: 11;">
-                        <p>Text</p>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 683px; height: 532px; left: 139px; top: 210px;">
+                    <div class="sl-block-content" style="z-index: 12;">
+                        <img style="" data-natural-width="939" data-natural-height="732" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5249785/centrality_two.png"/>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 593px; height: 404px; left: 180px; top: 140px;">
-                    <div class="sl-block-content" style="z-index: 12;">
-                        <img style="" data-natural-width="905" data-natural-height="617" data-src="img/progress.jpg"/>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 962px; height: 439px; left: 0px; top: 121px;">
+                    <div class="sl-block-content" style="z-index: 11;">
+                        <img style="" data-natural-width="920" data-natural-height="420" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5249799/evolution.png"/>
                     </div>
                 </div>
             </section>
@@ -305,7 +306,7 @@
             <section>
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 480px; height: 610px; left: 240px; top: 0px;">
                     <div class="sl-block-content" style="z-index: 11;">
-                        <img style="" data-natural-width="500" data-natural-height="635" data-lazy-loaded="" data-src="img/vampire_bat.jpg"/>
+                        <img style="" data-natural-width="500" data-natural-height="635" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237429/vampire_bat.jpg"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 661px;">
@@ -321,15 +322,15 @@
             <section>
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 80px; top: 76px;">
                     <div class="sl-block-content" style="z-index: 10;">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/D.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237471/D.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 240px; top: 76px;">
                     <div class="sl-block-content" style="z-index: 11;">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/D.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237471/D.png"/>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 160px; height: 55px; left: 384px; top: 113px;">
+                <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 160px; height: 55px; left: 388px; top: 113px;">
                     <div class="sl-block-content" data-shape-type="arrow-right" data-shape-fill-color="rgb(204, 204, 204)" data-shape-stretch="true" style="z-index: 12;">
                         <svg
                             xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 160 55">
@@ -339,22 +340,22 @@
                 </div>
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 560px; top: 77px;">
                     <div class="sl-block-content" style="z-index: 13;">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/P.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237472/P.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 720px; top: 76px;">
                     <div class="sl-block-content" style="z-index: 14;">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/P.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237472/P.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 80px; top: 484px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content fragment" style="z-index: 16;" data-fragment-index="1">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/D.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237471/D.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 240px; top: 484px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content fragment" style="z-index: 17;" data-fragment-index="1">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/C.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237470/C.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="shape" style="width: 160px; height: 55px; left: 384px; top: 521px;">
@@ -367,22 +368,22 @@
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 98px; height: 98px; left: 544px; top: 493px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content fragment" style="z-index: 19;" data-fragment-index="1">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/R.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237473/R.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 99px; height: 99px; left: 618px; top: 493px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content fragment" style="z-index: 20;" data-fragment-index="1">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/R.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237473/R.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 83px; top: 280px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content fragment" style="z-index: 21;" data-fragment-index="0">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/C.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237470/C.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 243px; top: 280px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content fragment" style="z-index: 22;" data-fragment-index="0">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/C.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237470/C.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="shape" style="width: 160px; height: 55px; left: 387px; top: 317px;">
@@ -395,17 +396,17 @@
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 563px; top: 281px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content fragment" style="z-index: 24;" data-fragment-index="0">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/R.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237473/R.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 723px; top: 280px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content fragment" style="z-index: 25;" data-fragment-index="0">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/R.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237473/R.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 720px; top: 484px;">
                     <div class="sl-block-content fragment" style="z-index: 26;" data-fragment-index="1">
-                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/P.png"/>
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237472/P.png"/>
                     </div>
                 </div>
             </section>
@@ -437,31 +438,236 @@
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 137px; height: 137px; left: 333px; top: 212px;">
-                    <div class="sl-block-style" style="z-index: 11;">
-                        <div class="sl-block-content" style="z-index: 11;">
-                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/examine.png"/>
+            <section data-background-color="#a61c00">
+                <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 335px; top: 493px; min-width: 4px; min-height: 4px;">
+                    <div class="sl-block-style" style="z-index: 10;">
+                        <div class="sl-block-content" style="z-index: 10;">
+                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237521/train.png"/>
                         </div>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 133px; height: 133px; left: 495px; top: 214px;">
+                <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 492px; top: 490px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content" style="z-index: 12;">
-                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="img/bat.png"/>
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 177px; top: 285px; min-width: 4px; min-height: 4px;">
+                    <div class="sl-block-style" style="z-index: 14;">
+                        <div class="sl-block-content" style="z-index: 14;">
+                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237520/search.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 334px; top: 282px; min-width: 4px; min-height: 4px;">
+                    <div class="sl-block-content" style="z-index: 15;">
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 493px; top: 283px; min-width: 4px; min-height: 4px;">
+                    <div class="sl-block-content" style="z-index: 16;">
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 651px; top: 285px; min-width: 4px; min-height: 4px;">
+                    <div class="sl-block-content" style="z-index: 17;">
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 137px; height: 137px; left: 333px; top: 70px;">
+                    <div class="sl-block-style" style="z-index: 18;">
+                        <div class="sl-block-content" style="z-index: 18;">
+                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237519/examine.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 133px; height: 133px; left: 495px; top: 72px;">
+                    <div class="sl-block-content" style="z-index: 19;">
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
                     </div>
                 </div>
             </section>
             <section>
-                <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 960px; height: 79px; left: 0px; top: 70px;">
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 137px; height: 137px; left: 334px; top: 212px;">
+                    <div class="sl-block-style" style="z-index: 11;">
+                        <div class="sl-block-content" style="z-index: 11;">
+                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237519/examine.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 133px; height: 133px; left: 496px; top: 214px;">
+                    <div class="sl-block-content" style="z-index: 12;">
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 960px; height: 79px; left: -2px; top: 171px;">
                     <div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 11; font-size: 160%;">
                         <pre class="python">
                             <code>&gt;&gt;&gt; import sympy as sym
 &gt;&gt;&gt; import scipy.optimize</code></pre>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 605px; height: 420px; left: 98px; top: 210px;">
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 605px; height: 420px; left: 98px; top: 280px;">
                     <div class="sl-block-content" style="z-index: 12;">
-                        <img data-natural-width="403" data-natural-height="280" style="" data-lazy-loaded="" data-src="img/pycon.png"/>
+                        <img data-natural-width="403" data-natural-height="280" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237693/pycon.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 133px; height: 133px; left: 176px; top: 7px;">
+                    <div class="sl-block-content" style="z-index: 13;">
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 160px; height: 55px; left: 335px; top: 46px;">
+                    <div class="sl-block-content" data-shape-type="arrow-right" data-shape-fill-color="rgb(204, 204, 204)" data-shape-stretch="true" style="z-index: 14;">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 160 55">
+                            <polygon points="0,16.5 80,16.5 80,0 160,27.5 80,55 80,38.5 0,38.5" class="shape-element" fill="rgb(204, 204, 204)"></polygon>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="math" style="width: auto; height: auto; min-width: 30px; min-height: 30px; left: 514px; top: 36px;">
+                    <div class="sl-block-content notranslate" style="z-index: 15;">
+                        <div class="math-input">[q_1, q_2, q_3, q_4]</div>
+                        <div class="math-output">
+                            <span class="katex">
+                                <span class="katex-mathml">
+                                    <math>
+                                        <semantics>
+                                            <mrow>
+                                                <mo>[</mo>
+                                                <msub>
+                                                    <mi>q</mi>
+                                                    <mn>1</mn>
+                                                </msub>
+                                                <mo separator="true">,</mo>
+                                                <msub>
+                                                    <mi>q</mi>
+                                                    <mn>2</mn>
+                                                </msub>
+                                                <mo separator="true">,</mo>
+                                                <msub>
+                                                    <mi>q</mi>
+                                                    <mn>3</mn>
+                                                </msub>
+                                                <mo separator="true">,</mo>
+                                                <msub>
+                                                    <mi>q</mi>
+                                                    <mn>4</mn>
+                                                </msub>
+                                                <mo>]</mo>
+                                            </mrow>
+                                            <annotation encoding="application/x-tex">[q_1, q_2, q_3, q_4]</annotation>
+                                        </semantics>
+                                    </math>
+                                </span>
+                                <span class="katex-html" aria-hidden="true">
+                                    <span class="base">
+                                        <span class="strut" style="height: 1em; vertical-align: -0.25em;"></span>
+                                        <span class="mopen">[</span>
+                                        <span class="mord">
+                                            <span class="mord mathit" style="margin-right: 0.03588em;">q</span>
+                                            <span class="msupsub">
+                                                <span class="vlist-t vlist-t2">
+                                                    <span class="vlist-r">
+                                                        <span class="vlist" style="height: 0.301108em;">
+                                                            <span class="" style="top: -2.55em; margin-left: -0.03588em; margin-right: 0.05em;">
+                                                                <span class="pstrut" style="height: 2.7em;"></span>
+                                                                <span class="sizing reset-size6 size3 mtight">
+                                                                    <span class="mord mtight">1</span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <span class="vlist-s">​</span>
+                                                    </span>
+                                                    <span class="vlist-r">
+                                                        <span class="vlist" style="height: 0.15em;">
+                                                            <span class=""></span>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="mpunct">,</span>
+                                        <span class="mspace" style="margin-right: 0.166667em;"></span>
+                                        <span class="mord">
+                                            <span class="mord mathit" style="margin-right: 0.03588em;">q</span>
+                                            <span class="msupsub">
+                                                <span class="vlist-t vlist-t2">
+                                                    <span class="vlist-r">
+                                                        <span class="vlist" style="height: 0.301108em;">
+                                                            <span class="" style="top: -2.55em; margin-left: -0.03588em; margin-right: 0.05em;">
+                                                                <span class="pstrut" style="height: 2.7em;"></span>
+                                                                <span class="sizing reset-size6 size3 mtight">
+                                                                    <span class="mord mtight">2</span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <span class="vlist-s">​</span>
+                                                    </span>
+                                                    <span class="vlist-r">
+                                                        <span class="vlist" style="height: 0.15em;">
+                                                            <span class=""></span>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="mpunct">,</span>
+                                        <span class="mspace" style="margin-right: 0.166667em;"></span>
+                                        <span class="mord">
+                                            <span class="mord mathit" style="margin-right: 0.03588em;">q</span>
+                                            <span class="msupsub">
+                                                <span class="vlist-t vlist-t2">
+                                                    <span class="vlist-r">
+                                                        <span class="vlist" style="height: 0.301108em;">
+                                                            <span class="" style="top: -2.55em; margin-left: -0.03588em; margin-right: 0.05em;">
+                                                                <span class="pstrut" style="height: 2.7em;"></span>
+                                                                <span class="sizing reset-size6 size3 mtight">
+                                                                    <span class="mord mtight">3</span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <span class="vlist-s">​</span>
+                                                    </span>
+                                                    <span class="vlist-r">
+                                                        <span class="vlist" style="height: 0.15em;">
+                                                            <span class=""></span>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="mpunct">,</span>
+                                        <span class="mspace" style="margin-right: 0.166667em;"></span>
+                                        <span class="mord">
+                                            <span class="mord mathit" style="margin-right: 0.03588em;">q</span>
+                                            <span class="msupsub">
+                                                <span class="vlist-t vlist-t2">
+                                                    <span class="vlist-r">
+                                                        <span class="vlist" style="height: 0.301108em;">
+                                                            <span class="" style="top: -2.55em; margin-left: -0.03588em; margin-right: 0.05em;">
+                                                                <span class="pstrut" style="height: 2.7em;"></span>
+                                                                <span class="sizing reset-size6 size3 mtight">
+                                                                    <span class="mord mtight">4</span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <span class="vlist-s">​</span>
+                                                    </span>
+                                                    <span class="vlist-r">
+                                                        <span class="vlist" style="height: 0.15em;">
+                                                            <span class=""></span>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="mclose">]</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -469,38 +675,59 @@
                 <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 338px; top: 217px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-style" style="z-index: 10;">
                         <div class="sl-block-content" style="z-index: 10;">
-                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/search.png"/>
+                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237520/search.png"/>
                         </div>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 495px; top: 214px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content" style="z-index: 11;">
-                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="img/bat.png"/>
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 654px; top: 215px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content" style="z-index: 12;">
-                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="img/bat.png"/>
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 494px; top: 74px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content" style="z-index: 13;">
-                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="img/bat.png"/>
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 654px; top: 74px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content" style="z-index: 14;">
-                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="img/bat.png"/>
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 494px; top: 354px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content" style="z-index: 15;">
-                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="img/bat.png"/>
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="width: 133px; height: 133px; left: 654px; top: 354px; min-width: 4px; min-height: 4px;">
                     <div class="sl-block-content" style="z-index: 17;">
-                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="img/bat.png"/>
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 950px; height: 87px; left: 5px; top: 70px;">
+                    <div class="sl-block-style" style="z-index: 11; transform: rotate(360deg);">
+                        <div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 11; font-size: 123%;">
+                            <pre class="python">
+                                <code>$ git clone git@github.com:rasbt/python-machine-learning-book-2nd-edition.git
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 339px; top: 280px;">
+                    <div class="sl-block-content" style="z-index: 12;">
+                        <img style="" data-natural-width="128" data-natural-height="128" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5249829/robot.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 499px; top: 280px;">
+                    <div class="sl-block-content" style="z-index: 14;">
+                        <img style="" data-natural-width="512" data-natural-height="512" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
                     </div>
                 </div>
             </section>
@@ -508,14 +735,44 @@
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 338px; top: 217px;">
                     <div class="sl-block-style" style="z-index: 12;">
                         <div class="sl-block-content" style="z-index: 12;">
-                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="img/train.png"/>
+                            <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237521/train.png"/>
                         </div>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 133px; height: 133px; left: 495px; top: 214px;">
                     <div class="sl-block-content" style="z-index: 13;">
-                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="img/bat.png"/>
+                        <img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
                     </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 70px; left: 160px; top: 70px;">
+                    <div class="sl-block-style" style="z-index: 11;">
+                        <div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 11; font-size: 140%;">
+                            <pre class="python">
+                                <code>&gt;&gt;&gt; import tensorflow
+&gt;&gt;&gt; import keras
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 336px; top: 280px;">
+                    <div class="sl-block-content" style="z-index: 12;">
+                        <img style="" data-natural-width="128" data-natural-height="128" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5249844/donut.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 128px; height: 128px; left: 496px; top: 280px;">
+                    <div class="sl-block-content" style="z-index: 13;">
+                        <img style="" data-natural-width="512" data-natural-height="512" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237509/bat.png"/>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 336px; top: 216px; min-width: 4px; min-height: 4px;">
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237471/D.png"/>
+                </div>
+                <div class="sl-block" data-block-type="image" style="width: 128px; height: 128px; left: 496px; top: 216px; min-width: 4px; min-height: 4px;">
+                        <img style="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/919283/images/5237470/C.png"/>
                 </div>
             </section>
             <section>
@@ -614,78 +871,56 @@
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 980px; left: 80px; top: 140px; height: auto;">
+                <section>
+                <div class="sl-block" data-block-type="text" style="width: 959px; left: 1px; top: 63px; height: auto;">
                     <div class="sl-block-style" style="z-index: 11; transform: rotate(360deg);">
-                        <div class="sl-block-content" dir="ui" style="color: rgb(255, 255, 255); z-index: 11;">
-                            <h1 style="text-align:left">
-                                <span style="font-size:1.4em">
-                                    <span style="color:#FF8C00">WHY A </span>SMILE
-                                    <span style="color:#FF8C00"> MAKES A </span>
-                                </span>
-                            </h1>
-                            <h1 style="text-align:left">
-                                <span style="font-size:1.4em">
-                                    <span style="color:#FF8C00">DIFFERENCE?</span>
-                                </span>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 980px; left: 81px; top: 139px; height: auto;">
-                    <div class="sl-block-style" style="z-index: 10; transform: rotate(360deg);">
-                        <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 10;">
+                        <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 11; font-size: 70%;">
                             <h1 style="text-align:left">
                                 <span style="font-size:1.4em">
                                     <span style="color:#FF8C00">WHY DOES PYCONUK</span>
-                                </span>
-                            </h1>
-                            <h1 style="text-align:left">
+                                </span>&nbsp;
                                 <span style="font-size:1.4em">
-                                    <span style="color:#FF8C00">HAS A </span>
-                                    <span style="color:#FFFFFF">CRASH</span>
+                                    <span style="color:#FF8C00">HAVE A </span>
+                                    <span style="color:#FFFFFF">CRECHE</span>
                                     <span style="color:#FF8C00">?</span>
                                 </span>
                             </h1>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 980px; left: 80px; top: 140px; height: auto;">
-                    <div class="sl-block-style" style="z-index: 10; transform: rotate(360deg);">
-                        <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 10;">
+                <div class="sl-block" data-block-type="text" style="width: 958px; left: 1px; top: 200px; height: auto;">
+                    <div class="sl-block-style" style="z-index: 12; transform: rotate(360deg);">
+                        <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 12; font-size: 70%;">
                             <h1 style="text-align:left">
                                 <span style="font-size:1.4em">
-                                    <span style="color:#FF8C00">WHY WRITING A SINGLE </span>
+                                    <span style="color:#FF8C00">WHY DOES WRITING A SINGLE </span>
+                                </span>
+                                <span style="color:#FFFFFF">
+                                    <span style="font-size:1.4em">LINE</span>
+                                </span>&nbsp;
+                                <span style="color:#FFFFFF">
+                                    <span style="font-size:1.4em">OF</span>&nbsp;
                                 </span>
                             </h1>
                             <h1 style="text-align:left">
-                                <span style="color:#FFFFFF">
-                                    <span style="font-size:1.4em">LINE</span>&nbsp;
-                                    <span style="font-size:1.4em">OF</span>&nbsp;
-                                </span>
                                 <span style="font-size:1.4em">
                                     <span style="color:#FFFFFF">DOCUMENTATION</span>
-                                    <span style="color:#FF8C00"> MATTERS?</span>
+                                    <span style="color:#FF8C00"></span>
+                                </span>
+                                <span style="font-size:1.4em">
+                                    <span style="color:#FF8C00">MATTER?</span>
                                 </span>
                             </h1>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 980px; left: 80px; top: 140px; height: auto;">
-                    <div class="sl-block-style" style="z-index: 10; transform: rotate(360deg);">
-                        <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 10;">
+                <div class="sl-block" data-block-type="text" style="width: 980px; left: 1px; top: 420px; height: auto;">
+                    <div class="sl-block-style" style="z-index: 13; transform: rotate(360deg);">
+                        <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 13; font-size: 70%;">
                             <h1 style="text-align:left">
                                 <span style="font-size:1.4em">
-                                    <span style="color:#FF8C00">WHY WRITING A SINGLE </span>
+                                    <span style="color:#FF8C00">WHY DOES WRITING A SINGLE </span>
                                 </span>
-                            </h1>
-                            <h1 style="text-align:left">
                                 <span style="color:#FFFFFF">
                                     <span style="font-size:1.4em">TEST</span>
                                 </span>
@@ -700,70 +935,42 @@
                 </div>
             </section>
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 980px; left: 0px; top: 212px; height: auto;">
-                    <div class="sl-block-style" style="z-index: 11; transform: rotate(360deg);">
-                        <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 11;">
-                            <h1>
-                                <span style="color:#FF8C00">
-                                    <span style="font-size:105px">IMPORT</span>
-                                </span>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 93px; height: 93px; left: 434px; top: 338px;">
-                    <div class="sl-block-content" style="z-index: 12;">
-                        <img data-natural-width="72" data-natural-height="72" style="" data-src="img/snake.png"/>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 970px; left: -10px; top: 210px; height: auto;">
-                    <div class="sl-block-style" style="z-index: 11;">
-                        <div class="sl-block-content" dir="ui" style="color: rgb(230, 184, 175); z-index: 11;">
-                            <h1>
-                                <span style="color:#FF8C00">
-                                    <span style="font-size:105px">WHY </span>
-                                </span>
-                                <span style="color:#FF8C00">
-                                    <span style="font-size:105px">YOU</span>
-                                </span>
-                                <span style="color:#FF8C00">
-                                    <span style="font-size:105px"> DO WHAT EVER</span>
-                                </span>
-                            </h1>
-                            <h1>
-                                <span style="color:#FF8C00">
-                                    <span style="font-size:105px">IT IS YOU </span>
-                                </span>
-                                <span style="color:#FF8C00">
-                                    <span style="font-size:105px">DO</span>
-                                </span>
-                                <span style="color:#FF8C00">
-                                    <span style="font-size:105px">?</span>
-                                </span>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 210px;">
+                <div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;">
                     <div class="sl-block-content" style="z-index: 11;">
-                        <p>
-                            <span style="color:#FF8C00">
-                                <span style="font-size:1.4em">@NikoletaGlyn</span>
-                            </span>
-                        </p>
-                        <p>
-                            <span style="color:#FF8C00">
-                                <span style="font-size:1.4em">http://nikoleta-v3.github.io</span>
-                            </span>
-                        </p>
-                        <p>&nbsp;</p>
+                        <ul>
+                            <li>Axelrod</li>
+                            <li>sympy&nbsp;</li>
+                            <li>networkx</li>
+                        </ul>
                     </div>
                 </div>
             </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 980px; left: 0px; top: -1px; height: auto;">
+                    <div class="sl-block-style" style="z-index: 11; transform: rotate(360deg);">
+                        <div class="sl-block-content" dir="ui" style="color: rgb(255, 255, 255); z-index: 11;">
+                            <h1 style="text-align:left">
+                                <span style="font-size:1.4em">
+                                    <span style="color:#FF8C00">WHY DOES </span>SMILE
+                                    <span style="color:#FF8C00"> MAKES A </span>
+                                </span>
+                            </h1>
+                            <h1 style="text-align:left">
+                                <span style="font-size:1.4em">
+                                    <span style="color:#FF8C00">DIFFERENCE?</span>
+                                </span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 424px;">
+                    <div class="sl-block-content" style="z-index: 12; color: rgb(255, 153, 0);">
+                        <p>@NikoletaGlyn</p>
+                        <p>Nikoleta-v3</p>
+                        <p>nikoleta-v3.github.io</p>
+                    </div>
+                </div>
+        </section>
         </div>
     </div>
 </div>
