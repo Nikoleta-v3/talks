@@ -13,7 +13,7 @@ Talks
 + [Accessing open research literature with Python]({{ site.baseurl }}/talks/2017-02-23 Arcas (PyCon Namibia)/main.pdf) -
 PyCon NA, Namibia 2017.
 
-+ [Writing tests for research software]({{ site.baseurl }}/talks/2017-02-23 Testing (PyCon Namibia)/main.pdf) - PyCon NA, Namibia 2017.\draw[orange, looseness=1.8] (s) edge[out=0, in=90, ->, thick] (7);
++ [Writing tests for research software]({{ site.baseurl }}/talks/2017-02-23 Testing (PyCon Namibia)/main.pdf) - PyCon NA, Namibia 2017.
 
 + [Defection and Cooperation amongst Prisoners]({{ site.baseurl }}/talks/2017-03-01-SIAM/main.pdf) -
 SIAM Meeting, Cardiff 2017.
@@ -38,7 +38,7 @@ literature]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
 + [Rhinos with a bit of Python]({{ site.baseurl }}/talks//2018-02-20-PyConNA/main.pdf) - PyConNA, Namibia 2018.
 
 + [Memory size in the Prisoners Dilemma]({{ site.baseurl }}/talks/2018-05-22-Gregynog/main.pdf) - Wales Mathematics Colloquium, Gregynog Hall 2018.
-
++ [Memory size in the Prisoners Dilemma]({{ site.baseurl }}/talks/2018-06-18-SIAM-UKIE-National-Student-Chapter/main.pdf) - SIAM UKIE National Student Chapter, Bath University 2018.
 
 Lightning Talks
 ---------------
