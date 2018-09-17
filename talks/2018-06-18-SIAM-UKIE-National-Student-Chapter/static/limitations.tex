@@ -1,0 +1,46 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+
+\begin{document}
+    \begin{tikzpicture}
+
+    \tikzstyle{state}=[minimum width=0.4cm, font=\boldmath];
+
+    \node[circle, fill=orange,  ultra thick] (0) at (0, 1.5) [state]   {};
+    \node[circle, fill=cyan,  ultra thick] (1) at (-1.4, 0) [state]  {};
+    \node[circle, fill=cyan,  ultra thick] (2) at (1.4, 0) [state] {};
+
+    \draw (0) edge[out=-135, in=45, -,  ultra thick] node [above] {} (1);
+    \draw (1) edge[out=0, in=180, -,  ultra thick] node [above] {} (2);
+    \draw (0) edge[out=-45, in=135, -,  ultra thick] node [above] {} (2);
+
+    \draw[orange, ultra thick] (-2.4, -.8) -- (-1.8, -.8) node [right] {\textbf{memory one strategy}};
+    \draw[ultra thick, -triangle 90] (1.7, .75) -- (2.7, .75);
+
+    \node[circle] (3) at (4.4, 1.5) [state]   {};
+    \node[circle, fill=cyan,  ultra thick] (4) at (3, 0) [state]  {};
+    \node[circle, fill=cyan,  ultra thick] (5) at (5.8, 0) [state] {};
+
+    \draw (3) edge[out=-135, in=45, -,  ultra thick] node [above] {} (4);
+    \draw (4) edge[out=0, in=180, -,  ultra thick] node [above] {} (5);
+    \draw (3) edge[out=-45, in=135, -,  ultra thick] node [above] {} (5);
+
+    \draw[ultra thick, -triangle 90] (6.1, .75) -- (7.1, .75);
+
+    \node[circle, fill=solarizedRed] (6) at (8.8, 1.5) [state]   {};
+    \node[circle, fill=cyan,  ultra thick] (7) at (7.4, 0) [state]  {};
+    \node[circle, fill=cyan,  ultra thick] (8) at (10.2, 0) [state] {};
+
+    \draw (6) edge[out=-135, in=45, -,  ultra thick] node [above] {} (7);
+    \draw (7) edge[out=0, in=180, -,  ultra thick] node [above] {} (8);
+    \draw (6) edge[out=-45, in=135, -,  ultra thick] node [above] {} (8);
+
+    \draw[solarizedRed, ultra thick] (7, -.8) -- (7.8, -.8) node [right] {\textbf{complex strategy}};
+\end{tikzpicture}
+
+\end{document}
