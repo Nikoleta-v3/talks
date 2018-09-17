@@ -40,6 +40,8 @@ literature]({{ site.baseurl }}/talks//2017-08-28-Euroscipy
 + [Memory size in the Prisoners Dilemma]({{ site.baseurl }}/talks/2018-05-22-Gregynog/main.pdf) - Wales Mathematics Colloquium, Gregynog Hall 2018.
 + [Memory size in the Prisoners Dilemma]({{ site.baseurl }}/talks/2018-06-18-SIAM-UKIE-National-Student-Chapter/main.pdf) - SIAM UKIE National Student Chapter, Bath University 2018.
 
++ [What does a smile make a difference]({{ site.baseurl }}/talks//2018-09-15-PyConUK/index.md) - PyConUK, Cardiff 2018.
+
 Lightning Talks
 ---------------
 
