@@ -1,0 +1,4 @@
+# compile files
+_minted-main/*
+*log
+*.vrb
