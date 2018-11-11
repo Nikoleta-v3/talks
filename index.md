@@ -44,6 +44,7 @@ Wales Mathematics Colloquium, &ensp; Gregynog Hall 2017.
 
 + [**Memory size in the Prisoners Dilemma**]({{ site.baseurl }}/talks/2018-05-22-Gregynog/main.pdf) - &ensp; Wales Mathematics Colloquium, &ensp; Gregynog Hall 2018.
 + [**Memory size in the Prisoners Dilemma**]({{ site.baseurl }}/talks/2018-06-18-SIAM-UKIE-National-Student-Chapter/main.pdf) - &ensp; SIAM UKIE National Student Chapter, &ensp; Bath University 2018.
++ [**How does a smile make a difference?**]({{ site.baseurl }}/talks/PyConUK-2018/index.html) - &ensp; PyConUK, &ensp; Cardiff 2018.
 
 <h4>Lightning Talks</h4>
 <hr>
