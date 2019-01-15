@@ -53,6 +53,7 @@ Wales Mathematics Colloquium, &ensp; Gregynog Hall 2017.
 + [**PyCon NA**]({{ site.baseurl }}/lightning-talks/PyCon Namibia/main.pdf) - &ensp; PyCon NA, &ensp; Namibia 2017.
 + [**CW17**]({{ site.baseurl }}/lightning-talks/CW17/CW17-Lightning talk-NikoletaGlynatsi.pdf) - &ensp;
 Collaborators Workshop, &ensp; Leeds 2017.
++ [**PyDiff**]({{ site.baseurl }}/lightning-talks/Hacktoberfest/index.html) - &ensp; PyDiff meeting, &ensp; January Cardiff 2019.
 
 
 The slides are also accessible on speaker deck (<https://speakerdeck.com/nikoletav3>).
