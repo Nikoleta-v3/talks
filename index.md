@@ -55,5 +55,9 @@ Wales Mathematics Colloquium, &ensp; Gregynog Hall 2017.
 Collaborators Workshop, &ensp; Leeds 2017.
 + [**PyDiff**]({{ site.baseurl }}/lightning-talks/Hacktoberfest/index.html) - &ensp; PyDiff meeting, &ensp; January Cardiff 2019.
 
+<h4>Three Minute Thesis</h4>
+
++ [**Would we behave differently if we had the brain of a goldfish?**]({{ site.baseurl }}/3min_thesis/index.html) - &ensp; School of Mathematics, &ensp; Cardiff University 2019.
+
 
 The slides are also accessible on speaker deck (<https://speakerdeck.com/nikoletav3>).
