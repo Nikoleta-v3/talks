@@ -6,7 +6,7 @@
 *main.toc
 *main.out
 *main.snm
-
+*.log
 # pycharm
 .idea/
 

@@ -9,12 +9,37 @@
     \begin{document}
     \begin{tikzpicture}
 
-        \node (p) at (2, 0) {$p = (p_1, p_2, p_3, p_4)$};
-        \node (zd) at (11, 0) {Extort 2, $p = (8/9, 1/2, 1/3, 0)$};
+        \node (p) at (2, 0.5) {\Large{$p = (p_1, p_2, p_3, p_4)$}};
+        \node (zd) at (14, 0.5) {\Large{Extort 2 $= (8/9, 1/2, 1/3, 0)$}};
 
-        \node (measure) at (5, -2)  {\includegraphics[width=.45\textwidth]{static/measuring.png}};
+        \node (measure) at (7, -2)  {\includegraphics[width=\textwidth]{static/sse_error_palette.png}};
 
         \draw (p) edge[out=0, in=90, ->, thick] node [above] {} (measure);
-        \draw (zd) edge[out=180, in=0, ->, thick] node [above] {} (measure);
+        \draw (zd) edge[out=-90, in=0, ->, thick] node [above] {} (measure);
+
+        \node (point) at (4.5, -6.2) {};
+
+        \draw (point) edge[out=0, in=-90, ->, thick] node [above] {} (measure);
+
+        \tikzstyle{state}=[minimum width=0.5cm, font=\boldmath];
+
+        \node[circle, draw, thick]  (1) at (0, -5) [state] {$1$};
+        \node[circle, draw, thick]  (4) at ($(1)+(2.5,0)$) [state] {$4$};
+        \node[circle, draw, thick] (2) at ($(1)+(0,-2.5)$) [state] {$2$}; 
+        \node[circle, draw, thick]  (3) at ($(2)+(2.5,0)$) [state] {$3$};
+    
+        \coordinate[above of=1] (s);
+    
+        \draw (s) edge[out=-90, in=90, ->, thick] node [above right] {$D$} (1);
+    
+        \draw (1) edge[out=180, in=135, loop, thick] node [above left] {$C/D$} (1);
+        \draw (4) edge[out=0, in=45, loop, thick] node [right] {$C/C$} (4);
+    
+        \draw (1) edge[out=-135, in=135, ->, thick] node [left] {$D/D$} (2);
+        \draw (2) edge[out=45,in=-45,->,thick] node [right] {$C/D$} (1);
+        \draw (2) edge[out=0,in=180,->,thick] node [below] {$D/D$} (3);
+        \draw (4) edge[out=180,in=0,->,thick] node [above] {$D/D$} (1);
+        \draw (3) edge[out=45,in=-45,->,thick] node [right] {$D/C$} (4);
+        \draw (3) edge[out=90,in=-20,->,thick] node [above right] {$C/D$} (1);
     \end{tikzpicture}
     \end{document}
