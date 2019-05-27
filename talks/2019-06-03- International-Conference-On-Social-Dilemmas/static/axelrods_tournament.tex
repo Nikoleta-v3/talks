@@ -1,0 +1,33 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+\definecolor{plain}{rgb}{93,93,93}
+\usetikzlibrary{positioning, arrows, fit, arrows.meta}
+
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+\begin{tikzpicture}
+    \pic[solarizedGreen] at (0, 0) {man};
+    \node at (0, .5) {\footnotesize{\textcolor{solarizedGreen}{Tit For Tat}}};
+
+    \pic[pink] at (-1.5, -1.5) {man};
+    \draw[>=triangle 45, <->] (-.45, -.95) -- (-1.05, -1.55);
+
+    \pic[solarizedBlue] (q_2) at (1.5, -1.5) {man};
+    \draw[>=triangle 45, <->] (.45, -.95) -- (1.05, -1.55);
+
+    \draw[>=triangle 45, <->] (0, -1.2) -- (0, -3);
+    \draw[>=triangle 45, <->] (-1.05, -2) -- (1.05, -2);
+
+    \draw[>=triangle 45, <->] (-1.05, -2.5) -- (-.45, -3.1);
+    \draw[>=triangle 45, <->] (1.05, -2.5) -- (.45, -3.1);
+    \node at (0, -3.25) {$\hdots$};
+
+\end{tikzpicture}
+\end{document}

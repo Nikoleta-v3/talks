@@ -1,0 +1,54 @@
+\documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{xcolor}
+    \definecolor{plain}{rgb}{93,93,93}
+    \usetikzlibrary{positioning,arrows, calc, arrows.meta}
+    
+    \definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+    \begin{document}
+    \tikzset{man/.pic={
+        \node[circle,fill,minimum size=5mm] (head) {};
+        \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+    \tikzset{big_man/.pic={
+        \node[circle,fill,minimum size=3mm] (head) {};
+        \node[circle,left = -15pt of head, fill,minimum size=5mm] (head_2) {};
+        \node[circle,right = -15pt of head, fill,minimum size=5mm] (head_3) {};
+        \node[draw=solarizedBase03, circle,fill,minimum size=5mm] (head) {};
+         \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+    \tikzset{small_man/.pic={
+            \node[circle,fill,minimum size=2.5mm] (head) {};
+            \node[rounded corners=2pt,minimum height=.4cm,minimum width=0.2cm,fill,below = .5pt of head] (body) {};
+            \draw[line width=.5mm,round cap-round cap] ([shift={(1pt,-.5pt)}]body.north east) --++(-90:3mm);
+            \draw[line width=.5mm,round cap-round cap] ([shift={(-1pt,-.5pt)}]body.north west)--++(-90:3mm);
+            }}
+    \tikzset{cloud/.pic={
+                \node[cloud, cloud puffs=10.8,minimum width=1cm, minimum height=1.1cm, draw] () at (0,0) {\tikzpictext};
+                }}
+    \begin{tikzpicture}
+        \pic[solarizedRed] at (0, .5) (myman) {man};
+        \pic[solarizedBlue] at (0, -2) (myman) {man};
+        \pic at (-.8, -1) (myman) {small_man};
+        \pic at (-.8, -1.2) (cloud) {cloud};
+        \node at (-.25, -1.75) [circle,fill,inner sep=1pt] {};
+        \node at (-.35, -1.65) [circle,fill,inner sep=1pt] {};
+
+
+        \pic[solarizedGreen] at (0, -4.5) (myman) {big_man};
+        \pic at (-.8, -3.4) (myman) {small_man};
+        \pic at (-.8, -3.6) (cloud) {cloud};
+        \node at (-.25, -4.15) [circle,fill,inner sep=1pt] {};
+        \node at (-.35, -4.05) [circle,fill,inner sep=1pt] {};
+
+
+        \node (0) at (4, 0) {$\bullet$ ZD strategies are not adaptable.};
+        \node (1) at (3.4, -2.5) {$\bullet$ Extortion is not optimal.};
+        \node (2) at (3.7, -5) {$\bullet$ Longer memory is beneficial.};
+
+    \end{tikzpicture}
+    \end{document}

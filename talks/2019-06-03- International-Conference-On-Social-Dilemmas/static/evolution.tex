@@ -1,0 +1,56 @@
+\documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{xcolor}
+    \definecolor{plain}{rgb}{93,93,93}
+    \usetikzlibrary{positioning,arrows, calc, arrows.meta, shapes}
+    
+    \definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+    \begin{document}
+    \tikzset{man/.pic={
+        \node[circle,fill,minimum size=5mm] (head) {};
+        \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+        \tikzset{big_man/.pic={
+        \node[circle,fill,minimum size=3mm] (head) {};
+        \node[circle,left = -15pt of head, fill,minimum size=5mm] (head_2) {};
+        \node[circle,right = -15pt of head, fill,minimum size=5mm] (head_3) {};
+        \node[draw=solarizedBase03, circle,fill,minimum size=5mm] (head) {};
+         \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+    \tikzset{small_man/.pic={
+            \node[circle,fill,minimum size=2.5mm] (head) {};
+            \node[rounded corners=2pt,minimum height=.4cm,minimum width=0.2cm,fill,below = .5pt of head] (body) {};
+            \draw[line width=.5mm,round cap-round cap] ([shift={(1pt,-.5pt)}]body.north east) --++(-90:3mm);
+            \draw[line width=.5mm,round cap-round cap] ([shift={(-1pt,-.5pt)}]body.north west)--++(-90:3mm);
+            }}
+    \tikzset{cloud/.pic={
+                \node[cloud, cloud puffs=10.8,minimum width=1cm, minimum height=1.1cm, draw] () at (0,0) {\tikzpictext};
+                }}
+    \begin{tikzpicture}
+        % \node[circle,fill,minimum size=5mm, solarizedGreen] (head) at (0, .1) {};
+        % \node[solarizedGreen, rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill, rotate=-90] (body) at (-.7, 0) {};
+
+        % \node[solarizedGreen, circle,fill,minimum size=5mm] (head) at (1.5, .7) {};
+        % \node[solarizedGreen, rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill, rotate=-45] (body) at (1, .2){};
+
+        % \node[solarizedGreen, circle,fill,minimum size=5mm] (head) at (2.4, .9) {};
+        % \node[solarizedGreen, rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        
+        \pic[solarizedRed] at (0, 0) (myman) {man};
+        \pic[solarizedBlue] at (1.5, 0) (myman) {man};
+        \pic at (.7, 1) (myman) {small_man};
+        \pic at (.7, .8) (cloud) {cloud};
+        \node at (1.25, .25) [circle,fill,inner sep=1pt] {};
+        \node at (1.15, .35) [circle,fill,inner sep=1pt] {};
+
+        \pic[solarizedGreen] at (3, 0) (myman) {big_man};
+        \pic at (2.2, 1) (myman) {small_man};
+        \pic at (2.2, .8) (cloud) {cloud};
+        \node at (2.74, .25) [circle,fill,inner sep=1pt] {};
+        \node at (2.65, .35) [circle,fill,inner sep=1pt] {};
+    \end{tikzpicture}
+    \end{document}
