@@ -46,6 +46,13 @@ Wales Mathematics Colloquium, &ensp; Gregynog Hall 2017.
 + [**Memory size in the Prisoners Dilemma**]({{ site.baseurl }}/talks/2018-06-18-SIAM-UKIE-National-Student-Chapter/main.pdf) - &ensp; SIAM UKIE National Student Chapter, &ensp; Bath University 2018.
 + [**How does a smile make a difference?**]({{ site.baseurl }}/talks/PyConUK-2018/index.html) - &ensp; PyConUK, &ensp; Cardiff 2018.
 
+<h4>2019</h4>
+<hr>
+
++ [**Stability of defection, optimisation of strategies and testing for extortion in the Prisoner's Dilemma**]({{ site.baseurl }}/posters//2019-06-03- International-Conference-On-Social-Dilemmas/main.pdf) - &ensp; 18th International Conference on Social Behaviour, &ensp; Sedona, Arizona 2019.
+
++ [**An introduction to Time Series**]({{ site.baseurl }}/talks//2019-06-24-Introduction-Time-Series/main.pdf) -&ensp;  CUBRIC \& Maths workshop, &ensp; Cardiff 2019.
+
 <h4>Lightning Talks</h4>
 <hr>
 
