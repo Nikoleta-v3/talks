@@ -1,0 +1,22 @@
+\documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{xcolor}
+    \definecolor{plain}{rgb}{93,93,93}
+    \usetikzlibrary{positioning,arrows}
+    
+    \definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+    \begin{document}
+    \tikzset{man/.pic={
+        \node[circle,fill,minimum size=5mm] (head) {};
+        \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+    \begin{tikzpicture}
+        \pic[orange] at (0, 0) (myman) {man};
+        \node at (-.5, .7) {\footnotesize{NICE?}};
+        \node at (1.1, .7) {\footnotesize{NOT NICE?}};
+
+        \pic[orange] at (3, 0) (myman) {man};
+    \end{tikzpicture}
+    \end{document}

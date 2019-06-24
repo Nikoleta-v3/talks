@@ -49,6 +49,13 @@ Wales Mathematics Colloquium, &ensp; Gregynog Hall 2017.
 Lightning Talks
 ---------------
 
+<h4>2019</h4>
+<hr>
+
++ [**Stability of defection, optimisation of strategies and testing for extortion in the Prisoner's Dilemma**]({{ site.baseurl }}/talks//2019-06-03- International-Conference-On-Social-Dilemmas/main.pdf) - &ensp; 18th International Conference on Social Behaviour, &ensp; Sedona, Arizona 2019.
+
++ [**An introduction to Time Series**]({{ site.baseurl }}/talks//2019-06-24-Introduction-Time-Series/main.pdf) -&ensp;  CUBRIC \& Maths workshop, &ensp; Cardiff 2019.
+
 <h4>Lightning Talks</h4>
 <hr>
 
@@ -57,6 +64,10 @@ Lightning Talks
 + [**CW17**]({{ site.baseurl }}/lightning-talks/CW17/CW17-Lightning talk-NikoletaGlynatsi.pdf) - &ensp;
 Collaborators Workshop, &ensp; Leeds 2017.
 + [**PyDiff**]({{ site.baseurl }}/lightning-talks/Hacktoberfest/index.html) - &ensp; PyDiff meeting, &ensp; January Cardiff 2019.
+
+<h4>Three Minute Thesis</h4>
+
++ [**Would we behave differently if we had the brain of a goldfish?**]({{ site.baseurl }}/3min_thesis/index.html) - &ensp; School of Mathematics, &ensp; Cardiff University 2019.
 
 
 The slides are also accessible on speaker deck (<https://speakerdeck.com/nikoletav3>).

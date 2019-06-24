@@ -6,7 +6,8 @@
 *main.toc
 *main.out
 *main.snm
-
+*main.vrb
+*.log
 # pycharm
 .idea/
 
@@ -18,3 +19,7 @@ _site
 # Gemfiles
 Gemfile*
 
+*.DS_Store
+
+# minted
+*_minted-main/
