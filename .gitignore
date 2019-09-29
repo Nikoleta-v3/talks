@@ -7,6 +7,8 @@
 *main.out
 *main.snm
 *main.vrb
+*.fls
+*.fdb_latexmk
 *.log
 # pycharm
 .idea/
