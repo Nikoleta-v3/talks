@@ -1,0 +1,46 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\begin{document}
+\begin{tikzpicture}
+
+\node (m) at (0, 2.5) {\textcolor{orange}{\tiny{MERITOCRACY}}};
+\node[circle, draw=black, draw=black, fill=orange!65] (0) at (0, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (0, 0) {\srcsize{0.7}};
+\node[circle, draw=black, draw=black, fill=cyan!65] (1) at (1, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (1, 0) {\srcsize{0.7}};
+\node[circle, draw=black, draw=black, fill=cyan!65] (2) at (2, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (2, 0) {\srcsize{0.4}};
+\node[circle, draw=black, draw=black, fill=orange!65] (3) at (0, 1) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (0, 1) {\srcsize{0.7}};
+\node[circle, draw=black, draw=black, fill=cyan!65] (4) at (1, 1) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (1, 1) {\srcsize{0.3}};
+\node[circle, draw=black, draw=black, fill=orange!65] (5) at (0, 2) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (0, 2) {\srcsize{0.8}};
+
+\node (l0) at (-.7, 2) {\tiny{0}};
+\node (l0) at (-.7, 1.5) {};
+\node (l1) at (0.7, 1.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\node (l0) at (-.7, 1) {\tiny{1}};
+\node (l0) at (-.7, 0.5) {};
+\node (l1) at (1.7, 0.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\node (l0) at (-.7, 0) {\tiny{2}};
+\node (l0) at (-.7, -.5) {};
+\node (l1) at (2.5, -.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\begin{pgfonlayer}{background}
+    \node [fill=solarizedBase02,fit=(5) (4) (3)] {}; 
+\end{pgfonlayer}
+
+\pause
+\node[minimum size=1mm,inner sep=3pt] (c) at (1, 2) {\textcolor{solarizedRed}{\srcsize{$C_M=0.6$}}};
+
+\end{tikzpicture}
+\end{document}

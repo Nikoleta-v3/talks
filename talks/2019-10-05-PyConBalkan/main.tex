@@ -174,43 +174,62 @@
 
 \begin{frame}
     \begin{center}
-        \textbf{\Large{TYPES OF \textcolor{orange}{UNCONSCIOUS} BIAS}}
+        \textbf{\Large{\textcolor{orange}{UNCONSCIOUS} BIAS}}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
         \textbf{\Large{\textcolor{orange}{AFFINITY} BIAS}}
+        \vspace{.5cm}
+
+        \includegraphics[width=.1\textwidth]{static/person.png}
+        \includegraphics[width=.1\textwidth]{static/person.png}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
         \textbf{\Large{\textcolor{orange}{HALO} EFFECT}}
+        \vspace{.5cm}
+
+        \includegraphics[width=.1\textwidth]{static/halo.png}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
         \textbf{\Large{\textcolor{orange}{HORNS} EFFECT}}
+        \vspace{.5cm}
+
+        \includegraphics[width=.1\textwidth]{static/horn.png}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
         \textbf{\Large{\textcolor{orange}{ATTRIBUTION} BIAS}}
+        \vspace{.5cm}
+
+        \includegraphics[width=.1\textwidth]{static/scale.png}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
         \textbf{\Large{\textcolor{orange}{CONFORMITY} BIAS}}
+        \vspace{.5cm}
+
+    \includegraphics[width=.1\textwidth]{static/thought-balloon.png}
+    \includegraphics[width=.1\textwidth]{static/arrow.png}
+    \includegraphics[width=.1\textwidth]{static/people.png}
+    \includegraphics[width=.1\textwidth]{static/people.png}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
-    \Large \textbf{The effect of unconscious bias in hierarchical systems}
+    \Large \textbf{EFFECT OF \textcolor{orange}{UNCONSCIOUS} BIAS IN HIERARCHICAL SYSTEM}
     \end{center}
 \end{frame}
 
@@ -255,13 +274,13 @@
 ... )
 
 >>> for level_index, level in enumerate(states[6]):
-...    print(f"Level {level_index}")
+...    print(f"Level {2 - level_index}")
 ...    for individual in level:
 ...        print(
 ...            f"""-|type {individual.individual_type} with
 ...    competence {individual.competence:.3f} retirement {individual.retirement_date:.3f}"""
 ...        )
-Level 0
+Level 2
 -|type 0 with
     competence 0.438 retirement 0.445
 -|type 1 with
@@ -273,7 +292,7 @@ Level 1
     competence 0.360 retirement 0.115
 -|type 1 with
     competence 0.698 retirement 0.012
-Level 2
+Level 0
 -|type 0 with
     competence 0.209 retirement 0.035
     \end{minted}
@@ -317,7 +336,7 @@ Level 2
     \centering
     \vspace{.5cm}
     \LARGE{\textbf{\textcolor{orange}{HIRING}}} \\
-    \vspace{.4cm}
+    \vspace{.3cm}
 
     \hspace{-.5cm}
     \begin{minipage}{0.29\textwidth}
@@ -416,9 +435,15 @@ Level 2
     \end{minipage}
 \end{frame}
 
+\begin{frame}[fragile]
+    \centering
+        \vspace{-1cm}
+        \includestandalone[width=\textwidth]{static/affinity_competence_}
+\end{frame}
+
 \begin{frame}
     \begin{center}
-    \Large \textbf{How much worse is the system because of affinity bias?}
+    \Large \textbf{HOW MUCH \textcolor{orange}{WORSE} IS THE SYSTEM BECAUSE OF AFFINITY BIAS?}
     \end{center}
 \end{frame}
 
@@ -438,7 +463,7 @@ Level 2
         \centering
         \animategraphics[loop,
                          controls,
-                         width=\textwidth]{1}{static/gif/}{1500}{1999}
+                         width=\textwidth]{1}{static/gif/}{0}{1999}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -469,12 +494,14 @@ Level 2
 
 \begin{frame}
     \begin{center}
-    @NikoletaGlyn \\
-    @drvinceknight
+    \faTwitter @NikoletaGlyn \\
+    \faTwitter @drvinceknight \\
+    
     \vspace{1cm}
     \end{center}
 
     \footnotesize
+    $\bullet$ https://nikoleta-v3.github.io \\
     $\bullet$ \url{vknight.org/unpeudemath/math/2017/11/10/the-fallacy-of-meritocracy.html} \\
     \faGithub  \ \url{github.com/drvinceknight/HierarchicalPromotion}
 \end{frame}
