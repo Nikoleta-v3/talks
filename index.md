@@ -56,6 +56,9 @@ Lightning Talks
 
 + [**An introduction to Time Series**]({{ site.baseurl }}/talks//2019-06-24-Introduction-Time-Series/main.pdf) -&ensp;  CUBRIC \& Maths workshop, &ensp; Cardiff 2019.
 
++ [**The Fallacy of Meritocracy**]({{ site.baseurl }}/talks//2019-10-05-PyConBalkan/main.pdf) -&ensp; PyCon Balkan Keynote, &ensp; Belgrade 2019.
+
+
 <h4>Lightning Talks</h4>
 <hr>
 
