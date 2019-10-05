@@ -1,0 +1,78 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\begin{document}
+\begin{tikzpicture}
+
+\node (m) at (0, 2.5) {\textcolor{orange}{\tiny{MERITOCRACY}}};
+\node[circle, draw=black, draw=black, fill=orange!65] (0) at (0, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (0, 0) {\srcsize{0.7}};
+\node[circle, draw=black, draw=black, fill=cyan!65] (1) at (1, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (1, 0) {\srcsize{0.7}};
+\node[circle, draw=black, draw=black, fill=cyan!65] (2) at (2, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (2, 0) {\srcsize{0.4}};
+\node[circle, draw=black, draw=black, fill=orange!65] (3) at (0, 1) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (0, 1) {\srcsize{0.7}};
+\node[circle, draw=black, draw=black, fill=cyan!65] (4) at (1, 1) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (1, 1) {\srcsize{0.3}};
+\node[circle, draw=black, draw=black, fill=orange!65] (5) at (0, 2) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (0, 2) {\srcsize{0.8}};
+
+\node (l0) at (-.7, 2) {\tiny{0}};
+\node (l0) at (-.7, 1.5) {};
+\node (l1) at (0.7, 1.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\node (l0) at (-.7, 1) {\tiny{1}};
+\node (l0) at (-.7, 0.5) {};
+\node (l1) at (1.7, 0.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\node (l0) at (-.7, 0) {\tiny{2}};
+\node (l0) at (-.7, -.5) {};
+\node (l1) at (2.5, -.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\node[minimum size=1mm,inner sep=3pt] (c) at (1, 2) {\textcolor{solarizedRed}{\srcsize{$C_M=0.6$}}};
+
+\node (a) at (4, 2.5) {\textcolor{orange}{\tiny{AFFINITY}}\textcolor{solarizedBase02}{\tiny{ABC}}};
+\node[circle, draw=black, draw=black, fill=orange!65] (20) at (4, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (4, 0) {\srcsize{0.7}};
+\node[circle, draw=black, draw=black, fill=cyan!65] (21) at (5, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (5, 0) {\srcsize{0.7}};
+\node[circle, draw=black, draw=black, fill=cyan!65] (22) at (6, 0) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (6, 0) {\srcsize{0.4}};
+\node[circle, draw=black, draw=black, fill=orange!65] (23) at (4, 1) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (4, 1) {\srcsize{0.8}};
+\node[circle, draw=black, draw=black, fill=orange!65] (24) at (5, 1) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (5, 1) {\srcsize{0.8}};
+\node[circle, draw=black, draw=black, fill=orange!65] (25) at (4, 2) {};
+\node[minimum size=1mm,inner sep=3pt] (12) at (4, 2) {\srcsize{0.8}};
+
+\node (k0) at (3.3, 2) {\tiny{0}};
+\node (k0) at (3.3, 1.5) {};
+\node (k1) at (4.7, 1.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (k0) -- (k1);
+
+\node (k0) at (3.3, 1) {\tiny{1}};
+\node (k0) at (3.3, 0.5) {};
+\node (k1) at (5.7, 0.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (k0) -- (k1);
+
+\node (k0) at (3.3, 0) {\tiny{2}};
+\node (k0) at (3.3, -.5) {};
+\node (k1) at (6.5, -.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (k0) -- (k1);
+
+\node[minimum size=1mm,inner sep=3pt] (c) at (5, 2) {\textcolor{solarizedRed}{\srcsize{$C_A=0.8$}}};
+
+\node (s) at (2.5, 3.5) {\textcolor{orange}{\tiny{np.random.seed(seed)}}};
+
+\begin{pgfonlayer}{background}
+    \node [fill=solarizedBase02,fit=(5) (4) (3) (2) (1) (25) (24) (23) (22) (21) (m) (a) (k0) (k1) (l0) (l1)] {}; 
+\end{pgfonlayer}
+
+\end{tikzpicture}
+\end{document}

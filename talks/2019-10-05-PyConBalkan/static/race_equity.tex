@@ -1,0 +1,33 @@
+\documentclass{standalone}
+\usepackage{siunitx}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}[yscale=0.5]
+    \coordinate  (A) at (0, 0) {};
+    \coordinate  (B) at (0, -10) {};
+    \draw [white, thick, dotted] (A) -- node[left] {} (B);
+
+    \coordinate  (A) at (5, 0) {};
+    \coordinate  (B) at (5, -10) {};
+    \draw [white, thick, dotted] (A) -- node[left] {} (B);
+
+    \coordinate  (A) at (2.5, 0) {};
+    \coordinate  (B) at (2.5, -10) {};
+    \draw [white, thick, dashed] (A) -- node[left] {} (B);
+
+    \node[] (0) at (2.5, 1) {\textit{FINISH LINE}};
+    \node[] (0) at (2.5, -10.5) {\textit{START LINE}};
+
+    \node[regular polygon,regular polygon sides=3, fill=orange, minimum size=1.5cm] (2) at (1.1, -13.5) {};
+    \node[regular polygon,regular polygon sides=3, fill=white, minimum size=1.5cm] (2) at  (1.1, -2) {};
+    \node[regular polygon,regular polygon sides=3, fill=white, minimum size=1.5cm] (2) at  (1.1, -5) {};
+    \node[regular polygon,regular polygon sides=3, fill=white, minimum size=1.5cm] (2) at  (1.1, -8) {};
+
+    \node[diamond, fill=orange, minimum size=1.4cm] (2) at (3.8, -13.2) {};
+    \node[regular polygon,regular polygon sides=3, fill=white, minimum size=1.5cm] (2) at  (3.8, -2) {};
+    \node[regular polygon,regular polygon sides=3, fill=white, minimum size=1.5cm] (2) at  (3.8, -5) {};
+    \node[regular polygon,regular polygon sides=3, fill=white, minimum size=1.5cm] (2) at  (3.8, -8) {};
+\end{tikzpicture}
+    \end{document}

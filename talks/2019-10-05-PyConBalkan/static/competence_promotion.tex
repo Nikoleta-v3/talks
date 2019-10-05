@@ -1,0 +1,41 @@
+
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+\begin{document}
+\begin{tikzpicture}
+    \node[circle, draw=black, draw=black, fill=orange!65,] (0) at (0, 0) {};
+    \node[minimum size=1mm,inner sep=3pt] (12) at (0, 0) {\srcsize{0.5}};
+    \node[circle, draw=black, draw=black, fill=cyan!65] (1) at (1, 0) {};
+    \node[minimum size=1mm,inner sep=3pt] (11) at (1, 0) {\srcsize{0.6}};
+    \node[circle, draw=black, fill=cyan!65]  (2) at (2, 0) {};
+    \node[minimum size=1mm,inner sep=3pt] (10) at (2, 0) {\srcsize{0.4}};
+    \node[circle, draw=black, draw=black, fill=orange!65,] (3) at (0, 1) {};
+    \node[circle, draw=black, draw=black, fill=black!25 ,] (4) at (1, 1) {};
+    \node[circle, draw=black, draw=black, fill=orange!65,] (5) at (0, 2) {};
+
+    \node (l0) at (-.7, 2) {\tiny{0}};
+    \node (l0) at (-.7, 1.5) {};
+    \node (l1) at (0.7, 1.5) {};
+    \draw[line width=1.5pt, dashed, -, black!20, solarizedBase02] (l0) -- (l1);
+
+    \node (l0) at (-.7, 1) {\tiny{1}};
+    \node (l0) at (-.7, 0.5) {};
+    \node (l1) at (1.7, 0.5) {};
+    \draw[line width=1.5pt, dashed, -, black!20, solarizedBase02] (l0) -- (l1);
+
+    \node (l0) at (-.7, 0) {\tiny{2}};
+    \node (l0) at (-.7, -.5) {};
+    \node (l1) at (2.5, -.5) {};
+    \draw[line width=1.5pt, dashed, -, black!20, solarizedBase02] (l0) -- (l1);
+
+    \draw[draw,->] (2) -- (4) node[midway,sloped,above,] {\srcsize{$0.4$}};
+    \draw[draw,->] (1) -- (4) node[midway,sloped,above, rotate=180] {\srcsize{$0.6$}};
+    \draw[draw,->] (0) -- (4) node[midway,sloped,above] {\srcsize{\textcolor{solarizedRed}{$\gamma$}$0.5$}};
+    \draw (5) edge[out=-135, in=135, ->, solarizedRed] node [above right] {\srcsize{\textcolor{solarizedRed}{$\gamma$}}} (0);
+    \draw (5) edge[out=-65, in=115, ->] node [above left] {} (1);
+    \draw (5) edge[out=0, in=90, ->] node [above left] {} (2);
+
+\end{tikzpicture}
+\end{document}
