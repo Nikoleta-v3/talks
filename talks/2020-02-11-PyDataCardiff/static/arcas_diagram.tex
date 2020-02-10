@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (0) at (0, 3) {Nature};
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (1) at (-2.7, .5) {arXiv};
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (2) at (2.7, .5) {PLOS};
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (3) at (360/6 * 4:3cm) {Springer};
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (4) at (360/6 * 5:3cm) {IEEE} ;
+
+    \node (center) at (0, 0.5) {ARCAS};
+    \draw (0) edge[-, out=-90, in=90] node[above, rotate=90] {} (center);
+    \draw (1) edge[-, out=0, in=180] node[above, rotate=90] {} (center);
+    \draw (2) edge[-, out=180, in=0] node[above, rotate=90] {} (center);
+    \draw (3) edge[-, out=65, in=-120] node[above, rotate=90] {} (center);
+    \draw (4) edge[-, out=115, in=-60] node[above, rotate=90] {} (center);
+\end{tikzpicture}
