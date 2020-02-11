@@ -108,7 +108,7 @@
 
 \begin{frame}
     \begin{center}
-    \small{title="prisoner's dilemma" AND abstract="prisoner's dilemma"}\\
+    \small{title="prisoner's dilemma" OR abstract="prisoner's dilemma"}\\
     
     \vspace{-.50cm}
     \includegraphics[width=\textwidth]{static/articles.png}
@@ -129,7 +129,7 @@
 \end{frame}
 
 \begin{frame}
-    \centering
+    \begin{center}
     \resizebox{.5\textwidth}{!}{
     \begin{tabular}{lcc}
         \toprule
@@ -142,7 +142,32 @@
         "population" & -     & 0.008 \\
         "social"     & 0.010 & - \\
         \bottomrule
-    \end{tabular}}
+    \end{tabular}}\vspace{1cm}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    abstract = ``The social network of agents'' \\ \vspace{1.5cm}
+
+    \pause
+    \(c^1\) = 0.009 + 0.011 + 0.010 = 0.30\\ 
+    \(c^2\) = 0.008 + 0.012 = 0.20\\ 
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \begin{tikzpicture}
+
+    \node (words) at (0, 0) {\includegraphics[width=.15\textwidth]{static/paper.png}};
+
+    \node[right=1cm of words] (six) {\([0.3, 0.2]\)};
+    \node (dummy_out) at (1, 0) {};
+    \node (dummy_in) at (2, 0) {};
+    \draw (dummy_out) edge[->, out=0, in=180, draw=orange] node[above] {} (dummy_in);
+    \end{tikzpicture}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -155,28 +180,21 @@
     \begin{center}
     \begin{tikzpicture}
 
-    \node[align=center, draw=orange, ellipse, minimum height=4cm, minimum width=2cm] (words) at (0, 0) {\(\text{word}^n\)};
-    \node[above=.3cm of words] {English Language};
+    \node (words) at (0, 0) {\includegraphics[width=.15\textwidth]{static/paper.png}};
 
     \pause
-    \node[right=2cm of words] (six) {\LARGE{\(\mathbb{R}^6\)}};
+    \node[right=2cm of words] (six) {\LARGE{\(\mathbb{R}^5\)}};
     \node (dummy_out) at (1.5, 0) {};
     \node (dummy_in) at (3, 0) {};
     \draw (dummy_out) edge[->, out=0, in=180, draw=orange] node[above] {\small{LDA}} (dummy_in);
     
     \pause
-    \node[right=2cm of six] (two) {\Large{\(\mathbb{R}^2\)}};
-    \node (dummy_out) at (4, 0) {};
-    \node (dummy_in) at (6, 0) {};
-    \draw (dummy_out) edge[->, out=0, in=180, draw=orange] node[above] {\small{t-SNE}} (dummy_in);
+    \node[right=1cm of six] (two) {\Large{Topic$_i$}};
+    \node (dummy_out) at (3.7, 0) {};
+    \node (dummy_in) at (5, 0) {};
+    \draw (dummy_out) edge[->, out=0, in=180, draw=orange] node[above] {} (dummy_in);
 
     \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \begin{center}
-    \includegraphics[width=.8\textwidth]{static/topics_6.png}
     \end{center}
 \end{frame}
 
@@ -191,13 +209,6 @@
         \includestandalone{static/topics}
     \end{center}
 \end{frame}
-
-\begin{frame}
-    \begin{center}
-    \includegraphics[width=\textwidth]{static/contribution_over_time.png}
-    \end{center}
-\end{frame}
-
 
 \begin{frame}
     \begin{center}
