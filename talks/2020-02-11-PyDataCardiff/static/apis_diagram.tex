@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (0) at (0, 3) {Nature};
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (1) at (-2.7, .5) {arXiv};
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (2) at (2.7, .5) {PLOS};
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (3) at (360/6 * 4:3cm) {Springer};
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (4) at (360/6 * 5:3cm) {IEEE} ;
+
+    \pause
+    \node (me) at (3, 3) {\includegraphics[width=.09\textwidth]{static/detective.png}};
+    \draw (0) edge[->, out=40, in=135] node[above] {XML} (me);
+    \draw (me) edge[->, out=-135, in=-45] node[below] {Query} (0);
+
+    \pause
+    \node[state, align=center, minimum size=4.5em] (1) at (-2.7, .5) {\includegraphics[width=.09\textwidth]{static/detective.png}};
+    \node[state, align=center, minimum size=4.5em] (2) at (2.7, .5) {\includegraphics[width=.09\textwidth]{static/detective.png}};
+    \node[state, align=center, minimum size=4.5em] (3) at (360/6 * 4:3cm) {\includegraphics[width=.09\textwidth]{static/detective.png}};
+    \node[state, align=center, minimum size=4.5em] (4) at (360/6 * 5:3cm) {\includegraphics[width=.09\textwidth]{static/detective.png}} ;
+
+
+\end{tikzpicture}
