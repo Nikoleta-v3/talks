@@ -1,0 +1,57 @@
+\documentclass{standalone}
+
+\usepackage{standalone}
+\usepackage{tikz}
+
+\begin{document}
+    \begin{tikzpicture}[node distance=1cm]
+    \node[punkt] (literature) {\textbf{Literature Review}};
+
+    \node[below=1.2cm of literature] (dummy)
+    {};
+
+    \node[right=6cm of dummy, punkt] (bibliometrics)
+    {\textbf{Bibliometric Study of the Prisoner's Dilemma}};
+
+    \node[below=7cm of literature, punkt] (metatournaments)
+    {\textbf{Meta Analysis of Tournaments}};
+
+    \node[right=1.5cm of metatournaments, punkt] (memoryone)
+    {\textbf{Best Response Memory One Strategies}};
+
+    \node[left=1.5cm of metatournaments, punkt] (sequences)
+    {\textbf{Best Response Sequences}};
+
+    \node[below=3cm of sequences, punkt] (lstm)
+    {\textbf{Recurrent Network}};
+
+    \draw (literature) edge[pil, out=0, in=135] node {} (bibliometrics);
+    \draw (literature) edge[pil, out=-90, in=90] node {} (metatournaments);
+    \draw (literature) edge[pil, out=-90, in=135] node {} (memoryone);
+    \draw (literature) edge[pil, out=-90, in=45] node {} (sequences);
+    \draw (metatournaments) edge[doublepil, out=0, in=180] node {} (memoryone);
+    \draw (metatournaments) edge[doublepil, out=180, in=0] node {} (sequences);
+    \draw (sequences) edge[doublepil, out=-135, in=135] node {} (lstm);
+
+    \pause
+
+    \node[below=4cm of literature] (dummy)
+    {};
+
+    \node[right=6cm of dummy, emojis] (bibliometrics)
+    {\includegraphics[width=0.25\textwidth]{static/books.png}\includegraphics[width=0.25\textwidth]{static/pc.png}\includegraphics[width=0.25\textwidth]{static/chart.png}};
+
+    \node[below=9.8cm of literature, emojis] (metatournaments)
+    {\includegraphics[width=0.25\textwidth]{static/look.png}\includegraphics[width=0.25\textwidth]{static/bar.png}};
+
+    \node[right=1.5cm of metatournaments, emojis] (memoryone)
+    {\includegraphics[width=0.25\textwidth]{static/look.png}\includegraphics[width=0.25\textwidth]{static/memone.png}};
+
+    \node[left=1.5cm of metatournaments, emojis] (sequences)
+    {\includegraphics[width=0.25\textwidth]{static/look.png}\includegraphics[width=0.25\textwidth]{static/sequence.png}};
+
+
+    \node[below=3.3cm of sequences, emojis] (lstm)
+    {\includegraphics[width=0.25\textwidth]{static/sequence.png}\includegraphics[width=0.25\textwidth]{static/lstm.png}};
+    \end{tikzpicture}
+\end{document}
