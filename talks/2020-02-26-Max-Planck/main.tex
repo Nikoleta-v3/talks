@@ -22,8 +22,8 @@
 \usepackage{amsmath,amsthm, amssymb, latexsym}
 
 \usepackage{tikz}
-\usetikzlibrary{er,positioning, calc, patterns, arrows}
-\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{er,positioning, calc, patterns, arrows, calc, positioning, arrows, arrows.meta, shapes, automata}
+\usetikzlibrary{decorations.pathreplacing, backgrounds, fit}
 \tikzset{
     ultra thick/.style={line width=1.6pt},
     % Define standard arrow tip
@@ -33,7 +33,7 @@
            ellipse,
            draw=orange,
            ultra thick,
-           text width=17em,
+           text width=18em,
            minimum height=8em,
            text centered,
            font=\LARGE},
@@ -62,6 +62,8 @@
 \usepackage{siunitx}
 \usetikzlibrary{calc, positioning, arrows, arrows.meta, shapes}
 \usetikzlibrary{backgrounds, fit}
+\tikzstyle{background}=[orange, rectangle, draw, inner sep=1mm, thick,
+           rounded corners=2mm]
 \makeatletter
 \newcommand{\srcsize}{\@setfontsize{\srcsize}{5pt}{5pt}}
 \makeatother
@@ -141,6 +143,54 @@
 
 \begin{frame}
     \begin{center}
+    \includestandalone[width=.7\textwidth]{static/arcas_diagram}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \small{title="prisoner's dilemma" OR abstract="prisoner's dilemma"}\\
+    
+    \vspace{-.50cm}
+    \includegraphics[width=\textwidth]{static/articles.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/lda}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/topics}
+    \end{center}
+\end{frame}
+
+% \begin{frame}
+%     \begin{center}
+%         \includegraphics[width=.7\textwidth]{static/pd.png}
+%     \end{center}
+% \end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.7\textwidth]{static/degree_dist.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \large{``A bibliometric study of research topics, collaboration and influence in the field of the Iterated Prisoner's Dilemma"} \\ \vspace{.5cm}
+        \footnotesize{Nikoleta E. Glynatsi, Vincent A. Knight} \\ \vspace{.5cm}
+        \footnotesize{https://arxiv.org/abs/1911.06128}
+    \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-BIBLIOMETRIC%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{center}
     \textcolor{orange}{\large{\textbf{Meta Analysis of Tournaments}}} \vspace{1cm}
 
     \includegraphics[width=0.10\textwidth]{static/look.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/bar.png}
@@ -149,13 +199,97 @@
 
 \begin{frame}
     \begin{center}
+        \includegraphics[width=.25\textwidth]{static/axelrod-logo.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \Large{\textbf{195}} \small{strategies in} \Large{\textbf{45686}} \small{tournaments}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=\textwidth]{static/tit_for_tat_r_distributions.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=\textwidth]{static/performances.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \Large{\textbf{Evolved HMM 5 ?}}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{static/features.png}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+        \large{``A meta analysis of tournaments and an evaluation of performance in the Iterated Prisoner's Dilemma"} \\ \vspace{.5cm}
+        \footnotesize{Nikoleta E. Glynatsi, Vincent A. Knight} \\ \vspace{.5cm}
+        \footnotesize{arXiv:2001.05911}
+    \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-META%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{center}
     \textcolor{orange}{\large{\textbf{Best Response Memory One Strategies}}} \vspace{1cm}
 
     \includegraphics[width=0.10\textwidth]{static/look.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/memone.png}
     \end{center}
 \end{frame}
 
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.7\textwidth]{static/markov_chain}
+    \end{center}
+\end{frame}
 
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.9\textwidth]{static/problem_maximisation}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=.8\textwidth]{static/mem_one_violin.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.25\textwidth]{static/axelrod-logo.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=.8\textwidth]{static/mem_one_against_longer_memory.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \large{``Stability of defection, optimisation of strategies and the limits of memory in the Prisoner's Dilemma "} \\ \vspace{.5cm}
+        \footnotesize{Nikoleta E. Glynatsi, Vincent A. Knight} \\ \vspace{.5cm}
+        \footnotesize{arXiv:1911.12112}
+    \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-MEMONE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
     \begin{center}
     \textcolor{orange}{\large{\textbf{Best Response Sequences}}} \vspace{1cm}
@@ -164,15 +298,45 @@
     \end{center}
 \end{frame}
 
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.9\textwidth]{static/tft_vs_defector}
+    \end{center}
+\end{frame}
+
 
 \begin{frame}
     \begin{center}
-        \textcolor{orange}{\large{\textbf{Recurrent Network Player}}} \vspace{1cm}
+    \includestandalone[width=.95\textwidth]{static/tft_vs_best_response}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.9\textwidth]{static/best_sequences}
+    \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-SEQUENCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{center}
+        \textcolor{orange}{\large{\textbf{Recurrent Neural Network Player}}} \vspace{1cm}
     
         \includegraphics[width=0.10\textwidth]{static/look.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/bar.png}
     \end{center}
 \end{frame}
 
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=.9\textwidth]{static/Diagram_lstm.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    Performance violin plot
+    \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-LSTM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
     \begin{center}
         \begin{itemize}
@@ -187,8 +351,8 @@
 
 \begin{frame}
     \begin{center}
-    \includegraphics[width=0.5\textwidth]{static/RhinoPic.pdf}\hspace{10pt}
-    \includestandalone[width=0.45\textwidth]{static/promotion}
+    \includegraphics[width=0.5\textwidth]{static/RhinoPic.pdf}\hspace{12pt}
+    \includestandalone[width=0.45\textwidth]{static/promotion} \\
     \end{center}
 \end{frame}
 

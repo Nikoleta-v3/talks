@@ -1,0 +1,81 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+
+\begin{document}
+    \begin{tikzpicture}
+    \node[font=\bfseries, text=orange!90] (0) at (0, 0) {Tit For Tat};
+    \node[font=\bfseries, text=orange!90] (1) at (0, -1) {Alternator};
+    \node[font=\bfseries, text=orange!90] (2) at (0, -2) {AntiTitForTat};
+    \node[font=\bfseries, text=orange!90] (3) at (0, -3) {Bully};
+    \node[font=\bfseries, text=orange!90] (4) at (0, -4) {Cooperator};
+    \node[font=\bfseries, text=orange!90] (5) at (0, -5) {Defector};
+    \node[font=\bfseries, text=orange!90] (6) at (0, -6) {SuspiciousTitForTat};
+    \node[font=\bfseries, text=orange!90] (7) at (0, -7) {WinShiftLoseStay};
+    \node[font=\bfseries, text=orange!90] (8) at (0, -8) {$\vdots$};
+    \node[font=\bfseries, text=orange!90] (9) at (0, -9) {Evolved HMM 5};
+
+    \pause
+
+    \draw [decorate,decoration={brace,amplitude=10pt, mirror,raise=4pt},yshift=0pt] (-2, 0) -- (-2, -9.5) node [rotate=90, midway, yshift=0.8cm] {195};
+
+    \pause
+
+    \node (dummy0) at (3, 0)  {};
+    \node (dummy1) at (3, -1) {};
+    \node (dummy2) at (3, -2) {};
+    \node (dummy3) at (3, -3) {};
+    \node (dummy4) at (3, -4) {};
+    \node (dummy5) at (3, -5) {};
+    \node (dummy6) at (3, -6) {};
+    \node (dummy7) at (3, -7) {};
+    \node (dummy9) at (3, -9) {};
+    
+    \node[font=\bfseries] (h) at (4.5, 1) {Heuristics};
+    \draw [solarizedBase2,] (4.5, -4.5) ellipse (1cm and 5cm);
+
+    \draw (0) edge[->, out=0, in=180, thick] (dummy0);
+    \draw (1) edge[->, out=0, in=180, thick] (dummy1);
+    \draw (2) edge[->, out=0, in=180, thick] (dummy2);
+    \draw (3) edge[->, out=0, in=180, thick] (dummy3);
+    \draw (4) edge[->, out=0, in=180, thick] (dummy4);
+    \draw (5) edge[->, out=0, in=180, thick] (dummy5);
+    \draw (6) edge[->, out=0, in=180, thick] (dummy6);
+    \draw (7) edge[->, out=0, in=180, thick] (dummy7);
+    \draw (9) edge[->, out=0, in=180, thick] (dummy9);
+
+    \node (dummy0) at (6, 0)  {};
+    \node (dummy1) at (6, -1) {};
+    \node (dummy2) at (6, -2) {};
+    \node (dummy3) at (6, -3) {};
+    \node (dummy4) at (6, -4) {};
+    \node (dummy5) at (6, -5) {};
+    \node (dummy6) at (6, -6) {};
+    \node (dummy7) at (6, -7) {};
+    \node (dummy9) at (6, -9) {};
+
+    \pause
+
+    \node (bf0) at (9, 0)  {[C, D, C, D, $\dots$]};
+    \node (bf1) at (9, -1) {[D, C, C, D, $\dots$]};
+    \node (bf2) at (9, -2) {[D, D, C, D, $\dots$]};
+    \node (bf3) at (9, -3) {[C, D, D, D, $\dots$]};
+    \node (bf4) at (9, -4) {[C, D, C, D, $\dots$]};
+    \node (bf5) at (9, -5) {[C, D, D, D, $\dots$]};
+    \node (bf6) at (9, -6) {[D, C, C, D, $\dots$]};
+    \node (bf7) at (9, -7) {[C, C, C, C, $\dots$]};
+    \node (bf9) at (9, -9) {[C, C, D, D, $\dots$]};
+
+    \draw (dummy0) edge[->, out=0, in=180, thick] (bf0) {};
+    \draw (dummy1) edge[->, out=0, in=180, thick] (bf1) {};
+    \draw (dummy2) edge[->, out=0, in=180, thick] (bf2) {};
+    \draw (dummy3) edge[->, out=0, in=180, thick] (bf3) {};
+    \draw (dummy4) edge[->, out=0, in=180, thick] (bf4) {};
+    \draw (dummy5) edge[->, out=0, in=180, thick] (bf5) {};
+    \draw (dummy6) edge[->, out=0, in=180, thick] (bf6) {};
+    \draw (dummy7) edge[->, out=0, in=180, thick] (bf7) {};
+    \draw (dummy9) edge[->, out=0, in=180, thick] (bf9) {};
+
+    \end{tikzpicture}
+\end{document}
