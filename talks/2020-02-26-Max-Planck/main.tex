@@ -107,7 +107,7 @@
     \begin{center}
     \includegraphics[width=0.5\textwidth]{static/vampire_bat.jpg}\vspace{.7cm}
 
-    \scriptsize{http://rebloggy.com/post/animals-bat-black-and-white-eyes-creepy-horror-gore-halloween-animal-bats-vampir/101865318472}
+    \scriptsize{rebloggy.com/post/animals-bat-black-and-white-eyes-creepy-horror-gore-halloween-animal-bats-vampir/101865318472}
     \end{center}
 \end{frame}
 
@@ -115,17 +115,10 @@
     \begin{center}
     \LARGE{
         \begin{equation*}
-            S_p =
-            \begin{pmatrix}
-                3 & 0  \\
-                5 & 1
-            \end{pmatrix}
-            \quad
-            S_q =
-            \begin{pmatrix}
-                3 & 5  \\
-                0 & 1
-            \end{pmatrix}
+            \begin{bmatrix}
+                (3, 3) & (0, 5)  \\
+                (5, 0) & (1, 1)
+            \end{bmatrix}
         \end{equation*}}
     \end{center}
 \end{frame}
@@ -152,12 +145,6 @@
 
 \begin{frame}
     \begin{center}
-    \hspace{1.15cm}\includestandalone[width=.85\textwidth]{static/api_diagram}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \begin{center}
     \includestandalone[width=.7\textwidth]{static/api_diagram_part_two}
     \end{center}
 \end{frame}
@@ -165,27 +152,6 @@
 \begin{frame}
     \begin{center}
     \includestandalone[width=.7\textwidth]{static/arcas_diagram}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \begin{center}
-    \small{title="prisoner's dilemma" OR abstract="prisoner's dilemma"}\\
-    
-    \vspace{-.50cm}
-    \includegraphics[width=\textwidth]{static/articles.png}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \begin{center}
-    \includestandalone[width=\textwidth]{static/lda}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \begin{center}
-    \includestandalone[width=\textwidth]{static/topics}
     \end{center}
 \end{frame}
 
@@ -203,9 +169,21 @@
 
 \begin{frame}
     \begin{center}
+    \includestandalone[width=\textwidth]{static/lda}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/topics}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
         \large{``A bibliometric study of research topics, collaboration and influence in the field of the Iterated Prisoner's Dilemma''} \\ \vspace{.5cm}
         \footnotesize{Nikoleta E. Glynatsi, Vincent A. Knight} \\ \vspace{.5cm}
-        \footnotesize{https://arxiv.org/abs/1911.06128}
+        \footnotesize{arxiv.org/abs/1911.06128}
     \end{center}
 \end{frame}
 
@@ -220,7 +198,8 @@
 
 \begin{frame}
     \begin{center}
-        \includegraphics[width=.25\textwidth]{static/axelrod-logo.png}
+        \includegraphics[width=.25\textwidth]{static/axelrod-logo.png} \\
+        \textbf{Axerlod-Python}
     \end{center}
 \end{frame}
 
@@ -232,14 +211,14 @@
 
 \begin{frame}
     \begin{center}
-        \textbf{Tit For Tat Performance} \\ \vspace{1cm}
+        \textbf{Tit For Tat Normalised Rank} \\ \vspace{1cm}
         \includegraphics[width=.8\textwidth]{static/tit_for_tat_r_distributions.png} 
     \end{center}
 \end{frame}
 
 \begin{frame}
     \begin{center}
-        \textbf{Evolved FSM 16 Performance} \\ \vspace{1cm}
+        \textbf{Evolved FSM 16 Normalised Rank} \\ \vspace{1cm}
         \includegraphics[width=.8\textwidth]{static/evolved_FSM_16_distributions.png} 
     \end{center}
 \end{frame}
@@ -287,7 +266,7 @@
         \large{``A meta analysis of tournaments and an evaluation of performance in the Iterated Prisoner's Dilemma''} \\ \vspace{.5cm}
         \footnotesize{Nikoleta E. Glynatsi, Vincent A. Knight} \\ \vspace{.5cm}
         \footnotesize{arXiv:2001.05911} \\ \vspace{.5cm}
-        \footnotesize{DOI:10.5281/zenodo.3516652}
+        \footnotesize{data: DOI:10.5281/zenodo.3516652}
     \end{center}
 \end{frame}
 
@@ -314,10 +293,10 @@
 
 \begin{frame}
     \begin{center}
-    \[\sum_{i=1} ^ N (c^{(i)T} \bar{a}^{(i)} - \bar{c}^{(i)T} a^{(i)}) \leq 0\] \\ \vspace{.5cm}
+    \[\sum_{i=1} ^ N (c^{(i)T} \bar{a}^{(i)} - \bar{c}^{(i)T} a^{(i)}) \leq 0 \ \text{if} \rightarrow \text{Defection}\] \\ \vspace{.5cm}
     \pause
-    \includegraphics[width=0.48\textwidth]{static/population_defection_takes_over.pdf}\hspace{6pt}
-    \includegraphics[width=0.48\textwidth]{static/population_defection_fails.pdf}\vspace{10pt}
+    \includegraphics[width=0.48\textwidth]{static/population_defection_takes_over.png}\hspace{6pt}
+    \includegraphics[width=0.48\textwidth]{static/population_defection_fails.png}\vspace{10pt}
 
     \end{center}
 \end{frame}
@@ -392,23 +371,17 @@
 \begin{frame}
     \begin{center}
         \large{``Training Recurrent Neural Network strategies for Iterated Prisoner's Dilemma''} \\ \vspace{.5cm}
-        \footnotesize{DOI:10.5281/zenodo.3516652}
+        \footnotesize{data: DOI:10.5281/zenodo.3685251}
     \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-SEQUENCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
     \begin{center}
-        \textcolor{orange}{\large{\textbf{Recurrent Neural Network Player}}} \vspace{1cm}
-    
-        \includegraphics[width=0.10\textwidth]{static/sequence.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/lstm.png}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \begin{center}
     \includestandalone[width=.15\textwidth]{static/neural_network} \\ \vspace{.5cm}
     \pause
-    \small{Reinforcement learning produces dominant strategies for the Iterated Prisoner’s Dilemma: https://doi.org/10.1371/journal.pone.0188046}
+    \small{Evolution Reinforces Cooperation with the Emergence of Self-Recognition Mechanisms: doi.org/10.1371/journal.pone.0204981} \\ \vspace{.5cm}
+    \pause
+    \small{Reinforcement learning produces dominant strategies for the Iterated Prisoner's Dilemma: doi.org/10.1371/journal.pone.0188046}
     \end{center}
 \end{frame}
 
@@ -444,7 +417,7 @@
 
 \begin{frame}
     \begin{center}
-    \Large{\textbf{\textcolor{orange}{RECOGNITION} MECHANISMS ARE \textcolor{orange}{BENEFICIAL}}} \\
+    \Large{\textbf{\textcolor{orange}{POSSIBLE} TO TRAIN A \textcolor{orange}{RECURRENT NETWORK} BEST RESPONSE}} \\
     \end{center}
 \end{frame}
 

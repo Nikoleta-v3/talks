@@ -14,7 +14,8 @@
 
     \pause
     \node[right=3cm of center] (r) {\LARGE{\(\mathbb{R}^n\)}};
-    \draw (center) edge[->, out=0, in=180, draw=orange, thick] node[above] {\tiny{Natural Language Process}} (r);
+    \draw (center) edge[->, out=0, in=180, draw=orange, thick] node[above] {\tiny{Natural Language}} (r);
+    \draw (center) edge[->, out=0, in=180, draw=orange, thick] node[below] {\tiny{Processing}} (r);
     \pause
     \node[right=2cm of r] (topic) {\Large{Topics}};
     \draw (r) edge[->, out=0, in=180, draw=orange, thick] node[above] {} (topic);
