@@ -60,6 +60,8 @@ Lightning Talks
 
 <h4>2019</h4>
 <hr>
++ [**Science analysed with NLP +**]({{ site.baseurl }}/talks//2020-02-11-PyDataCardiff/main.pdf) -&ensp; PyData Cardiff Meetup, &ensp; Cardiff 2019.
+
 + [**Understanding responses to environments for the Prisoner's Dilemma**]({{ site.baseurl }}/talks//2020-02-26-Max-Planck/main.pdf) -&ensp; Visit to Max Planck Institute, &ensp; Plön 2019.
 
 <h4>Lightning Talks</h4>
