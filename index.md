@@ -58,6 +58,9 @@ Lightning Talks
 
 + [**The Fallacy of Meritocracy**]({{ site.baseurl }}/talks//2019-10-05-PyConBalkan/main.pdf) -&ensp; PyCon Balkan Keynote, &ensp; Belgrade 2019.
 
+<h4>2019</h4>
+<hr>
++ [**Understanding responses to environments for the Prisoner's Dilemma**]({{ site.baseurl }}/talks//2020-02-26-Max-Planck/main.pdf) -&ensp; Visit to Max Planck Institute, &ensp; Plön 2019.
 
 <h4>Lightning Talks</h4>
 <hr>

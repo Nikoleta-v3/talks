@@ -1,0 +1,25 @@
+\documentclass{standalone}
+
+\usepackage{standalone}
+\usepackage{tikz}
+
+\begin{document}
+    \begin{tikzpicture}
+    \node (center) at (0, 0) {\includegraphics[width=.10\textwidth]{static/paper.png}};
+    \node (words) at (0, 1.2) {\includegraphics[width=.10\textwidth]{static/paper.png}};
+    \node (words) at (0, -1.2) {\includegraphics[width=.10\textwidth]{static/paper.png}};
+    \node (words) at (-1.2, 0) {\includegraphics[width=.10\textwidth]{static/paper.png}};
+    \node (words) at (-1.2, 1.2) {\includegraphics[width=.10\textwidth]{static/paper.png}};
+    \node (words) at (-1.2, -1.2) {\includegraphics[width=.10\textwidth]{static/paper.png}};
+
+    \pause
+    \node[right=3cm of center] (r) {\LARGE{\(\mathbb{R}^n\)}};
+    \draw (center) edge[->, out=0, in=180, draw=orange, thick] node[above] {\tiny{Natural Language}} (r);
+    \draw (center) edge[->, out=0, in=180, draw=orange, thick] node[below] {\tiny{Processing}} (r);
+    \pause
+    \node[right=2cm of r] (topic) {\Large{Topics}};
+    \draw (r) edge[->, out=0, in=180, draw=orange, thick] node[above] {} (topic);
+
+
+    \end{tikzpicture}
+\end{document}

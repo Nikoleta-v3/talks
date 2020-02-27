@@ -1,0 +1,18 @@
+\documentclass{standalone}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+    \begin{tikzpicture}[node distance=1cm]
+    \node (a) {\includegraphics[width=0.20\textwidth]{static/D.png}\includegraphics[width=0.20\textwidth]{static/D.png}};
+    \pause
+    \node (b) [below right=of a] {\includegraphics[width=0.20\textwidth]{static/C.png}\includegraphics[width=0.20\textwidth]{static/D.png}};;
+    \pause
+    \node (c) [below right=of b] {\includegraphics[width=0.20\textwidth]{static/D.png}\includegraphics[width=0.20\textwidth]{static/C.png}};;
+    \pause
+    \node (d) [below right=of c] {\Huge{$\dots$}};
+    \node (e) [below right=of d] {\includegraphics[width=0.25\textwidth]{static/shake.png}};
+    \end{tikzpicture}
+\end{document}
