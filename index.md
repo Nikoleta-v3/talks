@@ -46,9 +46,6 @@ Wales Mathematics Colloquium, &ensp; Gregynog Hall 2017.
 + [**Memory size in the Prisoners Dilemma**]({{ site.baseurl }}/talks/2018-06-18-SIAM-UKIE-National-Student-Chapter/main.pdf) - &ensp; SIAM UKIE National Student Chapter, &ensp; Bath University 2018.
 + [**How does a smile make a difference?**]({{ site.baseurl }}/talks/2018-09-15-PyConUK/index.html) - &ensp; PyConUK, &ensp; Cardiff 2018.
 
-Lightning Talks
----------------
-
 <h4>2019</h4>
 <hr>
 
@@ -58,13 +55,11 @@ Lightning Talks
 
 + [**The Fallacy of Meritocracy**]({{ site.baseurl }}/talks//2019-10-05-PyConBalkan/main.pdf) -&ensp; PyCon Balkan Keynote, &ensp; Belgrade 2019.
 
-<h4>2019</h4>
-<hr>
 + [**Science analysed with NLP +**]({{ site.baseurl }}/talks//2020-02-11-PyDataCardiff/main.pdf) -&ensp; PyData Cardiff Meetup, &ensp; Cardiff 2019.
 
 + [**Understanding responses to environments for the Prisoner's Dilemma**]({{ site.baseurl }}/talks//2020-02-26-Max-Planck/main.pdf) -&ensp; Visit to Max Planck Institute, &ensp; Plön 2019.
 
-<h4>2019</h4>
+<h4>2020</h4>
 <hr>
 + [**A bibliometric study of a research field**]({{ site.baseurl }}/talks//2020-06-24-PyDataUK/main.pdf) -&ensp; PyData UK Meetup, &ensp; 2020.
 
