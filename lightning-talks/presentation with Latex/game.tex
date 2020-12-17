@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 2pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }
+    }
+
+    \begin{tikzpicture}
+
+    \pic[solarizedBlue] (1) at (0, 0) {man};
+    \node (3) at (0, -1.5) {\textcolor{solarizedBlue}{cooperator}};
+
+    \pic[solarizedRed] (2) at (2.5, 0) {man};
+    \node (5) at (2.5, -1.5) {\textcolor{solarizedRed}{defector}};
+    \end{tikzpicture}
+
+\end{document}
