@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+
+\begin{document}
+    \begin{tikzpicture}
+        \node (cc) at (0, 0) {\includegraphics[width=.10\textwidth]{static/C.png}\includegraphics[width=.10\textwidth]{static/C.png}};
+        \node (cd) at (2.5, 0) {\includegraphics[width=.10\textwidth]{static/C.png}\includegraphics[width=.10\textwidth]{static/D.png}};
+        \node (cc) at (0, -2.5) {\includegraphics[width=.10\textwidth]{static/D.png}\includegraphics[width=.10\textwidth]{static/C.png}};
+        \node (cc) at (2.5, -2.5) {\includegraphics[width=.10\textwidth]{static/D.png}\includegraphics[width=.10\textwidth]{static/D.png}};
+
+        \draw[line width=.3mm] (1.2, .5) -- (1.2, -3);
+        \draw[line width=.3mm] (-1.5, -1.2) -- (4, -1.2);
+    \end{tikzpicture}
+\end{document}

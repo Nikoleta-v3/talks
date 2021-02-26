@@ -1,0 +1,19 @@
+\documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{xcolor}
+    \definecolor{plain}{rgb}{93,93,93}
+    \usetikzlibrary{positioning,arrows, calc, arrows.meta}
+    
+
+\begin{document}
+\begin{tikzpicture}
+    \node (noise) at (0, 0) {\includegraphics[width=.1\textwidth]{static/noise.png}};
+    \node[text=orange] (noise) at (4, 0) {Noise or randomness in the data points};
+    \node (noise) at (0, -2) {\includegraphics[width=.11\textwidth]{static/seasonality.png}};
+    \node[text=orange] (noise) at (5, -2) {Predictable fluctuations correlated with the calendar};
+    \node (noise) at (0, -4) {\includegraphics[width=.1\textwidth]{static/up.png}};
+    \node[text=orange] (noise) at (4.1, -4) {Long term trajectory, positive or negative};
+    \node (noise) at (0, -6) {\includegraphics[width=.1\textwidth]{static/cycle.png}};
+    \node[text=orange] (noise) at (5.1, -6) {Repeating periods that are not related to the calendar};
+\end{tikzpicture}
+\end{document}

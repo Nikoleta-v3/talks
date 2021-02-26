@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+\begin{document}
+\begin{tikzpicture}
+\node[circle, fill=black!20] (0) at (0, 0) {};
+\node[circle, fill=black!20] (1) at (1, 0) {};
+\node[circle, fill=black!20] (2) at (2, 0) {};
+\node[circle, fill=black!20] (3) at (0, 1) {};
+\node[circle, draw=black, draw=black, fill=cyan!65] (4) at (1, 1) {};
+\node[circle, fill=black!20] (5) at (0, 2) {};
+
+\node (l0) at (-1.5, 2) {\tiny{Level 0}};
+\node (l0) at (-1.5, 1.5) {};
+\node (l1) at (0.7, 1.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\node (l0) at (-1.5, 1) {\tiny{Level 1}};
+\node (l0) at (-1.5, 0.5) {};
+\node (l1) at (1.7, 0.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\node (l0) at (-1.5, 0) {\tiny{Level 2}};
+\node (l0) at (-1.5, -.5) {};
+\node (l1) at (2.7, -.5) {};
+\draw[line width=1.5pt, dashed, -, black!20] (l0) -- (l1);
+
+\pause
+%\node[circle, draw=black, draw=black, fill=cyan!65, label={[xshift=.5cm, yshift=-.53cm]\textcolor{white}{\tiny{0.2}}}] (4) at (1, 1) {};
+\node (4) at (1, 1) {\tiny{0.2}};
+
+
+\pause
+\node[circle, draw=black, draw=black, fill=cyan!65] (4) at (1, 1) {};
+\node (4) at (1.01, 1) {\includegraphics[width=.06\textwidth]{static/retirement.pdf}};
+\end{tikzpicture}
+\end{document}

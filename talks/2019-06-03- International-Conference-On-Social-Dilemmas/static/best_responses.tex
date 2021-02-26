@@ -1,0 +1,42 @@
+\documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{xcolor}
+    \definecolor{plain}{rgb}{93,93,93}
+    \usetikzlibrary{positioning,arrows, calc, arrows.meta, shapes}
+    
+    \definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+    \begin{document}
+    \tikzset{man/.pic={
+        \node[circle,fill,minimum size=5mm] (head) {};
+        \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+    \tikzset{small_man/.pic={
+        \node[circle,fill,minimum size=2.5mm] (head) {};
+        \node[rounded corners=2pt,minimum height=.4cm,minimum width=0.2cm,fill,below = .5pt of head] (body) {};
+        \draw[line width=.5mm,round cap-round cap] ([shift={(1pt,-.5pt)}]body.north east) --++(-90:3mm);
+        \draw[line width=.5mm,round cap-round cap] ([shift={(-1pt,-.5pt)}]body.north west)--++(-90:3mm);
+        }}
+    \tikzset{cloud/.pic={
+            \node[cloud, cloud puffs=10.8,minimum width=1cm, minimum height=1.1cm, draw] () at (0,0) {\tikzpictext};
+            }}
+    \begin{tikzpicture}
+        \pic[solarizedBlue] at (0, 0) (myman) {man};
+        \pic at (-1.5, 0) (myman) {man};
+        \pic at (-.8, 1) (myman) {small_man};
+        \pic at (-.8, .8) (cloud) {cloud};
+        \node at (-.25, .25) [circle,fill,inner sep=1pt] {};
+        \node at (-.35, .35) [circle,fill,inner sep=1pt] {};
+
+        \draw[>=triangle 45, <->] (-1.1, -0.5) -- (-.4, -0.5);
+
+%         \pic (c1) at (15,5) [pic text=$3x$ is a factor of both $6x^2$and $9x$]{cloud};
+% \pic (c2) at (17,1) [pic text=$-4$ is a factor of both $-8x$ and $-12$]{cloud};
+% \draw[-latex'] (c1) to[bend right] (a);
+% \draw[-latex'] (c2) to[bend left]  (b);
+
+        \node[font=\fontsize{4}{2}\selectfont] at (2, 0) {$u_q(p) = \frac{\frac{1}{2}pQp^T + cp + a}{\frac{1}{2}p\bar{Q}p^T + \bar{c}p + \bar{a}}$};
+        \node[font=\fontsize{4}{2}\selectfont] at (2, -.6) {$p^* =  \operatorname*{argmax}_p {u_q} (p)$};
+    \end{tikzpicture}
+    \end{document}

@@ -1,31 +1,48 @@
- <!--<aside>-->
-	<!--<div class="container">-->
-		<!--<nav>-->
-			<!--<ul>-->
-				<!--<li><a href="{{ site.baseurl }}/">Talks</a></li>-->
-				<!--<li><a href="{{ site.baseurl }}/lightning-talks/">Lightning - Talks</a></li>-->
-			<!--</ul>-->
-			<!--</li>-->
-			<!--</ul>-->
-		<!--</nav>-->
-	<!--</div>-->
-<!--</aside>-->
- <aside>
-	<div class="container">
-		<nav>
-			<ul>
-				<li><a href="https://nikoleta-v3.github.io/about-me">About me</a></li>
-				<li><a href="https://nikoleta-v3.github.io/blog">Blog</a></li>
-				<li><a href="{{ site.baseurl }}/">Talks</a></li>
-					</a></li>
-			</ul>
-			</li>
-			</ul>
-		</nav>
-	</div>
-</aside>
+<div class="header-wrapper">
+    <header>
+        <!-- logo and description -->
+        {% if page.layout != "post" %}
+        <div class="head-area">
+            <h1 class="site-logo">
+                <a href="https://nikoleta-v3.github.io/"><img src="{{ site.baseurl }}/assets/img/logo.png" class="logo"/></a>
+            </h1>
+            <h3 class="site-description">{{ site.description }}</h3>
+        </div>
+        {% endif %}
+        <nav class="site-nav">
+            <div class="left-nav">
+                <!-- add titles to all buttons -->
+                <div class="ui secondary menu inverted">
+                    <a class="item" href="https://nikoleta-v3.github.io/">
+                        Home
+                    </a>
+                    <a class="item" href="https://nikoleta-v3.github.io/about.html">
+                        About
+                    </a>
+                    <a class="item" href="https://nikoleta-v3.github.io/blog.html">
+                        Blog
+                    </a>
+                    <a class="item" href="{{ site.baseurl }}/">
+                        Talks
+                    </a>
+                    <div class="right menu">
+                        <div id="head-search" class="ui category search item">
+                            <div class="ui transparent icon input">
+                                <input placeholder="Search..." type="text" id="search-input" onkeypress="handleKeyPress()">
+                                <i class="search link icon" onclick="handleSubmit()"></i>
+                            </div>
+                        </div>
 
-<header>
-	<h1><a href="https://nikoleta-v3.github.io/">{{ site.title }}</a></h1>
-</header>
- 
+                        <a class="item" href="https://twitter.com/NikoletaGlyn">
+                            <i class="twitter link icon"></i>
+                        </a>
+                        <a class="item" href="https://github.com/Nikoleta-v3">
+                            <i class="github link icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-nav"></div>
+        </nav>
+    </header>
+</div>

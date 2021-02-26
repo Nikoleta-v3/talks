@@ -1,0 +1,26 @@
+\documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{xcolor}
+    \definecolor{plain}{rgb}{93,93,93}
+    \usetikzlibrary{positioning,arrows, calc, arrows.meta}
+    
+    \definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+    \begin{document}
+    \tikzset{man/.pic={
+        \node[circle,fill,minimum size=5mm] (head) {};
+        \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+    \begin{tikzpicture}
+        \pic[solarizedBlue] at (0, 0) (myman) {man};;
+        \node(b0) at (-.1, -.4) {};
+        \node(b1) at (.15, -.4) {};
+        \pic at (-1.5, 0) (myman) {man};
+
+        \draw[>=triangle 45, <->] (-1.1, -0.5) -- (-.4, -0.5);
+        \draw[solarizedBlue, ->, thick] (b0) to[out=135,in=45,looseness=8] (b1);
+
+        \node[font=\fontsize{4}{2}\selectfont] at (2.5, 0) {$p^* =  \operatorname*{argmax}_p {u_q} (p)+ $ \textcolor{solarizedBlue}{$u_{p^*}(p^*)$}};
+    \end{tikzpicture}
+    \end{document}

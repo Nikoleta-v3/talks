@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+
+    \node[state, align=center, draw=orange, fill=orange, minimum size=4.5em] (0) at (0, 3) {PLOS \\ \tiny{API}};
+    \pause 
+    \node (center) at (0, 0.5) {\includegraphics[width=0.10\textwidth]{static/detective.png}};
+    \pause
+    \draw (center) edge[->, out=45, in=-45, thick] node[right, rotate=45] {} (0);
+    \node[text width=3.5cm, minimum size=4.5em] (message) at (3, 2) {\tiny{\url{http://api.plos.org/search?q=title:"Game"+AND+abstract:"Game"&rows=1}}};
+    \pause
+    \draw (center) edge[<-, out=135, in=-135, thick] node[above, rotate=90] {\tiny{article}} (0);
+\pause
+    \node[text width=7cm, minimum size=4.5em] (message) at (0, -2) {\tiny{
+        \{id': '10.1371\/journal.pone.0058546', \\
+        \ 'journal': 'PLoS ONE', \\ 
+        \ 'eissn': '1932\-6203', \\
+        \ 'publication date': '2013\-03\-13T00:00:00Z', \\
+        \ 'article type': 'Research Article', \\ 
+        \ 'author display': ['Adam C. Oei', 'Michael D. Patterson'], \\
+        \ 'abstract': ['Background: Previous evidence points $\dots$]\} \\}};
+\end{tikzpicture}

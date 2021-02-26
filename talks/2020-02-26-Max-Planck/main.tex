@@ -1,0 +1,450 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%Solarized Theme%%%%%%%%%%%%%%%
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+%%%%%Packages%%%%%
+\usefonttheme{serif}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fontawesome}
+\usepackage{minted}
+\usepackage{soul}
+
+\definecolor{DarkGray}{gray}{0.1}
+\usemintedstyle{paraiso-dark}
+
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl, xcolor}
+\usepackage{booktabs}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+
+\usepackage{tikz}
+\usetikzlibrary{er,positioning, calc, patterns, arrows, calc, positioning, arrows, arrows.meta, shapes, automata}
+\usetikzlibrary{decorations.pathreplacing, backgrounds, fit}
+\tikzset{
+    ultra thick/.style={line width=1.6pt},
+    % Define standard arrow tip
+    >=stealth',
+    % Define style for boxes
+    chain/.style={
+        rectangle, 
+        rounded corners, 
+        % fill=black!10,
+        draw=white, very thick,
+        text width=3.5em, 
+        minimum height=3em, 
+        text centered},
+    punkt/.style={
+           ellipse,
+           draw=orange,
+           ultra thick,
+           text width=18em,
+           minimum height=8em,
+           text centered,
+           font=\LARGE},
+    % Define arrow style
+    pil/.style={
+           ->,
+           ultra thick,
+           draw=orange,
+           shorten <=2pt,
+           shorten >=2pt,},
+    doublepil/.style={
+     latex'-latex',
+     ultra thick,
+     draw=orange,
+     shorten <=2pt,
+     shorten >=2pt,},
+     emojis/.style={
+        ellipse,
+        text width=17em,
+        minimum height=8em,
+        text centered,
+        font=\LARGE},
+}
+
+\usepackage{standalone}
+\usepackage{siunitx}
+\usetikzlibrary{calc, positioning, arrows, arrows.meta, shapes}
+\usetikzlibrary{backgrounds, fit}
+\tikzstyle{background}=[orange, rectangle, draw, inner sep=1mm, thick,
+           rounded corners=2mm]
+\makeatletter
+\newcommand{\srcsize}{\@setfontsize{\srcsize}{5pt}{5pt}}
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+    \begin{center}
+        \LARGE{\textbf{\textcolor{orange}{Understanding responses to environments for the Prisoner's Dilemma}}} \\
+
+        \vspace{1.5cm}
+        \normalsize{Max Planck Institute for Evolutionary Biology}
+
+        \vspace{1cm}
+        \normalsize{@NikoletaGlyn}
+
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=0.24\textwidth]{static/cardiff_uni_logo.png}\hspace{6pt}
+    \includegraphics[width=0.24\textwidth, height=0.245\textwidth]{static/axelrod-logo.png}\vspace{10pt}
+
+    \hspace{2pt}\includegraphics[width=0.24\textwidth]{static/ssi-logo.png} \hspace{1pt}
+    \includegraphics[width=0.24\textwidth]{static/plos-logo.jpg}
+
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=0.5\textwidth]{static/vampire_bat.jpg}\vspace{.7cm}
+
+    \scriptsize{rebloggy.com/post/animals-bat-black-and-white-eyes-creepy-horror-gore-halloween-animal-bats-vampir/101865318472}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \LARGE{
+        \begin{equation*}
+            \begin{bmatrix}
+                (3, 3) & (0, 5)  \\
+                (5, 0) & (1, 1)
+            \end{bmatrix}
+        \end{equation*}}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/iterated_prisoners_dilemma}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/structure}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \textcolor{orange}{\large{\textbf{Bibliometric Study of the Prisoner's Dilemma}}} \vspace{1cm}
+    
+    \includegraphics[width=0.10\textwidth]{static/books.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/pc.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/chart.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.7\textwidth]{static/api_diagram_part_two}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.7\textwidth]{static/arcas_diagram}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.7\textwidth]{static/pd.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.7\textwidth]{static/degree_dist.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/lda}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/topics}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \large{``A bibliometric study of research topics, collaboration and influence in the field of the Iterated Prisoner's Dilemma''} \\ \vspace{.5cm}
+        \footnotesize{Nikoleta E. Glynatsi, Vincent A. Knight} \\ \vspace{.5cm}
+        \footnotesize{arxiv.org/abs/1911.06128}
+    \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-BIBLIOMETRIC%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{center}
+    \textcolor{orange}{\large{\textbf{Meta Analysis of Tournaments}}} \vspace{1cm}
+
+    \includegraphics[width=0.10\textwidth]{static/look.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/bar.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.25\textwidth]{static/axelrod-logo.png} \\
+        \textbf{Axelrod-Python}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \Large{\textbf{195}} \small{strategies in} \Large{\textbf{45686}} \small{tournaments}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \textbf{Tit For Tat Normalised Rank} \\ \vspace{1cm}
+        \includegraphics[width=.8\textwidth]{static/tit_for_tat_r_distributions.png} 
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \textbf{Evolved FSM 16 Normalised Rank} \\ \vspace{1cm}
+        \includegraphics[width=.8\textwidth]{static/evolved_FSM_16_distributions.png} 
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{static/performances_standard.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{static/performances_noisy.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{"static/performances_probabilistic ending".png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{"static/performances_noisy probabilistic ending".png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \Large{\textbf{Evolved FSM 16}} \\ \vspace{1cm}
+    \includegraphics[width=0.1\textwidth]{static/detective.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{static/features.png}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+        \large{``A meta analysis of tournaments and an evaluation of performance in the Iterated Prisoner's Dilemma''} \\ \vspace{.5cm}
+        \footnotesize{Nikoleta E. Glynatsi, Vincent A. Knight} \\ \vspace{.5cm}
+        \footnotesize{arXiv:2001.05911} \\ \vspace{.5cm}
+        \footnotesize{data: DOI:10.5281/zenodo.3516652}
+    \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-META%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{center}
+    \textcolor{orange}{\large{\textbf{Best Response Memory One Strategies}}} \vspace{1cm}
+
+    \includegraphics[width=0.10\textwidth]{static/look.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/memone.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.7\textwidth]{static/markov_chain}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includestandalone[width=.5\textwidth]{static/equations}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \[\sum_{i=1} ^ N (c^{(i)T} \bar{a}^{(i)} - \bar{c}^{(i)T} a^{(i)}) \leq 0 \ \Rightarrow \text{Defection}\] \\ \vspace{.5cm}
+    \pause
+    \includegraphics[width=0.48\textwidth]{static/population_defection_takes_over.png}\hspace{6pt}
+    \includegraphics[width=0.48\textwidth]{static/population_defection_fails.png}\vspace{10pt}
+
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.9\textwidth]{static/problem_maximisation}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=.8\textwidth]{static/mem_one_violin.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.7\textwidth]{static/gambler}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=.8\textwidth]{static/mem_one_against_longer_memory.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \large{``Stability of defection, optimisation of strategies and the limits of memory in the Prisoner's Dilemma''} \\ \vspace{.5cm}
+        \footnotesize{Nikoleta E. Glynatsi, Vincent A. Knight} \\ \vspace{.5cm}
+        \footnotesize{arXiv:1911.12112}
+    \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-MEMONE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{center}
+    \textcolor{orange}{\large{\textbf{Best Response Sequences}}} \vspace{1cm}
+
+    \includegraphics[width=0.10\textwidth]{static/look.png}\hspace{2pt}\includegraphics[width=0.10\textwidth]{static/sequence.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.9\textwidth]{static/tft_vs_defector}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.95\textwidth]{static/tft_vs_best_response}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.9\textwidth]{static/best_sequences}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.95\textwidth]{static/best_sequences_part_two}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \large{``Training Recurrent Neural Network strategies for Iterated Prisoner's Dilemma''} \\ \vspace{.5cm}
+        \footnotesize{data: DOI:10.5281/zenodo.3685251}
+    \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-SEQUENCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.15\textwidth]{static/neural_network} \\ \vspace{.5cm}
+    \pause
+    \small{Reinforcement learning produces dominant strategies for the Iterated Prisoner's Dilemma: doi.org/10.1371/journal.pone.0188046} \\ \vspace{.5cm}
+    \pause
+    \small{Evolution Reinforces Cooperation with the Emergence of Self-Recognition Mechanisms: doi.org/10.1371/journal.pone.0204981}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/recurrent_neural_network}
+    \end{center}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=\textwidth]{static/lstm_performance.png}
+    \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END-LSTM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{center}
+    \Large{\textbf{\textcolor{orange}{5 TOPICS} \& AUTHORS ARE  \textcolor{orange}{COLLABORATIVE}}}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \Large{\textbf{IDENTIFY THE \textcolor{orange}{MEAN COOPERATOR} \& ADJUST TO THEM}} \\ 
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \Large{\textbf{TO BE ES YOU MUST BE \textcolor{orange}{FORGIVING}}} \\ \vspace{1cm}
+    \Large{\textbf{A \textcolor{orange}{LONGER MEMORY} IS \textcolor{orange}{BENEFICIAL}}} \\
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \Large{\textbf{POSSIBLE TO TRAIN A \textcolor{orange}{RECURRENT NETWORK} USING \textcolor{orange}{BEST RESPONSE SEQUENCES}}} \\
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=0.5\textwidth]{static/RhinoPic.pdf}\hspace{12pt}
+    \includestandalone[width=0.45\textwidth]{static/promotion} \\
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \faTwitter @NikoletaGlyn \\
+    
+    \vspace{1cm}
+    \end{center}
+
+    \footnotesize
+    $\bullet$ nikoleta-v3.github.io \\
+    \faGithub \ \url{github.com/ArcasProject/Arcas} \\
+    \faGithub \ \url{github.com/Nikoleta-v3/bibliometric-study-of-the-prisoners-dilemma} \\
+    \faGithub \ \url{github.com/Nikoleta-v3/meta-analysis-of-prisoners-dilemma-tournaments} \\
+    \faGithub \ \url{github.com/Nikoleta-v3/Memory-size-in-the-prisoners-dilemma} \\
+    $\bullet$ arXiv:2001.05911 \\
+    $\bullet$ arXiv:1911.12112 \\
+    $\bullet$ arXiv:1911.06128 \\
+\end{frame}
+
+\end{document}
+
