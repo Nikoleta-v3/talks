@@ -17,9 +17,7 @@
 _site
 .sass-cache
 .jekyll-metadata
-
-# Gemfiles
-Gemfile*
+*.jekyll-cache/
 
 *.DS_Store
 
