@@ -19,9 +19,6 @@ _site
 .jekyll-metadata
 *.jekyll-cache/
 
-# Gemfiles
-Gemfile*
-
 *.DS_Store
 
 # minted
