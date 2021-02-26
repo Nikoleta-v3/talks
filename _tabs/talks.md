@@ -4,6 +4,7 @@ icon: fas fa-info
 order: 4
 ---
 
+
 <h4>2020</h4>
 <hr>
 + [**A bibliometric study of a research field**]({{ site.baseurl }}/talks//2020-06-24-PyDataUK/main.pdf) -&ensp; PyData UK Meetup, &ensp; 2020.
