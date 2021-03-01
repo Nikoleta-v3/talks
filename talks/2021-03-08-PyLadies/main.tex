@@ -51,18 +51,18 @@
 
 \begin{frame}
     \begin{center}
-    \includegraphics[width=0.24\textwidth]{static/mpi.jpg}\hspace{6pt}
-    \includegraphics[width=0.24\textwidth]{static/ssi-logo.png}\hspace{6pt}
+    \includegraphics[width=0.24\textwidth]{static/mpi.jpg}\hspace{8pt}
+    \includegraphics[width=0.24\textwidth]{static/python.png}\vspace{8pt}
 
-    \hspace{-6pt}\includegraphics[width=0.24\textwidth]{static/django_girls.png}\hspace{6pt}
-    \includegraphics[width=0.24\textwidth, height=0.245\textwidth]{static/axelrod-logo.png}\hspace{6pt}
+    \includegraphics[width=0.24\textwidth]{static/django_girls.png}\hspace{8pt}
+    \includegraphics[width=0.24\textwidth]{static/axelrod-logo.png}
     \end{center}
 \end{frame}
 
-\begin{frame}
-    \centering
-    \includestandalone[width=.85\textwidth]{static/game}
-\end{frame}
+% \begin{frame}
+%     \centering
+%     \includestandalone[width=.85\textwidth]{static/game}
+% \end{frame}
 
 \begin{frame}
     \begin{center}
@@ -77,91 +77,97 @@
 \end{frame}
 
 \begin{frame}
-    \centering
-    \includestandalone[width=\textwidth]{static/tft_vs_defector}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/iterated_prisoners_dilemma}
+    \end{center}
 \end{frame}
 
-\begin{frame}
-    \centering
-    \includestandalone[width=\textwidth]{static/tft_vs_cooperator}
-\end{frame}
+% \begin{frame}
+%     \centering
+%     \includestandalone[width=\textwidth]{static/tft_vs_defector}
+% \end{frame}
 
-\begin{frame}[fragile]
-	\begin{minted}
-    [
-    framesep=4mm,
-    baselinestretch=1.2,
-    fontsize=\footnotesize,
-    ]
-    {python}
-class TitForTat(Player):
-    """A player starts by cooperating and then mimics previous
-    move by opponent."""
+% \begin{frame}
+%     \centering
+%     \includestandalone[width=\textwidth]{static/tft_vs_cooperator}
+% \end{frame}
 
-    name = 'Tit For Tat'
-    classifier = {
-        'memory_depth': 1,  # Four-Vector = (1.,0.,1.,0.)
-        'stochastic': False,
-        'inspects_source': False,
-        'manipulates_source': False,
-        'manipulates_state': False
-    }
+% \begin{frame}[fragile]
+% 	\begin{minted}
+%     [
+%     framesep=4mm,
+%     baselinestretch=1.2,
+%     fontsize=\footnotesize,
+%     ]
+%     {python}
+% class TitForTat(Player):
+%     """A player starts by cooperating and then mimics previous
+%     move by opponent."""
 
-    @staticmethod
-    def strategy(opponent):
-        return 'D' if opponent.history[-1:] == ['D'] else 'C'
-    \end{minted}
-\end{frame}
+%     name = 'Tit For Tat'
+%     classifier = {
+%         'memory_depth': 1,  # Four-Vector = (1.,0.,1.,0.)
+%         'stochastic': False,
+%         'inspects_source': False,
+%         'manipulates_source': False,
+%         'manipulates_state': False
+%     }
 
-\begin{frame}[fragile]
-	\begin{minted}
-    [
-    framesep=4mm,
-    baselinestretch=1.2,
-    fontsize=\footnotesize,
-    ]
-    {python}
-class TestTitForTat(TestPlayer):
+%     @staticmethod
+%     def strategy(opponent):
+%         return 'D' if opponent.history[-1:] == ['D'] else 'C'
+%     \end{minted}
+% \end{frame}
 
-    name = "Tit For Tat"
-    player = axelrod.TitForTat
-    expected_classifier = {
-        'memory_depth': 1,
-        'stochastic': False,
-        'inspects_source': False,
-        'manipulates_source': False,
-        'manipulates_state': False
-    }
+% \begin{frame}[fragile]
+% 	\begin{minted}
+%     [
+%     framesep=4mm,
+%     baselinestretch=1.2,
+%     fontsize=\footnotesize,
+%     ]
+%     {python}
+% class TestTitForTat(TestPlayer):
 
-    def test_strategy(self):
-        """Starts by cooperating."""
-        self.first_play_test(C)
-    \end{minted}
-\end{frame}
+%     name = "Tit For Tat"
+%     player = axelrod.TitForTat
+%     expected_classifier = {
+%         'memory_depth': 1,
+%         'stochastic': False,
+%         'inspects_source': False,
+%         'manipulates_source': False,
+%         'manipulates_state': False
+%     }
+
+%     def test_strategy(self):
+%         """Starts by cooperating."""
+%         self.first_play_test(C)
+%     \end{minted}
+% \end{frame}
 
 \begin{frame}
     \centering
     \includegraphics[width=\textwidth]{static/outline_of_library.pdf}
 \end{frame}
 
-\begin{frame}
-    \centering
-    \Huge \textcolor{orange}{Research}
-\end{frame}
+% \begin{frame}
+%     \centering
+%     \Huge \textcolor{orange}{Research}
+% \end{frame}
 
 
-\begin{frame}
-    \centering
-    \includegraphics[width=.54\textwidth]{static/paper_one.png}\hspace{6pt}
-    \includegraphics[width=.40\textwidth]{static/paper_two.png}\vfill
+% \begin{frame}
+%     \centering
+%     \includegraphics[width=.54\textwidth]{static/paper_one.png}\hspace{6pt}
+%     \includegraphics[width=.40\textwidth]{static/paper_two.png}\vfill
 
-    \includegraphics[width=.95\textwidth]{static/paper_three.png}
-\end{frame}
+%     \includegraphics[width=.95\textwidth]{static/paper_three.png}
+% \end{frame}
 
-\begin{frame}
-    \centering
-    \Huge \textcolor{orange}{Contributions}
-\end{frame}
+% \begin{frame}
+%     \centering
+%     \Huge \textcolor{orange}{Contributions}
+% \end{frame}
 
 \begin{frame}
     \centering
@@ -200,5 +206,10 @@ class TestTitForTat(TestPlayer):
     \faGithub  \ \url{https://github.com/gaffney2010} \\
     \faGithub  \ \url{https://github.com/marcharper} \\
     \faGithub  \ \url{https://github.com/meatballs} \\
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=\textwidth]{static/my_first_pr.png}
 \end{frame}
 \end{document}
