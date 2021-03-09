@@ -1,4 +1,6 @@
 \documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes, patterns}
 
 \begin{document}
 \tikzset{man/.pic={
@@ -7,12 +9,13 @@
     \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
     \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
     }}
-\begin{tikzpicture}
-    \pic[solarizedRed] at (0, 0) (myman) {man};
-    \node (p) at (.5, .7) {\includegraphics[width=.05\textwidth]{static/D} \includegraphics[width=.05\textwidth]{static/C}};
-    \pic[solarizedGreen] at (-2, -1.8) (myman) {man};
-    \pic[solarizedBlue] at (2, -1.8) (myman) {man};
-    \pic[solarizedOrange] at (-1, -4) (myman) {man};
-    \pic[solarizedMagenta] at (1, -4) (myman) {man};
+
+\begin{tikzpicture}[scale=.9]
+        \pic[solarizedRed]  (A1) at (0, 1) {man};
+        \pic[solarizedRed] (A1) at (-1, .6) {man};
+        \pic[solarizedRed]  (A1) at (.8, -1.1) {man};
+        \pic[solarizedRed]  (A1) at (-.8, -1.1) {man};
+        \pic[solarizedBlue] (A1) at (1, .6) {man};
+        \node (p) at (1.8, .6) {\small{\textcolor{solarizedBlue}{Hello}}};
 \end{tikzpicture}
 \end{document}
