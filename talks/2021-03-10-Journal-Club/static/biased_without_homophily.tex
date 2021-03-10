@@ -1,0 +1,37 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes, patterns}
+
+\begin{document}
+\begin{tikzpicture}[scale=.9]
+
+\node (A1) at (-1, -1) [circle, fill=solarizedBlue] {};
+\node (A2) at ($(A1) + (1.5, -.5)$) [circle, fill=solarizedBlue] {};
+\node (A3) at ($(A1) + (-1.5, -.5)$) [circle, fill=solarizedBlue] {};
+\draw[gray] (A1)  -- (A2);
+\draw[gray] (A1)  -- (A3);
+
+\node (A4) at ($(A1) + (0, -1)$) [circle, fill=solarizedOrange] {};
+\node (A5) at ($(A4) + (1, -.5)$) [circle, fill=solarizedOrange] {};
+\node (A6) at ($(A4) + (-1, -.5)$) [circle, fill=solarizedOrange] {};
+\draw[gray] (A1)  -- (A4);
+\draw[gray] (A4)  -- (A5);
+\draw[gray] (A4)  -- (A6);
+\draw[gray] (A2) -- (A5);
+\draw[gray] (A3) -- (A6);
+
+\node (A7) at ($(A4) + (0, -1)$) [circle, fill=solarizedBlue, inner sep=2pt] {\tiny{$i$}};
+\node (A8) at ($(A7) + (1, -.5)$) [circle, fill=solarizedBlue] {};
+\node (A9) at ($(A7) + (-1, -.5)$) [circle, fill=solarizedBlue] {};
+\node (A10) at ($(A7) + (0, -1)$) [circle, fill=solarizedOrange] {};
+\draw[gray] (A7)  -- (A4);
+\draw[gray] (A7)  -- (A5);
+\draw[gray] (A7)  -- (A6);
+\draw[gray] (A7)  -- (A8);
+\draw[gray] (A7) -- (A9);
+\draw[gray] (A7) -- (A10);
+
+\node (A11) at ($(A10) + (-.5, -1)$) [circle, fill=solarizedBlue] {};
+\draw[gray] (A10) -- (A11);
+\end{tikzpicture}
+\end{document}
