@@ -10,14 +10,18 @@
 
 \pause
 \node (A3) at ($(A2) + (-.5, -1)$) [circle, fill=solarizedOrange] {};
+\pause
 \draw[gray] (A3)  -- node[left] {\tiny{$\phi_{3,1}$}} (A1);
 \draw[gray] (A3)  -- node[right] {\tiny{$\phi_{3,2}$}} (A2);
 
 \pause
+\node[fontscale=1] (maths) at ($(A3) + (3.5, 0.5)$) {\tiny{$\phi_{wv} = \frac{h_{wv}k_{v}}{\sum\limits_{v \in \{G\}, v \neq w}h_{wv}k_{v}}$}};
+\pause
+\node (maths_2) at ($(maths) + (0, -1)$) {\tiny{$\lambda=2$}};
+\pause
 \node (A4) at ($(A3) + (1.5, 0)$) [circle, fill=solarizedBlue] {};
 \node (A5) at ($(A3) + (.8, -.7)$) {\textcolor{gray}{$\dots$}};
-\pause
 
-\node[fontscale=1] (maths) at ($(A4) + (2.5, 0.5)$) {\tiny{$\phi_{wv} = \frac{h_{wv}k_{v}}{\sum\limits_{v \in \{G\}, v \neq w}h_{wv}k_{v}}$}};
+
 \end{tikzpicture}
 \end{document}
