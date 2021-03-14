@@ -1,0 +1,257 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%Solarized Theme%%%%%%%%%%%%%%%
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+%%%%%Packages%%%%%
+\usefonttheme{serif}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fontawesome}
+\usepackage{minted}
+\usepackage{soul}
+
+\definecolor{DarkGray}{gray}{0.1}
+\usemintedstyle{paraiso-dark}
+
+\PassOptionsToPackage{demo}{graphicx}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl, xcolor}
+\usepackage{booktabs}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+
+\usepackage{tikz}
+\usetikzlibrary{er,positioning, calc, patterns, arrows, calc, positioning, arrows, arrows.meta, shapes, automata}
+\usetikzlibrary{decorations.pathreplacing, backgrounds, fit, matrix}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+
+\usepackage{standalone}
+\usepackage{siunitx}
+\usetikzlibrary{calc, positioning, arrows, arrows.meta, shapes}
+\usetikzlibrary{backgrounds, fit}
+\tikzstyle{background}=[orange, rectangle, draw, inner sep=1mm, thick,
+           rounded corners=2mm]
+\makeatletter
+\newcommand{\srcsize}{\@setfontsize{\srcsize}{5pt}{5pt}}
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+    \begin{center}
+        \LARGE{\textbf{\textcolor{orange}{The Evolution of Cooperation}}} \\
+
+        \vspace{1.5cm}
+        \normalsize{Cardiff University}
+
+        \vspace{1cm}
+        \normalsize{@NikoletaGlyn}
+
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width=0.24\textwidth]{static/mpi.jpg}\hspace{6pt}
+    \includegraphics[width=0.24\textwidth, height=0.245\textwidth]{static/cardiff_uni_logo.png}\vspace{10pt}
+
+    \hspace{2pt}\includegraphics[width=0.24\textwidth]{static/ssi-logo.png} \hspace{1pt}
+    \includegraphics[width=0.24\textwidth]{static/axelrod-logo.png}
+
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=.2\textwidth]{static/players} \hspace{.6cm}
+    \includegraphics[width=.2\textwidth]{static/actions} \hspace{.6cm}
+    \includegraphics[width=.2\textwidth]{static/objective}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.75\textwidth]{static/rock_paper_scissors_one}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.75\textwidth]{static/rock_paper_scissors_two}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.75\textwidth]{static/rock_paper_scissors_three}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+        \Large
+        \textcolor{orange}{\textsc{Prisoner's Dilemma}} \\ \vspace{3pt}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \LARGE{
+        \begin{equation*}
+            \begin{pmatrix}
+                (3, 3) & (0, 5)  \\
+                (5, 0) & (1, 1)
+            \end{pmatrix}
+        \end{equation*}}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \LARGE{
+        \begin{equation*}
+            \begin{pmatrix}
+                (R, R) & (S, T)  \\
+                (T, S) & (P, P)
+            \end{pmatrix}
+        \end{equation*}}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includestandalone[width=\textwidth]{static/iterated_prisoners_dilemma}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.55\textwidth]{static/game}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=.75\textwidth]{static/Thesis}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=.35\textwidth]{static/evolution.png}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=.5\textwidth]{static/evolution}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \vspace{-1cm}
+
+    \includestandalone[width=.5\textwidth]{static/evolution_two}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \Large
+        \textcolor{orange}{\textsc{Moran Proccess}} \\ \vspace{3pt}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includestandalone[width=\textwidth]{static/moran}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+            \includestandalone[width=.8\textwidth]{static/explanation}
+        \end{column}
+        \pause
+        \begin{column}{.5\textwidth}
+            \begin{align*}
+                f_{1i} & = \frac{R \times (i - 1) + S \times (N - i)} {N - 1} \\
+                f_{2i} & = \frac{T \times i + P \times (N - i - 1)} {N - 1}
+            \end{align*}
+            \pause
+            \begin{align*}
+                p_{i, i + 1} & = \frac{i f_{1i}} {i f_{1i} + (N - i) f_{2i}} \frac{N - i}{N}\\
+                p_{i, i - 1} & = \frac{(N - i) f_{2i}} {i f_{1i} + (N - i) f_{2i}} \frac{i}{N}
+            \end{align*}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=.75\textwidth]{static/moran_results.png}
+\end{frame}
+
+\begin{frame}
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+            \includestandalone[width=\textwidth]{static/mutation}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \pause\begin{align*}
+                p_{i, i + 1} & = \frac{i f_{1i}} {i f_{1i} + (N - i) f_{2i}} \frac{N - i}{N}\\
+                p_{i, i - 1} & = \frac{(N - i) f_{2i}} {i f_{1i} + (N - i) f_{2i}} \frac{i}{N}
+            \end{align*}
+            \begin{align*}
+                \varphi = \frac{1}{1+\sum_{j=1}^{N-1}\prod_i^j \frac{p_{i, i - 1}}{p_{i, i + 1}}}.
+            \end{align*}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=.75\textwidth]{static/moran_results.png}
+\end{frame}
+
+\begin{frame}
+    \begin{columns}
+        \begin{column}{.4\textwidth}
+            \centering
+            \includestandalone[width=.4\textwidth]{static/reactive}
+        \end{column}
+        \pause
+        \begin{column}{.6\textwidth}
+            \includegraphics[width=\textwidth]{static/reactive_results.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \begin{align*}
+        f_{1i} & = \frac{R \times (i - 1) + S \times (N - i)} {N - 1} \\
+        f_{2i} & = \frac{T \times i + P \times (N - i - 1)} {N - 1}
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \faTwitter @NikoletaGlyn \\
+    http://web.evolbio.mpg.de/social-behaviour/
+    \end{center}
+\end{frame}
+
+\end{document}
+
