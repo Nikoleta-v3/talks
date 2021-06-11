@@ -1,0 +1,18 @@
+\documentclass{standalone}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+    \begin{tikzpicture}[node distance=1cm]
+    \node (a) {\includestandalone[width=.6\textwidth]{static/DD}};
+    \pause
+    \node (b) [below right=of a] {\includestandalone[width=.6\textwidth]{static/CD}};
+    \pause
+    \node (c) [below right=of b] {\includestandalone[width=.6\textwidth]{static/CD}};
+    \pause
+    \node (d) [below right=of c] {\Huge{$\dots$}};
+    \node (e) [below right=of d] {\includestandalone[width=.6\textwidth]{static/CC}};
+    \end{tikzpicture}
+\end{document}

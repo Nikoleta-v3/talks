@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+    \tikzstyle{state}=[minimum width=1cm, font=\boldmath];
+
+    \node[thick] (0) at (-1, 0) [state] {\textcolor{orange}{\textbf{Tit For Tat}}};
+    \node[thick] (1) at (-1, -1) [state] {\textcolor{cyan}{\textbf{Cooperator}}};
+
+    \node[thick] (2) at (1, 0.7) [state] {$1$};
+    \node[thick] (3) at (2, 0.7) [state] {$2$};
+    \node[thick] (4) at (3, 0.7) [state] {$3$};
+    \node[thick] (5) at (4, 0.7) [state] {$4$};
+    \node[thick] (6) at (5, 0.7) [state] {$5$};
+
+    \node[thick] (7) at (6, 0.7) [state] {score};
+    \node (13) at (6, 0) [state] {};
+    \node (19) at (6, -1.5) [state] {};
+
+    \node (14) at (1, -1) [state] {$C$};
+    \node (15) at (2, -1) [state] {$C$};
+    \node (16) at (3, -1) [state] {$C$};
+    \node (17) at (4, -1) [state] {$C$};
+    \node (18) at (5, -1) [state] {$C$};
+
+    \node (8) at (1, 0) [state] {$C$};
+    \node (9) at (2, 0) [state] {$C$};
+    \node (10) at (3, 0) [state] {$C$};
+    \node (11) at (4, 0) [state] {$C$};
+    \node (12) at (5, 0) [state] {$C$};
+
+    \node (13) at (6, 0) [state] {$15$};
+    \node (19) at (6, -1) [state] {$15$};
+
+    \node [background, fit=(7) (13) (19)] {};
+    \end{tikzpicture}
