@@ -7,8 +7,12 @@
     \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
     \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
     }}
+\tikzset{
+        ultra thick/.style={line width=1.6pt},
+        heavy thick/.style={line width=1.8pt}
+    }
 \begin{tikzpicture}
-    \node at (1.5, 7) {\textbf{Update Stage}};
+    \node (a) at (-4, 2.5) {\includestandalone[width=0.1\textwidth]{static/green}};
 
     \pic[solarizedRed] at (0, 0) (myman) {man};
     \pic[solarizedGreen] at (1, 0) (myman) {man};
@@ -32,13 +36,15 @@
     \pic[solarizedRed] at (3, 6) (myman) {man};
 
     \pause
-    \node at (-0.3, 5.5) (a) {};
-    \node at (-0.3, 4) (b) {};
-
-    \draw (a) edge[out=180, in=180, thick, ->] node [] {} (b);
-    \draw (b) edge[out=180, in=180, thick, ->] node [] {} (a);
+    \draw [solarizedBase2, thick, dotted] (1.5, 2.5) ellipse (3cm and 5cm);
 
     \pause
-    \pic[solarizedRed] at (0, 6) (myman) {man};
+    \draw [solarizedBase03, ultra thick] (1.5, 2.5) ellipse (3cm and 5cm);
+
+    \pause
+
+    \draw [solarizedBase2, thick, dotted] (0, 3.5) ellipse (.55cm and 1cm);
+
+    % \node[draw=white, minimum size=1.5cm, brace, thick, dotted] (circle) at (0, 3.5) {};
 \end{tikzpicture}
 \end{document}
