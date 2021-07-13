@@ -41,7 +41,7 @@
 
 \begin{frame}
     \begin{center}
-        \large{\textcolor{orange}{Prisoners, Game Theory \& the Axelrod Library}} \\
+        \large{\textcolor{orange}{Web scraping, text analysis, and networks can help us identify the most important Avenger}} \\
 
         \vspace{1cm}
         \normalsize{@NikoletaGlyn}
@@ -54,162 +54,238 @@
     \includegraphics[width=0.24\textwidth]{static/mpi.jpg}\hspace{8pt}
     \includegraphics[width=0.24\textwidth]{static/python.png}\vspace{8pt}
 
-    \includegraphics[width=0.24\textwidth]{static/django_girls.png}\hspace{8pt}
-    \includegraphics[width=0.24\textwidth]{static/axelrod-logo.png}
-    \end{center}
-\end{frame}
-
-% \begin{frame}
-%     \centering
-%     \includestandalone[width=.85\textwidth]{static/game}
-% \end{frame}
-
-\begin{frame}
-    \begin{center}
-    \huge{
-        \begin{equation*}
-            \begin{pmatrix}
-                (3, 3) & (0, 5) \\[6pt]
-                (5, 0) & (1, 1)
-            \end{pmatrix}
-        \end{equation*}}
+    \includegraphics[width=0.24\textwidth]{static/namibia.jpg}\hspace{8pt}
+    \includegraphics[width=0.24\textwidth]{static/django_girls.png}
     \end{center}
 \end{frame}
 
 \begin{frame}
-    \begin{center}
-    \includestandalone[width=\textwidth]{static/iterated_prisoners_dilemma}
-    \end{center}
+    \hspace{.8cm} \LARGE{Marvel Comics} \\
+
+    \hspace{.8cm} \normalsize{1. An American media and entertainment company}
+
+    \hspace{1cm}\normalsize{that was widely regarded as one of the “big two”}
+
+    \hspace{1cm}\normalsize{publishers in the comic industry.}
 \end{frame}
 
-% \begin{frame}
-%     \centering
-%     \includestandalone[width=\textwidth]{static/tft_vs_defector}
-% \end{frame}
+\begin{frame}
+    \hspace{.8cm} \LARGE{Marvel Cinematic Universe} \\
 
-% \begin{frame}
-%     \centering
-%     \includestandalone[width=\textwidth]{static/tft_vs_cooperator}
-% \end{frame}
+    \hspace{.8cm} \normalsize{1. Media franchise centered on a series of superhero films.}
 
-% \begin{frame}[fragile]
-% 	\begin{minted}
-%     [
-%     framesep=4mm,
-%     baselinestretch=1.2,
-%     fontsize=\footnotesize,
-%     ]
-%     {python}
-% class TitForTat(Player):
-%     """A player starts by cooperating and then mimics previous
-%     move by opponent."""
+    \hspace{1cm}\normalsize{The films are based on characters that appear in the}
 
-%     name = 'Tit For Tat'
-%     classifier = {
-%         'memory_depth': 1,  # Four-Vector = (1.,0.,1.,0.)
-%         'stochastic': False,
-%         'inspects_source': False,
-%         'manipulates_source': False,
-%         'manipulates_state': False
-%     }
+    \hspace{1cm}\normalsize{comic books published by Marvel Comics.}
+\end{frame}
 
-%     @staticmethod
-%     def strategy(opponent):
-%         return 'D' if opponent.history[-1:] == ['D'] else 'C'
-%     \end{minted}
-% \end{frame}
 
-% \begin{frame}[fragile]
-% 	\begin{minted}
-%     [
-%     framesep=4mm,
-%     baselinestretch=1.2,
-%     fontsize=\footnotesize,
-%     ]
-%     {python}
-% class TestTitForTat(TestPlayer):
+\begin{frame}
+    \begin{minipage}{.4\textwidth}
+        \includegraphics[width=.75\textwidth]{static/iron_man_2008.jpg}
+    \end{minipage} \pause
+    \begin{minipage}{.58\textwidth}
+        \includegraphics[width=\textwidth]{static/MCU.jpg}
+    \end{minipage}
+\end{frame}
 
-%     name = "Tit For Tat"
-%     player = axelrod.TitForTat
-%     expected_classifier = {
-%         'memory_depth': 1,
-%         'stochastic': False,
-%         'inspects_source': False,
-%         'manipulates_source': False,
-%         'manipulates_state': False
-%     }
-
-%     def test_strategy(self):
-%         """Starts by cooperating."""
-%         self.first_play_test(C)
-%     \end{minted}
-% \end{frame}
+\begin{frame}
+    \begin{minipage}{.49\textwidth}
+        \centering
+        \textbf{\Large{23 movies}}
+    \end{minipage} \pause
+    \begin{minipage}{.49\textwidth}
+        \centering
+        \textbf{\Large{8000+ characters}}
+    \end{minipage}
+\end{frame}
 
 \begin{frame}
     \centering
-    \includegraphics[width=\textwidth]{static/outline_of_library.pdf}
+    \textbf{\large{Who is the most important character in the MCU?}}
 \end{frame}
-
-% \begin{frame}
-%     \centering
-%     \Huge \textcolor{orange}{Research}
-% \end{frame}
-
-
-% \begin{frame}
-%     \centering
-%     \includegraphics[width=.54\textwidth]{static/paper_one.png}\hspace{6pt}
-%     \includegraphics[width=.40\textwidth]{static/paper_two.png}\vfill
-
-%     \includegraphics[width=.95\textwidth]{static/paper_three.png}
-% \end{frame}
-
-% \begin{frame}
-%     \centering
-%     \Huge \textcolor{orange}{Contributions}
-% \end{frame}
 
 \begin{frame}
     \centering
-    \includegraphics[width=.40\textwidth]{static/contributions.png}
+    \includegraphics[width=\textwidth]{static/MCU.jpg}
 \end{frame}
 
 \begin{frame}
-    \footnotesize
-    ``And I really wanted to thank you all, I discovered your project because of a
-    course where we needed to participate in an open source project, and I had
-    the occasion to compare the welcome me and my coworkers received here
-    compared to other people from my class who worked on different project. And
-    I’ve got to said you are awesome on that part and on the help your provide
-    to newbies I like your project so I’ll try to continue to contribute now and
-    then!'' \\
+    \centering
+    \includegraphics[width=\textwidth]{static/avenger.jpg}
+\end{frame}
 
-    Julie Rymer - @Chadys -10 May 2017
+\begin{frame}
+    \centering
+    \textbf{\large{Which character has the most lines?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includestandalone[width=\textwidth]{static/sentence}
+\end{frame}
+
+
+\begin{frame}
+    \centering
+    \includegraphics[width=\textwidth]{static/spoken.png}
+\end{frame}
+
+
+\begin{frame}
+    \centering
+    \includestandalone[width=\textwidth]{static/mention}
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\scriptsize
+    ]
+    {python}
+import spacy
+nlp = spacy.load("en_core_web_sm")
+
+def identify_names(text):
+
+... doc = nlp(text)
+... names = [ent.text for ent in doc.ents if ent.label_ == 'PERSON']
+
+... return names
+\end{minted}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textbf{\large{Which character is mentioned the most?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=\textwidth]{static/mentions.png}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includestandalone[width=\textwidth]{static/stones}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=.4\textwidth]{static/infinity_stones.jpg}
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{minted}
+    [
+    framesep=4mm,
+    baselinestretch=1.2,
+    bgcolor=DarkGray,
+    fontsize=\scriptsize
+    ]
+    {python}
+import spacy
+nlp = spacy.load("en_core_web_sm")
+
+def identify_names_and_stones(text):
+
+... doc = nlp(text)
+... names = [ent.text for ent in doc.ents if ent.label_ == 'PERSON']
+... stones = [word.text for word in doc 
+...           if word.text in names_lookup['Infinity stones']]
+
+... return names + stones
+\end{minted}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textbf{\large{Which character interacts with the stones the most?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=\textwidth]{static/interactions_with_stones.png}
+\end{frame}
+
+\begin{frame}
+    \hspace{.8cm} \LARGE{Social Network} \\
+
+    \hspace{.8cm} \normalsize{1. A network of social interactions and}
+
+    \hspace{1cm}\normalsize{personal relationships}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includestandalone[width=\textwidth]{static/connections}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=.8\textwidth]{static/network.png}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textbf{\large{Who is the most connected character?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=\textwidth]{static/degree.png}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textbf{\large{Which character stands between others the most?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=\textwidth]{static/between.png}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textbf{\large{Which character is the most important based on Google?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=\textwidth]{static/page_rank.png}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textbf{\large{Who is the most important character in the MCU?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textbf{\large{\st{Who is the most important character in the MCU?}}} \\ \vspace{10pt}
+    \textbf{\large{What do we mean by the most important?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=\textwidth]{static/tony_stark.jpg}
 \end{frame}
 
 \begin{frame}
     \begin{center}
         \small
-    \#ChooseToChallenge \\
     \faTwitter \ @NikoletaGlyn \\
-    \faTwitter \ @AxelrodPython \\
-    
-    \vspace{1cm}
+    \faGithub \ \url{https://github.com/Nikoleta-v3} \\
+    \faGithub \ \url{https://github.com/Nikoleta-v3/avengers-analysis} \\ \vspace{1cm}
+
+
+
+    \tiny{\url{https://medium.com/swlh/avengers-web-scraping-entity-extraction-and-network-graphs-in-python-ea6dc323eb7d}}
     \end{center}
-
-    \footnotesize
-    \faGithub \ \url{https://github.com/Axelrod-Python/Axelrod} \\
-    $\bullet$ \url{https://axelrod.readthedocs.io/} \\
-    $\bullet$ \url{https://axelrod.readthedocs.io/en/latest/tutorials/contributing/index.html} \\
-
-    \faGithub  \ \url{https://github.com/drvinceknight} \\
-    \faGithub  \ \url{https://github.com/gaffney2010} \\
-    \faGithub  \ \url{https://github.com/marcharper} \\
-    \faGithub  \ \url{https://github.com/meatballs} \\
 \end{frame}
 
-\begin{frame}
-    \centering
-    \includegraphics[width=\textwidth]{static/my_first_pr.png}
-\end{frame}
 \end{document}
