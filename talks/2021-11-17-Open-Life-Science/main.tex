@@ -14,6 +14,7 @@
 
 \definecolor{DarkGray}{gray}{0.1}
 \usemintedstyle{paraiso-dark}
+\renewcommand{\arraystretch}{2}
 
 
 \usepackage{graphicx}
@@ -41,7 +42,7 @@
 
 \begin{frame}
     \begin{center}
-        \Large{\textcolor{orange}{\textcolor{orange}{Publishing and Citing open research code \\ Open Life Science}}} \\
+        \Large{\textcolor{orange}{\textcolor{orange}{Publishing \& Citing Open Research Code}}} \\
 
         \vspace{1cm}
         \normalsize{@NikoletaGlyn}
@@ -86,7 +87,6 @@
 %     \Large{\textbf{\textcolor{orange}{Why do we publish our} \st{software}\textcolor{orange}{?}}}
 % \end{frame}
 
-
 \begin{frame}
     \centering
     \Large{\textbf{\textcolor{orange}{Why do we publish our} research output?}}
@@ -109,17 +109,57 @@
     \end{center}
 \end{frame}
 
-% \begin{frame}
-%     \begin{center}
-%         \small
-%     \faTwitter \ @NikoletaGlyn \\
-%     \faGithub \ \url{https://github.com/Nikoleta-v3} \\
-%     \faGithub \ \url{https://github.com/Nikoleta-v3/avengers-analysis} \\ \vspace{1cm}
+\begin{frame}
+    \begin{center}
+        \resizebox{\textwidth}{!}{
+        \begin{tabular}{lccccc}
+    \toprule
+    Publishing method & Example & Citation & software peer-reviewed & journal publication\\
+    \midrule
+    Public repo \& citation file & Citation File Format  & \checkmark & $\times$ & $\times$ \\
+    Community peer review & rOpenSci, pyOpensci   & \checkmark & $\times$ & $\times$ \\
+    Software paper & Journal of   & \checkmark & $\times$ & $\times$ \\
+    Software meta-paper & JOSS, JOSE   & \checkmark & $\times$ & $\times$  \\
+    \bottomrule
+        \end{tabular}}
+    \end{center}
 
+    \centering
+    \tiny{SeptembRSE: 30th September, \url{https://www.youtube.com/watch?v=l1B2kqoxqAo&t=1824s}}
+\end{frame}
 
+\begin{frame}
+    \centering
+    \Large{\textbf{\textcolor{orange}{Should I publish my} open research code?}}
+    \vspace{1cm}
+    \pause
 
-%     \tiny{\url{https://medium.com/swlh/avengers-web-scraping-entity-extraction-and-network-graphs-in-python-ea6dc323eb7d}}
-%     \end{center}
-% \end{frame}
+    \Large{\textbf{\textcolor{orange}{Why publish my} open research code?}}
+    \vspace{1cm}
+    \pause
+
+    \Large{\textbf{\textcolor{orange}{Should I cite} open research code?}}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \textbf{@vinceknight: better to cite too much as opposed to too little.}
+    \vspace{1cm}
+    \pause
+
+    \includegraphics[width=\textwidth]{static/cite.png}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \small
+    \faTwitter \ @NikoletaGlyn \\
+    \vspace{.75cm}
+
+    \ \url{https://www.youtube.com/watch?v=l1B2kqoxqAo&t=1824s} \\
+    \ \url{https://www.software.ac.uk} \\
+    \ \url{https://www.software.ac.uk/which-journals-should-i-publish-my-software} \\
+    \end{center}
+\end{frame}
 
 \end{document}
