@@ -1,0 +1,25 @@
+\documentclass{standalone}
+
+\begin{document}
+\begin{tikzpicture}
+
+    \node at (-1, -3) (equal) {\textcolor{solarizedRed}{\small{$\pi_{\rm A}$}}};
+    \node at (-.7, -3) (equal) {\small{$=$}};
+    \node at (.4, -2.9) (equal) {\textcolor{solarizedRed}{\small{$(N - k - 1)$}}};
+    \node at (1.9, -2.9) (MM) {\includestandalone[width=.1\textwidth]{static/RR}};
+    \node at (2.7, -2.9) (equal) {\small{$+$}};
+    \node at (3, -2.9) (equal) {\textcolor{solarizedGreen}{\small{$k$}}};
+    \node at (3.7, -2.9) (MM) {\includestandalone[width=.1\textwidth]{static/RM}};
+
+    \pause
+
+
+    \node at (-1, -5) (equal) {\textcolor{solarizedGreen}{\small{$\pi_{\rm B}$}}};
+    \node at (-.7, -5) (equal) {\small{$=$}};
+    \node at (.1, -4.9) (equal) {\textcolor{solarizedGreen}{\small{$(k - 1)$}}};
+    \node at (1.2, -4.9) (MM) {\includestandalone[width=.1\textwidth]{static/MR}};
+    \node at (2.1, -4.9) (equal) {\small{$+$}};
+    \node at (3, -4.9) (equal) {\textcolor{solarizedRed}{\small{$(N - k)$}}};
+    \node at (4.1, -4.9) (MM) {\includestandalone[width=.1\textwidth]{static/MM}};
+\end{tikzpicture}
+\end{document}

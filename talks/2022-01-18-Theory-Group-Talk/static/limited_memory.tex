@@ -1,0 +1,56 @@
+\documentclass{standalone}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+\begin{tikzpicture}
+    \pic[solarizedRed] at (-2, -4) (myman) {man};
+    \node at (-2, -4.6) (myman) {A};
+
+    \draw [decorate,decoration={brace,amplitude=10pt},xshift=-4pt,yshift=0pt]
+    (0.5, -8) -- (0.5, -1.5) node [black,midway,xshift=-0.6cm] {};
+
+    \node at (-.2, -2.05) (a) {1};
+
+    \node at (-.2, -4.05) (a) {2};
+
+    \node at (-.2, -5.4) (a) {$\vdots$};
+
+    \node at (-.5, -7.4) (a) {$N-1$};
+
+    \node[minimum size=.5mm, draw, fill, solarizedViolet, circle, text=white, font=\small] at (1, -2) (a) {R};
+    \node[minimum size=.5mm, draw, fill, solarizedViolet, circle, right=of a, text=white, font=\small] (b) {R};
+    \node[minimum size=.5mm, draw, fill, solarizedViolet, circle, right=of b, text=white, font=\small] (c) {R};
+    \node[minimum size=.5mm, draw, fill, solarizedViolet, circle, right=of c, text=white, font=\small] (d) {R};
+    \node[minimum size=.5mm, draw, fill, solarizedViolet, circle, right=of d, text=white, font=\small] (e) {R};
+    \node[minimum size=.5mm, draw, fill, solarizedViolet, circle, right=of e, text=white, font=\small] (f) {R};
+
+
+    \node[minimum size=.5mm, draw, fill, solarizedYellow, circle, below=of a, text=white, font=\small] (a1) {S};
+    \node[minimum size=.5mm, draw, fill, solarizedCyan, circle, below=of b, text=white, font=\small] (b1) {P};
+    \node[minimum size=.5mm, draw, fill, solarizedYellow, circle, below=of c, text=white, font=\small] (c1) {S};
+    \node[minimum size=.5mm, draw, fill, solarizedCyan, circle, below=of d, text=white, font=\small] (d1) {P};
+    \node[minimum size=.5mm, draw, fill, solarizedYellow, circle, below=of e, text=white, font=\small] (e1) {S};
+    \node[minimum size=.5mm, draw, fill, solarizedCyan, circle, below=of f, text=white, font=\small] (f1) {P};
+
+
+    \node[circle, below=of a1] (a2) {$\vdots$};
+    \node[circle, below=of b1] (b2) {$\vdots$};
+    \node[circle, below=of c1] (c2) {$\vdots$};
+    \node[circle, below=of d1] (d2) {$\vdots$};
+    \node[circle, below=of e1] (e2) {$\vdots$};
+    \node[circle, below=of f1] (f2) {$\vdots$};
+
+    \node[minimum size=.5mm, draw, fill, solarizedMagenta, circle, below=of a2, text=white, font=\small] (a3) {T};
+    \node[minimum size=.5mm, draw, fill, solarizedMagenta, circle, below=of b2, text=white, font=\small] (b3) {T};
+    \node[minimum size=.5mm, draw, fill, solarizedMagenta, circle, below=of c2, text=white, font=\small] (c3) {T};
+    \node[minimum size=.5mm, draw, fill, solarizedMagenta, circle, below=of d2, text=white, font=\small] (d3) {T};
+    \node[minimum size=.5mm, draw, fill, solarizedMagenta, circle, below=of e2, text=white, font=\small] (e3) {T};
+    \node[minimum size=.5mm, draw, fill, solarizedMagenta, circle, below=of f2, text=white, font=\small] (f3) {T};
+
+\end{tikzpicture}
+\end{document}
