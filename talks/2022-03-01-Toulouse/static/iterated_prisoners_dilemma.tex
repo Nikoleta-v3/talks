@@ -1,0 +1,30 @@
+\documentclass{standalone}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+    \begin{tikzpicture}[node distance=1cm]
+    \node[font=\bfseries] (a) {\Huge{D D}};
+    \node (turna) [below=.3cm of a] {1};
+    \pause
+    \node[font=\bfseries] (b) [below right=of a] {\Huge{D C}};
+    \node (turnb) [below=.3cm of b] {2};
+    \pause
+    \node[font=\bfseries] (c) [below right=of b] {\Huge{C D}};
+    \node (turnc) [below=.3cm of c] {3};
+    \pause
+    \node (d) [below right=of c] {\Huge{$\dots$}};
+    \node[font=\bfseries] (e) [below right=of d] {\Huge{C C}};
+    \node (turnc) [below=.3cm of e] {$n$};
+    % \pause
+    % \node (labela) [above= of a] {\Large{(1, 1)}};
+    % \pause
+    % \node (labelb) [above= of b] {\Large{(0, 5)}};
+    % \pause
+    % \node (labelc) [above= of c] {\Large{(5, 0)}};
+    % \pause
+    % \node (labele) [above= of e] {\Large{(3, 3)}};
+    \end{tikzpicture}
+\end{document}
