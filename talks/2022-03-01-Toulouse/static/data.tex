@@ -1,0 +1,45 @@
+\documentclass{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+    [node distance=.8cm,
+    start chain=going below,]
+
+       \node[punktchain] (a) {\textbf{\large{For $i \in [0, 11420]$}}};
+       \pause
+       \node (b) [punktchain, below=2cm of a ]  {random number of turns};
+       \node (c) [punktchain, right=of b ]  {random noisy probability};
+       \node (d) [punktchain, right=of c ]  {random ending probability};
+       \node (e) [punktchain, left=of b ]  {random number of repetitions};
+       \node (f) [punktchain, left=of e ]  {random subset of strategies};
+
+       \draw[->, thick, solarizedBase3] (a.south) -- (b.north);
+       \draw[->, thick, solarizedBase3] (a.south) -- (c.north);
+       \draw[->, thick, solarizedBase3] (a.east) -| (d.north);
+       \draw[->, thick, solarizedBase3] (a.south) -- (e.north);
+       \draw[->, thick, solarizedBase3] (a.west) -| (f.north);
+
+      \pause
+       \node (k) [below=5cm of a ]  {
+                                  \begin{tabular}{|c|c|}
+                                    \toprule 
+                                    turns + no noise &  turns + noise \\
+                                    \midrule
+                                    prob. ending + no noise &  prob. ending + noise \\
+                                    \bottomrule
+                                  \end{tabular}};
+
+      \draw[tuborg, decoration={brace,amplitude=20pt, raise=4pt}] let
+      \p1=(d.east), \p2=(f.west) in
+      ($(\x1,\y1-2em)$) -- ($(\x2,\y2-2em)$) {};
+
+
+      
+      \pause
+      \draw[thick,] (k.south) |- (-7.5cm, -7.3cm);
+      \draw[thick,] (-7.5cm, -7.3cm) -- (-7.5cm, 1.5cm);
+      \draw[->, thick,] (-7.5cm, 1.5cm) -| (a.north);
+    
+    \end{tikzpicture}
+\end{document}
