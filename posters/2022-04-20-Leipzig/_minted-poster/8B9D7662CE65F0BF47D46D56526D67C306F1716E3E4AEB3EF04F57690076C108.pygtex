@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{err}{\PYGZdl{}} \PYG{n}{pip} \PYG{n}{install} \PYG{n}{arcas}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{k+kn}{import} \PYG{n+nn}{arcas}
+
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{api} \PYG{o}{=} \PYG{n}{arcas}\PYG{o}{.}\PYG{n}{Arxiv}\PYG{p}{()}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{params} \PYG{o}{=} \PYG{n}{api}\PYG{o}{.}\PYG{n}{parameters\PYGZus{}fix}\PYG{p}{(}\PYG{n}{title}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}EHBEA\PYGZdq{}}\PYG{p}{,}
+                                \PYG{n}{abstract}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}EHBEA\PYGZdq{}}\PYG{p}{,}
+                                \PYG{n}{records}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{url} \PYG{o}{=} \PYG{n}{api}\PYG{o}{.}\PYG{n}{create\PYGZus{}url\PYGZus{}search}\PYG{p}{(}\PYG{n}{params}\PYG{p}{)}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{request} \PYG{o}{=} \PYG{n}{api}\PYG{o}{.}\PYG{n}{make\PYGZus{}request}\PYG{p}{(}\PYG{n}{url}\PYG{p}{)}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{root} \PYG{o}{=} \PYG{n}{api}\PYG{o}{.}\PYG{n}{get\PYGZus{}root}\PYG{p}{(}\PYG{n}{request}\PYG{p}{)}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{raw\PYGZus{}article} \PYG{o}{=} \PYG{n}{api}\PYG{o}{.}\PYG{n}{parse}\PYG{p}{(}\PYG{n}{root}\PYG{p}{)}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{article} \PYG{o}{=} \PYG{n}{api}\PYG{o}{.}\PYG{n}{to\PYGZus{}dataframe}\PYG{p}{(}\PYG{n}{raw\PYGZus{}article}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
+\end{Verbatim}
