@@ -16,6 +16,7 @@
 \RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}
 \definecolor{DarkGray}{RGB}{5, 66, 81}
 \definecolor{DarkerGray}{RGB}{3, 22, 27}
+\definecolor{Myorange}{RGB}{255, 165, 0}
 
 \usemintedstyle{native}
 
@@ -29,6 +30,9 @@ calc, arrows.meta, automata, backgrounds}
     ultra thick/.style={line width=3pt},
     super thick/.style={line width=6pt}
 }
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
 \usetikzlibrary{matrix}
 
 \usecolortheme[dark,accent=cyan]{solarized}
@@ -51,6 +55,8 @@ calc, arrows.meta, automata, backgrounds}
   \setlength{\textwidth}{.5\textwidth}%
 }{}
 \setbeamerfont{block body}{size=\footnotesize}
+\setbeamercolor{block title}{use=structure,fg=black,bg=purple!75!black}
+\setbeamercolor{block body}{use=structure,fg=white,bg=white!20!white}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -73,7 +79,7 @@ calc, arrows.meta, automata, backgrounds}
     \textbf{\textcolor{orange}{\Huge A bibliometric study of the Iterated Prisoner's Dilemma}}
     \vspace{1cm}
 
-    \textbf{\Large\textcolor{orange}{research topics \& collaboration}}
+    \textbf{\textcolor{orange}{\large \circled{1} We collect scholarly data \circled{2} We classify abstracts into research topics \circled{3} We explore collaboration using co-authorship}}
     \end{column}
     \begin{column}{.1\linewidth}
         \vspace{1cm}
@@ -116,7 +122,7 @@ calc, arrows.meta, automata, backgrounds}
 \begin{columns}
 \begin{column}{.33\linewidth}
     \begin{center}
-    \textbf{\Large\textcolor{orange}{\textsc{HOW \& FROM WHERE}}}
+    \textbf{\Large\textcolor{orange}{\textsc{\circled{1} HOW \& FROM WHERE}}}
     \vspace{.5cm}
 
     \textbf{\Large\textcolor{orange}{\textsc{DO WE COLLECT DATA?}}}
@@ -126,18 +132,25 @@ calc, arrows.meta, automata, backgrounds}
     \begin{center}
         \includestandalone[width=.45\textwidth]{static/arcas_diagram}
     \end{center}
-    \vspace{1cm}
 
     \begin{figure}
     \centering
+    \begin{minipage}{4cm}
+        \setbeamercolor{postit}{bg=solarizedBase00}
+        \begin{beamercolorbox}[ht=.7cm, sep=.2em, wd=22cm, rounded=true]{postit}
+        \textcolor{solarizedBase03}{\scriptsize
+         \textbf{\textsc{RCAS is an open source tool with which we collect articles' meta-data in a few lines of code}}}
+        \end{beamercolorbox}
+    \end{minipage}
+    \vspace{1cm}
+
     \begin{minted}
         [
         autogobble=true,
         framesep=2mm,
-        fontsize=\small,
+        fontsize=\footnotesize,
         ]
         {python}
-    $ pip install arcas
     >>> import arcas
     
     >>> api = arcas.Arxiv()
@@ -150,11 +163,17 @@ calc, arrows.meta, automata, backgrounds}
     >>> root = api.get_root(request)
     >>> raw_article = api.parse(root)
     >>> article = api.to_dataframe(raw_article[0])
-
     \end{minted}
     \end{figure}
+    \vspace{1cm}
 
     \begin{center}
+        \scriptsize{\textcolor{orange}{keywords}: prisoner's dilemma, prisoners dilemma,
+        prisoner dilemma, prisoners evolution, prisoner game theory}\\
+        \vspace{.2cm}
+        \scriptsize{\textcolor{orange}{search field}: title, abstract, text}\\
+        
+        \vspace{-.7cm}
         \includegraphics[width=.8\textwidth]{static/articles.png}
     \end{center}
 \end{column}
@@ -162,7 +181,7 @@ calc, arrows.meta, automata, backgrounds}
 \vrule width 3pt
 \begin{column}{.33\linewidth}
     \begin{center}
-        \textbf{\Large\textcolor{orange}{\textsc{WHAT DO RESEARCHERS}}}
+        \textbf{\Large\textcolor{orange}{\circled{2} \textsc{WHAT DO RESEARCHERS}}}
         \vspace{.5cm}
     
         \textbf{\Large\textcolor{orange}{\textsc{WRITE ABOUT?}}}
@@ -170,26 +189,27 @@ calc, arrows.meta, automata, backgrounds}
     % \colorbox{solarizedBase2}{{\begin{minipage}[t][.7\textheight][t]
     %     {\dimexpr1\textwidth-3\fboxsep-2\fboxrule-5pt\relax}
     \vspace{1cm}
+    \centering
+    \begin{minipage}{4cm}
+        \setbeamercolor{postit}{bg=solarizedBase00}
+        \begin{beamercolorbox}[ht=.7cm, sep=.2em, wd=9.3cm, rounded=true]{postit}
+        \textcolor{solarizedBase03}{\small
+         \textbf{\textsc{Latent Dirichlet Allocation}}}
+        \end{beamercolorbox}
+    \end{minipage}
+    \vspace{1cm}
 
     \begin{center}
         \includestandalone[width=.45\textwidth]{static/lda}
-        \vspace{1cm}
-
-        \small{
-            $\bullet$ Topic 1: 0.039 $\times$ ``cooperation'', 0.028 $\times$ ``study'', and 0.026 $\times$ ``human''
-            \vspace{.2cm}
-
-            $\bullet$ Topic 5: 0.020 $\times$ ``cooperation'', 0.028 $\times$ ``agents'', and 0.026 $\times$ ``strategies''}
     \end{center}
     \vspace{1cm}
 
     \begin{center}
-        \includegraphics[width=.6\textwidth]{static/coherence.png}
+        \includestandalone[width=.8\textwidth]{static/topics}
     \end{center}
-    \vspace{1cm}
 
     \begin{center}
-        \includestandalone[width=.9\textwidth]{static/topics}
+        \includestandalone[width=.8\textwidth]{static/topics}
     \end{center}
 
     \vspace{1cm}
@@ -206,9 +226,9 @@ calc, arrows.meta, automata, backgrounds}
     \end{center}
     \vspace{1.5cm}
 
-    \begin{center}
-        \includegraphics[width=.7\textwidth]{static/pd.png}
-    \end{center}
+    % \begin{center}
+    %     \includegraphics[width=.7\textwidth]{static/pd.png}
+    % \end{center}
 
     \begin{center}
         \includegraphics[width=.6\textwidth]{static/degree_dist.png}
@@ -239,7 +259,7 @@ calc, arrows.meta, automata, backgrounds}
 \end{column}
 \end{columns}
 
-\vspace{1cm}
+\vspace{.5cm}
 
 \hrule height 3pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -248,13 +268,13 @@ calc, arrows.meta, automata, backgrounds}
         \vspace{0.3cm}
 
         \centering
-        \textbf{ \faTwitter \ NikoletaGlyn}
+        \textbf{ \faTwitter \ NikoletaGlyn \& \faTwitter \ VinceKnight}
     \end{column}
     \begin{column}{.6\linewidth}
         \vspace{0.3cm}
 
         \centering
-        \textbf{ In case you missed me: \url{https://nikoleta-v3.github.io/blog/2018/01/05/power-of-memory.html}}
+        \textbf{ This work was supported by the European Research Council Starting Grant 850529 (E-DIRECT)}
     \end{column}
     \begin{column}{.2\linewidth}
         \vspace{0.3cm}
