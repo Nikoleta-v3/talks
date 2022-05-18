@@ -77,9 +77,12 @@ calc, arrows.meta, automata, backgrounds}
     \centering
     \vspace{1cm}
     \textbf{\textcolor{orange}{\Huge A bibliometric study of the Iterated Prisoner's Dilemma}}
-    \vspace{1cm}
+    \vspace{.8cm}
 
-    \textbf{\textcolor{orange}{\large \circled{1} We collect scholarly data \circled{2} We classify abstracts into research topics \circled{3} We explore collaboration using co-authorship}}
+    \textbf{\textcolor{orange}{\circled{1} We collect scholarly data \circled{2} We identify research topics using topic modeling \circled{3} We explore collaboration using co-authorship}} \\
+    \vspace{.2cm}
+
+    \textbf{\textcolor{orange}{\url{https://www.nature.com/articles/s41599-021-00718-9}}}
     \end{column}
     \begin{column}{.1\linewidth}
         \vspace{1cm}
@@ -95,28 +98,11 @@ calc, arrows.meta, automata, backgrounds}
     \begin{column}{.02\linewidth}
     \end{column}
 \end{columns}
-\vspace{1cm}
+\vspace{.5cm}
 
 \hrule height 3pt
-\vspace{1cm}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST COLUMN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{minipage}{.33\linewidth}
-% \begin{center}
-%     \Large\textcolor{orange}{How do we collect data on a field?}
-% \end{center}
-% \end{minipage}
-% \begin{minipage}{.33\linewidth}
-% \begin{center}
-%     \Large\textcolor{orange}{What do people write about?}
-% \end{center}
-% \end{minipage}
-% \begin{minipage}{.33\linewidth}
-% \begin{center}
-%     \Large\textcolor{orange}{Is the field of cooperation a collaborative field?}
-% \end{center}
-% \end{minipage}
 \vspace{1cm}
 
 \begin{columns}
@@ -137,9 +123,9 @@ calc, arrows.meta, automata, backgrounds}
     \centering
     \begin{minipage}{4cm}
         \setbeamercolor{postit}{bg=solarizedBase00}
-        \begin{beamercolorbox}[ht=.7cm, sep=.2em, wd=22cm, rounded=true]{postit}
-        \textcolor{solarizedBase03}{\scriptsize
-         \textbf{\textsc{RCAS is an open source tool with which we collect articles' meta-data in a few lines of code}}}
+        \begin{beamercolorbox}[ht=.7cm, sep=.2em, wd=26cm, rounded=true]{postit}
+        \textcolor{solarizedBase03}{\footnotesize
+         \textbf{\textsc{ARCAS is an open source tool with which we collect articles' meta-data in a few lines of code}}}
         \end{beamercolorbox}
     \end{minipage}
     \vspace{1cm}
@@ -165,15 +151,15 @@ calc, arrows.meta, automata, backgrounds}
     >>> article = api.to_dataframe(raw_article[0])
     \end{minted}
     \end{figure}
-    \vspace{1cm}
+    \vspace{.7cm}
 
     \begin{center}
-        \scriptsize{\textcolor{orange}{keywords}: prisoner's dilemma, prisoners dilemma,
-        prisoner dilemma, prisoners evolution, prisoner game theory}\\
+        \footnotesize{\textbf{\textcolor{orange}{keywords}: prisoner's dilemma, prisoners dilemma,
+        prisoner dilemma, prisoners evolution, prisoner game theory}}\\
         \vspace{.2cm}
-        \scriptsize{\textcolor{orange}{search field}: title, abstract, text}\\
+        \footnotesize{\textbf{\textcolor{orange}{search field}: title, abstract, text}}\\
         
-        \vspace{-.7cm}
+        \vspace{-.9cm}
         \includegraphics[width=.8\textwidth]{static/articles.png}
     \end{center}
 \end{column}
@@ -197,64 +183,87 @@ calc, arrows.meta, automata, backgrounds}
          \textbf{\textsc{Latent Dirichlet Allocation}}}
         \end{beamercolorbox}
     \end{minipage}
-    \vspace{1cm}
 
     \begin{center}
-        \includestandalone[width=.45\textwidth]{static/lda}
-    \end{center}
-    \vspace{1cm}
-
-    \begin{center}
-        \includestandalone[width=.8\textwidth]{static/topics}
+        \includegraphics[width=.45\textwidth]{static/lda}
     \end{center}
 
     \begin{center}
-        \includestandalone[width=.8\textwidth]{static/topics}
+        \begin{minipage}{4cm}
+            \setbeamercolor{postit}{bg=solarizedBase00}
+            \begin{beamercolorbox}[ht=.7cm, sep=.1em, wd=12cm, rounded=true]{postit}
+            \textcolor{solarizedBase03}{\small
+             \textbf{\textsc{Most important words in each topic}}}
+            \end{beamercolorbox}
+        \end{minipage}
+        \vspace{.7cm}
+
+        \includestandalone[width=.75\textwidth]{static/topics}
+        \vspace{-.5cm}
+
+        \begin{minipage}{4cm}
+            \setbeamercolor{postit}{bg=solarizedBase00}
+            \begin{beamercolorbox}[ht=.7cm, sep=.1em, wd=2.3cm, rounded=true]{postit}
+            \textcolor{solarizedBase03}{\small
+             \textbf{\textsc{Labels}}}
+            \end{beamercolorbox}
+        \end{minipage}
+        \vspace{.2cm}
+
+        \includestandalone[width=.8\textwidth]{static/topics_two}
     \end{center}
 
-    \vspace{1cm}
+    \vspace{.5cm}
 % \end{minipage}}}
 \end{column}
 \vrule width 3pt
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%THIRD COLUMN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{column}{.33\linewidth}
     \begin{center}
-        \textbf{\Large\textcolor{orange}{\textsc{IS THE FIELD OF COOPERATION}}}
+        \textbf{\Large\textcolor{orange}{\textsc{\circled{3} IS THE FIELD OF COOPERATION}}}
         \vspace{.5cm}
     
         \textbf{\Large\textcolor{orange}{\textsc{A COOPERATIVE FIELD?}}}
     \end{center}
-    \vspace{1.5cm}
-
-    % \begin{center}
-    %     \includegraphics[width=.7\textwidth]{static/pd.png}
-    % \end{center}
+    \vspace{.65cm}
 
     \begin{center}
-        \includegraphics[width=.6\textwidth]{static/degree_dist.png}
-        \vspace{1cm}
+        \begin{minipage}{4cm}
+            \setbeamercolor{postit}{bg=solarizedBase00}
+            \begin{beamercolorbox}[ht=.7cm, sep=.1em, wd=8cm, rounded=true]{postit}
+            \textcolor{solarizedBase03}{\small
+             \textbf{\textsc{Co-authorship network}}}
+            \end{beamercolorbox}
+        \end{minipage}
+        \vspace{.5cm}
 
-        \small{
-            $\bullet$ A
-            \vspace{.2cm}
+        \includegraphics[width=.7\textwidth]{static/pd.png}
 
-            $\bullet$ B
-            \vspace{.2cm}
-            
-            $\bullet$ C}
+        \includegraphics[width=.65\textwidth]{static/degree_dist.png}
     \end{center}
+    \vspace{.5cm}
 
-    % \Large{How does this compare?}
-    % \resizebox{\textwidth}{!}{%
-    % \begin{tabular}{lrrrrrrrrrr}
-    %     \toprule
-    %     {} &  \# Nodes  &   \% Isolated nodes &  \# Connected components &  Size of largest component &  Av. degree &  \# Communities &  Clustering coeff \\
-    %     \midrule
-    %     $G$              &     4221 &             8.0 &                    1157 &                        796 &       3.621 &           1177 & 0.666 \\
-    %     Auction Games    &     5362 &             8.4 &                    1469 &                       1348 &       2.932 &           1493 & 0.599 \\
-    %     Price of Anarchy &     1315 &            12.5 &                     406 &                        221 &       2.969 &            414 & 0.626 \\
-    %     \bottomrule
-    %     \end{tabular}}
+    \begin{center}
+    \begin{minipage}{4cm}
+        \setbeamercolor{postit}{bg=solarizedBase00}
+        \begin{beamercolorbox}[ht=.7cm, sep=.2em, wd=15cm, rounded=true]{postit}
+        \textcolor{solarizedBase03}{\small
+            \textbf{\textsc{How does this compare to other sub fields?}}}
+        \end{beamercolorbox}
+    \end{minipage}
+    \vspace{1.5cm}
+
+    \resizebox{.9\textwidth}{!}{%
+    \begin{tabular}{lrrrrrrrrrr}
+        \toprule
+        {} &  \# Nodes     & Av. degree &   \% Isolated nodes   &  Clustering coeff & \# Communities &  Modularity \\
+        \midrule
+        Prisoner's Dilemma&     4221 &           3.621  &    8.0 &    0.666 & 1177 & 0.965264 \\
+        Auction Games     &     5362 &           2.932  &    8.4 &    0.599 & 1493 & 0.957238 \\
+        Price of Anarchy  &     1315 &           2.969  &    12.5 &   0.626 &  414 & 0.964498 \\
+        \bottomrule
+        \end{tabular}}
+    \end{center}
     \vspace{1cm}
 \end{column}
 \end{columns}
@@ -268,7 +277,7 @@ calc, arrows.meta, automata, backgrounds}
         \vspace{0.3cm}
 
         \centering
-        \textbf{ \faTwitter \ NikoletaGlyn \& \faTwitter \ VinceKnight}
+        \textbf{ \faTwitter \ NikoletaGlyn \& \faTwitter \ drvinceknight        }
     \end{column}
     \begin{column}{.6\linewidth}
         \vspace{0.3cm}
