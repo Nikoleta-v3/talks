@@ -1,0 +1,51 @@
+\documentclass{standalone}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+\begin{tikzpicture}
+
+    \pic[cyan] at (0, 0) (myman) {man};
+    \pic[solarizedRed] at (1, 0) (myman) {man};
+    \pic[solarizedRed] at (2, 0) (myman) {man};
+    \pic[cyan] at (3, 0) (myman) {man};
+    \pic[cyan] at (4, 0) (myman) {man};
+
+    \pic[solarizedRed] at (0, 2) (myman) {man};
+    \pic[cyan] at (1, 2) (myman) {man};
+    \pic[cyan] at (2, 2) (myman) {man};
+    \pic[cyan] at (3, 2) (myman) {man};
+    \pic[solarizedRed] at (4, 2) (myman) {man};
+
+    % \node at (-3.5, 4) {\small{\textbf{1. Game Phase}}};
+    \pic[cyan] at (0, 4) (myman) {man};
+    \pic[solarizedRed] at (1, 4) (myman) {man};
+    \pic[solarizedRed] at (2, 4) (myman) {man};
+    \pic[solarizedRed] at (3, 4) (myman) {man};
+    \pic[cyan] at (4, 4) (myman) {man};
+
+    \coordinate (c1) at (0, 2.9);
+    \coordinate (c12) at (0, 3);
+    \coordinate (c2) at (0, 2.2);
+    \coordinate (c22) at (0, 2.1);
+    \coordinate (c3) at  (.8, 3.4);
+    \coordinate (c32) at (.9, 3.4);
+    \coordinate (c4) at  (0.2, 3.4);
+    \coordinate (c42) at (0.1, 3.4);
+
+
+    \draw (c1) edge[out=-90, in=90, ->, ultra thick] node [above] {} (c22);
+    \draw (c2) edge[out=90, in=-90, ->, ultra thick] node [above] {} (c12);
+
+    \draw (c4) edge[out=0, in=180, ->, ultra thick] node [above] {} (c32);
+    \draw (c3) edge[out=180, in=0, ->, ultra thick] node [above] {} (c42);
+
+    \coordinate (c1) at (-.5, 3.5);
+    \coordinate (c2) at (-.5, 2);
+    \draw (c1) edge[out=180, in=180, ->, ultra thick, dotted, solarizedBase03] node [left] {} (c2);
+\end{tikzpicture}
+\end{document}
