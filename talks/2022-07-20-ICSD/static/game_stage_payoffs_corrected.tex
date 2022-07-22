@@ -18,8 +18,7 @@
 
     \draw (a) edge[out=25, in=155, thick, ->] node [] {} (b);
     \draw (b) edge[out=205, in=-25, thick, ->] node [below] {} (a);
-
-    \node at (0, -2) {\includegraphics[width=.04\textwidth]{static/cross}};
+    \node at (0, -2) {\includegraphics[width=.04\textwidth]{static/check}};
     \node at (0, -2.7) {\includegraphics[width=.04\textwidth]{static/check}};
 
     \node at (1, -2) {\includegraphics[width=.04\textwidth]{static/check}};
@@ -27,10 +26,12 @@
 
     \node at (2, -2) {\includegraphics[width=.04\textwidth]{static/check}};
     \node at (2, -2.7) {\includegraphics[width=.04\textwidth]{static/cross}};
-    \node (1) at (4, -2) {\includegraphics[width=.04\textwidth]{static/cross}};
-    \node at (4, -2.7) {\includegraphics[width=.04\textwidth]{static/cross}};
+
     \node at (3, -2) {$\dots$};
     \node at (3, -2.7) {$\dots$};
+    \node (1) at (4, -2) {\includegraphics[width=.04\textwidth]{static/cross}};
+    \node at (4, -2.7) {\includegraphics[width=.04\textwidth]{static/cross}};
+
     \coordinate (2) at (4.4, -3.2);
 
     \begin{pgfonlayer}{background}
