@@ -1,0 +1,38 @@
+\documentclass{standalone}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+\tikzset{
+        ultra thick/.style={line width=1.6pt},
+        heavy thick/.style={line width=1.8pt}
+    }
+\begin{tikzpicture}
+    \node (a) at (-4, 2.5) {\includestandalone[width=0.1\textwidth]{static/green}};
+
+    \pic[cyan] at (0, 0) (myman) {man};
+    \pic[solarizedRed] at (1, 0) (myman) {man};
+    \pic[solarizedRed] at (2, 0) (myman) {man};
+    \pic[cyan] at (3, 0) (myman) {man};
+    \pic[cyan] at (4, 0) (myman) {man};
+
+    \pic[solarizedRed] at (0, 2) (myman) {man};
+    \pic[cyan] at (1, 2) (myman) {man};
+    \pic[cyan] at (2, 2) (myman) {man};
+    \pic[cyan] at (3, 2) (myman) {man};
+    \pic[solarizedRed] at (4, 2) (myman) {man};
+
+    \pic[solarizedRed] at (1, 4) (myman) {man};
+    \pic[solarizedRed] at (2, 4) (myman) {man};
+    \pic[solarizedRed] at (3, 4) (myman) {man};
+    \pic[cyan] at (4, 4) (myman) {man};
+
+    \pause
+    \draw [solarizedBase2, thick, dotted] (2, 1.5) ellipse (3cm and 4.5cm);
+
+\end{tikzpicture}
+\end{document}

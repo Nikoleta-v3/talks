@@ -1,0 +1,41 @@
+\documentclass{standalone}
+\usepackage{soul}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+\begin{tikzpicture}
+
+    \pic[solarizedRed] at (1.46, 0) (myman) {man};
+    \node at (1.46, -.6) (myman) {A};
+
+    \node at (4.7, -.4) (myman) {\footnotesize{$\bullet$ remembers \textcolor{solarizedRed}{1} interactions}};
+    \node at (4.35, -.8) (myman) {\footnotesize{$\bullet$ remembers \textcolor{solarizedRed}{last} turn}};
+
+
+    \pic[solarizedRed] at (1.46, -2) (myman) {man};
+    \node at (1.46, -2.6) (myman) {A};
+
+    \node at (4.7, -2.4) (myman) {\footnotesize{$\bullet$ remembers \textcolor{solarizedGreen}{2} interactions}};
+    \node at (4.35, -2.8) (myman) {\footnotesize{$\bullet$ remembers \textcolor{solarizedGreen}{last} turn}};
+
+
+    \pic[solarizedRed] at (1.46, -4) (myman) {man};
+    \node at (1.46, -4.6) (myman) {A};
+
+    \node at (4.7, -4.4) (myman) {\footnotesize{$\bullet$ remembers \textcolor{solarizedViolet}{1} interactions}};
+    \node at (4.47, -4.8) (myman) {\footnotesize{$\bullet$ remembers \textcolor{solarizedViolet}{2 last} turn}};
+
+
+    \pic[solarizedRed] at (1.46, -6) (myman) {man};
+    \node at (1.46, -6.6) (myman) {A};
+
+    \node at (4.7, -6.4) (myman) {\footnotesize{$\bullet$ remembers \textcolor{solarizedOrange}{2} interactions}};
+    \node at (4.65, -6.8) (myman) {\footnotesize{$\bullet$ remembers \textcolor{solarizedOrange}{two last} turn}};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass{standalone}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+
+\tikzset{bigbrain/.pic={
+        \node[circle,fill,minimum size=8mm] (head) {};
+        \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+\begin{tikzpicture}
+
+    \node at (-1, -.6) (myman) {Interactions stage:};
+
+    \pic[cyan] at (1.5, 0) (myman) {man};
+
+    \node at (4, -.4) (myman) {\footnotesize{$\bullet$ remembers last turn}};
+    \node at (4.1, -.8) (myman) {\footnotesize{$+$ knows opening action}};
+
+    \pause
+
+    \node at (-1.2, -2.6) (myman) {Updating stage:};
+
+    \pic[cyan] at (1.46, -2) (myman) {bigbrain};
+
+    \node at (4.7, -2.4) (myman) {\footnotesize{$\bullet$ remembers \(N - 1\) interactions}};
+    \node at (4.05, -2.8) (myman) {\footnotesize{$\bullet$ remembers each turn}};
+
+\end{tikzpicture}
+\end{document}

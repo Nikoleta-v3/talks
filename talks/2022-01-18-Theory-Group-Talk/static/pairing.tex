@@ -1,0 +1,55 @@
+\documentclass{standalone}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+
+\tikzset{bigbrain/.pic={
+        \node[circle,fill,minimum size=8mm] (head) {};
+        \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+        \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+        \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+        }}
+\begin{tikzpicture}
+
+    \pic[solarizedRed] at (0, 0) (myman) {man};
+    \node at (0.2, 0) (a) {};
+    \node at (0, -.6) (myman) {A};
+    \pause
+
+    \pic[solarizedRed] at (2, 0) (myman) {man};
+    \node at (1.8, 0) (b) {};
+    \draw (a) edge[out=45, in=135, thick, ->] node [below] {} (b);
+
+    \pause
+    \pic[solarizedGreen] at (3, 0) (myman) {man};
+    \node at (2.8, 0) (c) {};
+    \draw (a) edge[out=55, in=135, thick, ->] node [below] {} (c);
+
+
+    \pause
+
+    \pic[solarizedGreen] at (0, -2) (myman) {man};
+    \node at (0.2, -2) (a) {};
+    \node at (0, -2.6) (myman) {B};
+
+    \pic[solarizedRed] at (2, -2) (myman) {man};
+    \node at (1.8, -2) (b) {};
+    \draw (a) edge[out=45, in=135, thick, ->] node [below] {} (b);
+
+    \pic[solarizedGreen] at (3, -2) (myman) {man};
+    \node at (2.8, -2) (c) {};
+    \draw (a) edge[out=55, in=135, thick, ->] node [below] {} (c);
+
+    \pause
+    \node at (-.2, 0) (a1) {};
+    \node at (-.2, -2) (a2) {};
+    \draw (a1) edge[out=180, in=180, thick, ->] node [below] {} (a2);
+    \draw (a2) edge[out=180, in=180, thick, ->] node [below] {} (a1);
+
+\end{tikzpicture}
+\end{document}

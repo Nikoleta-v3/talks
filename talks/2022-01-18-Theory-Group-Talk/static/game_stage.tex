@@ -1,0 +1,67 @@
+\documentclass{standalone}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+\tikzstyle{state}=[minimum width=5mm, font=\tiny]
+\begin{tikzpicture}
+
+    \pic[solarizedRed] at (1, 0) (myman) {man};
+    \node at (1, -.6) (myman) {A};
+    \pic[] at (2.5, 0) (myman) {man};
+
+    \node at (1.3, -.3) (a) {};
+    \node at (2.2, -.3) (b) {};
+
+    \draw (a) edge[out=25, in=155, thick, ->] node [] {} (b);
+    \draw (b) edge[out=205, in=-25, thick, ->] node [below] {} (a);
+    
+    \pause
+    \draw (b) edge[out=205, in=-25, thick, ->] node [below] {\tiny{$\delta$}} (a);
+
+    \pause
+
+    \node at (1, -1.5) (p) {\textcolor{solarizedRed}{\tiny$(y^{\rm A}, p^{\rm A}, q^{\rm A})$}};
+
+    \pause
+
+    \node at (2.6, -1.5) (p) {\tiny$(y^{\rm \Gamma}, p^{\rm \Gamma}, q^{\rm \Gamma})$};
+
+    % \pause 
+
+	% \node[circle, draw, thick] (0) at (0.8, -3.5) [state] {$CC$};
+	% \node[circle, draw, thick] (1) at (2.8, -3.5) [state] {$CD$};
+	% \node[circle, draw, thick] (2) at (0.8, -5.5) [state] {$DC$};
+	% \node[circle, draw, thick] (3) at (2.8, -5.5) [state] {$DD$};
+
+    % \pause
+
+	% \draw (0) edge[out=20, in=160, ->, thick] node [above] {} (1);
+	% \draw (1) edge[ out=-160, in=-20, ->, thick] node [above] {} (0);
+
+	% \draw (2) edge[out=20, in=160, ->, thick] node [above] {} (3);
+	% \draw (3) edge[ out=-160, in=-20, ->, thick] node [above] {} (2);
+
+	% \draw (0) edge[out=-70, in=70, ->, thick] node [above] {} (2);
+	% \draw (2) edge[ out=110, in=-110, ->, thick] node [above] {} (0);
+
+	% \draw (1) edge[out=-70, in=70, ->, thick] node [above] {} (3);
+	% \draw (3) edge[ out=110, in=-110, ->, thick] node [above] {} (1);
+
+    % \draw (0) edge[out=-35, in=125, ->, thick] node [above] {} (3);
+    % \draw (3) edge[ out=145, in=-55, ->, thick] node [above] {} (0);
+
+    % \draw (1) edge[out=-125, in=35, ->, thick] node [above] {} (2);
+    % \draw (2) edge[ out=55, in=-145, ->, thick] node [above] {} (1);
+
+    % \draw (0) edge[ out=180, in=135, ->, thick, loop] node [above] {}  (0);
+    % \draw (2) edge[out=180, in=135, ->, thick, loop] node [above] {} (2);
+
+    % \draw (1) edge[out=0, in=45, ->, thick, loop] node [above] {} (1);
+    % \draw (3) edge[ out=0, in=45, ->, thick, loop] node [above] {} (3);
+\end{tikzpicture}
+\end{document}

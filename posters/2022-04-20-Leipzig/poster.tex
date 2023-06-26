@@ -1,0 +1,295 @@
+\documentclass[usenames,dvipsnames,t]{beamer}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{standalone}
+\usepackage{minted}
+\usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage{rotating}
+\usepackage{booktabs}
+
+\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}
+\definecolor{DarkGray}{RGB}{5, 66, 81}
+\definecolor{DarkerGray}{RGB}{3, 22, 27}
+\definecolor{Myorange}{RGB}{255, 165, 0}
+
+\usemintedstyle{native}
+
+\usetikzlibrary{shapes.arrows, positioning, arrows, decorations.pathreplacing,
+angles, quotes, decorations.pathmorphing, fit, backgrounds,
+calc, arrows.meta, automata, backgrounds}
+
+\tikzstyle{background}=[solarizedRed, rectangle, draw, inner sep=0.7mm,
+           rounded corners=1mm, ultra thick]
+\tikzset{
+    ultra thick/.style={line width=3pt},
+    super thick/.style={line width=6pt}
+}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\usetikzlibrary{matrix}
+
+\usecolortheme[dark,accent=cyan]{solarized}
+\beamertemplatenavigationsymbolsempty
+\setbeamerfont{block title}{size=\Large}
+\usepackage[orientation=landscape,size=a1,scale=1.4]{beamerposter}
+\newcommand{\R}{\mathbb{R}}
+
+\renewcommand{\arraystretch}{0.8}
+
+\addtobeamertemplate{block begin}{%
+  \setlength{\textwidth}{.5\textwidth}%
+}{}
+
+\addtobeamertemplate{block alerted begin}{%
+  \setlength{\textwidth}{.5\textwidth}%
+}{}
+
+\addtobeamertemplate{block example begin}{%
+  \setlength{\textwidth}{.5\textwidth}%
+}{}
+\setbeamerfont{block body}{size=\footnotesize}
+\setbeamercolor{block title}{use=structure,fg=black,bg=purple!75!black}
+\setbeamercolor{block body}{use=structure,fg=white,bg=white!20!white}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.02\linewidth}
+    \end{column}
+    \begin{column}{.1\linewidth}
+        \vspace{1cm}
+
+        \begin{center}
+        \includegraphics[width=.7\textwidth]{static/mpi.jpg}
+        \end{center}
+    \end{column}
+    \begin{column}{.7\linewidth}
+    \vspace{1.5cm}
+
+    \centering
+    \vspace{1cm}
+    \textbf{\textcolor{orange}{\Huge A bibliometric study of the Iterated Prisoner's Dilemma}}
+    \vspace{.8cm}
+
+    \textbf{\textcolor{orange}{\circled{1} We collect scholarly data \circled{2} We identify research topics using topic modeling \circled{3} We explore collaboration using co-authorship}} \\
+    \vspace{.2cm}
+
+    \textbf{\textcolor{orange}{\url{https://www.nature.com/articles/s41599-021-00718-9}}}
+    \end{column}
+    \begin{column}{.1\linewidth}
+        \vspace{1cm}
+
+        \begin{center}
+            \includegraphics[width=.7\textwidth]{static/cardiff_uni_logo}
+        \end{center}
+        \end{column}
+    % \begin{column}{.23\linewidth}
+
+    %     \includestandalone[width=\textwidth]{static/memory_one}
+    % \end{column}
+    \begin{column}{.02\linewidth}
+    \end{column}
+\end{columns}
+\vspace{.5cm}
+
+\hrule height 3pt
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%FIRST COLUMN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{1cm}
+
+\begin{columns}
+\begin{column}{.33\linewidth}
+    \begin{center}
+    \textbf{\Large\textcolor{orange}{\textsc{\circled{1} HOW \& FROM WHERE}}}
+    \vspace{.5cm}
+
+    \textbf{\Large\textcolor{orange}{\textsc{DO WE COLLECT DATA?}}}
+    \end{center}
+    \vspace{1cm}
+
+    \begin{center}
+        \includestandalone[width=.45\textwidth]{static/arcas_diagram}
+    \end{center}
+
+    \begin{figure}
+    \centering
+    \begin{minipage}{4cm}
+        \setbeamercolor{postit}{bg=solarizedBase00}
+        \begin{beamercolorbox}[ht=.7cm, sep=.2em, wd=26cm, rounded=true]{postit}
+        \textcolor{solarizedBase03}{\footnotesize
+         \textbf{\textsc{ARCAS is an open source tool with which we collect articles' meta-data in a few lines of code}}}
+        \end{beamercolorbox}
+    \end{minipage}
+    \vspace{1cm}
+
+    \begin{minted}
+        [
+        autogobble=true,
+        framesep=2mm,
+        fontsize=\footnotesize,
+        ]
+        {python}
+    >>> import arcas
+    
+    >>> api = arcas.Arxiv()
+    >>> params = api.parameters_fix(title="EHBEA",
+                                    abstract="EHBEA",
+                                    records=1)
+    
+    >>> url = api.create_url_search(params)
+    >>> request = api.make_request(url)
+    >>> root = api.get_root(request)
+    >>> raw_article = api.parse(root)
+    >>> article = api.to_dataframe(raw_article[0])
+    \end{minted}
+    \end{figure}
+    \vspace{.7cm}
+
+    \begin{center}
+        \footnotesize{\textbf{\textcolor{orange}{keywords}: prisoner's dilemma, prisoners dilemma,
+        prisoner dilemma, prisoners evolution, prisoner game theory}}\\
+        \vspace{.2cm}
+        \footnotesize{\textbf{\textcolor{orange}{search field}: title, abstract, text}}\\
+        
+        \vspace{-.9cm}
+        \includegraphics[width=.8\textwidth]{static/articles.png}
+    \end{center}
+\end{column}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%SECOND COLUMN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vrule width 3pt
+\begin{column}{.33\linewidth}
+    \begin{center}
+        \textbf{\Large\textcolor{orange}{\circled{2} \textsc{WHAT DO RESEARCHERS}}}
+        \vspace{.5cm}
+    
+        \textbf{\Large\textcolor{orange}{\textsc{WRITE ABOUT?}}}
+    \end{center}
+    % \colorbox{solarizedBase2}{{\begin{minipage}[t][.7\textheight][t]
+    %     {\dimexpr1\textwidth-3\fboxsep-2\fboxrule-5pt\relax}
+    \vspace{1cm}
+    \centering
+    \begin{minipage}{4cm}
+        \setbeamercolor{postit}{bg=solarizedBase00}
+        \begin{beamercolorbox}[ht=.7cm, sep=.2em, wd=9.3cm, rounded=true]{postit}
+        \textcolor{solarizedBase03}{\small
+         \textbf{\textsc{Latent Dirichlet Allocation}}}
+        \end{beamercolorbox}
+    \end{minipage}
+
+    \begin{center}
+        \includegraphics[width=.45\textwidth]{static/lda}
+    \end{center}
+
+    \begin{center}
+        \begin{minipage}{4cm}
+            \setbeamercolor{postit}{bg=solarizedBase00}
+            \begin{beamercolorbox}[ht=.7cm, sep=.1em, wd=12cm, rounded=true]{postit}
+            \textcolor{solarizedBase03}{\small
+             \textbf{\textsc{Most important words in each topic}}}
+            \end{beamercolorbox}
+        \end{minipage}
+        \vspace{.7cm}
+
+        \includestandalone[width=.75\textwidth]{static/topics}
+        \vspace{-.5cm}
+
+        \begin{minipage}{4cm}
+            \setbeamercolor{postit}{bg=solarizedBase00}
+            \begin{beamercolorbox}[ht=.7cm, sep=.1em, wd=2.3cm, rounded=true]{postit}
+            \textcolor{solarizedBase03}{\small
+             \textbf{\textsc{Labels}}}
+            \end{beamercolorbox}
+        \end{minipage}
+        \vspace{.2cm}
+
+        \includestandalone[width=.8\textwidth]{static/topics_two}
+    \end{center}
+
+    \vspace{.5cm}
+% \end{minipage}}}
+\end{column}
+\vrule width 3pt
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%THIRD COLUMN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{column}{.33\linewidth}
+    \begin{center}
+        \textbf{\Large\textcolor{orange}{\textsc{\circled{3} IS THE FIELD OF COOPERATION}}}
+        \vspace{.5cm}
+    
+        \textbf{\Large\textcolor{orange}{\textsc{A COOPERATIVE FIELD?}}}
+    \end{center}
+    \vspace{.65cm}
+
+    \begin{center}
+        \begin{minipage}{4cm}
+            \setbeamercolor{postit}{bg=solarizedBase00}
+            \begin{beamercolorbox}[ht=.7cm, sep=.1em, wd=8cm, rounded=true]{postit}
+            \textcolor{solarizedBase03}{\small
+             \textbf{\textsc{Co-authorship network}}}
+            \end{beamercolorbox}
+        \end{minipage}
+        \vspace{.5cm}
+
+        \includegraphics[width=.7\textwidth]{static/pd.png}
+
+        \includegraphics[width=.65\textwidth]{static/degree_dist.png}
+    \end{center}
+    \vspace{.5cm}
+
+    \begin{center}
+    \begin{minipage}{4cm}
+        \setbeamercolor{postit}{bg=solarizedBase00}
+        \begin{beamercolorbox}[ht=.7cm, sep=.2em, wd=15cm, rounded=true]{postit}
+        \textcolor{solarizedBase03}{\small
+            \textbf{\textsc{How does this compare to other sub fields?}}}
+        \end{beamercolorbox}
+    \end{minipage}
+    \vspace{1.5cm}
+
+    \resizebox{.9\textwidth}{!}{%
+    \begin{tabular}{lrrrrrrrrrr}
+        \toprule
+        {} &  \# Nodes     & Av. degree &   \% Isolated nodes   &  Clustering coeff & \# Communities &  Modularity \\
+        \midrule
+        Prisoner's Dilemma&     4221 &           3.621  &    8.0 &    0.666 & 1177 & 0.965264 \\
+        Auction Games     &     5362 &           2.932  &    8.4 &    0.599 & 1493 & 0.957238 \\
+        Price of Anarchy  &     1315 &           2.969  &    12.5 &   0.626 &  414 & 0.964498 \\
+        \bottomrule
+        \end{tabular}}
+    \end{center}
+    \vspace{1cm}
+\end{column}
+\end{columns}
+
+\vspace{.5cm}
+
+\hrule height 3pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INFO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{columns}
+    \begin{column}{.2\linewidth}
+        \vspace{0.3cm}
+
+        \centering
+        \textbf{ \faTwitter \ NikoletaGlyn \& \faTwitter \ drvinceknight        }
+    \end{column}
+    \begin{column}{.6\linewidth}
+        \vspace{0.3cm}
+
+        \centering
+        \textbf{ This work was supported by the European Research Council Starting Grant 850529 (E-DIRECT)}
+    \end{column}
+    \begin{column}{.2\linewidth}
+        \vspace{0.3cm}
+
+        \centering
+        \textbf{ \faGithub \ Nikoleta-v3}
+    \end{column}
+\end{columns}
+\end{document}

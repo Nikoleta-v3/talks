@@ -1,0 +1,12 @@
+\documentclass[tikz]{standalone}
+
+\begin{document}
+\begin{tikzpicture}[scale=1, every node/.style={scale=0.5}]
+    \node (words) at (0, 0) {\includegraphics[width=.15\textwidth]{static/paper.png}};
+
+    \node[right=2cm of words] (six) {\LARGE{\(\mathbb{R}^5\)}};
+    \node (dummy_out) at (1.5, 0) {};
+    \node (dummy_in) at (3, 0) {};
+    \draw (dummy_out) edge[->, out=0, in=180, draw=orange] node[above] {\small{LDA}} (dummy_in);
+\end{tikzpicture}
+\end{document}

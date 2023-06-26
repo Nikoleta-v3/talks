@@ -1,0 +1,14 @@
+\documentclass{standalone}
+
+\begin{document}
+\begin{tikzpicture}
+
+    \node at (-1.2, -5) (equal) {\textcolor{cyan}{\small{$\pi_{\rm B}$}}};
+    \node at (-.7, -5) (equal) {\small{$=$}};
+    \node at (.1, -4.9) (equal) {\textcolor{cyan}{\small{$(k - 1)$}}};
+    \node at (1.4, -4.9) (MM) {\includestandalone[width=.1\textwidth]{static/MM}};
+    \node at (2.4, -4.9) (equal) {\small{$+$}};
+    \node at (3.3, -4.9) (equal) {\textcolor{solarizedRed}{\small{$(N - k)$}}};
+    \node at (4.6, -4.9) (MM) {\includestandalone[width=.1\textwidth]{static/MR}};
+\end{tikzpicture}
+\end{document}

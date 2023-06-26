@@ -20,6 +20,8 @@ _site
 *.jekyll-cache/
 
 *.DS_Store
+.vscode/*
 
 # minted
 *_minted-main/
+*_minted-poster/

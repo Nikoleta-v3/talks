@@ -1,0 +1,51 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{pgf}
+
+\definecolor{ao}{rgb}{0.0, 0.5, 0.0}
+\definecolor{boston}{rgb}{0.8, 0.0, 0.0}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1.3cm,>=stealth,bend angle=45]
+
+    \node[individual] (a) {EvolvedLookerUp2\_4\_3 (1)};
+    \node[above=of a] (title) {\textbf{\textcolor{cyan}{POPULATION}}};
+    \node[individual, below=of a] (b) {EvolvedLookerUp2\_4\_3 (2)};
+    \node[individual, below=of b] (c) {EvolvedLookerUp2\_4\_3 (3)};
+    \node[individual, below=of c] (d) {EvolvedLookerUp2\_4\_3 (4)};
+    \node[below=of d] (k) {$\dots$};
+    \node[individual, below=of k] (f) {EvolvedLookerUp2\_4\_3 ($n-3$)};
+    \node[individual, below=of f] (h) {EvolvedLookerUp2\_4\_3 ($n-2$)};
+    \node[individual, below=of h] (j) {EvolvedLookerUp2\_4\_3 ($N$)};
+
+    \draw[cyan, thick, dotted] ($(a.north west)+(-0.3,0.6)$)  rectangle ($(j.south east)+(0.3,-0.6)$);
+
+    \node[right =of a] (score1) {4.9};
+    \node[above=1.8cm of score1] (title) {\textbf{\textcolor{solarizedOrange}{SCORES}}};
+    \node[right =of b] (score2) {4.5};
+    \node[right =of c] (score3) {3.2};
+    \node[right =of d] (score4) {2.1};
+    \node[right =of f] (score6) {1.3};
+    \node[right =of h] (score7) {0.9};
+    \node[right =of j] (score8) {0};
+    \draw[solarizedOrange, thick, dotted] ($(score1.north west)+(-0.5, 0.9)$)  rectangle ($(score8.south east)+(0.8, -0.9)$);
+
+    \pause
+    \draw[-, solarizedRed, thick] ($(f.north west)+(-0.7, 0.7)$)  -- ($(score6.north east)+(1, 1)$);
+    \pause
+    \draw[solarizedBase03, thick, fill=solarizedBase03] ($(score6.north west)+(0, 0)$)  rectangle ($(score8.south east)+(0.5, 0)$);
+    \draw[solarizedBase03, thick, fill=solarizedBase03] ($(f.north west)+(0, 0)$)  rectangle ($(j.south east)+(0, 0)$);
+    \pause
+    \draw[-, solarizedRed, thick] (a.west) -| ($(a.west) + (-1, -1.5)$);
+    \draw[-, solarizedRed, thick] (b.west) -| ($(b.west) + (-1, 1.5)$);
+    \draw[-, solarizedRed, thick] ($(b.west) + (-1, 1.5)$) -- ($(b.west) + (-2, 1.5)$);
+    \draw[->, solarizedRed, thick] ($(b.west) + (-2, 1.5)$) |- (f.west);
+    \pause
+    \node[individual, below=of k] (f) {\small{EvolvedLookerUp2\_4\_3 (1) + EvolvedLookerUp2\_4\_3 (2)}};
+    \end{tikzpicture}
+\end{document}
