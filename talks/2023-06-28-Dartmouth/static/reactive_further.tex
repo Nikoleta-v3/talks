@@ -1,0 +1,33 @@
+\documentclass{standalone}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=5mm] (head) {};
+    \node[rounded corners=2pt,minimum height=.8cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+    \draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+    }}
+\begin{tikzpicture}
+    \pic[solarizedGreen!80!white] at (0, 0) (myman) {man};
+
+    \coordinate (origin) at (.4, 0);
+    \coordinate (upper) at (.4, .5);
+    \coordinate (uleft) at (.65, .7);
+    \draw [-, solarizedGreen, fill=solarizedGreen!60!white] (origin) -- (upper) -- (uleft) -- cycle;
+
+    \coordinate (origin) at (.5, 0);
+    \coordinate (upper) at (.5, .5);
+    \coordinate (uleft) at (.75, .7);
+    \draw [-, solarizedGreen, fill=solarizedGreen!60!white] (origin) -- (upper) -- (uleft) -- cycle;
+
+    \coordinate (origin) at (.6, 0);
+    \coordinate (upper) at (.6, .5);
+    \coordinate (uleft) at (.85, .7);
+    \draw [-, solarizedGreen, fill=solarizedGreen!60!white] (origin) -- (upper) -- (uleft) -- cycle;
+
+    \coordinate (origin) at (.7, 0);
+    \coordinate (upper) at (.7, .5);
+    \coordinate (uleft) at (.95, .7);
+    \draw [-, solarizedGreen, fill=solarizedGreen!60!white] (origin) -- (upper) -- (uleft) -- cycle;
+\end{tikzpicture}
+\end{document}
