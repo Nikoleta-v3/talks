@@ -1,0 +1,30 @@
+
+\documentclass[tikz]{standalone}
+
+\definecolor{solarizedBlue}{HTML}{268BD2}
+\definecolor{solarizedBlue0}{HTML}{2699d2}
+\definecolor{solarizedBlue1}{HTML}{266fd2}
+\definecolor{solarizedBlue2}{HTML}{2661d2}
+\definecolor{solarizedBlue3}{HTML}{2653d2}
+\definecolor{solarizedBlue4}{HTML}{2645d2}
+\definecolor{solarizedBlue5}{HTML}{2637d2}
+\definecolor{solarizedBlue6}{HTML}{2629d2}
+\definecolor{solarizedBlue7}{HTML}{3126d2}
+\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
+\definecolor{ao}{rgb}{0.0, 0.5, 0.0}
+
+\usetikzlibrary{positioning, fit, calc,matrix, arrows,scopes}
+
+\begin{document}
+\tikzset{man/.pic={
+    \node[circle,fill,minimum size=10mm] (head) {};
+    \node[rounded corners=4pt,minimum height=1.1cm,minimum width=0.8cm,fill,below = 2pt of head] (body) {};
+    \draw[line width=2mm,round cap-round cap] ([shift={(4pt,-2pt)}]body.north east) --++(-90:6mm);
+    \draw[line width=2mm,round cap-round cap] ([shift={(-4pt,-2pt)}]body.north west)--++(-90:6mm);
+    }}
+\begin{tikzpicture}
+
+\pic[solarizedBlue0] at (0, 0) (myman) {man};
+
+\end{tikzpicture}
+\end{document}
